@@ -22,11 +22,11 @@ python -m pip install -r requirements.txt
 code .
 ```
 
-Poslednjom komandom se pokrenuli VS Code. U Explorer panelu VS Code-a uđite u folder source i otvorite `conf.py`. Ne morate ništa da radite u `conf.py`‚ to ste uradili samo da VS Code shvati da treba da konfiguriše Python. Verovatno će vam preporučiti da instalirate ekstenziju za Python što prihvatiti. Ako je sve u desnom delu status bar-a (linija na dnu VS Code prozora) bi trebalo da stoji nešto poput `3.10.11 ('.venv':venv)`. Oznaka verzije može da se razlikuje ali ovo što piše u zagradi treba da bude tako. Ako nije, kliknite na to mesto i izaberite Python okruženje koje je u `.venv` podfolderu vašeg projekta (a koje ste prethodnim komandama kreirali). Obratite pažnju da je potrebno da u editoru imate otvoren `conf.py` da biste u status bar-u videli koje okruženje Pajtona je aktivno. 
+Poslednjom komandom se pokrenuli VS Code. U Explorer panelu VS Code-a uđite u folder source i otvorite `conf.py`. Ne morate ništa da radite u `conf.py`‚ otvorili ste ga samo da VS Code shvati da treba da konfiguriše Python. Verovatno će vam preporučiti da instalirate ekstenziju za Python što možete prihvatiti. Ako je sve prošlo kako treba, u desnom delu status bar-a (linija na dnu VS Code prozora) će stajati nešto poput `3.10.11 ('.venv':venv)` što je opis aktivnog Python okruženja. Oznaka verzije može da se razlikuje ali ovo što piše u zagradi treba da bude tako. Ako nije, kliknite na to mesto u status bar-u i izaberite Python okruženje koje se nalazi u `.venv` podfolderu vašeg projekta (a koje ste prethodnim komandama kreirali). Obratite pažnju da je potrebno da u editoru imate otvoren `conf.py` da biste u status bar-u videli koje okruženje Pajtona je aktivno. 
 
-Možete da zatvorite komandni prozor jer ćete preći da koristite terminal u okviru VS Code. Ako koristite drugi editor koji ne podržava integrisani terminal možete da ostavite otvoren komandni prozor i u njemo unosite komande.
+Sada možete da zatvorite komandni prozor i pređete da koristite terminal u okviru VS Code. Ako koristite drugi editor koji ne podržava integrisani terminal možete da ostavite otvoren komandni prozor i u njemu unosite komande.
 
-U VS Code otvorite terminal, ukoliko već nije otvoren, opcijom *Terminal -> Net Terminal*. U terminalu koji se otvara u posebnom panelu u VS Code prozoru bi trebalo da prompt počinje sa `(.venv)`. 
+U VS Code otvorite terminal, ukoliko već nije otvoren, opcijom *Terminal -> New Terminal*. U posebnom panelu u VS Code prozoru će se otvoriti terminal i u njemo treba da bude ispisam prompt koji počinje sa `(.venv)`. 
 
 
 U terminalu otkucajte komandu:
@@ -35,7 +35,7 @@ U terminalu otkucajte komandu:
 make html
 ```
 
-Zatim otvorite u brauzeru fajl *index.html* koji se nalazi u podfolderu *build/html*, a što u terminalu možete učiniti komandom (ako koristite Chrome):
+Zatim otvorite u brauzeru fajl `index.html` koji se nalazi u podfolderu `build/html`, a što u terminalu možete učiniti komandom (ako koristite Chrome):
 
 ```
 start chrome file://%cd%/build/html/index.html 
