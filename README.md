@@ -53,22 +53,29 @@ make html
 
 Ne zaboravite da snimite promene u editoru pre nego što pokrenete pretodnu komandu.
 
-Obratite pažnju da li je ispisana neka poruka crvenom bojom i ako jeste ispravite šta treba pa ponovite prethodnu komandu.
+Pokretanje prethodne komande obično ispiše dosta nekih informacija. Obratite pažnju da li je ispisana neka poruka crvenom bojom i ako jeste ispravite šta treba pa ponovite prethodnu komandu.
 
 Ako ste zaboravili gde se nalazi generisan HTML, poslednja linija u ispisanim porukama govori o tome.
 
-Ako vam je već otvoren kurs u brauzeru, dovoljno je da osvežite prikaz u brauzeru da biste videli promene.
+Ako vam je već otvoren kurs u brauzeru, dovoljno je da osvežite prikaz u brauzeru da biste videli promene. Može se desiti da se promena ne prikaže onako kako očekujete. U tom slučaju prvo proverite da li ste snimili promene, da li je bilo poruka o grešci kod buildovanja, pa onda probajte Ctrl-Shift-R u brauzeru i ako ni to ne uspe, uradite:
+
+```
+make clean
+make html
+```
+
+i nakon toga Ctrl-Shift-R u brauzeru.
 
 Ne zaboravite da pre početka i na kraju rada na sadržaju sinhronizujete Git repozitorijum.
 
 
-## Instrukcije za autore
+## Instrukcije za izradu sadržaja
 
 Ovde koristimo Sphinx generator dokumentacije u varijanti sa Markdown sintaksom. To znači da su svi tekstualni sadržaji su u fajlovima sa ekstenzijom `.md`.  
 
 Izvorni sadržaj kursa je u podfolderu `source`. Za svaki izvorni Markdown dokument će se na kraju kreirati jedna web strana. Dokumenti su hijerarhijski organizovani. Na vrhu hijerarhije je glavni `index.md`, sledeći u hijerarhiji su `index.md` fajlovi u podfolderima i na kraju su ostali falnovi u podfolderima. Treba se držati navedenih nivoa hijerarhije i ne uvoditi dodatne. 
 
-Za više detalja pogledati:
+Za više detalja o notaciji koju koristite pri unosu teksta možete pogledati:
 
 - [Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/index.html) - Tu je opisano kako se koristi Sphinx sa Markdown-om, mada nisu opisane sve Sphinx komponente
 - [Sphinx direktive](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html), [Sphinx role](https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html), [Docutils direktive](https://docutils.sourceforge.io/docs/ref/rst/directives.html) i [Docutils role](https://docutils.sourceforge.io/docs/ref/rst/roles.html) daju detaljnije informacije o osnovnom skupu raspoloživih komponenti, pri čemu se u navedenim dokumentima koristi reStructuredText sintaksa, pa se treba navići kako istu stvar napisati u Markdaun sintaksi. Pošto je Sphinx nadogradnja Docutils-a, u Sphinx dokumentaciji se opisuju samo direktive i role koje je dodao Sphinx, pa treba kombinovati Docutils i Sphinx dokumentaciju.
