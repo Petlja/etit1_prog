@@ -3,7 +3,7 @@ Ovaj repozitorijum posvećen je kursu za Programiranje za prvi razred obrazovnog
 
 
 
-## Konfirugacija okružena
+## Konfirugacija okružena 
 
 Prvo klonirajte repozitorijum https://github.com/Petlja/etit1_prog. Ako nemate iskustva sa Git-om preporučujemo da koristite GitHub desktop (https://desktop.github.com/).
 
