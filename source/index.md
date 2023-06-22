@@ -5,4 +5,5 @@
 :caption: Садржај
 
 uvod/index
+algoritmi/index
 ```
