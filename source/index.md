@@ -6,4 +6,5 @@
 
 uvod/index
 algoritmi/index
+struktura_i_tipovi/index
 ```
