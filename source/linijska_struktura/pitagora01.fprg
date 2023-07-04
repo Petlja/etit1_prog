@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-06-24 07:36:13 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDYtMjQ7MDY6Mzg6MzkgUE07MjQ4OQ=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDYtMjQ7MDc6MzY6MTMgUE07MjsyNTg5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, c, O, P" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <assign variable="c" expression="Sqrt(a^2+b^2)"/>
+            <assign variable="O" expression="a+b+c"/>
+            <assign variable="P" expression="(a*b)/2"/>
+            <output expression="O" newline="True"/>
+            <output expression="P" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

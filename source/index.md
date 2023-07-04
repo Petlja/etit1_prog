@@ -7,4 +7,7 @@
 uvod/index
 algoritmi/index
 struktura_i_tipovi/index
+izrazi_naredbe/index
+linijska_struktura/index
+prilozi/index
 ```

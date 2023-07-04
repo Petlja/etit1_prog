@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-06-24 03:54:57 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDYtMjQ7MDM6MDM6MjggUE07MjQ3Ng=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDYtMjQ7MDM6NTQ6NTcgUE07NzsyNTk4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, m, cena" type="Integer" array="False" size=""/>
+            <input variable="cena"/>
+            <input variable="n"/>
+            <input variable="m"/>
+            <output expression="cena*10*(n-m)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
