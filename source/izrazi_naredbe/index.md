@@ -4,4 +4,6 @@
 :maxdepth: 1
 
 operatori_jezika
+jednostavna_dodela
+aritmeticki_operatori
 ```

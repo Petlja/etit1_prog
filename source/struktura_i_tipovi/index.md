@@ -15,4 +15,11 @@ znakovne_promenljive
 prelazne_sekvence
 znakovni_kviz
 realni_tip
+realne_promenljive
+realni_kviz
+izvedeni_tip
+nabrojivi_tip
+unos_prikaz
+funkcija_prikaz
+funkcija_unos
 ```
