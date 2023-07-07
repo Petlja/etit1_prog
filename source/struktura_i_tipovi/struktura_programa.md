@@ -123,7 +123,7 @@ int main(void)
 На основу датог дијаграма тока сада можемо и написати програм у програмском
 језику C:
 
-```{literalinclude} ../_code_samples/hello.c
+```{literalinclude} code/hello.c
 :language: c
 ```
 
