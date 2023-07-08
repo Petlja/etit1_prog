@@ -9,4 +9,5 @@ visual_studio
 visual_studio_start
 prevodjenje
 vs_code
+kviz
 ```
