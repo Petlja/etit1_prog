@@ -35,7 +35,7 @@ Linux, онда већ имаш $C$ компајлер. Ако користиш 
 :caption: Садржај
 
 uvod/index
-ide/index
+priprema_okruzenja/index
 algoritmi/index
 struktura_i_tipovi/index
 izrazi_naredbe/index

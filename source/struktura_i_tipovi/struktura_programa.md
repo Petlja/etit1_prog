@@ -114,7 +114,7 @@ int main(void)
 Подсети се првог дијаграма тока који је на излазу исписивао текст
 `Hello, World!`.
 
-```{image} ../_images/alg_hello_world5.png
+```{image} ../priprema_okruzenja/images/alg_hello_world5.png
 :width: 70%
 :align: center
 :alt: Flowgorithm израда дијаграма тока
