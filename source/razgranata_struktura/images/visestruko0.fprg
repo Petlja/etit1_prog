@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-09 02:16:36 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMDk7MDI6MTE6MDQgUE07MjQ3Mg=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMDk7MDI6MTY6MzYgUE07MjsyNTkx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dan" type="Integer" array="False" size=""/>
+            <input variable="dan"/>
+            <if expression="dan == 1">
+                <then>
+                    <output expression="&quot;ponedeljak&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="dan == 2">
+                        <then>
+                            <output expression="&quot;utorak&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="dan == 3">
+                                <then>
+                                    <output expression="&quot;sreda&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="dan == 4">
+                                        <then>
+                                            <output expression="&quot;cetvrtak&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="dan == 5">
+                                                <then>
+                                                    <output expression="&quot;petak&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="dan == 6">
+                                                        <then>
+                                                            <output expression="&quot;subota&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="dan == 7">
+                                                                <then>
+                                                                    <output expression="&quot;nedelja&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;pogresan unos&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

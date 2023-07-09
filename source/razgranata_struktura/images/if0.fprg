@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-09 07:11:39 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMDk7MDc6MDg6NTggUE07MjQ5Mg=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMDk7MDc6MTE6MzkgUE07MTsyNTkz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="racun" type="Real" array="False" size=""/>
+            <input variable="racun"/>
+            <if expression="racun &gt; 1000">
+                <then>
+                    <assign variable="racun" expression="racun - (racun * 0.1)"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="racun" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

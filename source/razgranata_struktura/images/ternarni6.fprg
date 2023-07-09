@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-09 11:52:15 AM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMDk7MTE6NDc6NDUgQU07MjQ3MQ=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMDk7MTE6NTI6MTUgQU07MTsyNTcy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <input variable="num"/>
+            <if expression="num&lt;0">
+                <then>
+                    <output expression="&quot;Manji od 0&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="num == 0">
+                        <then>
+                            <output expression="&quot;Jednak 0&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Veci od 0&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

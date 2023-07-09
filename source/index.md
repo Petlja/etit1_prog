@@ -40,5 +40,6 @@ algoritmi/index
 struktura_i_tipovi/index
 izrazi_naredbe/index
 linijska_struktura/index
+razgranata_struktura/index
 prilozi/index
 ```

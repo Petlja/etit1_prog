@@ -85,7 +85,7 @@ enum radni_dan { pon, uto, sre, cet, pet };
 набројивог типа података је:
 
 ```text
-enum { identifikator_1, identifikator_2, ... identifikator_n } ime_tipa;
+typedef enum { identifikator_1, identifikator_2, ... identifikator_n } ime_tipa;
 ```
 
 На пример, дефиниши набројиви тип података `radni_dan` који може да има
