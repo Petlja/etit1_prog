@@ -8,7 +8,7 @@ Bell Labs. Оригинално је развијен за оперативни 
 System/370 рачунарима и убрзо прихваћен као подразумевани програмски језик за
 развој оперативних система и системског софтвера.
 
-```{image} ../_images/thompson_ritchie.jpg
+```{image} images/thompson_ritchie.jpg
 :width: 70%
 :align: center
 :alt: Dennis Ritchie и Ken Thompson
