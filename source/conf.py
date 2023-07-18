@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Програмирање за први разред образовног профила Електротехничар информационих технологија'
-copyright = '2023, Петља'
-author = 'Петља'
+project = 'Програмирање I за информатичке профиле у електротехничким школама'
+copyright = '2023, Фондација Петља'
+author = 'Велимир Радловачки'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -24,6 +24,6 @@ language = 'sr'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_title = 'Програмирање за први разред образовног профила Електротехничар информационих технологија'
+html_title = 'Програмирање I за информатичке профиле у електротехничким школама'
 html_theme = 'furo'
 html_static_path = ['_static']
