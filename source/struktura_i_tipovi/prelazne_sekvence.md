@@ -19,7 +19,13 @@
 превођења:
 
 ```text
-char a = '\', b = '"', c = ''', d = '?'; // neispravno
+#include <stdio.h>
+
+int main(void)
+{
+    char a = '\', b = '"', c = ''', d = '?'; // neispravno
+    return 0;
+}
 ```
 
 Да би исправио грешке у програму потребно је да ставиш обрнуту косу црту пре
@@ -27,7 +33,13 @@ char a = '\', b = '"', c = ''', d = '?'; // neispravno
 прелазне секвенце.
 
 ```c
-char a = '\\', b = '\"', c = '\'', d = '\?'; // ispravno
+#include <stdio.h>
+
+int main(void)
+{
+    char a = '\\', b = '\"', c = '\'', d = '\?'; // ispravno
+    return 0;
+}
 ```
 
 ## Нови ред

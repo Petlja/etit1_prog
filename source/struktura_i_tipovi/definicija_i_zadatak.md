@@ -1,4 +1,4 @@
-# Дефиниција и задатак алгоритма
+# Алгоритми
 
 ## Увод
 
@@ -119,7 +119,7 @@
 има одређено значење. Претходни пример можеш представити дијаграмом тока на
 следећи начин:
 
-```{image} ../_images/definicija_i_zadatak.png
+```{image} images/definicija_i_zadatak.png
 :width: 70%
 :align: center
 :alt: Дијаграм тока
@@ -128,7 +128,7 @@
 Као и у случају писања псеудокода, постоји више стилова записивања дијаграма
 тока. Исти дијаграм тока у "IBM" стилу изгледао би овако:
 
-```{image} ../_images/definicija_i_zadatak_ibm.png
+```{image} images/definicija_i_zadatak_ibm.png
 :width: 70%
 :align: center
 :alt: Дијаграм тока

@@ -18,20 +18,35 @@ tip identifikator_1, identifikator_2, ... identifikator_n;
 ```
 
 Променљиве целобројног типа најчешће ћеш декларисати коришћењем кључне речи
-`int`. На пример, ако желиш да декларишеш три целобројне променљиве $x$, $y$ и
-$z$, то можеш урадити на следећи начин:
+`int`. На пример, ако желиш да декларишеш три целобројне променљиве `x`, `y` и
+`z`, то можеш урадити на следећи начин:
 
 ```c
-int x;
-int y;
-int z;
+#include <stdio.h>
+
+int main(void)
+{
+    int x;
+    int y;
+    int z;
+    return 0;
+}
 ```
 
 или
 
 ```c
-int x, y, z;
+#include <stdio.h>
+
+int main(void)
+{
+    int x, y, z;
+    return 0;
+}
 ```
+
+У оба случаја целобројне променљиве `x`, `y` и `z` декларисане су на исправан
+начин и можеш их даље користити у функцији `main()`.
 
 Целобројна променљива типа `int` у меморији рачунара заузима 4 бајта. Пошто
 један бајт има 8 бита, то значи да целобројна променљива заузима 32 бита у
@@ -94,14 +109,27 @@ $2^{31}-1$, односно од $-2147483648$ до $2147483647$.
 дана у месецу можеш декларисати са `unsigned short`.
 
 ```c
-unsigned short dan; // rezervisano 2 bajta u memoriji
+#include <stdio.h>
+
+int main(void)
+{
+    unsigned short dan; // rezervisano 2 bajta u memoriji
+    return 0;
+}
 ```
 
 Неће бити грешка уколико је декларишеш са `int`, али си таквом декларацијом
 непотребно заузео дупло више меморије.
 
 ```c
-int dan; // rezervisano 4 bajta u memoriji
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void)
+{
+    int dan; // rezervisano 4 bajta u memoriji
+    return 0;
+}
 ```
 
 Супротно томе, ако је у питању годишње пословање неке веће компаније приказано
@@ -111,7 +139,13 @@ $2147483647$ може да буде недовољан. Ако вредност 
 `long long`.
 
 ```c
-long long poslovanje; // rezervisano 8 bajtа u memoriji
+#include <stdio.h>
+
+int main(void)
+{
+    long long poslovanje; // rezervisano 8 bajtа u memoriji
+    return 0;
+}
 ```
 
 У [табели у прилогу](../prilozi/tipovi_podataka.md) наведене су све дозвољене
@@ -159,10 +193,16 @@ tip identifikator = vrednost;
 тренутним бројем година које имају на данашњи дан:
 
 ```c
-int ana = 16;
-int nikola = 17;
-int marko = 15;
-int milica = 18;
+#include <stdio.h>
+
+int main(void)
+{
+    int ana = 16;
+    int nikola = 17;
+    int marko = 15;
+    int milica = 18;
+    return 0;
+}
 ```
 
 Слично као код декларације променљивих, можеш истовремено иницијализовати више
@@ -176,7 +216,13 @@ tip identifikator_1 = vrednost_1, identifikator_2 = vrednost_2, ... identifikato
 начин:
 
 ```c
-int ana = 16, nikola = 17, marko = 15, milica = 18;
+#include <stdio.h>
+
+int main(void)
+{
+    int ana = 16, nikola = 17, marko = 15, milica = 18;
+    return 0;
+}
 ```
 
 У истој линији можеш комбиновати и декларацију и иницијализацију. На пример,
@@ -184,5 +230,11 @@ int ana = 16, nikola = 17, marko = 15, milica = 18;
 нису познате године Сање и Милоша, то можеш записати на следећи начин:
 
 ```c
-int ana = 16, nikola = 17, marko = 15, milica = 18, sanja, milos;
+#include <stdio.h>
+
+int main(void)
+{
+    int ana = 16, nikola = 17, marko = 15, milica = 18, sanja, milos;
+    return 0;
+}
 ```

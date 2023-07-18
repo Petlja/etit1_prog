@@ -23,15 +23,27 @@ tip identifikator_1, identifikator_2, ... identifikator_n;
 $z$, то можеш урадити на следећи начин:
 
 ```c
-char x;
-char y;
-char z;
+#include <stdio.h>
+
+int main(void)
+{
+    char x;
+    char y;
+    char z;
+    return 0;
+}
 ```
 
 или
 
 ```c
-char x, y, z;
+#include <stdio.h>
+
+int main(void)
+{
+    char x, y, z;
+    return 0;
+}
 ```
 
 Променљива типа `char` у меморији рачунара заузима један бајт. Пошто један бајт
@@ -58,10 +70,16 @@ tip identifikator = vrednost;
 `milica` са тренутним смеровима на које њихови компаси показују:
 
 ```c
-char ana = 'N';
-char nikola = 'W';
-char marko = 'S';
-char milica = 'E';
+#include <stdio.h>
+
+int main(void)
+{
+    char ana = 'N';
+    char nikola = 'W';
+    char marko = 'S';
+    char milica = 'E';
+    return 0;
+}
 ```
 
 Више променљивих знаковног типа такође можеш истовремено иницијализовати, па тада
@@ -74,7 +92,13 @@ tip identifikator_1 = vrednost_1, identifikator_2 = vrednost_2, ... identifikato
 Према томе, претходни пример можеш записати на следећи начин:
 
 ```c
-char ana = 'N', nikola = 'W', marko = 'S', milica = 'E';
+#include <stdio.h>
+
+int main(void)
+{
+    char ana = 'N', nikola = 'W', marko = 'S', milica = 'E';
+    return 0;
+}
 ```
 
 У истој линији можеш комбиновати и декларацију и иницијализацију. На пример,
@@ -83,5 +107,11 @@ char ana = 'N', nikola = 'W', marko = 'S', milica = 'E';
 начин:
 
 ```c
-char ana = 'N', nikola = 'W', marko = 'S', milica = 'E', sanja, milos;
+#include <stdio.h>
+
+int main(void)
+{
+    char ana = 'N', nikola = 'W', marko = 'S', milica = 'E', sanja, milos;
+    return 0;
+}
 ```
