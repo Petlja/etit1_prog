@@ -5,4 +5,6 @@
 
 definicija_niza
 deklaracija_inicijalizacija
+sortiranje_niza
+selection_sort
 ```
