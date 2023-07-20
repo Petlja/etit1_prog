@@ -6,4 +6,5 @@
 operatori_jezika
 jednostavna_dodela
 aritmeticki_operatori
+operator_sizeof
 ```
