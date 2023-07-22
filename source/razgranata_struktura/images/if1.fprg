@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-22 12:09:12 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTE6NTQ6NDUgQU07MjQ2NA=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTI6MDk6MTIgUE07MjsyNTgz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="broj, apsolut" type="Integer" array="False" size=""/>
+            <input variable="broj"/>
+            <if expression="broj &gt;= 0">
+                <then>
+                    <assign variable="apsolut" expression="broj"/>
+                </then>
+                <else>
+                    <assign variable="apsolut" expression="-broj"/>
+                </else>
+            </if>
+            <output expression="apsolut" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

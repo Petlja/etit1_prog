@@ -6,5 +6,7 @@
 operatori_jezika
 jednostavna_dodela
 aritmeticki_operatori
+konverzije_tipova
+bitski_operatori
 operator_sizeof
 ```

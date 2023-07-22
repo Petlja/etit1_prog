@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-22 12:38:39 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTI6MzQ6NDcgUE07MjQ4MA=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTI6Mzg6MzkgUE07MjsyNTk0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="t" type="Real" array="False" size=""/>
+            <input variable="t"/>
+            <if expression="t &lt;=0">
+                <then>
+                    <output expression="&quot;cvrsto&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="t &gt;= 100">
+                        <then>
+                            <output expression="&quot;gasovito&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;tecno&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

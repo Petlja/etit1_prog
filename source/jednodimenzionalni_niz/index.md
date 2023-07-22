@@ -9,6 +9,7 @@ pristupanje_elementima
 sizeof_niz
 kviz_niz
 pretrazivanje_niza
+minimum_maksimum
 sortiranje_niza
 selection_sort
 ```

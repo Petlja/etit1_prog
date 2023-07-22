@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-22 10:54:52 AM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTA6NDg6MTIgQU07MjQ2MA=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTA6NTQ6NTIgQU07MTsyNTY5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="broj" type="Integer" array="False" size=""/>
+            <input variable="broj"/>
+            <if expression="broj &gt; 0">
+                <then>
+                    <assign variable="broj" expression="broj + 1"/>
+                </then>
+                <else>
+                    <output expression="&quot;Pogresan unos&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="broj" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
