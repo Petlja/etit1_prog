@@ -1,5 +1,17 @@
 # Цикличне програмске структуре и алгоритми
 
+## Садржај
+
+```{toctree}
+:maxdepth: 1
+
+ciklicna_struktura
+brojacki_ciklus
+preduslov_postuslov
+prevremeni_break
+preskakanje_continue
+```
+
 ## Извод из Плана наставе и учења
 
 **Циљ:**
@@ -33,15 +45,3 @@
 демонстрирати како одабрати наредбу за решавање проблема која највише одговара
 логици појединца (нпр. гађање у мету: гађај 10 пута, гађај док не погодиш
 центар, гађај док постигнеш 100 поена).
-
-## Садржај:
-
-```{toctree}
-:maxdepth: 1
-
-ciklicna_struktura
-brojacki_ciklus
-preduslov_postuslov
-prevremeni_break
-preskakanje_continue
-```

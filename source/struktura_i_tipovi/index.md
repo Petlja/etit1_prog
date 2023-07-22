@@ -5,7 +5,6 @@
 ```{toctree}
 :maxdepth: 1
 
-definicija_i_zadatak
 struktura_programa
 kljucne_reci
 komentari

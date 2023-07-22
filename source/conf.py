@@ -13,8 +13,12 @@ author = 'Велимир Радловачки'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", "sphinx_design", "sphinx_copybutton"]
-myst_enable_extensions = ["colon_fence", "dollarmath"]
+extensions = [ "myst_parser",
+               "sphinx_design",
+               "sphinx_copybutton" ]
+myst_enable_extensions = [ "colon_fence",
+                           "dollarmath",
+                           "html_admonition" ]
 templates_path = ['_templates']
 exclude_patterns = []
 language = 'sr'

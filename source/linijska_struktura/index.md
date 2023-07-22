@@ -1,9 +1,10 @@
 # Линијске програмске структуре и алгоритми
 
+## Садржај
+
 ```{toctree}
 :maxdepth: 1
 
 linijska_struktura.md
-geometrija.md
-jednacine.md
+geometrijske_formule.md
 ```
