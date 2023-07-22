@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-22 07:18:02 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MDc6MTY6NTYgUE07MjQ4NA=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MDc6MTg6MDIgUE07MTsyNTg1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Hello, World!&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,5 +1,22 @@
 # Разгранате програмске структуре и алгоритми
 
+## Садржај
+
+```{toctree}
+:maxdepth: 1
+
+razgranata_struktura
+relacijski_operatori
+logicki_operatori
+operatori_kviz
+naredba_grananja
+naredba_grananja_kviz
+ternarni_uslovni
+ternarni_uslovni_kviz
+visestruko_grananje
+visestruko_kviz
+```
+
 ## Извод из Плана наставе и учења
 
 **Циљ:**
@@ -27,20 +44,3 @@
 како угнежђавањима `if`-наредби, тако и применом наредбе `switch`. На примеру
 истог задатка демонстрирати решења реализована уградњом `if` наредби и решења
 реализована наредбом `switch`.
-
-## Садржај:
-
-```{toctree}
-:maxdepth: 1
-
-razgranata_struktura
-relacijski_operatori
-logicki_operatori
-operatori_kviz
-naredba_grananja
-naredba_grananja_kviz
-ternarni_uslovni
-ternarni_uslovni_kviz
-visestruko_grananje
-visestruko_kviz
-```

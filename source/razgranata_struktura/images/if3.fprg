@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-22 03:05:58 PM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MDI6NDc6MjkgUE07MjQ4Mw=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MDM6MDU6NTggUE07MzsyNTkw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="godine" type="Integer" array="False" size=""/>
+            <input variable="godine"/>
+            <if expression="godine &gt; 12 &amp;&amp; godine &lt; 20">
+                <then>
+                    <output expression="&quot;Jeste tinejdzer&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Nije tinejdzer&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
