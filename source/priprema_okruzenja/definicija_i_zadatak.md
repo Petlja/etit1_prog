@@ -120,7 +120,7 @@
 следећи начин:
 
 ```{image} images/definicija_i_zadatak.png
-:width: 30%
+:width: 20%
 :align: center
 :alt: Дијаграм тока
 ```
@@ -129,7 +129,7 @@
 тока. Исти дијаграм тока у "IBM" стилу изгледао би овако:
 
 ```{image} images/definicija_i_zadatak_ibm.png
-:width: 30%
+:width: 20%
 :align: center
 :alt: Дијаграм тока
 ```

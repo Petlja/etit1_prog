@@ -144,7 +144,7 @@ if(izraz)           if(izraz)
 Алгоритамско решење овог задатка представљено дијаграмом тока може да изгледа
 овако:
 
-```{image} images/if0.png
+```{image} images/if1.png
 :width: 50%
 :align: center
 :alt: Наредба гранања if-else

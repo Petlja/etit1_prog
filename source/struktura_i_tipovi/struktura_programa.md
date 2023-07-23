@@ -119,12 +119,12 @@ int main(void)
 `Hello, World!`.
 
 ```{image} images/hello.png
-:width: 30%
+:width: 25%
 :align: center
 :alt: Дијаграм тока
 ```
 
-На основу датог дијаграма тока сада можемо и написати програм у програмском
+На основу датог дијаграма тока сада можеш написати и програм у програмском
 језику C:
 
 ```{literalinclude} code/hello.c
