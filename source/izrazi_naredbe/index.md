@@ -9,4 +9,6 @@ aritmeticki_operatori
 konverzije_tipova
 bitski_operatori
 operator_sizeof
+bibliotecke_funkcije
+bibliotecke_matematicke
 ```

@@ -24,9 +24,6 @@ realni_io
 realni_kviz
 izvedeni_tip
 nabrojivi_tip
-konstante
-bibliotecke_funkcije
-bibliotecke_matematicke
 ```
 
 ## Извод из Плана наставе и учења
