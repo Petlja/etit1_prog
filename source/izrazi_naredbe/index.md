@@ -8,6 +8,8 @@ jednostavna_dodela
 aritmeticki_operatori
 konverzije_tipova
 bitski_operatori
+slozena_dodela
+slozena_dodela_kviz
 operator_sizeof
 bibliotecke_funkcije
 bibliotecke_matematicke
