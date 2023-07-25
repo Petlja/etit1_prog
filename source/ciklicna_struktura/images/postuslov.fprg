@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="velim"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-25 11:41:43 AM"/>
+        <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjU7MTE6Mjg6NDcgQU07MjQ3MA=="/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjU7MTE6NDE6NDMgQU07MjsyNTcw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <do expression="i &lt; 10">
+                <output expression="i" newline="True"/>
+                <assign variable="i" expression="i + 1"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
