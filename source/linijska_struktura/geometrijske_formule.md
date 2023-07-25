@@ -1,7 +1,7 @@
 # Геометријске формуле
 
-Алгоритми и програми у програмском језику C из
-[геометрије и примене геометријских формула](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/01%20geometrijske%20formule).
+Алгоритми и програми у програмском језику C:
+[геометрија и примена геометријских формула](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/01%20geometrijske%20formule).
 
 ## Тренинг
 

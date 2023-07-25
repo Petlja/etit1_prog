@@ -5,15 +5,20 @@
 ```{toctree}
 :maxdepth: 1
 
-linijska_struktura.md
-geometrijske_formule.md
+linijska_struktura
+geometrijske_formule
+linearne_jednacine_i_sistemi
+linearna_zavisnost
+stepenovanje_i_korenovanje
+kretanje
+pojam_div_i_mod
+pozicioni_zapis
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓
 
 ## Напомена
 
-Ово поглавље не постоји као посебна област у Плану наставе и учења. Уместо да
-ученици цртају алгоритамске шеме $n$ часова пре него што су написали један ред
-програма, логично је да схвате алгоритме на конкретним примерима, а то да ли ће
-алгоритам бити записан или нацртан је небитно...
+Ово поглавље заправо не постоји као посебна област у Плану наставе и учења.
+
+Објашњено [ОВДЕ](../priprema_okruzenja/index.md)!
