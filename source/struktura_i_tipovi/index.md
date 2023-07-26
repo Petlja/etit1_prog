@@ -8,6 +8,7 @@
 struktura_programa
 kljucne_reci
 komentari
+identifikatori_kviz
 tipovi
 celobrojni_tip
 celobrojne_promenljive
@@ -24,6 +25,7 @@ realni_io
 realni_kviz
 izvedeni_tip
 nabrojivi_tip
+izvedeni_kviz
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓

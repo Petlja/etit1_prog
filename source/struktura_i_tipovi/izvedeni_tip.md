@@ -14,21 +14,40 @@ typedef tip novo_ime;
 начин:
 
 ```c
-typedef unsigned short int bodovi;
+#include <stdio.h>
+
+int main(void)
+{
+    typedef unsigned short int bodovi;
+    return 0;
+}
 ```
 
 па након тога користиш свој тип података `bodovi` као и све остале типове:
 
 ```c
-bodovi ana = 20000, nikola = 18000, marko, milica;
+#include <stdio.h>
+
+int main(void)
+{
+    typedef unsigned short int bodovi;
+    bodovi alisa = 20000, bob = 18000, ceca, dule;
+    return 0;
+}
 ```
 
 Над типовима података дефинисаним кључном речју `typedef` не можеш користити
-модификаторе. Због тога ће у следећем примеру:
+модификаторе. Због тога ће у следећем програму:
 
 ```c
-typedef int bodovi;
-unsigned short bodovi ana = 20000, nikola = 18000, marko, milica;
+#include <stdio.h>
+
+int main(void)
+{
+    typedef unsigned short int bodovi;
+    unsigned short bodovi alisa = 20000, bob = 18000, ceca, dule;
+    return 0;
+}
 ```
 
 компајлер јавити грешку.
@@ -37,16 +56,22 @@ unsigned short bodovi ana = 20000, nikola = 18000, marko, milica;
 даље користити у програму. У следећем примеру:
 
 ```c
-typedef unsigned short int bodovi;
-bodovi ana, nikola;
-unsigned short int marko, milica;
+#include <stdio.h>
+
+int main(void)
+{
+    typedef unsigned short int bodovi;
+    bodovi alisa = 20000, bob = 18000;
+    unsigned short int ceca, dule;
+    return 0;
+}
 ```
 
-променљиве `ana`, `nikola`, `marko` и `milica` су истог типа.
+променљиве `alisa`, `bob`, `ceca` и `dule` су заправо истог типа.
 
-Кључном речи `typedef` заправо се не креирају нови типови података - креирају
-се синоними за већ постојеће типове.
+Кључном речи `typedef` не креирају се нови типови података - креирају се
+синоними за већ постојеће типове.
 
 У пракси, кључна реч `typedef` највише се користи се да би се поједноставила
 декларација комплексних структура података које се састоје од струкрура или
-унија - то су структуре података које ћеш учити у другом разреду.
+унија - о њима ћеш учити следеће школске године.
