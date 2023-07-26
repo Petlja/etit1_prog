@@ -5,10 +5,10 @@
 ```{toctree}
 :maxdepth: 1
 
-struktura_programa
+struktura_jezika
 kljucne_reci
 komentari
-identifikatori_kviz
+struktura_kviz
 tipovi
 celobrojni_tip
 celobrojne_promenljive
