@@ -1,4 +1,7 @@
-# Табела ASCII кодова
+# ASCII табела
+
+Табела **ASCII** *(American Standard Code for Information Interchange)* кодова
+(у декадном, окталном и хексадекадном бројевном систему) и карактера.
 
 ```text
 DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH

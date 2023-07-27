@@ -24,7 +24,9 @@ int main(void)
 ```
 
 па након тога користиш тип података `bodovi` који си дефинисао као и све остале
-типове:
+типове. Нека је задатак да напишеш програм у програмском језику C у којем су
+познате вредности броја бодова $100$ и $85$ које су Тамара и Влада добили на
+тесту, а није познат број бодова Алисе и Боба.
 
 ```c
 #include <stdio.h>
@@ -32,7 +34,7 @@ int main(void)
 int main(void)
 {
     typedef unsigned short int bodovi;
-    bodovi t = 200, v = 18000, a, b;
+    bodovi t = 100, v = 85, a, b;
     return 0;
 }
 ```
@@ -45,8 +47,8 @@ int main(void)
 
 int main(void)
 {
-    typedef unsigned short int bodovi;
-    unsigned short bodovi t = 200, v = 18000, a, b;
+    typedef int bodovi;
+    unsigned short bodovi t = 100, v = 85, a, b;
     return 0;
 }
 ```
@@ -62,7 +64,7 @@ int main(void)
 int main(void)
 {
     typedef unsigned short int bodovi;
-    bodovi t = 200, v = 18000;
+    bodovi t = 100, v = 85;
     unsigned short int a, b;
     return 0;
 }
@@ -70,6 +72,21 @@ int main(void)
 
 променљиве `t`, `v`, `a` и `b` заправо су истог типа. Кључном речи `typedef` не
 креирају се нови типови - креирају се синоними за већ постојеће типове.
+
+Кључном речју `const` можеш дефинисати константне податке изведеног типа. На
+пример, ако је минимум бодова $0$, максимум $100$ и број бодова за позитивну
+оцену $51$, то можеш представити у програму на следећи начин:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    typedef unsigned short int bodovi;
+    const bodovi min = 0, max = 100, poz = 51;
+    return 0;
+}
+```
 
 У пракси се `typedef` највише користи да би се поједноставила декларација
 комплексних структура података које се састоје од струкрура или унија - о њима
