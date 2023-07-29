@@ -7,9 +7,13 @@
 
 ciklicna_struktura
 brojacki_ciklus
+brojacki_kviz
 preduslov_postuslov
+preduslov_postuslov_kviz
 prevremeni_break
 preskakanje_continue
+skokovi_goto
+iskok_kviz
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓

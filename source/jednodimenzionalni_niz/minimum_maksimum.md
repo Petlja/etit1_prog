@@ -37,10 +37,3 @@ int main(void)
 
 Максимални елемент низа пронаћићеш на исти начин ако у наредби услова замениш
 оператор `<` са оператором `>`.
-
-## Задаци за вежбу
-
-Из Методичке збирке задатака реши задатак:
-
-[Најнижа температура](https://petlja.org/biblioteka/r/Zbirka/najmanja_temperatura1)
-[Редни број максимума](https://petlja.org/biblioteka/r/Zbirka/redni_broj_maksimuma1)
