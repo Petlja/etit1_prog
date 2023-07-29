@@ -14,6 +14,7 @@ prevremeni_break
 preskakanje_continue
 skokovi_goto
 iskok_kviz
+z
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓
