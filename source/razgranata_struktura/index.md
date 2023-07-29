@@ -15,6 +15,14 @@ ternarni_uslovni
 ternarni_uslovni_kviz
 visestruko_grananje
 visestruko_kviz
+z_relacijski_operatori
+z_logicki_operatori
+z_intervali
+z_diskretni_skup_vrednosti
+z_leksikografsko
+z_hijerarhijsko
+z_minimum_i_maksimum
+z_razno
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓

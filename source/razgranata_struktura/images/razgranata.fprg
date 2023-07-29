@@ -4,24 +4,21 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="velim"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-07-22 10:54:52 AM"/>
+        <attribute name="saved" value="2023-07-29 04:55:59 PM"/>
         <attribute name="created" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTA6NDg6MTIgQU07MjQ2MA=="/>
-        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjI7MTA6NTQ6NTIgQU07MTsyNTY5"/>
+        <attribute name="edited" value="dmVsaW07TUFJTkZSQU1FOzIwMjMtMDctMjk7MDQ6NTU6NTkgUE07MjsyNjAz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="broj" type="Integer" array="False" size=""/>
-            <input variable="broj"/>
-            <if expression="broj &gt; 0">
+            <if expression="">
                 <then>
-                    <assign variable="broj" expression="broj + 1"/>
+                    <assign variable="" expression=""/>
                 </then>
                 <else>
-                    <output expression="&quot;Pogresan unos&quot;" newline="True"/>
+                    <assign variable="" expression=""/>
                 </else>
             </if>
-            <output expression="broj" newline="True"/>
         </body>
     </function>
 </flowgorithm>

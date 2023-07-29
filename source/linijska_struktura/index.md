@@ -6,13 +6,13 @@
 :maxdepth: 1
 
 linijska_struktura
-geometrijske_formule
-linearne_jednacine_i_sistemi
-linearna_zavisnost
-stepenovanje_i_korenovanje
-kretanje
-pojam_div_i_mod
-pozicioni_zapis
+z_geometrijske_formule
+z_linearne_jednacine_i_sistemi
+z_linearna_zavisnost
+z_stepenovanje_i_korenovanje
+z_kretanje
+z_pojam_div_i_mod
+z_pozicioni_zapis
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓

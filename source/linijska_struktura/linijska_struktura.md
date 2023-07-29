@@ -40,19 +40,19 @@ naredbа_n
 из [Методичке збирке задатака из основа програмирања](https://petlja.org/biblioteka/r/kursevi/Zbirka)
 која је објављена на Петљи.
 
-Ови задаци могу се сврстати у задатке у којима се врше основна
+Задаци у којима се врше основна
 [аритметичка](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika)
-израчунавања, а могу се поделити у категорије на следећи начин:
+израчунавања сврстани су у поткатегорије на следећи начин:
 
 - Елементарна целобројна и реална аритметика:
-    * [Геометријске формуле](geometrijske_formule.md)
-    * [Линеарне једначине и системи линеарних једначина](linearne_jednacine_i_sistemi.md)
-    * [Линеарна зависност и пропорција](linearna_zavisnost.md)
-    * [Степеновање и кореновање](stepenovanje_i_korenovanje.md)
-    * [Кретање](kretanje.md)
+    * [Геометријске формуле](z_geometrijske_formule.md)
+    * [Линеарне једначине и системи линеарних једначина](z_linearne_jednacine_i_sistemi.md)
+    * [Линеарна зависност и пропорција](z_linearna_zavisnost.md)
+    * [Степеновање и кореновање](z_stepenovanje_i_korenovanje.md)
+    * [Кретање](z_kretanje.md)
 - Целобројно дељење
-    * [Појам целобројног количника и остатка](pojam_div_i_mod.md)
-    * [Позициони запис](pozicioni_zapis.md)
+    * [Појам целобројног количника и остатка](z_pojam_div_i_mod.md)
+    * [Позициони запис](z_pozicioni_zapis.md)
 
 :::{admonition} Програмски језик C и Петља
 :class: tip
