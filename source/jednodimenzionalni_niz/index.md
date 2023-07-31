@@ -5,6 +5,7 @@
 ```{toctree}
 :maxdepth: 1
 
+jednodimenzionalni
 definicija_niza
 deklaracija_inicijalizacija
 pristupanje_elementima
@@ -14,6 +15,7 @@ pretrazivanje_niza
 minimum_maksimum
 sortiranje_niza
 selection_sort
+z
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓

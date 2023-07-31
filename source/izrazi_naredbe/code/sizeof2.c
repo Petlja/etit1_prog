@@ -3,7 +3,7 @@
 int main(void)
 {
 	int a = 10, b;
-	b = sizeof(a++);
+	b = sizeof(++a);
 	printf("%d %d", a, b);
 	return 0;
 }
