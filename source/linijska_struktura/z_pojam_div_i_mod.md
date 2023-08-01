@@ -104,16 +104,3 @@ $v=\lfloor{\frac{y-1}{a}}\rfloor$.
 ```
 
 :::
-
-## По два и по три
-
-Прочитај [текст задатка](https://petlja.org/biblioteka/r/Zbirka/po_dva_i_po_tri).
-
-:::{admonition} Предложено решење задатка
-:class: tip
-
-```{literalinclude} code/po_dva_i_po_tri.c
-:language: c
-```
-
-:::
