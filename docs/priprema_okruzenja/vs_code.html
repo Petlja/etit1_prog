@@ -1,0 +1,905 @@
+<!doctype html>
+<html class="no-js" lang="sr">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Софтвер за израду дијаграма тока" href="flowgorithm.html" /><link rel="prev" title="Од изворног кода до извршног програма" href="prevodjenje.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>Visual Studio Code едитор и GCC - Програмирање I за информатичке профиле у електротехничким школама</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Програмирање I за информатичке профиле у електротехничким школама</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Програмирање I за информатичке профиле у електротехничким школама</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Претрага" name="q" aria-label="Претрага">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Садржај</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../uvod/index.html">Увод</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Увод</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezici.html">Програмски језици</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezik_c.html">Програмски језик C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksa_i_semantika.html">Синтакса и семантика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksne_konstrukcije.html">Синтаксне конструкције језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/zivotni_ciklus.html">Животни циклус развоја софтвера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/uvod_kviz.html">Квиз</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Припрема радног окружења</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Припрема радног окружења</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="radno_okruzenje.html">Радно окружење програмера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_studio.html">Microsoft Visual Studio IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_studio_start.html">Рад у Visual Studio окружењу</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prevodjenje.html">Од изворног кода до извршног програма</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Visual Studio Code едитор и GCC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowgorithm.html">Софтвер за израду дијаграма тока</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definicija_i_zadatak.html">Алгоритми</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kviz.html">Квиз</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../struktura_i_tipovi/index.html">Структура језика и типови података</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Структура језика и типови података</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/struktura_jezika.html">Структура језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/kljucne_reci.html">Кључне речи и идентификатори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/komentari.html">Коментари</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/struktura_kviz.html">Квиз: структура језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/tipovi.html">Типови података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojni_tip.html">Целобројни тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojne_promenljive.html">Целобројни променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojni_io.html">Унос и приказ целих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojni_kviz.html">Квиз: Целобројни тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovni_tip.html">Знаковни тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovne_promenljive.html">Знаковни променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/prelazne_sekvence.html">Прелазне секвенце</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovni_io.html">Унос и приказ карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovni_kviz.html">Квиз: Знаковни тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realni_tip.html">Реални тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realne_promenljive.html">Реални променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realni_io.html">Унос и приказ реалних бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realni_kviz.html">Квиз: Реални тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/izvedeni_tip.html">Изведени тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/nabrojivi_tip.html">Набројиви тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/izvedeni_kviz.html">Квиз: изведени и набројиви типови</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_operatori.html">Оператори над битовима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_kviz.html">Квиз: оператори над битовима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela.html">Оператори сложене доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela_kviz.html">Квиз: Оператори сложене доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement.html">Оператори инкрементирања и декрементирања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement_kviz.html">Квиз: Оператори инкрементирања и декрементирања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operator_sizeof.html">Оператор <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_funkcije.html">Стандардне библиотечке функције</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_matematicke.html">Библиотечке математичке функције</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_kviz.html">Квиз: библиотечке функције</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linijska_struktura/index.html">Линијске програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Линијске програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/linijska_struktura.html">Линијска структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_geometrijske_formule.html">Задаци: Геометријске формуле</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_linearne_jednacine_i_sistemi.html">Задаци: Линеарне једначине и системи линеарних једначина</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_linearna_zavisnost.html">Задаци: Линеарна зависност и пропорција</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_stepenovanje_i_korenovanje.html">Задаци: Степеновање и кореновање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_kretanje.html">Задаци: Кретање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_pojam_div_i_mod.html">Задаци: Појам целобројног количника и остатка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_pozicioni_zapis.html">Задаци: Позициони запис</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../razgranata_struktura/index.html">Разгранате програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Разгранате програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/razgranata_struktura.html">Разграната структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/relacijski_operatori.html">Релацијски оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/logicki_operatori.html">Логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/operatori_kviz.html">Квиз: Релацијски и логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja.html">Наредба гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja_kviz.html">Квиз: Наредба гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni.html">Тернарни условни оператор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni_kviz.html">Квиз: Тернарни условни оператор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_grananje.html">Наредба вишеструког гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_kviz.html">Квиз: Наредба вишеструког гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_relacijski_operatori.html">Задаци: Релацијски оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_logicki_operatori.html">Задаци: Логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_intervali.html">Задаци: Гранање на основу припадности интервалима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_diskretni_skup_vrednosti.html">Задаци: Гранање на основу коначног скупа вредности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_leksikografsko.html">Задаци: Лексикографско поређење торки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_hijerarhijsko.html">Задаци: Хијерархија услова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_minimum_i_maksimum.html">Задаци: Минимум и максимум два броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_razno.html">Задаци: Разни задаци са гранањем</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ciklicna_struktura/index.html">Цикличне програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Цикличне програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/ciklicna_struktura.html">Циклична структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_ciklus.html">Наредба бројачког циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_kviz.html">Квиз: наредба бројачког циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov.html">Наредбе циклуса са предусловом и постусловом</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov_kviz.html">Квиз: циклуси са предусловом и постусловом</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/prevremeni_break.html">Превремени излазак из циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/kviz_niz.html">Квиз: Једнодимензионални низ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pretrazivanje_niza.html">Претраживање низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z.html">Задаци из збирке - IN PROGRESS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/tipovi_podataka.html">Основни типови података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/celobrojni_ogranicenja.html">Провера опсега вредности целобројних типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/ascii_tabela.html">ASCII табела</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/znakovni_ogranicenja.html">Провера опсега вредности знаковног типа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/prelazne_sekvence.html">Табела прелазних секвенци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/realni_ogranicenja.html">Провера опсега вредности и прецизности реалних типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/operatori_prioritet.html">Приоритет оператора</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="visual-studio-code-gcc">
+<h1>Visual Studio Code едитор и GCC<a class="headerlink" href="#visual-studio-code-gcc" title="Permalink to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Напомена</p>
+<p>Ова лекција намењена је само оним ученицима који, из неког разлога, нису у
+могућности да инсталирају и користе интегрисано развојно окружење Visual
+Studio. Ако си већ инсталирао Visual Studio, онда нема потребе да инсталираш
+и Visual Studio Code едитор и GCC сет алата!</p>
+</div>
+<p>Једна од алтернатива интегрисаном развојном окружењу Visual Studio је Visual
+Studio Code едитор и GCC сет алата. Остале алтернативе, Code::Blocks и DevC++
+су прилично застареле по дизајну и функционалности и одавно се не користе у
+софтверским компанијама. Ако из неког разлога не можеш или не желиш да користиш
+Visual Studio, у наставку ће бити објашњен детаљан поступак преузимања,
+инсталације и конфигурације Visual Studio Code едитора за рад са GCC сетом
+алата.</p>
+<p>Овај поступак је мало компликованији од претходних, па пажљиво прати следеће
+кораке.</p>
+<section id="visual-studio-code">
+<h2>Преузимање и инсталација Visual Studio Code едитора<a class="headerlink" href="#visual-studio-code" title="Permalink to this heading">#</a></h2>
+<p>Преузимање и инсталација Visual Studio Code едитора прилично је једноставна и
+интуитивна. Visual Studio Code едитор је потпуно бесплатaн, чак и за
+комерцијалну употребу. Да би га преузео са интернета, потребно је посетиш веб
+страницу
+<a class="reference external" href="https://code.visualstudio.com/Download">code.visualstudio.com/Download</a>
+и одабереш адекватну верзију. Ако немаш администраторске привилегије на
+рачунару, одабери <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Installer</span></code>, односно, ако имаш администраторске
+привилегије, одабери <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Installer</span></code> како би едитор био доступан свим
+корисницима рачунара.</p>
+<a class="reference internal image-reference" href="../_images/vscode0.png"><img alt="code.visualstudio.com" class="align-center" src="../_images/vscode0.png" style="width: 100%;" /></a>
+<p>Покрени преузети инсталер и прихвати услове коришћења:</p>
+<a class="reference internal image-reference" href="../_images/vscode1.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode1.png" style="width: 70%;" /></a>
+<p>У овом кораку можеш променити фолдер у којем ће се Visual Studio Code
+инсталирати. За тим нема потребе, па је довољно да оставиш подразумевани фолдер
+и кликнеш <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/vscode2.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode2.png" style="width: 70%;" /></a>
+<p>У овом кораку можеш променити име фолдера у Start менију у којем ће бити
+креирана пречица до Visual Studio Code едитора. Ни за тим нема потребе, па је
+довољно да оставиш подразумевано име и кликнеш <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/vscode3.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode3.png" style="width: 70%;" /></a>
+<p>У овом кораку можеш одабрати да ли желиш пречицу на десктопу штиклирањем опције
+<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">desktop</span> <span class="pre">icon</span></code> и да ли у Windows Explorer контекстном менију желиш
+ставку <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">with</span> <span class="pre">Code</span></code> када кликнеш десним кликом на фајл или директоријум
+штиклирањем опција
+<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">&quot;Open</span> <span class="pre">with</span> <span class="pre">Code&quot;</span> <span class="pre">action</span> <span class="pre">to</span> <span class="pre">Windows</span> <span class="pre">Explorer</span> <span class="pre">file</span> <span class="pre">context</span> <span class="pre">menu</span></code> и
+<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">&quot;Open</span> <span class="pre">with</span> <span class="pre">Code&quot;</span> <span class="pre">action</span> <span class="pre">to</span> <span class="pre">Windows</span> <span class="pre">Explorer</span> <span class="pre">directory</span> <span class="pre">context</span> <span class="pre">menu</span></code>.
+Следеће две опције су већ штиклиране,
+<code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Code</span> <span class="pre">as</span> <span class="pre">an</span> <span class="pre">editor</span> <span class="pre">for</span> <span class="pre">supported</span> <span class="pre">file</span> <span class="pre">types</span></code> и
+<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">to</span> <span class="pre">PATH</span> <span class="pre">(requires</span> <span class="pre">shell</span> <span class="pre">restart)</span></code>, а тичу се асоцијације Visual Studio
+Code едитора са подржаним форматима фајлова и додавања Visual Studio Code
+едитора у системску путању како би се могао позивати из било ког директоријума.
+Препоручено је да ове опције оставиш штиклираним. Након одабира жељених опција
+кликни <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/vscode4.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode4.png" style="width: 70%;" /></a>
+<p>У овом кораку излистане су инсталационе опције које си до сада направио. Ако си
+задовољан, кликни <code class="docutils literal notranslate"><span class="pre">Install</span></code>, а у супротном можеш кликнути <code class="docutils literal notranslate"><span class="pre">&lt;Back</span></code> и направити
+измене.</p>
+<a class="reference internal image-reference" href="../_images/vscode5.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode5.png" style="width: 70%;" /></a>
+<p>Сачекај да се инсталација заврши:</p>
+<a class="reference internal image-reference" href="../_images/vscode6.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode6.png" style="width: 70%;" /></a>
+<p>остави штиклирану опцију <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> како би се едитор одмах
+покренуо и кликни <code class="docutils literal notranslate"><span class="pre">Finish</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/vscode7.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode7.png" style="width: 70%;" /></a>
+<p>Када се едитор стартује по први пут у менију са леве стране кликни на икону
+<code class="docutils literal notranslate"><span class="pre">Extensions</span></code> или притисни на тастатури <code class="docutils literal notranslate"><span class="pre">CTRL</span></code>, <code class="docutils literal notranslate"><span class="pre">SHIFT</span></code> и <code class="docutils literal notranslate"><span class="pre">X</span></code>. У пољу за
+претрагу унеси <code class="docutils literal notranslate"><span class="pre">C</span></code> и инсталирај додатке: <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>, <code class="docutils literal notranslate"><span class="pre">C/C++</span> <span class="pre">Themes</span></code> и
+<code class="docutils literal notranslate"><span class="pre">C/C++</span> <span class="pre">Extension</span> <span class="pre">Pack</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/vscode8.png"><img alt="Visual Studio Code инсталација" class="align-center" src="../_images/vscode8.png" style="width: 100%;" /></a>
+<p>Овим си завршио са преузимањем, инсталацијом и иницијалним подешавањима Visual
+Studio Code едитора.</p>
+</section>
+<section id="gcc">
+<h2>Преузимање и инсталација GCC сета алата<a class="headerlink" href="#gcc" title="Permalink to this heading">#</a></h2>
+<p>Након инсталације едитора, неопходно је да инсталираш C компајлер и дебагер.
+GNU колекција компајлера и алата за Windows дистрибуира се кроз Cygwin и MinGW
+пројекте, па ћеш у овој лекцији научити да инсталираш пакет mingw-w64 који
+подржава програмирање у програмском језику C на 32-битним и 64-битним верзијама
+оперативног система Windows.</p>
+<p>За инсталацију MinGW користи се <a class="reference external" href="https://www.msys2.org/">MSYS2</a> исталер.</p>
+<a class="reference internal image-reference" href="../_images/msys0.png"><img alt="msys2.org" class="align-center" src="../_images/msys0.png" style="width: 100%;" /></a>
+<p>Тренутно актуелну верзију MSYS2 инсталера можеш преузети кликом на линк поред
+текста <code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">Download</span> <span class="pre">the</span> <span class="pre">installer</span></code>. Инсталирај MSYS2 као на сликама испод.</p>
+<a class="reference internal image-reference" href="../_images/msys1.png"><img alt="msys2.org" class="align-center" src="../_images/msys1.png" style="width: 70%;" /></a>
+<p>Кликни <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/msys2.png"><img alt="MSYS2 инсталација" class="align-center" src="../_images/msys2.png" style="width: 70%;" /></a>
+<p>Немој мењати инсталациону путању <code class="docutils literal notranslate"><span class="pre">C:\msys64</span></code> и кликни <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/msys3.png"><img alt="MSYS2 инсталација" class="align-center" src="../_images/msys3.png" style="width: 70%;" /></a>
+<p>Кликни <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/msys4.png"><img alt="MSYS2 инсталација" class="align-center" src="../_images/msys4.png" style="width: 70%;" /></a>
+<p>Искључи опцију <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">MSYS2</span> <span class="pre">now.</span></code> и кликни <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/msys5.png"><img alt="MSYS2 инсталација" class="align-center" src="../_images/msys5.png" style="width: 70%;" /></a>
+<p>Овим си завршио инсталацију MSYS2.</p>
+</section>
+<section id="id1">
+<h2>Инсталација GCC сета алата<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Из Start менија из фолдера <code class="docutils literal notranslate"><span class="pre">MSYS2</span> <span class="pre">64bit</span></code> покрени <code class="docutils literal notranslate"><span class="pre">MSYS2</span> <span class="pre">MSYS</span></code>. Унеси команду
+<code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-Syu</span></code> па притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. Процес ће изгледати од прилике овако:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ pacman -Syu
+:: Synchronizing package databases...
+ mingw32                                                                                                          1607.6 KiB  1581 KiB/s 00:01 [######################################################################################] 100%
+ mingw64                                                                                                          1617.2 KiB  1217 KiB/s 00:01 [######################################################################################] 100%
+ ucrt64                                                                                                           1675.0 KiB  1323 KiB/s 00:01 [######################################################################################] 100%
+ clang32                                                                                                          1569.1 KiB   444 KiB/s 00:04 [######################################################################################] 100%
+ clang64                                                                                                          1603.1 KiB  1349 KiB/s 00:01 [######################################################################################] 100%
+ msys                                                                                                              390.2 KiB   109 KiB/s 00:04 [######################################################################################] 100%
+:: Starting core system upgrade...
+warning: terminate other MSYS2 programs before proceeding
+resolving dependencies...
+looking for conflicting packages...
+ 
+Packages (2) mintty-1~3.6.1-1  msys2-runtime-3.3.5-1
+ 
+Total Download Size:    4.01 MiB
+Total Installed Size:  13.76 MiB
+Net Upgrade Size:       0.02 MiB
+ 
+:: Proceed with installation? [Y/n]
+</pre></div>
+</div>
+<p>Поново притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>:: Retrieving packages...
+ mintty-1~3.6.1-1-x86_64                                                                                           798.7 KiB   647 KiB/s 00:01 [######################################################################################] 100%
+ msys2-runtime-3.3.5-1-x86_64                                                                                        3.2 MiB  1941 KiB/s 00:02 [######################################################################################] 100%
+ Total (2/2)                                                                                                         4.0 MiB  2.27 MiB/s 00:02 [######################################################################################] 100%
+(2/2) checking keys in keyring                                                                                                                 [######################################################################################] 100%
+(2/2) checking package integrity                                                                                                               [######################################################################################] 100%
+(2/2) loading package files                                                                                                                    [######################################################################################] 100%
+(2/2) checking for file conflicts                                                                                                              [######################################################################################] 100%
+(2/2) checking available disk space                                                                                                            [######################################################################################] 100%
+:: Processing package changes...
+(1/2) upgrading mintty                                                                                                                         [######################################################################################] 100%
+(2/2) upgrading msys2-runtime                                                                                                                  [######################################################################################] 100%
+:: To complete this update all MSYS2 processes including this terminal will be closed. Confirm to proceed [Y/n]
+</pre></div>
+</div>
+<p>Поново притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. Када се конзолни прозор MSYS2 затвори, поново из Start
+менија из фолдера <code class="docutils literal notranslate"><span class="pre">MSYS2</span> <span class="pre">64bit</span></code> покрени <code class="docutils literal notranslate"><span class="pre">MSYS2</span> <span class="pre">MSYS</span></code>. Унеси команду
+<code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-Syu</span></code> па притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ pacman -Syu
+:: Synchronizing package databases...
+ mingw32 is up to date
+ mingw64 is up to date
+ ucrt64 is up to date
+ clang32 is up to date
+ clang64 is up to date
+ msys is up to date
+:: Starting core system upgrade...
+ there is nothing to do
+:: Starting full system upgrade...
+resolving dependencies...
+looking for conflicting packages...
+ 
+Packages (46) bash-completion-2.11-2  brotli-1.0.9-3  bsdtar-3.6.1-2  ca-certificates-20211016-1  curl-7.83.1-1  dash-0.5.11.5-2  findutils-4.9.0-3  gawk-5.1.1-1  gcc-libs-11.3.0-1  gdbm-1.23-1  gettext-0.21-2  gnupg-2.2.35-1
+              icu-71.1-2  libasprintf-0.21-2  libcurl-7.83.1-1  libffi-3.4.2-1  libgdbm-1.23-1  libgettextpo-0.21-2  libgnutls-3.7.5-2  libgpgme-1.17.1-1  libidn2-2.3.2-3  libintl-0.21-2  liblz4-1.9.3-2  libopenssl-1.1.1.o-1
+              libp11-kit-0.24.1-3  libpcre2_8-10.40-1  libpsl-0.21.1-4  libsqlite-3.38.5-1  libunistring-1.0-1  libxml2-2.9.14-3  libxslt-1.1.35-2  libzstd-1.5.2-2  mpfr-4.1.0.p13-1  msys2-keyring-1~20220522-1  msys2-launcher-1.5-1
+              nano-6.3-1  openssl-1.1.1.o-1  p11-kit-0.24.1-3  pacman-contrib-1.5.1-1  rebase-4.5.0-2  sed-4.8-3  time-1.9-3  tzcode-2022a-1  which-2.21-4  zlib-1.2.12-2  zstd-1.5.2-2
+ 
+Total Download Size:    33.12 MiB
+Total Installed Size:  108.80 MiB
+Net Upgrade Size:       -0.24 MiB
+ 
+:: Proceed with installation? [Y/n]
+</pre></div>
+</div>
+<p>Поново притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code> и сачекај да се инсталација/ажурирање заврши.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>:: Retrieving packages...
+ gnupg-2.2.35-1-x86_64                                                                                               2.2 MiB  2.33 MiB/s 00:01 [######################################################################################] 100%
+ gettext-0.21-2-x86_64                                                                                            1731.5 KiB  1260 KiB/s 00:01 [######################################################################################] 100%
+ icu-71.1-2-x86_64                                                                                                   9.7 MiB  4.27 MiB/s 00:02 [######################################################################################] 100%
+ bsdtar-3.6.1-2-x86_64                                                                                            1196.5 KiB  4.41 MiB/s 00:00 [######################################################################################] 100%
+ libgnutls-3.7.5-2-x86_64                                                                                         1388.7 KiB   761 KiB/s 00:02 [######################################################################################] 100%
+ gawk-5.1.1-1-x86_64                                                                                              1160.8 KiB  3.02 MiB/s 00:00 [######################################################################################] 100%
+ curl-7.83.1-1-x86_64                                                                                              876.0 KiB  2.03 MiB/s 00:00 [######################################################################################] 100%
+ libunistring-1.0-1-x86_64                                                                                         669.4 KiB  1300 KiB/s 00:01 [######################################################################################] 100%
+ nano-6.3-1-x86_64                                                                                                 629.4 KiB  1919 KiB/s 00:00 [######################################################################################] 100%
+ libsqlite-3.38.5-1-x86_64                                                                                         626.4 KiB  2.45 MiB/s 00:00 [######################################################################################] 100%
+ libxml2-2.9.14-3-x86_64                                                                                           535.6 KiB  2.78 MiB/s 00:00 [######################################################################################] 100%
+ openssl-1.1.1.o-1-x86_64                                                                                          595.5 KiB  2.47 MiB/s 00:00 [######################################################################################] 100%
+ findutils-4.9.0-3-x86_64                                                                                          488.3 KiB  1073 KiB/s 00:00 [######################################################################################] 100%
+ gcc-libs-11.3.0-1-x86_64                                                                                         1539.4 KiB   316 KiB/s 00:05 [######################################################################################] 100%
+ mpfr-4.1.0.p13-1-x86_64                                                                                           367.2 KiB   603 KiB/s 00:01 [######################################################################################] 100%
+ zstd-1.5.2-2-x86_64                                                                                               346.5 KiB  2.20 MiB/s 00:00 [######################################################################################] 100%
+ p11-kit-0.24.1-3-x86_64                                                                                           341.5 KiB  1294 KiB/s 00:00 [######################################################################################] 100%
+ pacman-contrib-1.5.1-1-x86_64                                                                                       4.0 MiB   725 KiB/s 00:06 [######################################################################################] 100%
+ libopenssl-1.1.1.o-1-x86_64                                                                                      1199.7 KiB   284 KiB/s 00:04 [######################################################################################] 100%
+ ca-certificates-20211016-1-any                                                                                    324.7 KiB  1216 KiB/s 00:00 [######################################################################################] 100%
+ libgpgme-1.17.1-1-x86_64                                                                                          354.8 KiB   379 KiB/s 00:01 [######################################################################################] 100%
+ tzcode-2022a-1-x86_64                                                                                             288.9 KiB  1537 KiB/s 00:00 [######################################################################################] 100%
+ libzstd-1.5.2-2-x86_64                                                                                            284.6 KiB  1148 KiB/s 00:00 [######################################################################################] 100%
+ rebase-4.5.0-2-x86_64                                                                                             264.2 KiB   993 KiB/s 00:00 [######################################################################################] 100%
+ libcurl-7.83.1-1-x86_64                                                                                           250.2 KiB  2.20 MiB/s 00:00 [######################################################################################] 100%
+ sed-4.8-3-x86_64                                                                                                  233.8 KiB  1499 KiB/s 00:00 [######################################################################################] 100%
+ libp11-kit-0.24.1-3-x86_64                                                                                        189.2 KiB  2035 KiB/s 00:00 [######################################################################################] 100%
+ gdbm-1.23-1-x86_64                                                                                                187.3 KiB  1310 KiB/s 00:00 [######################################################################################] 100%
+ bash-completion-2.11-2-any                                                                                        195.5 KiB   958 KiB/s 00:00 [######################################################################################] 100%
+ brotli-1.0.9-3-x86_64                                                                                             339.0 KiB   310 KiB/s 00:01 [######################################################################################] 100%
+ libpcre2_8-10.40-1-x86_64                                                                                         124.1 KiB  1149 KiB/s 00:00 [######################################################################################] 100%
+ libxslt-1.1.35-2-x86_64                                                                                           137.3 KiB   387 KiB/s 00:00 [######################################################################################] 100%
+ msys2-launcher-1.5-1-x86_64                                                                                       106.5 KiB   566 KiB/s 00:00 [######################################################################################] 100%
+ liblz4-1.9.3-2-x86_64                                                                                              81.0 KiB   574 KiB/s 00:00 [######################################################################################] 100%
+ libgettextpo-0.21-2-x86_64                                                                                        122.6 KiB   206 KiB/s 00:01 [######################################################################################] 100%
+ zlib-1.2.12-2-x86_64                                                                                               49.2 KiB   262 KiB/s 00:00 [######################################################################################] 100%
+ msys2-keyring-1~20220522-1-any                                                                                     41.9 KiB   396 KiB/s 00:00 [######################################################################################] 100%
+ libgdbm-1.23-1-x86_64                                                                                              30.9 KiB   253 KiB/s 00:00 [######################################################################################] 100%
+ dash-0.5.11.5-2-x86_64                                                                                             76.7 KiB   136 KiB/s 00:01 [######################################################################################] 100%
+ time-1.9-3-x86_64                                                                                                  24.2 KiB   155 KiB/s 00:00 [######################################################################################] 100%
+ libffi-3.4.2-1-x86_64                                                                                              23.3 KiB  94.2 KiB/s 00:00 [######################################################################################] 100%
+ libintl-0.21-2-x86_64                                                                                              21.6 KiB   138 KiB/s 00:00 [######################################################################################] 100%
+ libidn2-2.3.2-3-x86_64                                                                                            106.6 KiB  74.2 KiB/s 00:01 [######################################################################################] 100%
+ which-2.21-4-x86_64                                                                                                19.6 KiB  74.0 KiB/s 00:00 [######################################################################################] 100%
+ libasprintf-0.21-2-x86_64                                                                                           6.1 KiB  1979   B/s 00:03 [######################################################################################] 100%
+ libpsl-0.21.1-4-x86_64                                                                                             67.8 KiB  13.4 KiB/s 00:05 [######################################################################################] 100%
+ Total (46/46)                                                                                                      33.1 MiB  2.47 MiB/s 00:13 [######################################################################################] 100%
+(46/46) checking keys in keyring                                                                                                               [######################################################################################] 100%
+(46/46) checking package integrity                                                                                                             [######################################################################################] 100%
+(46/46) loading package files                                                                                                                  [######################################################################################] 100%
+(46/46) checking for file conflicts                                                                                                            [######################################################################################] 100%
+(46/46) checking available disk space                                                                                                          [######################################################################################] 100%
+:: Processing package changes...
+( 1/46) upgrading bash-completion                                                                                                              [######################################################################################] 100%
+( 2/46) upgrading gcc-libs                                                                                                                     [######################################################################################] 100%
+( 3/46) upgrading brotli                                                                                                                       [######################################################################################] 100%
+( 4/46) upgrading liblz4                                                                                                                       [######################################################################################] 100%
+( 5/46) upgrading zlib                                                                                                                         [######################################################################################] 100%
+( 6/46) upgrading libopenssl                                                                                                                   [######################################################################################] 100%
+( 7/46) upgrading libzstd                                                                                                                      [######################################################################################] 100%
+( 8/46) upgrading libintl                                                                                                                      [######################################################################################] 100%
+( 9/46) upgrading libgettextpo                                                                                                                 [######################################################################################] 100%
+(10/46) upgrading libasprintf                                                                                                                  [######################################################################################] 100%
+(11/46) upgrading gettext                                                                                                                      [######################################################################################] 100%
+(12/46) upgrading bsdtar                                                                                                                       [######################################################################################] 100%
+(13/46) upgrading openssl                                                                                                                      [######################################################################################] 100%
+(14/46) upgrading findutils                                                                                                                    [######################################################################################] 100%
+(15/46) upgrading sed                                                                                                                          [######################################################################################] 100%
+(16/46) upgrading libffi                                                                                                                       [######################################################################################] 100%
+(17/46) upgrading libp11-kit                                                                                                                   [######################################################################################] 100%
+(18/46) upgrading p11-kit                                                                                                                      [######################################################################################] 100%
+(19/46) upgrading ca-certificates                                                                                                              [######################################################################################] 100%
+(20/46) upgrading libunistring                                                                                                                 [######################################################################################] 100%
+(21/46) upgrading libidn2                                                                                                                      [######################################################################################] 100%
+(22/46) upgrading libxml2                                                                                                                      [######################################################################################] 100%
+(23/46) upgrading libxslt                                                                                                                      [######################################################################################] 100%
+(24/46) upgrading libpsl                                                                                                                       [######################################################################################] 100%
+(25/46) upgrading libsqlite                                                                                                                    [######################################################################################] 100%
+(26/46) upgrading libcurl                                                                                                                      [######################################################################################] 100%
+(27/46) upgrading curl                                                                                                                         [######################################################################################] 100%
+(28/46) upgrading dash                                                                                                                         [######################################################################################] 100%
+(29/46) upgrading mpfr                                                                                                                         [######################################################################################] 100%
+(30/46) upgrading gawk                                                                                                                         [######################################################################################] 100%
+(31/46) upgrading libgdbm                                                                                                                      [######################################################################################] 100%
+(32/46) upgrading gdbm                                                                                                                         [######################################################################################] 100%
+(33/46) upgrading libgnutls                                                                                                                    [######################################################################################] 100%
+(34/46) upgrading gnupg                                                                                                                        [######################################################################################] 100%
+==&gt; Appending keys from msys2.gpg...
+==&gt; Updating trust database...
+gpg: next trustdb check due at 2022-11-18
+(35/46) upgrading icu                                                                                                                          [######################################################################################] 100%
+(36/46) upgrading libgpgme                                                                                                                     [######################################################################################] 100%
+(37/46) upgrading libpcre2_8                                                                                                                   [######################################################################################] 100%
+(38/46) upgrading msys2-keyring                                                                                                                [######################################################################################] 100%
+==&gt; Appending keys from msys2.gpg...
+==&gt; Disabling revoked keys in keyring...
+  -&gt; Disabled 1 keys.
+==&gt; Updating trust database...
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   6  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:   6  signed:   6  trust: 0-, 0q, 0n, 6m, 0f, 0u
+gpg: depth: 2  valid:   6  signed:   0  trust: 6-, 0q, 0n, 0m, 0f, 0u
+gpg: next trustdb check due at 2022-11-18
+(39/46) upgrading msys2-launcher                                                                                                               [######################################################################################] 100%
+(40/46) upgrading nano                                                                                                                         [######################################################################################] 100%
+(41/46) upgrading which                                                                                                                        [######################################################################################] 100%
+(42/46) upgrading zstd                                                                                                                         [######################################################################################] 100%
+(43/46) upgrading pacman-contrib                                                                                                               [######################################################################################] 100%
+(44/46) upgrading rebase                                                                                                                       [######################################################################################] 100%
+(45/46) upgrading time                                                                                                                         [######################################################################################] 100%
+(46/46) upgrading tzcode                                                                                                                       [######################################################################################] 100%
+:: Running post-transaction hooks...
+(1/1) Updating the info directory file...
+</pre></div>
+</div>
+<p>Након тога унеси команду
+<code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">--needed</span> <span class="pre">base-devel</span> <span class="pre">mingw-w64-x86_64-toolchain</span></code> и притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+:: There are 19 members in group mingw-w64-x86_64-toolchain:
+:: Repository mingw64
+   1) mingw-w64-x86_64-binutils  2) mingw-w64-x86_64-crt-git  3) mingw-w64-x86_64-gcc  4) mingw-w64-x86_64-gcc-ada  5) mingw-w64-x86_64-gcc-fortran  6) mingw-w64-x86_64-gcc-libgfortran  7) mingw-w64-x86_64-gcc-libs
+   8) mingw-w64-x86_64-gcc-objc  9) mingw-w64-x86_64-gdb  10) mingw-w64-x86_64-gdb-multiarch  11) mingw-w64-x86_64-headers-git  12) mingw-w64-x86_64-libgccjit  13) mingw-w64-x86_64-libmangle-git  14) mingw-w64-x86_64-libwinpthread-git
+   15) mingw-w64-x86_64-make  16) mingw-w64-x86_64-pkgconf  17) mingw-w64-x86_64-tools-git  18) mingw-w64-x86_64-winpthreads-git  19) mingw-w64-x86_64-winstorecompat-git
+ 
+Enter a selection (default=all):
+</pre></div>
+</div>
+<p>Поново притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>resolving dependencies...
+looking for conflicting packages...
+ 
+Packages (64) binutils-2.37-5  bison-3.8.2-3  diffstat-1.64-1  diffutils-3.8-3  dos2unix-7.4.2-1  flex-2.6.4-2  gperf-3.1-4  groff-1.22.4-3  m4-1.4.19-2  make-4.3-3  mingw-w64-x86_64-bzip2-1.0.8-2
+              mingw-w64-x86_64-ca-certificates-20211016-3  mingw-w64-x86_64-expat-2.4.8-1  mingw-w64-x86_64-gettext-0.21-3  mingw-w64-x86_64-gmp-6.2.1-3  mingw-w64-x86_64-isl-0.24-1  mingw-w64-x86_64-libffi-3.3-4
+              mingw-w64-x86_64-libiconv-1.16-2  mingw-w64-x86_64-libsystre-1.0.1-4  mingw-w64-x86_64-libtasn1-4.18.0-1  mingw-w64-x86_64-libtre-git-r128.6fb7206-2  mingw-w64-x86_64-mpc-1.2.1-1  mingw-w64-x86_64-mpdecimal-2.5.1-1
+              mingw-w64-x86_64-mpfr-4.1.0.p13-1  mingw-w64-x86_64-ncurses-6.3-5  mingw-w64-x86_64-openssl-1.1.1.o-3  mingw-w64-x86_64-p11-kit-0.24.1-2  mingw-w64-x86_64-python-3.9.13-1  mingw-w64-x86_64-readline-8.1.001-1
+              mingw-w64-x86_64-sqlite3-3.38.4-1  mingw-w64-x86_64-tcl-8.6.11-5  mingw-w64-x86_64-termcap-1.3.1-6  mingw-w64-x86_64-tk-8.6.11.1-2  mingw-w64-x86_64-tzdata-2022a-1  mingw-w64-x86_64-windows-default-manifest-6.4-4
+              mingw-w64-x86_64-xxhash-0.8.1-2  mingw-w64-x86_64-xz-5.2.5-3  mingw-w64-x86_64-zlib-1.2.12-1  mingw-w64-x86_64-zstd-1.5.2-2  patch-2.7.6-1  pkgconf-1.8.0-1  tar-1.34-2  texinfo-6.8-4  texinfo-tex-6.8-4
+              base-devel-2022.01-2  mingw-w64-x86_64-binutils-2.38-2  mingw-w64-x86_64-crt-git-10.0.0.r14.ga08c638f8-1  mingw-w64-x86_64-gcc-12.1.0-1  mingw-w64-x86_64-gcc-ada-12.1.0-1  mingw-w64-x86_64-gcc-fortran-12.1.0-1
+              mingw-w64-x86_64-gcc-libgfortran-12.1.0-1  mingw-w64-x86_64-gcc-libs-12.1.0-1  mingw-w64-x86_64-gcc-objc-12.1.0-1  mingw-w64-x86_64-gdb-12.1-1  mingw-w64-x86_64-gdb-multiarch-12.1-1
+              mingw-w64-x86_64-headers-git-10.0.0.r14.ga08c638f8-1  mingw-w64-x86_64-libgccjit-12.1.0-1  mingw-w64-x86_64-libmangle-git-10.0.0.r14.ga08c638f8-1  mingw-w64-x86_64-libwinpthread-git-10.0.0.r14.ga08c638f8-1
+              mingw-w64-x86_64-make-4.3-1  mingw-w64-x86_64-pkgconf-1.8.0-2  mingw-w64-x86_64-tools-git-10.0.0.r14.ga08c638f8-1  mingw-w64-x86_64-winpthreads-git-10.0.0.r14.ga08c638f8-1
+              mingw-w64-x86_64-winstorecompat-git-10.0.0.r14.ga08c638f8-1
+ 
+Total Download Size:    180.56 MiB
+Total Installed Size:  1063.06 MiB
+ 
+:: Proceed with installation? [Y/n]
+</pre></div>
+</div>
+<p>Поново притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code> и сачекај да се инсталација/ажурирање заврши.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>:: Retrieving packages...
+ mingw-w64-x86_64-gcc-ada-12.1.0-1-any                                                                              20.9 MiB  6.27 MiB/s 00:03 [######################################################################################] 100%
+ mingw-w64-x86_64-libgccjit-12.1.0-1-any                                                                            11.0 MiB  5.35 MiB/s 00:02 [######################################################################################] 100%
+ mingw-w64-x86_64-gdb-multiarch-12.1-1-any                                                                           6.5 MiB  6.92 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-binutils-2.38-2-any                                                                                5.8 MiB  6.63 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-gcc-fortran-12.1.0-1-any                                                                          11.9 MiB  1433 KiB/s 00:09 [######################################################################################] 100%
+ binutils-2.37-5-x86_64                                                                                              5.0 MiB  3.59 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-openssl-1.1.1.o-3-any                                                                              4.8 MiB  4.59 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-headers-git-10.0.0.r14.ga08c638f8-1-any                                                            5.5 MiB  1094 KiB/s 00:05 [######################################################################################] 100%
+ mingw-w64-x86_64-gdb-12.1-1-any                                                                                     4.2 MiB  3.83 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-gcc-12.1.0-1-any                                                                                  37.2 MiB  2.37 MiB/s 00:16 [######################################################################################] 100%
+ mingw-w64-x86_64-gettext-0.21-3-any                                                                                 3.1 MiB  5.63 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-python-3.9.13-1-any                                                                               17.5 MiB  1091 KiB/s 00:16 [######################################################################################] 100%
+ groff-1.22.4-3-x86_64                                                                                            2023.3 KiB  5.53 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-tk-8.6.11.1-2-any                                                                               1972.9 KiB  6.86 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-tcl-8.6.11-5-any                                                                                   2.6 MiB  2.26 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-crt-git-10.0.0.r14.ga08c638f8-1-any                                                                3.3 MiB  1162 KiB/s 00:03 [######################################################################################] 100%
+ mingw-w64-x86_64-ncurses-6.3-5-any                                                                               1757.8 KiB  2.90 MiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-sqlite3-3.38.4-1-any                                                                            1822.7 KiB  2.33 MiB/s 00:01 [######################################################################################] 100%
+ texinfo-6.8-4-x86_64                                                                                             1186.2 KiB  1851 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-gcc-libs-12.1.0-1-any                                                                            877.3 KiB  3.66 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-isl-0.24-1-any                                                                                   949.7 KiB  2.20 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-gcc-libgfortran-12.1.0-1-any                                                                     854.5 KiB  3.13 MiB/s 00:00 [######################################################################################] 100%
+ tar-1.34-2-x86_64                                                                                                 801.1 KiB  1968 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-gcc-objc-12.1.0-1-any                                                                              8.2 KiB  37.8 KiB/s 00:00 [######################################################################################] 100%
+ bison-3.8.2-3-x86_64                                                                                              770.0 KiB  3.01 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-libiconv-1.16-2-any                                                                              744.5 KiB  2.61 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-gmp-6.2.1-3-any                                                                                  558.6 KiB  2.33 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-zstd-1.5.2-2-any                                                                                 494.9 KiB  2.08 MiB/s 00:00 [######################################################################################] 100%
+ diffutils-3.8-3-x86_64                                                                                            362.2 KiB  2.27 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-mpfr-4.1.0.p13-1-any                                                                             356.9 KiB  2.79 MiB/s 00:00 [######################################################################################] 100%
+ make-4.3-3-x86_64                                                                                                 466.2 KiB  1140 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-xz-5.2.5-3-any                                                                                   354.7 KiB  2.47 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-ca-certificates-20211016-3-any                                                                   330.7 KiB  2.29 MiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-readline-8.1.001-1-any                                                                           384.3 KiB   547 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-p11-kit-0.24.1-2-any                                                                             343.8 KiB   551 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-mpdecimal-2.5.1-1-any                                                                            321.9 KiB  1288 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-tools-git-10.0.0.r14.ga08c638f8-1-any                                                            309.7 KiB  1402 KiB/s 00:00 [######################################################################################] 100%
+ dos2unix-7.4.2-1-x86_64                                                                                           336.7 KiB   423 KiB/s 00:01 [######################################################################################] 100%
+ m4-1.4.19-2-x86_64                                                                                                238.1 KiB  1713 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-libtasn1-4.18.0-1-any                                                                            187.4 KiB  1102 KiB/s 00:00 [######################################################################################] 100%
+ flex-2.6.4-2-x86_64                                                                                               302.6 KiB  1137 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-tzdata-2022a-1-any                                                                               179.4 KiB  1043 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-expat-2.4.8-1-any                                                                                158.3 KiB   147 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-make-4.3-1-any                                                                                   151.6 KiB  22.7 KiB/s 00:07 [######################################################################################] 100%
+ mingw-w64-x86_64-openssl-1.1.1.o-3-any is up to date                                                               4.81 KiB  22.7 KiB/s 00:07 [######################################################################################] 100%
+ gperf-3.1-4-x86_64                                                                                                101.4 KiB   209 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-zlib-1.2.12-1-any                                                                                102.3 KiB   160 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-bzip2-1.0.8-2-any                                                                                 89.1 KiB   518 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-xxhash-0.8.1-2-any                                                                               106.1 KiB   131 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-mpc-1.2.1-1-any                                                                                   72.7 KiB   773 KiB/s 00:00 [######################################################################################] 100%
+ patch-2.7.6-1-x86_64                                                                                              101.6 KiB   118 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-libtre-git-r128.6fb7206-2-any                                                                     84.2 KiB   154 KiB/s 00:01 [######################################################################################] 100%
+ mingw-w64-x86_64-libffi-3.3-4-any                                                                                  40.2 KiB   215 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-winpthreads-git-10.0.0.r14.ga08c638f8-1-any                                                       39.3 KiB   253 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-pkgconf-1.8.0-2-any                                                                               79.1 KiB   158 KiB/s 00:01 [######################################################################################] 100%
+ diffstat-1.64-1-x86_64                                                                                             29.3 KiB   264 KiB/s 00:00 [######################################################################################] 100%
+ pkgconf-1.8.0-1-x86_64                                                                                             58.4 KiB   124 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-libwinpthread-git-10.0.0.r14.ga08c638f8-1-any                                                     28.3 KiB   223 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-termcap-1.3.1-6-any                                                                               28.0 KiB   183 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-libsystre-1.0.1-4-any                                                                             24.0 KiB   170 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-winstorecompat-git-10.0.0.r14.ga08c638f8-1-any                                                    19.9 KiB   212 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-libmangle-git-10.0.0.r14.ga08c638f8-1-any                                                         22.4 KiB   144 KiB/s 00:00 [######################################################################################] 100%
+ mingw-w64-x86_64-windows-default-manifest-6.4-4-any                                                                 3.1 KiB  19.7 KiB/s 00:00 [######################################################################################] 100%
+ texinfo-tex-6.8-4-x86_64                                                                                           26.4 KiB  65.0 KiB/s 00:00 [######################################################################################] 100%
+ base-devel-2022.01-2-any                                                                                            2.4 KiB   552   B/s 00:05 [######################################################################################] 100%
+ Total (64/64)                                                                                                    1058.1 KiB   146 KiB/s 00:07 [######################################################################################] 100%
+(64/64) checking keys in keyring                                                                                                               [######################################################################################] 100%
+(64/64) checking package integrity                                                                                                             [######################################################################################] 100%
+(64/64) loading package files                                                                                                                  [######################################################################################] 100%
+(64/64) checking for file conflicts                                                                                                            [######################################################################################] 100%
+(64/64) checking available disk space                                                                                                          [######################################################################################] 100%
+:: Processing package changes...
+( 1/64) installing binutils                                                                                                                    [######################################################################################] 100%
+( 2/64) installing m4                                                                                                                          [######################################################################################] 100%
+( 3/64) installing bison                                                                                                                       [######################################################################################] 100%
+( 4/64) installing diffstat                                                                                                                    [######################################################################################] 100%
+( 5/64) installing diffutils                                                                                                                   [######################################################################################] 100%
+( 6/64) installing dos2unix                                                                                                                    [######################################################################################] 100%
+( 7/64) installing flex                                                                                                                        [######################################################################################] 100%
+( 8/64) installing gperf                                                                                                                       [######################################################################################] 100%
+( 9/64) installing groff                                                                                                                       [######################################################################################] 100%
+(10/64) installing texinfo                                                                                                                     [######################################################################################] 100%
+(11/64) installing texinfo-tex                                                                                                                 [######################################################################################] 100%
+(12/64) installing make                                                                                                                        [######################################################################################] 100%
+(13/64) installing patch                                                                                                                       [######################################################################################] 100%
+Optional dependencies for patch
+    ed: for patch -e functionality
+(14/64) installing pkgconf                                                                                                                     [######################################################################################] 100%
+(15/64) installing tar                                                                                                                         [######################################################################################] 100%
+(16/64) installing base-devel                                                                                                                  [######################################################################################] 100%
+(17/64) installing mingw-w64-x86_64-libiconv                                                                                                   [######################################################################################] 100%
+(18/64) installing mingw-w64-x86_64-zlib                                                                                                       [######################################################################################] 100%
+(19/64) installing mingw-w64-x86_64-binutils                                                                                                   [######################################################################################] 100%
+(20/64) installing mingw-w64-x86_64-headers-git                                                                                                [######################################################################################] 100%
+(21/64) installing mingw-w64-x86_64-crt-git                                                                                                    [######################################################################################] 100%
+(22/64) installing mingw-w64-x86_64-isl                                                                                                        [######################################################################################] 100%
+(23/64) installing mingw-w64-x86_64-gmp                                                                                                        [######################################################################################] 100%
+(24/64) installing mingw-w64-x86_64-mpfr                                                                                                       [######################################################################################] 100%
+(25/64) installing mingw-w64-x86_64-mpc                                                                                                        [######################################################################################] 100%
+(26/64) installing mingw-w64-x86_64-libwinpthread-git                                                                                          [######################################################################################] 100%
+(27/64) installing mingw-w64-x86_64-gcc-libs                                                                                                   [######################################################################################] 100%
+(28/64) installing mingw-w64-x86_64-windows-default-manifest                                                                                   [######################################################################################] 100%
+(29/64) installing mingw-w64-x86_64-winpthreads-git                                                                                            [######################################################################################] 100%
+(30/64) installing mingw-w64-x86_64-zstd                                                                                                       [######################################################################################] 100%
+(31/64) installing mingw-w64-x86_64-gcc                                                                                                        [######################################################################################] 100%
+(32/64) installing mingw-w64-x86_64-gcc-ada                                                                                                    [######################################################################################] 100%
+(33/64) installing mingw-w64-x86_64-gcc-libgfortran                                                                                            [######################################################################################] 100%
+(34/64) installing mingw-w64-x86_64-gcc-fortran                                                                                                [######################################################################################] 100%
+(35/64) installing mingw-w64-x86_64-gcc-objc                                                                                                   [######################################################################################] 100%
+(36/64) installing mingw-w64-x86_64-expat                                                                                                      [######################################################################################] 100%
+(37/64) installing mingw-w64-x86_64-gettext                                                                                                    [######################################################################################] 100%
+(38/64) installing mingw-w64-x86_64-libtre-git                                                                                                 [######################################################################################] 100%
+(39/64) installing mingw-w64-x86_64-libsystre                                                                                                  [######################################################################################] 100%
+(40/64) installing mingw-w64-x86_64-ncurses                                                                                                    [######################################################################################] 100%
+(41/64) installing mingw-w64-x86_64-bzip2                                                                                                      [######################################################################################] 100%
+(42/64) installing mingw-w64-x86_64-libffi                                                                                                     [######################################################################################] 100%
+(43/64) installing mingw-w64-x86_64-mpdecimal                                                                                                  [######################################################################################] 100%
+(44/64) installing mingw-w64-x86_64-libtasn1                                                                                                   [######################################################################################] 100%
+(45/64) installing mingw-w64-x86_64-p11-kit                                                                                                    [######################################################################################] 100%
+(46/64) installing mingw-w64-x86_64-ca-certificates                                                                                            [######################################################################################] 100%
+(47/64) installing mingw-w64-x86_64-openssl                                                                                                    [######################################################################################] 100%
+(48/64) installing mingw-w64-x86_64-termcap                                                                                                    [######################################################################################] 100%
+(49/64) installing mingw-w64-x86_64-readline                                                                                                   [######################################################################################] 100%
+(50/64) installing mingw-w64-x86_64-tcl                                                                                                        [######################################################################################] 100%
+(51/64) installing mingw-w64-x86_64-sqlite3                                                                                                    [######################################################################################] 100%
+(52/64) installing mingw-w64-x86_64-tk                                                                                                         [######################################################################################] 100%
+(53/64) installing mingw-w64-x86_64-xz                                                                                                         [######################################################################################] 100%
+(54/64) installing mingw-w64-x86_64-tzdata                                                                                                     [######################################################################################] 100%
+(55/64) installing mingw-w64-x86_64-python                                                                                                     [######################################################################################] 100%
+(56/64) installing mingw-w64-x86_64-xxhash                                                                                                     [######################################################################################] 100%
+(57/64) installing mingw-w64-x86_64-gdb                                                                                                        [######################################################################################] 100%
+Optional dependencies for mingw-w64-x86_64-gdb
+    mingw-w64-x86_64-python-pygments: for syntax highlighting
+(58/64) installing mingw-w64-x86_64-gdb-multiarch                                                                                              [######################################################################################] 100%
+Optional dependencies for mingw-w64-x86_64-gdb-multiarch
+    mingw-w64-x86_64-python-pygments: for syntax highlighting
+(59/64) installing mingw-w64-x86_64-libgccjit                                                                                                  [######################################################################################] 100%
+(60/64) installing mingw-w64-x86_64-libmangle-git                                                                                              [######################################################################################] 100%
+(61/64) installing mingw-w64-x86_64-make                                                                                                       [######################################################################################] 100%
+(62/64) installing mingw-w64-x86_64-pkgconf                                                                                                    [######################################################################################] 100%
+(63/64) installing mingw-w64-x86_64-tools-git                                                                                                  [######################################################################################] 100%
+(64/64) installing mingw-w64-x86_64-winstorecompat-git                                                                                         [######################################################################################] 100%
+:: Running post-transaction hooks...
+(1/1) Updating the info directory file...
+</pre></div>
+</div>
+<p>Ако су се јавиле грешке приликом преузимања пакета, понови команду
+<code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">--needed</span> <span class="pre">base-devel</span> <span class="pre">mingw-w64-x86_64-toolchain</span></code> и притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>,
+а ако нису, поступак инсталације GNU колекције компајлера и алата је завршен.</p>
+</section>
+<section id="id2">
+<h2>Подешавање путање<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Након успешне инсталације у систем је потребно унети путању до Mingw-w64 <code class="docutils literal notranslate"><span class="pre">bin</span></code>
+директоријума. Покрени Windows Settings и у пољу за претрагу унеси
+<code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">environment</span> <span class="pre">variables</span> <span class="pre">for</span> <span class="pre">your</span> <span class="pre">account</span></code>. У секцији <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">variables</span></code>
+одабери <code class="docutils literal notranslate"><span class="pre">Path</span></code> и кликни <code class="docutils literal notranslate"><span class="pre">Edit</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/path0.png"><img alt="Додавање директоријума у путању" class="align-center" src="../_images/path0.png" style="width: 70%;" /></a>
+<p>Кликни <code class="docutils literal notranslate"><span class="pre">New</span></code>, унеси <code class="docutils literal notranslate"><span class="pre">C:\msys64\mingw64\bin</span></code>, па потом кликни <code class="docutils literal notranslate"><span class="pre">OK</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/path1.png"><img alt="Додавање директоријума у путању" class="align-center" src="../_images/path1.png" style="width: 70%;" /></a>
+<p>Након додавања директоријума у путању рестартуј Windows.</p>
+<p>Након рестарта можеш проверите да ли си све урадио исправно. Покрени Command
+Prompt, унеси команду <code class="docutils literal notranslate"><span class="pre">gcc</span> <span class="pre">--version</span></code> и притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. Добићеш поруку сличну
+овој:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>gcc (Rev1, Built by MSYS2 project) 12.1.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</pre></div>
+</div>
+<p>Унеси команду <code class="docutils literal notranslate"><span class="pre">gdb</span> <span class="pre">--version</span></code> и притисни <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. Добићеш поруку сличну овој:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>GNU gdb (GDB) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</pre></div>
+</div>
+<p>Visual Studio Code едитор сада је спреман за рад са GCC компајлером и GDB
+дебагером.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="flowgorithm.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Софтвер за израду дијаграма тока</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="prevodjenje.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Од изворног кода до извршног програма</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Фондација Петља
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Visual Studio Code едитор и GCC</a><ul>
+<li><a class="reference internal" href="#visual-studio-code">Преузимање и инсталација Visual Studio Code едитора</a></li>
+<li><a class="reference internal" href="#gcc">Преузимање и инсталација GCC сета алата</a></li>
+<li><a class="reference internal" href="#id1">Инсталација GCC сета алата</a></li>
+<li><a class="reference internal" href="#id2">Подешавање путање</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    </body>
+</html>

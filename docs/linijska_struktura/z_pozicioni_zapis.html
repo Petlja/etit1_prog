@@ -1,0 +1,1397 @@
+<!doctype html>
+<html class="no-js" lang="sr">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Разгранате програмске структуре и алгоритми" href="../razgranata_struktura/index.html" /><link rel="prev" title="Задаци: Појам целобројног количника и остатка" href="z_pojam_div_i_mod.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>Задаци: Позициони запис - Програмирање I за информатичке профиле у електротехничким школама</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Програмирање I за информатичке профиле у електротехничким школама</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Програмирање I за информатичке профиле у електротехничким школама</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Претрага" name="q" aria-label="Претрага">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Садржај</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../uvod/index.html">Увод</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Увод</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezici.html">Програмски језици</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezik_c.html">Програмски језик C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksa_i_semantika.html">Синтакса и семантика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksne_konstrukcije.html">Синтаксне конструкције језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/zivotni_ciklus.html">Животни циклус развоја софтвера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/uvod_kviz.html">Квиз</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../priprema_okruzenja/index.html">Припрема радног окружења</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Припрема радног окружења</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/radno_okruzenje.html">Радно окружење програмера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/visual_studio.html">Microsoft Visual Studio IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/visual_studio_start.html">Рад у Visual Studio окружењу</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/prevodjenje.html">Од изворног кода до извршног програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/vs_code.html">Visual Studio Code едитор и GCC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/flowgorithm.html">Софтвер за израду дијаграма тока</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/definicija_i_zadatak.html">Алгоритми</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/kviz.html">Квиз</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../struktura_i_tipovi/index.html">Структура језика и типови података</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Структура језика и типови података</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/struktura_jezika.html">Структура језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/kljucne_reci.html">Кључне речи и идентификатори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/komentari.html">Коментари</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/struktura_kviz.html">Квиз: структура језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/tipovi.html">Типови података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojni_tip.html">Целобројни тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojne_promenljive.html">Целобројни променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojni_io.html">Унос и приказ целих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/celobrojni_kviz.html">Квиз: Целобројни тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovni_tip.html">Знаковни тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovne_promenljive.html">Знаковни променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/prelazne_sekvence.html">Прелазне секвенце</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovni_io.html">Унос и приказ карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/znakovni_kviz.html">Квиз: Знаковни тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realni_tip.html">Реални тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realne_promenljive.html">Реални променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realni_io.html">Унос и приказ реалних бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/realni_kviz.html">Квиз: Реални тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/izvedeni_tip.html">Изведени тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/nabrojivi_tip.html">Набројиви тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struktura_i_tipovi/izvedeni_kviz.html">Квиз: изведени и набројиви типови</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_operatori.html">Оператори над битовима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_kviz.html">Квиз: оператори над битовима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela.html">Оператори сложене доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela_kviz.html">Квиз: Оператори сложене доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement.html">Оператори инкрементирања и декрементирања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement_kviz.html">Квиз: Оператори инкрементирања и декрементирања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operator_sizeof.html">Оператор <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_funkcije.html">Стандардне библиотечке функције</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_matematicke.html">Библиотечке математичке функције</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_kviz.html">Квиз: библиотечке функције</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Линијске програмске структуре и алгоритми</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Линијске програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linijska_struktura.html">Линијска структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_geometrijske_formule.html">Задаци: Геометријске формуле</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_linearne_jednacine_i_sistemi.html">Задаци: Линеарне једначине и системи линеарних једначина</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_linearna_zavisnost.html">Задаци: Линеарна зависност и пропорција</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_stepenovanje_i_korenovanje.html">Задаци: Степеновање и кореновање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_kretanje.html">Задаци: Кретање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_pojam_div_i_mod.html">Задаци: Појам целобројног количника и остатка</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Задаци: Позициони запис</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../razgranata_struktura/index.html">Разгранате програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Разгранате програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/razgranata_struktura.html">Разграната структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/relacijski_operatori.html">Релацијски оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/logicki_operatori.html">Логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/operatori_kviz.html">Квиз: Релацијски и логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja.html">Наредба гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja_kviz.html">Квиз: Наредба гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni.html">Тернарни условни оператор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni_kviz.html">Квиз: Тернарни условни оператор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_grananje.html">Наредба вишеструког гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_kviz.html">Квиз: Наредба вишеструког гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_relacijski_operatori.html">Задаци: Релацијски оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_logicki_operatori.html">Задаци: Логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_intervali.html">Задаци: Гранање на основу припадности интервалима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_diskretni_skup_vrednosti.html">Задаци: Гранање на основу коначног скупа вредности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_leksikografsko.html">Задаци: Лексикографско поређење торки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_hijerarhijsko.html">Задаци: Хијерархија услова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_minimum_i_maksimum.html">Задаци: Минимум и максимум два броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_razno.html">Задаци: Разни задаци са гранањем</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ciklicna_struktura/index.html">Цикличне програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Цикличне програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/ciklicna_struktura.html">Циклична структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_ciklus.html">Наредба бројачког циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_kviz.html">Квиз: наредба бројачког циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov.html">Наредбе циклуса са предусловом и постусловом</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov_kviz.html">Квиз: циклуси са предусловом и постусловом</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/prevremeni_break.html">Превремени излазак из циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/kviz_niz.html">Квиз: Једнодимензионални низ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pretrazivanje_niza.html">Претраживање низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z.html">Задаци из збирке - IN PROGRESS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/tipovi_podataka.html">Основни типови података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/celobrojni_ogranicenja.html">Провера опсега вредности целобројних типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/ascii_tabela.html">ASCII табела</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/znakovni_ogranicenja.html">Провера опсега вредности знаковног типа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/prelazne_sekvence.html">Табела прелазних секвенци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/realni_ogranicenja.html">Провера опсега вредности и прецизности реалних типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/operatori_prioritet.html">Приоритет оператора</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Задаци: Позициони запис<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/02%20Celobrojno%20deljenje/02%20Pozicioni%20zapis">позициони запис</a>.</p>
+<section id="zbir-target">
+<span id="id2"></span><h2>Збир цифара четвороцифреног броја<a class="headerlink" href="#zbir-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/zbir_cifara">текст задатка</a>.</p>
+<p>Збир цифара четвороцифреног броја се добија издвајањем цифара јединица,
+десетица, стотина и хиљада, које се затим саберу. Цифре броја можемо одредити
+на неколико различитих начина.</p>
+<p>Кључна опаска је увек то да се последња цифра броја може одредити операцијом
+израчунавања остатка при дељењу са 10. На пример, последња цифра броја 1234
+је 4, што је управо остатак при дељењу тог броја са 10.</p>
+<p>До цифре јединица <span class="math notranslate nohighlight">\(c_0\)</span> броја <span class="math notranslate nohighlight">\(n\)</span> може се лако доћи као <span class="math notranslate nohighlight">\(n\mod{10}\)</span>. На пример,
+цифра јединица броја 1234 је 4 и она се лако добија као остатак при дељењу
+броја 1234 са 10.</p>
+<p>Последња цифра броја се лако може уклонити тако што се израчуна целобројни
+количник тог броја са 10. На пример, целобројни количник при дељењу броја 1234
+са 10 је 123. Цифру десетица полазног броја можемо добити као цифру јединица
+броја који се добија када му се избрише последња цифра, а управо смо видели да
+је то број <span class="math notranslate nohighlight">\(n\div{10}\)</span>. На пример, цифра десетица број 1234 је цифра јединица
+броја 123 и она је једнака <span class="math notranslate nohighlight">\((n\div{10})\mod{10}\)</span>.</p>
+<p>Последње две цифре броја се могу уклонити тако што се израчуна количник тог
+броја при дељењу са 100. На пример, целобројни количник при дељењу броја 1234
+са 100 је 12. Цифру стотина полазног броја можемо добити као цифру јединица
+броја који се добија када му се избришу последње две цифре, а управо смо видели
+да је то број <span class="math notranslate nohighlight">\(n\div{100}\)</span>. На пример, цифра стотина броја 1234 је цифра
+јединица броја 12 и она је једнака <span class="math notranslate nohighlight">\((n\div{100})\mod{10}\)</span>.</p>
+<p>Последње три цифре броја се могу уклонити тако што се израчуна количник тог
+броја при дељењу са 1000. На пример, целобројни количник при дељењу броја 1234
+са 1000 је 1. Цифру хиљада полазног броја можемо добити као цифру јединица
+броја који се добија када му се избришу последње три цифре, а управо смо видели
+да је то број <span class="math notranslate nohighlight">\(n\div{1000}\)</span>. На пример, цифра хиљада броја 1234 је цифра
+јединица броја 1 и она је једнака <span class="math notranslate nohighlight">\((n\div{1000})\mod{10}\)</span>.</p>
+<p>Уочава се веома јасна правилност.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">broj</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cifraJedinica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cifraDesetica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cifraStotina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cifraHiljada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">zbirCifara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cifraJedinica</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cifraDesetica</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cifraStotina</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cifraHiljada</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">zbirCifara</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="jardi-target">
+<span id="id3"></span><h2>Јарди, стопе и инчи<a class="headerlink" href="#jardi-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/jardi_stope_inci">текст задатка</a>.</p>
+<section id="id4">
+<h3>Класична конверзија<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Класичан поступак конверзије подразумева да се израчуна колико у једном јарду
+има инча (<span class="math notranslate nohighlight">\(3\cdot 12=36\)</span>) и да се тај број помножи бројем јарди, да се број
+инча у једној стопи (12) помножи бројем стопа и на крају да се на збир ова два
+броја дода број инча. Тиме добијамо формулу <span class="math notranslate nohighlight">\(j\cdot 36+s\cdot 12+i\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">jardi</span><span class="p">,</span><span class="w"> </span><span class="n">stope</span><span class="p">,</span><span class="w"> </span><span class="n">inci</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jardi</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">stope</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">inci</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">uIncima</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jardi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">36</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">stope</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inci</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">uIncima</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Хорнерова схема<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>У основи претходне формуле лежи један поступак који нам омогуаћава да поступно
+извршимо конверзију. Прво можемо да се запитамо колико стопа има у учитаној
+дужини. Пошто у једној јарди има 3 стопе у <span class="math notranslate nohighlight">\(j\)</span> јарди имамо <span class="math notranslate nohighlight">\(j\cdot 3\)</span> стопa и
+поред тога имамо још <span class="math notranslate nohighlight">\(s\)</span> стопа. Укупан број стопа је зато једнак <span class="math notranslate nohighlight">\(j\cdot 3+s\)</span>.</p>
+<p>Сада се можемо запитати колико укупно имамо инча. У свакој од стопа које смо
+мало пре израчунали има 12 инча и имамо још преосталих <span class="math notranslate nohighlight">\(i\)</span> инча. Зато је укупан
+број инча једнак <span class="math notranslate nohighlight">\((j\cdot 3+s)\cdot 12+i\)</span>.</p>
+<p>Овакав запис се назива Хорнерова схема и она се често користи за вредности
+бројева и полинома. На пример, вредност броја <span class="math notranslate nohighlight">\(123=1\cdot 100+2\cdot 10+3\)</span>, се
+Хорнеровом схемом може израчунати као <span class="math notranslate nohighlight">\(((1\cdot 10)+2)\cdot 10+3\)</span>, па и као
+<span class="math notranslate nohighlight">\(((0\cdot 10+1)\cdot 10+2)\cdot 10+3\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">jardi</span><span class="p">,</span><span class="w"> </span><span class="n">stope</span><span class="p">,</span><span class="w"> </span><span class="n">inci</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jardi</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">stope</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">inci</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">uIncima</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">jardi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">stope</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inci</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">uIncima</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="oktalni-target">
+<span id="id6"></span><h2>Октални бројеви<a class="headerlink" href="#oktalni-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/oktalni_brojevi">текст задатка</a>.</p>
+<p>За вредности броја на основу цифара се може употребити алгоритам заснован на
+класичној дефиницији позиционог записа (тада број израчунавамо као
+<span class="math notranslate nohighlight">\(c_3\cdot 8^3+c_2\cdot 8^2+c_1\cdot 8^1+c_0\cdot 8^0\)</span>), док цифру на позицији
+<span class="math notranslate nohighlight">\(i\)</span> можемо израчунати као <span class="math notranslate nohighlight">\((n\div 8^i)\mod 8\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c3</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">c0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c3</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">c0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Избаци цифру стотина<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/izbaci_cifru_stotina">текст задатка</a>.</p>
+<p>Пре избацивања цифре, одредимо префикс броја пре те цифре (део записа броја
+испред ње) и суфикс броја након те цифре (део записа броја иза ње). На пример,
+ако је број 123456, префикс пре цифре стотина је 123, а суфикс након ње је 56.
+Префикс се може одредити као целобројни количник овог броја са 1000, а суфикс
+као остатак при дељењу са 100. На крају ћемо на префикс дописати цифре суфикса.
+Пошто је суфикс двоцифрен, то ћемо урадити тако што ћемо префикс помножити са
+100 и сабрати са суфиксом.</p>
+<p><strong>Доказ коректности.</strong> Докажимо ово и формално. Претпоставимо да је <span class="math notranslate nohighlight">\(n\)</span> облика
+<span class="math notranslate nohighlight">\((c_kc_{k-1}\ldots c_3c_2c_1c_0)_{10}\)</span>, тј.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n=c_k\cdot 10^k+\ldots c_3\cdot 10^3+c_2\cdot 10^2+c_1\cdot 10+c_0\]</div>
+</div>
+<p>Овај број се може записати у облику
+<span class="math notranslate nohighlight">\((c_k\cdot 10^{k-3}+\ldots +c_3)\cdot 10^3+c_2\cdot 10^2+c_1\cdot 10+c_0\)</span> и
+пошто важи да је <span class="math notranslate nohighlight">\(0\leq c_2\cdot 10^2+c_1\cdot 10+c_0&lt;1000\)</span> (јер су све цифре
+између 0 и 9), на основу дефиниције целобројног количника, важи да је
+<span class="math notranslate nohighlight">\(n\div 1000=c_k\cdot 10^{k-3}+\ldots +c_3\)</span>. Потпуно аналогно се доказује да је
+<span class="math notranslate nohighlight">\(n\mod 100=c_1\cdot 10+c_0\)</span>. На крају, важи да је</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[100\cdot(n\div 1000)+n\mod 100=c_k\cdot 10^{k-1}+\ldots c_3\cdot 10^2+c_1\cdot 10+c_0\]</div>
+</div>
+<p>што је број <span class="math notranslate nohighlight">\((c_kc_{k-1}\ldots c_3c_1c_0)_{10}\)</span> који се добија од полазног
+брисањем цифре <span class="math notranslate nohighlight">\(c_2\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">prefiks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sufiks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">prefiks</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sufiks</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="ponoc-target">
+<span id="id8"></span><h2>Поноћ<a class="headerlink" href="#ponoc-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/ponoc">текст задатка</a>.</p>
+<p>Један веома често коришћен начин је да се пре израчунавања све преведе у
+најмање јединице, а да се након израчунавања изврши прерачунавање у полазне
+јединице. То би подразумевало да се текући тренутак и наредна поноћ претворе у
+број секунди протекао од претходне поноћи, да се израчуна број секунди до
+поноћи и да се затим то време изражено само у секундама изрази у сатима,
+минутима и секундама.</p>
+<p>Ако је време одређено бројевима <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(m\)</span> и <span class="math notranslate nohighlight">\(s\)</span> који представљају број сати,
+минута и секунди, тада се време протекло од почетка дана може израчунати тако
+што се саберу број сати помножен са <span class="math notranslate nohighlight">\(60\cdot 60\)</span> (јер у једном сату има 60
+минута, а сваки од њих има 60 секунди), број минута помножен са <span class="math notranslate nohighlight">\(60\)</span> (jер у
+једном минуту има 60 секунди) и број секунди, тј. израчунавањем вредности
+<span class="math notranslate nohighlight">\(h\cdot 60^2+m\cdot 60+s\)</span>, што може да се уради било директно, било Хорнеровим
+поступком, како је објашњено у задатку <a class="reference internal" href="#jardi-target">Јарди, стопе и инчи</a>.
+Приметимо да се овде ради о запису у бројевној основи <span class="math notranslate nohighlight">\(60\)</span>. Хорнеров поступак
+би овде кретао прво од броја целих сати <span class="math notranslate nohighlight">\(h\)</span>, затим израчунавао број целих
+минута тако што би помножио број сати <span class="math notranslate nohighlight">\(h\)</span> са <span class="math notranslate nohighlight">\(60\)</span> и на то додао број <span class="math notranslate nohighlight">\(m\)</span>, а
+затим број секунди добио множећи тај број минута са <span class="math notranslate nohighlight">\(60\)</span> и сабирајући са <span class="math notranslate nohighlight">\(s\)</span>
+(тј. израчунао би вредност израза <span class="math notranslate nohighlight">\((h\cdot 60+m)\cdot 60+s\)</span>). Наредна поноћ се
+може представити у облику времена 24:00:00 и она се може превести у секунде на
+потпуно исти начин (изразом <span class="math notranslate nohighlight">\(24\cdot 60^2\)</span>).</p>
+<p>Када се изврши одузимање, тада је добијени број секунди (рецимо да је то <span class="math notranslate nohighlight">\(t_s\)</span>)
+потребно претворити у сате, минуте и секунде. То се може урадити како је описано
+у задатку <a class="reference internal" href="#zbir-target">Збир цифара четвороцифреног броја</a>, који укључују
+израчунавање остатака и количника при целобројном дељењу са бројевном основом
+која је у овом случају 60. Последња цифра (вредност <span class="math notranslate nohighlight">\(s\)</span>) може се одредити као
+остатак при дељењу броја <span class="math notranslate nohighlight">\(t_s\)</span> са <span class="math notranslate nohighlight">\(60\)</span> тј. <span class="math notranslate nohighlight">\(s=t_s\mod 60\)</span>, претпоследња цифра
+<span class="math notranslate nohighlight">\(m\)</span> као остатак при дељењу са <span class="math notranslate nohighlight">\(60\)</span> целобројног количника бројева <span class="math notranslate nohighlight">\(t_s\)</span> и 60 тј.
+<span class="math notranslate nohighlight">\(m=(t_s\div 60)\mod 60\)</span>, а прва цифра <span class="math notranslate nohighlight">\(h\)</span> као целобројни количник бројева <span class="math notranslate nohighlight">\(t_s\)</span>
+и <span class="math notranslate nohighlight">\(60^2\)</span> тј. <span class="math notranslate nohighlight">\(h=t_s\div 60^2\)</span>. Ако у полазном броју секунди има више од једног
+дана (у овом задатку то није могуће, али у неким другим задацима ће бити), тада
+је потребно још одредити остатак броја сати при дељењу са <span class="math notranslate nohighlight">\(24\)</span>. Овим се, дакле,
+добија следећи поступак.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*}
+s &amp;=&amp; t_s\mod 60\\
+m &amp;=&amp; (t_s\div 60)\mod 60\\
+h &amp;=&amp; (t_s\div 60^2)\mod 24
+\end{eqnarray*}\end{split}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Sponoc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">S_do_ponoci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sponoc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">s_do_ponoci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S_do_ponoci</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_do_ponoci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S_do_ponoci</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">h_do_ponoci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S_do_ponoci</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">24</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">%d:%d:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">h_do_ponoci</span><span class="p">,</span><span class="w"> </span><span class="n">m_do_ponoci</span><span class="p">,</span><span class="w"> </span><span class="n">s_do_ponoci</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="trajanje-target">
+<span id="id9"></span><h2>Трајање вожње<a class="headerlink" href="#trajanje-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/trajanje_voznje">текст задатка</a>.</p>
+<p>Трајање вожње израчунава се тако што се од времена доласка одузме време
+поласка. Задатак, дакле, захтева израчунавање разлике између два временска
+тренутка за која знамо да су у оквиру једног дана.</p>
+<p>Један од уобичајених начина рада са временом је да се сваки временски тренутак
+изрази преко броја секунди протеклих од почетка тог дана (тј. од претходне
+поноћи). Ако је <span class="math notranslate nohighlight">\(h\)</span> број сати, <span class="math notranslate nohighlight">\(m\)</span> број минута и <span class="math notranslate nohighlight">\(s\)</span> број секунди, оба смера
+конверзије можемо реализовати као у задатку <a class="reference internal" href="#ponoc-target">Поноћ</a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">hPocetak</span><span class="p">,</span><span class="w"> </span><span class="n">mPocetak</span><span class="p">,</span><span class="w"> </span><span class="n">sPocetak</span><span class="p">,</span><span class="w"> </span><span class="n">hKraj</span><span class="p">,</span><span class="w"> </span><span class="n">mKraj</span><span class="p">,</span><span class="w"> </span><span class="n">sKraj</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hPocetak</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mPocetak</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sPocetak</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hKraj</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mKraj</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sKraj</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">SPocetak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hPocetak</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mPocetak</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sPocetak</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">SKraj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hKraj</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mKraj</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sKraj</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SKraj</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">SPocetak</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sTrajanje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mTrajanje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">hTrajanje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d:%d:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hTrajanje</span><span class="p">,</span><span class="w"> </span><span class="n">mTrajanje</span><span class="p">,</span><span class="w"> </span><span class="n">sTrajanje</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="unix">
+<h2>UNIX време<a class="headerlink" href="#unix" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/unix_vreme">текст задатка</a>.</p>
+<p>Као и обично, написаћемо једначине за конверзију времена датог у данима,
+сатима, минутима, секундама и милисекундама у број милисекунди од укључивања
+рачунара и броја милисекунди у време, све свести на милисекунде, извршити
+тражену операцију сабирања времена и на крају, милисекунде превести у време у
+данима, сатима, минутима, секундама и милисекундама. Сличну технику, али само
+за сате, минуте и секунде, применили смо, на пример, у задатку
+<a class="reference internal" href="#ponoc-target">Поноћ</a>.</p>
+<p>Најприроднији начин да време преведемо у милисекунде је да употребимо Хорнерову
+шему, коју смо описали у задатку <a class="reference internal" href="#jardi-target">Јарди, стопе и инчи</a>. Укупан
+број сати можемо добити тако што број дана помножимо са 24 (јер је толико сати
+у једном дану) и додамо број сати. Укупан број минута можемо добити тако што
+тако добијени број сати помножимо са 60 (јер је толико минута у једном сату) и
+додамо број минута. Укупан број секунди можемо добити тако што тако добијени
+број минута помножимо са 60 (јер је толико секунди у једном минуту) и додамо
+број секунди. На крају, укупан број милисекунди можемо добити тако што добијени
+број секунди помножимо са 1000 (јер је толико милисекунди у једној секунди) и
+додамо број милисекунди. Дакле, ако променљиве <span class="math notranslate nohighlight">\(dan\)</span>, <span class="math notranslate nohighlight">\(sat\)</span>, <span class="math notranslate nohighlight">\(min\)</span>, <span class="math notranslate nohighlight">\(sek\)</span> и
+<span class="math notranslate nohighlight">\(mili\)</span> представљају број дана, сати, минута, секунди и милисекунди, тада
+конверзију можемо извршити помоћу израза</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(((dan\cdot 24+sat)\cdot 60+min)\cdot 60+sek)\cdot 1000+mili\]</div>
+</div>
+<p>Ово је много лепше решење него да, на пример, унапред рачунамо колико
+милисекунди има у једном сату.</p>
+<p>Конверзија у супротном смеру тече тако што се рачуна једна по једна цифра у
+запису у овој мешовитој основи (слично као у задацима
+<a class="reference internal" href="#zbir-target">Збир цифара четвороцифреног броја</a> и <a class="reference internal" href="#ponoc-target">Поноћ</a>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">p_dan</span><span class="p">,</span><span class="w"> </span><span class="n">p_sat</span><span class="p">,</span><span class="w"> </span><span class="n">p_min</span><span class="p">,</span><span class="w"> </span><span class="n">p_sek</span><span class="p">,</span><span class="w"> </span><span class="n">p_mili</span><span class="p">,</span><span class="w"> </span><span class="n">trajanje</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_dan</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_sat</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_min</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_sek</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_mili</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">trajanje</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pocetak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(((</span><span class="n">p_dan</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p_sat</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p_min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p_sek</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p_mili</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kraj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pocetak</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trajanje</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k_mili</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">kraj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k_sek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">kraj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">kraj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">kraj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">24</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k_dan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">kraj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="p">));</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d:%d:%d:%d:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">k_dan</span><span class="p">,</span><span class="w"> </span><span class="n">k_sat</span><span class="p">,</span><span class="w"> </span><span class="n">k_min</span><span class="p">,</span><span class="w"> </span><span class="n">k_sek</span><span class="p">,</span><span class="w"> </span><span class="n">k_mili</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="ugao-target">
+<span id="id10"></span><h2>Угао сатне казаљке<a class="headerlink" href="#ugao-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/ugao_satne_kazaljke">текст задатка</a>.</p>
+<p>За разлику од секундне казаљке која се креће дискретно (поскочи сваке секунде),
+сатна казаљка се обично креће непрекидно. Ипак, пошто у овом задатку не
+разматрамо секунде, већ само минуте, претпоставићемо да се сатна казаљка помера
+само једном у минуту (на сваком пуном минуту). Дакле, положај сатне казаљке ће
+бити одређен временом протеклим од претходног тренутка када је сатна казаљка
+била усмерена на горе (а то је претходна поноћ или претходно подне) израженим у
+целом броју минута.</p>
+<p>Ако се зна колико је тренутно сати и минута, тај број се може лако израчунати
+(број сати се помножи са 60 и сабере се са бројем минута, слично као у задатку
+<a class="reference internal" href="#ponoc-target">Поноћ</a>). Пошто угао казаљке линеарно зависи од броја протеклих
+минута, и пошто на сваких 12 сати сатна казаљка направи пун круг, тј. опише
+угао од 360 степени, важи пропорција</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha^\circ:M=360^\circ:12 \ h\]</div>
+</div>
+<p>где је <span class="math notranslate nohighlight">\(M\)</span> број минута протеклих од претходног тренутка када је сатна казаљка
+заклапала <span class="math notranslate nohighlight">\(0^\circ\)</span> (а то је претходно подне или поноћ). <span class="math notranslate nohighlight">\(M\)</span> се, дакле, може
+израчунати тако што се тих 12h (тј. 12 сати и 0 минута) претвори у број минута
+протеклих од претходне поноћи или поднева и реши се пропорција</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[M=\frac{\alpha^\circ \cdot(12\cdot 60 \ m)}{360^\circ}=\frac{\alpha^\circ \cdot 720 \ m}{360^\circ} = \alpha \cdot 2 \ m\]</div>
+</div>
+<p>Када се зна број минута протеклих од претходног поднева или поноћи, време се
+лако може израчунати (остатак при дељењу са 60 даје број минута, а количник
+број сати, слично као у задатку <a class="reference internal" href="#ponoc-target">Поноћ</a>).</p>
+<p>Један начин да се дође до решења је да се закључи да, пошто за 12 сати сатна
+казаљка обиђе угао од 360 степени, она за један сат обиђе дванаестину тог угла
+тј. угао од <span class="math notranslate nohighlight">\(\frac{360^\circ}{12}=30^\circ\)</span>. Пошто један сат има 60 минута, за
+један временски минут она обиђе шездесетину угла који пређе за сат времена, тј.
+угао од <span class="math notranslate nohighlight">\(\frac{30^\circ}{60}=0.5^\circ\)</span>. Дакле, пошто за један временски минут
+казаљка пређе пола степена, једном степену одговара 2 минута времена. Број
+минута протеклих од поднева или поноћи се онда може израчунати множењем датог
+угла у степенима са 2 (минута по степену).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">alfa</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alfa</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alfa</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="izmedju-target">
+<span id="id11"></span><h2>Угао између казаљки<a class="headerlink" href="#izmedju-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/ugao_izmedju_kazaljki">текст задатка</a>.</p>
+<p>Нека је дати временски тренутак описан параметрима <span class="math notranslate nohighlight">\(sat\)</span> и <span class="math notranslate nohighlight">\(minut\)</span>.</p>
+<p>Угао који минутна казаљка заклапа у односу на почетни положај од нула минута
+(такозвани угаони отклон минутне казаљке) једнак је <span class="math notranslate nohighlight">\(minut\cdot 360'\)</span>, где <span class="math notranslate nohighlight">\('\)</span>
+означава угаони минут. Заиста, на сваки минут времена минутна казаљка се помера
+за <span class="math notranslate nohighlight">\(\frac{360^\circ}{60}=6^\circ\)</span>. Дакле, <span class="math notranslate nohighlight">\(6^\circ\)</span> је померање минутне казаљке
+у степенима по сваком временском минуту, а пошто у једном степену има <span class="math notranslate nohighlight">\(60\)</span>
+угаоних минута тј. пошто је <span class="math notranslate nohighlight">\(1^\circ=60'\)</span>, за сваки минут времена минyтна
+казаљка се помери за <span class="math notranslate nohighlight">\(6^\circ \cdot \frac{60'}{1^\circ}=360'\)</span>, тј. за <span class="math notranslate nohighlight">\(360\)</span>
+угаоних минута.</p>
+<p>Угао који у датом временском тренутку заклапа сатна казаљка са позитивним
+смером y осе рачунат је у задатку <a class="reference internal" href="#ugao-target">Угао сатне казаљке</a>. Подсетимо
+се, угао у угаоним минутима који сатна казаљка заузима у односу на положај
+<span class="math notranslate nohighlight">\(12 \ h\)</span> (угаони отклон сатне казаљке) једнак је
+<span class="math notranslate nohighlight">\(sat\cdot 30^\circ\cdot \frac{60'}{1^\circ}+minut\cdot 30'\)</span>. Заиста на сваки
+сат казаљка се помери за <span class="math notranslate nohighlight">\(\frac{360^\circ}{12}=30^\circ\)</span>, а пошто у једном
+степену има <span class="math notranslate nohighlight">\(60'\)</span>, то је једнако <span class="math notranslate nohighlight">\(30^\circ\cdot \frac{60'}{1^\circ}\)</span>. На сваки
+минут времена сатна казаљка се помери додатно за <span class="math notranslate nohighlight">\(\frac{30^\circ}{60}=30'\)</span>.
+Заиста, она се за један минут времена помери <span class="math notranslate nohighlight">\(12\)</span> пута мање него минутна
+казаљка, за коју смо установили да се за минут времена помери за <span class="math notranslate nohighlight">\(360'\)</span>. Дакле
+сатна казаљка се за сваки минут времена помери за <span class="math notranslate nohighlight">\(30'\)</span>.</p>
+<p>Да би се израчунао (неоријентисани) угао између казаљки изражен у минутима
+потребно је одредити апсолутну вредност разлике у угаоним минутима. На крају
+је добијени резултат потребно превести у степене и минуте.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sat</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sat</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">min</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sat</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">u_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">u_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">360</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">u_izmedju</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">u_sat</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">u_min</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">u_izmedju_stepeni</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_izmedju</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">u_izmedju_minuti</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_izmedju</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">u_izmedju_stepeni</span><span class="p">,</span><span class="w"> </span><span class="n">u_izmedju_minuti</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="razmeni-target">
+<span id="id12"></span><h2>Размени цифре<a class="headerlink" href="#razmeni-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/razmeni_cifre">текст задатка</a>.</p>
+<p>Цифру јединица и цифру стотина у природном броју можемо разменити тако што прво
+уклонимо цифре јединица и стотина, тачније заменимо их нулама, а затим цифру
+јединица додамо у броју на место цифре стотина, а цифру стотина додамо на место
+цифре јединица.</p>
+<p>Прво одредимо цифру јединица <span class="math notranslate nohighlight">\(c_0\)</span> и цифру стотина <span class="math notranslate nohighlight">\(c_2\)</span> broja <span class="math notranslate nohighlight">\(n\)</span>. То радимо
+на исти начин као, на пример, у задатку
+<a class="reference internal" href="#zbir-target">Збир цифара четвороцифреног броја</a>. Цифру јединица добијамо као
+остатaк при дељењу полазног броја са 10 (<span class="math notranslate nohighlight">\(c_0=n\mod 10\)</span>), а цифру стотина као
+остатак при дељењу са 10 количника полазног броја и броја 100
+(<span class="math notranslate nohighlight">\(c_2=(n\div 100)\mod 10\)</span>). Затим од броја одузмемо цифру јединица <span class="math notranslate nohighlight">\(c_0\)</span>, и
+одузмемо цифру стотина <span class="math notranslate nohighlight">\(c_2\)</span> помножену са 100 (израчунамо
+<span class="math notranslate nohighlight">\(n-c_0-c_2\cdot 100\)</span>). На тај начин смо у броју „избрисали” цифру јединица и
+цифру стотина (заменили их нулама). Преостаје нам да у броју додамо цифру
+јединица на место цифре стотина, то постижемо увећавањем броја за производ
+цифре јединица и броја 100, и да цифру стотина додамо на место цифре јединица,
+једноставно увећањем броја за цифру стотина (увећамо претходни резултат за
+<span class="math notranslate nohighlight">\(c_0\cdot 100+c_2\)</span>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">broj</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj_r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">broj</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">broj_r</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Замена цифре <span class="math notranslate nohighlight">\(c_i\)</span> која је на позицији <span class="math notranslate nohighlight">\(i\)</span> у броју <span class="math notranslate nohighlight">\(n\)</span> цифром <span class="math notranslate nohighlight">\(c\)</span> реализујемо
+изразом <span class="math notranslate nohighlight">\(n=n-10^i\cdot c_i+10^i\cdot c\)</span>. Одузимањем од полазног броја производ
+<span class="math notranslate nohighlight">\(10^i\cdot c_i\)</span> цифру на позицији <span class="math notranslate nohighlight">\(i\)</span> постављамо на 0, а увећавањем добијене
+вредности за <span class="math notranslate nohighlight">\(10^i\cdot c\)</span> цифру на позицији <span class="math notranslate nohighlight">\(i\)</span> постављамо на вредност <span class="math notranslate nohighlight">\(c\)</span>.
+Израз записујемо краће <span class="math notranslate nohighlight">\(n+10^i\cdot(c-c_i)\)</span>. У нашем задатку то изгледа овако
+<span class="math notranslate nohighlight">\(n+1\cdot(c_2-c_0)+100\cdot(c_0-c_2)\)</span>, или краће <span class="math notranslate nohighlight">\(n+99\cdot(c_0-c_2)\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">broj</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">broj</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj_r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">broj</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">99</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">broj_r</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="ovce-target">
+<span id="id13"></span><h2>Бројање оваца<a class="headerlink" href="#ovce-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/brojanje_ovaca">текст задатка</a>.</p>
+<p>Сваки прст на Јовановој руци представља једну овцу. Сваки прст на Дулетовој
+руци представља 5 оваца, зато што Дуле отвара следећи прст само кад Јован
+изброји 5 оваца. Сваки прст на Станојевој руци представља 25 оваца, зато што
+Станоје отвара следећи прст само кад Дуле избоји до 5. Већ смо објаснили да
+сваки Дулетов прст представља 5 оваца, према томе 5 Дулетових прстију вреди
+<span class="math notranslate nohighlight">\(5\cdot 5\)</span> оваца, дакле 25. Обележимо са <span class="math notranslate nohighlight">\(J, D, S\)</span> број отворених прстију десне
+руке редом код Јована, Дулета и Станоја. Тада је број оваца у стаду једнак
+<span class="math notranslate nohighlight">\(S\cdot 25+D\cdot 5+J\)</span>.</p>
+<p>Можемо приметити да Јова и Дуле не могу имати отворена више од 4 прста, јер
+сваки пут кад изброје до 5, почињу бројање из почетка, а следећи пастир отвара
+још један прст.</p>
+<p>Ово је пример бројања у систему са основом 5. Уопште, ако су дате цифре
+<span class="math notranslate nohighlight">\(a_n,a_{n-1},\ldots,a_1,a_0\)</span>, такве да су све из интервала <span class="math notranslate nohighlight">\([0,b-1]\)</span>, тада
+можемо да оформимио запис <span class="math notranslate nohighlight">\((a_na_{n-1}\ldots a_1a_0)_b\)</span> чија је вредност једнака
+<span class="math notranslate nohighlight">\(a_nb^n+a_{n-1}b^{n-1}+\ldots+a_2b^2+a_1b+a_0\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj_ovaca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">broj_ovaca</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Задатак можемо решити и Хорнеровом схемом, исто као у задатку
+<a class="reference internal" href="#jardi-target">Јарди, стопе и инчи</a>. Тада се вредност израчунава као
+<span class="math notranslate nohighlight">\((S\cdot 5+D)\cdot 5+J\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj_ovaca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">broj_ovaca</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id14">
+<h2>Обрни цифре<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/obrni_cifre">текст задатка</a>.</p>
+<p>Један од начина да решимо задатак је да искомбинујемо поступак уклањања цифара
+са десног краја броја и поступак додавања цифара на десни крај броја. Последња
+цифра (цифра јединица) се може одредити одређивањем остатка при дељењу бројем
+10, а уклонити одређивањем целобројног количника при дељењу бројем 10, како смо
+показали у задатку <a class="reference internal" href="#zbir-target">Збир цифара четвороцифреног броја</a>. Цифра се
+може додати на десни крај броја тако што се број помножи са 10 и сабере са том
+цифром. Формирање броја додавањем једне по једне цифре на десни крај назива се
+Хорнеров поступак тј. Хорнерова шема и већ смо је детаљно описали у задатку
+<a class="reference internal" href="#ovce-target">Бројање оваца</a>.</p>
+<p>Да бисмо решили овај конкретан задатак, четири пута ћемо уклонити цифру
+јединица (и те четири цифре ћемо упамтити у четири променљиве). Након тога,
+цифре које смо запамтили у тим променљивим ћемо једну по једну додавати на
+десни крај броја, али у обратном редоследу (прво ћемо додати цифру јединица,
+иза ње цифру десетица, затим цифру стотина и на крају цифру хиљада). На пример,
+ако је полазни број 1234567, запамтићемо и уклонити цифру јединица (одређивањем
+остатка и целобројног количника при дељењу са 10) и добићемо број 123456, затим
+ћемо уклонити следећу цифру и добити број 12345, затим број 1234 и на крају
+број 123. Након тога ћемо на тај број додати цифру јединица полазног броја
+(можењем са 10 и сабирањем) и добићемо 1237. Након тога ћемо на сличан начин
+добити 12376, након тога 123765 и на крају тражени број 1237654.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Једно могуће решење је да се одреде вредности последње 4 цифре <span class="math notranslate nohighlight">\(c_3\)</span>, <span class="math notranslate nohighlight">\(c_2\)</span>,
+<span class="math notranslate nohighlight">\(c_1\)</span> и <span class="math notranslate nohighlight">\(c_0\)</span> (на начин приказан у задатку
+<a class="reference internal" href="#zbir-target">Збир цифара четвороцифреног броја</a>), да се одреди префикс <span class="math notranslate nohighlight">\(p\)</span>
+испред те четири цифре (он се може израчунати као целобројни количник при
+дељењу полазног броја са 10000) и затим да се формира нови број
+<span class="math notranslate nohighlight">\(p\cdot 10000+c_0\cdot 1000+c_1\cdot 100+c_2\cdot 10+c_3\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">prefiks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">prefiks</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Једно могуће решење је  да се одреде вредности последње 4 цифре, а затим да се
+на сваком од 4 места тренутна цифра замени жељеном, слично као што је то
+приказано у задатку <a class="reference internal" href="#razmeni-target">Размени цифре</a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (3)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id15">
+<h2>Цифре здесна<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/cifre_sdesna">текст задатка</a>.</p>
+<p>Једно решење је да се прво учита свих 6 цифара у 6 различитих променљивих, а
+онда да се вредност броја формира на стадардни начин (било као вредност
+полинома
+<span class="math notranslate nohighlight">\(c_5\cdot 10^5+c_4\cdot 10^4+c_3\cdot 10^3+c_2\cdot 10^2+c_1\cdot 10 +c_0\)</span>
+одређеног класичном дефиницијом записа декадног броја, било Хорнеровим
+поступком, како је иулстровано у задатку <a class="reference internal" href="#jardi-target">Јарди, стопе и инчи</a>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c0</span><span class="p">,</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="n">c3</span><span class="p">,</span><span class="w"> </span><span class="n">c4</span><span class="p">,</span><span class="w"> </span><span class="n">c5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c4</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c5</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">broj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">broj</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Приказаћемо решење које неће прво учитавати све цифре, већ ће обрађивати цифру
+по цифру, редом којим пристижу. Број (памтићемо га у променљивој <code class="docutils literal notranslate"><span class="pre">broj</span></code>)
+иницијализујемо на нулу, и у сваком кораку учитавамо нову цифру и дописујемо је
+слеве стране тако што тренутну вредност броја саберемо са вредношћу цифре
+помножену одговарајућим тежинским фактором. У првом кораку тај фактор је 1, у
+наредном 10, затим 100, 1000, 10000 и на крају 100000.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cifra</span><span class="p">,</span><span class="w"> </span><span class="n">broj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">100000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">broj</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Употребићемо променљиву <code class="docutils literal notranslate"><span class="pre">tezina</span></code> у којој се памти тренутна вредност тежинског
+фактора (текући степен основе). Променљиву <code class="docutils literal notranslate"><span class="pre">broj</span></code> ћемо ажурирати тако што ћемо
+је увећати за производ тренутно учитане цифре <code class="docutils literal notranslate"><span class="pre">cifra</span></code> и текуће вредности
+променљиве <code class="docutils literal notranslate"><span class="pre">tezina</span></code>. Променљиву <code class="docutils literal notranslate"><span class="pre">tezina</span></code> иницијализујемо на вредност 1 и на
+крају сваког корака ажурирамо множењем са 10.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (3)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cifra</span><span class="p">,</span><span class="w"> </span><span class="n">tezina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">broj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tezina</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tezina</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tezina</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tezina</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tezina</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tezina</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tezina</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tezina</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tezina</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tezina</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cifra</span><span class="p">);</span>
+<span class="w">    </span><span class="n">broj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tezina</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cifra</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tezina</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">broj</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id16">
+<h2>Чекање<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/cekanje">текст задатка</a>.</p>
+<p>Растојање између два броја чији се поредак не зна, најлакше се израчунава као
+апсолутна вредност њихове разлике. Као што је то обично случај, аритметику над
+временским тренуцима је лакше спроводити ако се времена представе преко броја
+секунди протеклих од почетка дана (ту технику смо, на пример, употребили да
+бисмо одузели два временска тренутка у задатку <a class="reference internal" href="#ponoc-target">Поноћ</a>). Када се
+време представи на тај начин, апсолутна вредност разлике се може израчунати
+функцијом бибилотечком функцијом <code class="docutils literal notranslate"><span class="pre">abs()</span></code>. На крају, добијени број секунди се
+преводи назад у време изражено сатима, минутима и секундама. Оба смера
+конверзије врше се на неки од уобичајених начина који су коришћени, на пример,
+у задатку <a class="reference internal" href="#ponoc-target">Поноћ</a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ah</span><span class="p">,</span><span class="w"> </span><span class="n">am</span><span class="p">,</span><span class="w"> </span><span class="n">as</span><span class="p">,</span><span class="w"> </span><span class="n">bh</span><span class="p">,</span><span class="w"> </span><span class="n">bm</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ah</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">am</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">as</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bh</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bs</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ah</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">am</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">as</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bh</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bm</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bs</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d:%d:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id17">
+<h2>Тркачи<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/trkaci">текст задатка</a>.</p>
+<p>Ако је</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s\)</span> - дужина кружне стазе у <span class="math notranslate nohighlight">\(km\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_1\)</span> - брзина првог тркача у <span class="math notranslate nohighlight">\(kmh\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_2\)</span> - брзина другог тркача у <span class="math notranslate nohighlight">\(kmh\)</span></p></li>
+</ul>
+<p>тада је брзина одмицања бржег тркача од споријег <span class="math notranslate nohighlight">\(|v_1-v_2| \ kmh\)</span>. Према томе,
+бржи тркач пун круг - пут који треба да пређе да би сустигао споријег - прелази
+за време <span class="math notranslate nohighlight">\(t=\frac{s}{|v_1-v_2|} \ h\)</span> (користимо формулу која повезује брзину,
+време и пређени пут код равномерног кретања).</p>
+<p>Апсолутну вредност можемо израчунати коришћењем библиотечке функције <code class="docutils literal notranslate"><span class="pre">fabs()</span></code>.
+Новина у овом задатку је то што време не желимо да прикажемо у реалном броју
+сати, већ, у облику сати, минута и секунди. Претпоставимо да је резултат облика
+<span class="math notranslate nohighlight">\(h\)</span> сати, <span class="math notranslate nohighlight">\(m\)</span> минута и <span class="math notranslate nohighlight">\(s\)</span> секунди. Пошто у једном сату има <span class="math notranslate nohighlight">\(60\)</span> минута, а у
+једном минуту има <span class="math notranslate nohighlight">\(60\)</span> секунди, тај резултат се може претворити у реалан број
+сати тако што се израчуна <span class="math notranslate nohighlight">\(h+\frac{m}{60}+\frac{s}{60^2}\)</span> и потребно је
+одредити вредности <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(m\)</span> и <span class="math notranslate nohighlight">\(s\)</span> тако да ово буде што ближе могуће вредности
+<span class="math notranslate nohighlight">\(t\)</span> израчунатој у првом делу задатка.</p>
+<p>Гледано другачије, израз <span class="math notranslate nohighlight">\(t_s=h\cdot 60^2+m\cdot 60+s\)</span> представља број секунди
+у том резултату (он је увек цео број). Са друге стране израз <span class="math notranslate nohighlight">\(t\cdot 60^2\)</span>
+представља реалан број секунди за које се тркачи сустигну. Та два броја треба
+да буду што ближа, тако да ћемо целобројну вредност израза
+<span class="math notranslate nohighlight">\(h\cdot 60^2+m\cdot 60+s\)</span> одредити заокруживањем броја <span class="math notranslate nohighlight">\(t\cdot 60^2\)</span> на
+најближу целобројну вредност (у имплементацији се ово може урадити коришћењем
+библиотечке функције <code class="docutils literal notranslate"><span class="pre">round</span></code>).</p>
+<p>Када знамо целобројну вредности израза <span class="math notranslate nohighlight">\(t_s=h\cdot 60^2+m\cdot 60+s\)</span>, потребно
+је одредити његове компоненте <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(m\)</span> и <span class="math notranslate nohighlight">\(s\)</span>. При том мора да важи да је
+<span class="math notranslate nohighlight">\(0\leq s&lt;60\)</span> и <span class="math notranslate nohighlight">\(0\leq m&lt;60\)</span>. Приметимо да се овде ради о запису у бројевној
+основи <span class="math notranslate nohighlight">\(60\)</span>, тако да се појединачне цифре тог записа могу одредити на исти
+начин како је то показано у задацима
+<a class="reference internal" href="#zbir-target">Збир цифара четвороцифреног броја</a> и
+<a class="reference internal" href="#oktalni-target">Октални бројеви</a>, а у контексту рада са временом у задацима
+<a class="reference internal" href="#ponoc-target">Поноћ</a> и <a class="reference internal" href="#trajanje-target">Трајање вожње</a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fabs</span><span class="p">(</span><span class="n">v1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">v2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ts</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">%d</span><span class="se">\n</span><span class="s">%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sat</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="n">sek</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id18">
+<h2>Радијани<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/radijani">текст задатка</a>.</p>
+<p>Обим круга <span class="math notranslate nohighlight">\(O\)</span> полупречника <span class="math notranslate nohighlight">\(r\)</span> једнак је <span class="math notranslate nohighlight">\(2r\pi\)</span>. Дужина кружног лука <span class="math notranslate nohighlight">\(l\)</span>
+пропроционална је углу <span class="math notranslate nohighlight">\(\alpha\)</span> (задатом у реалном броју степени) који одговара
+том луку. Пошто целом кругу одговара угао од <span class="math notranslate nohighlight">\(360^\circ\)</span>, важи пропорција
+<span class="math notranslate nohighlight">\(2r\pi:360^\circ=l:\alpha\)</span> тј. <span class="math notranslate nohighlight">\(l=\frac{\alpha\cdot r\cdot\pi}{180^\circ}\)</span>.
+Радијан је онај угао <span class="math notranslate nohighlight">\(\alpha\)</span> код којег је <span class="math notranslate nohighlight">\(l=r\)</span>, па важи да је
+<span class="math notranslate nohighlight">\(r=\frac{\alpha\cdot r\cdot\pi}{180^\circ}\)</span> тј.
+<span class="math notranslate nohighlight">\(\alpha=\frac{180^\circ}{\pi}\)</span>. Дакле угао
+<span class="math notranslate nohighlight">\(\mathrm{rad}=\frac{180^\circ}{\pi}\)</span>.</p>
+<p>Ако је неки угао изражен као <span class="math notranslate nohighlight">\(x\,\mathrm{rad}\)</span>, тада је он једнак
+<span class="math notranslate nohighlight">\(\frac{x\cdot 180^\circ}{\pi}\)</span>. Tиме се угао у радијанима може представити
+реалним бројем степени.</p>
+<p>Превођење тог угла у реални број секунди је једноставно (множењем са 60 добије
+се реални број минута и новим множењем са 60 добија се реални број секунди).
+Пошто ми желимо да угао изразимо у степенима, минутама и секундама, потребно је
+да добијемо цео број секунди и потребно је извршити заокруживање (овим кораком
+се утао може малчице променити, међутим, то је неопходно јер се степенима,
+минутима и секундама не може представити произвољан угао - најмањи угао који се
+може представити је секунда која износи 3600-ти део степена). У задатку се
+тражи заокруживање на најближи угао, тако да ћемо употребити библиотечку
+функцију <code class="docutils literal notranslate"><span class="pre">round()</span></code>.</p>
+<p>Када се добије угао изражен у целом броју секунди, превођење у степене, минуте
+и секунде вршимо на неки од уобичајених начина, аналогно конверзијама секунди у
+секунди, минуте и сате које су приказане у задатку <a class="reference internal" href="#ponoc-target">Поноћ</a>. На
+крају је степене потребно свести на интервал <span class="math notranslate nohighlight">\([0,360)\)</span>, што радимо
+израчунавањем остатка при дељењу са <span class="math notranslate nohighlight">\(360\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#define _USE_MATH_DEFINES</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radijani</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">radijani</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">round</span><span class="p">((</span><span class="n">radijani</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">180.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">360</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d:%d:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="n">sek</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id19">
+<h2>Гпс<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/gps">текст задатка</a>.</p>
+<p>Ако је број степени <span class="math notranslate nohighlight">\(st\)</span>, минута <span class="math notranslate nohighlight">\(min\)</span>, а секунди <span class="math notranslate nohighlight">\(sek\)</span>, тада се резултат може
+добити као <span class="math notranslate nohighlight">\(st+\frac{min}{60}+\frac{sek}{60^2}\)</span>.</p>
+<p>Наиме, у једном степену има 60 минута тако да један минут представља
+<span class="math notranslate nohighlight">\(\frac{1}{60}\)</span> степени. Један минут има 60 секунди тако да у степену има <span class="math notranslate nohighlight">\(60^2\)</span>
+секунди па зато једна секунда представља <span class="math notranslate nohighlight">\(\frac{1}{60^2}\)</span> степени.</p>
+<p>Суптилно место у имплементацији је то што су улазни подаци цели бројеви, а
+резултат треба да буде реалан број. Да би се постигло да се врши реално, а не
+целобројно дељење, довољно је константе у имениоцу записати као реалне
+константе (нпр. написаћемо <code class="docutils literal notranslate"><span class="pre">60.0</span></code> уместо <code class="docutils literal notranslate"><span class="pre">60</span></code>). Чим је један аргумент у
+аритметичком изразу реалан, и други ће имплицитно бити конвертован у реалан
+број.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="n">sek</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sek</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">60.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sek</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3600.0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id20">
+<h2>Поклапање казаљки<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/poklapanje_kazaljki">текст задатка</a>.</p>
+<p>Угао сатне и минутне казаљке у датом временском тренутку већ је рачунат у
+задацима <a class="reference internal" href="#ugao-target">Угао сатне казаљке</a> и
+<a class="reference internal" href="#izmedju-target">Угао између казаљки</a>.</p>
+<p>Ако је <span class="math notranslate nohighlight">\(t\)</span> број који представља минут у сату <span class="math notranslate nohighlight">\(x\)</span> у коме се поклапају сатна и
+минутна казаљка, тада је:</p>
+<ul class="simple">
+<li><p>угао минутне казаљке једнак <span class="math notranslate nohighlight">\(t\cdot 6^\circ\)</span>, где је <span class="math notranslate nohighlight">\(6^\circ\)</span> број степени
+за које се минутна казаљка помера по минуту (пошто минутна казаљка обиђе пун
+круг за 360 минута, то следи из <span class="math notranslate nohighlight">\(\frac{360^\circ}{60}\)</span>),</p></li>
+<li><p>угао сатне казаљке једнак <span class="math notranslate nohighlight">\(x\cdot 30^\circ+t\cdot 0.5^\circ\)</span>, где је
+<span class="math notranslate nohighlight">\(30^\circ\)</span> угао у степенима који представља померање сатне казаљке на сваки
+сат, а <span class="math notranslate nohighlight">\(0.5^\circ\)</span> померање сатне у текућем сату које је 12 пута мање него
+померање минутне које је <span class="math notranslate nohighlight">\(t\cdot 6^\circ\)</span>.</p></li>
+</ul>
+<p>Из једначине <span class="math notranslate nohighlight">\(x\cdot 30^\circ+t\cdot 0.5^\circ=t\cdot 6^\circ\)</span> добија се да је
+<span class="math notranslate nohighlight">\(t=\frac{60\cdot x}{11}\)</span>.</p>
+<p>Пошто је <span class="math notranslate nohighlight">\(x\)</span> цео број, приликом израчунавања израза <span class="math notranslate nohighlight">\(\frac{60\cdot x}{11}\)</span>,
+потребно је константе навести у реалном облику (као <code class="docutils literal notranslate"><span class="pre">60.0</span></code> и <code class="docutils literal notranslate"><span class="pre">11.0</span></code>), да не би
+грешком дошло до целобројног дељења. Друго решење било би да се променљива <span class="math notranslate nohighlight">\(x\)</span>
+уведе као реална, без обзира на то што су јој вредности увек цели бројеви.
+Пошто је вредност израза реалан број минута, а као решење задатка се очекује
+њему најближи цео број минута, потребно је извршити заокруживање коришћењем
+библиотечке функције <code class="docutils literal notranslate"><span class="pre">round()</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sat</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sat</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">round</span><span class="p">(</span><span class="mf">60.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">11.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../razgranata_struktura/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Разгранате програмске структуре и алгоритми</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="z_pojam_div_i_mod.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Задаци: Појам целобројног количника и остатка</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Фондација Петља
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Позициони запис</a><ul>
+<li><a class="reference internal" href="#zbir-target">Збир цифара четвороцифреног броја</a></li>
+<li><a class="reference internal" href="#jardi-target">Јарди, стопе и инчи</a><ul>
+<li><a class="reference internal" href="#id4">Класична конверзија</a></li>
+<li><a class="reference internal" href="#id5">Хорнерова схема</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#oktalni-target">Октални бројеви</a></li>
+<li><a class="reference internal" href="#id7">Избаци цифру стотина</a></li>
+<li><a class="reference internal" href="#ponoc-target">Поноћ</a></li>
+<li><a class="reference internal" href="#trajanje-target">Трајање вожње</a></li>
+<li><a class="reference internal" href="#unix">UNIX време</a></li>
+<li><a class="reference internal" href="#ugao-target">Угао сатне казаљке</a></li>
+<li><a class="reference internal" href="#izmedju-target">Угао између казаљки</a></li>
+<li><a class="reference internal" href="#razmeni-target">Размени цифре</a></li>
+<li><a class="reference internal" href="#ovce-target">Бројање оваца</a></li>
+<li><a class="reference internal" href="#id14">Обрни цифре</a></li>
+<li><a class="reference internal" href="#id15">Цифре здесна</a></li>
+<li><a class="reference internal" href="#id16">Чекање</a></li>
+<li><a class="reference internal" href="#id17">Тркачи</a></li>
+<li><a class="reference internal" href="#id18">Радијани</a></li>
+<li><a class="reference internal" href="#id19">Гпс</a></li>
+<li><a class="reference internal" href="#id20">Поклапање казаљки</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

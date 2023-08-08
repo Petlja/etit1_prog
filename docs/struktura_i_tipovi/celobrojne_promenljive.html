@@ -1,0 +1,757 @@
+<!doctype html>
+<html class="no-js" lang="sr">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Унос и приказ целих бројева" href="celobrojni_io.html" /><link rel="prev" title="Целобројни тип података" href="celobrojni_tip.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>Целобројни променљиви и непроменљиви подаци - Програмирање I за информатичке профиле у електротехничким школама</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Програмирање I за информатичке профиле у електротехничким школама</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Програмирање I за информатичке профиле у електротехничким школама</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Претрага" name="q" aria-label="Претрага">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Садржај</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../uvod/index.html">Увод</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Увод</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezici.html">Програмски језици</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezik_c.html">Програмски језик C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksa_i_semantika.html">Синтакса и семантика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksne_konstrukcije.html">Синтаксне конструкције језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/zivotni_ciklus.html">Животни циклус развоја софтвера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvod/uvod_kviz.html">Квиз</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../priprema_okruzenja/index.html">Припрема радног окружења</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Припрема радног окружења</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/radno_okruzenje.html">Радно окружење програмера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/visual_studio.html">Microsoft Visual Studio IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/visual_studio_start.html">Рад у Visual Studio окружењу</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/prevodjenje.html">Од изворног кода до извршног програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/vs_code.html">Visual Studio Code едитор и GCC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/flowgorithm.html">Софтвер за израду дијаграма тока</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/definicija_i_zadatak.html">Алгоритми</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/kviz.html">Квиз</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Структура језика и типови података</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Структура језика и типови података</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="struktura_jezika.html">Структура језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kljucne_reci.html">Кључне речи и идентификатори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="komentari.html">Коментари</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struktura_kviz.html">Квиз: структура језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipovi.html">Типови података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celobrojni_tip.html">Целобројни тип података</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Целобројни променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celobrojni_io.html">Унос и приказ целих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celobrojni_kviz.html">Квиз: Целобројни тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znakovni_tip.html">Знаковни тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znakovne_promenljive.html">Знаковни променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prelazne_sekvence.html">Прелазне секвенце</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znakovni_io.html">Унос и приказ карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="znakovni_kviz.html">Квиз: Знаковни тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realni_tip.html">Реални тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realne_promenljive.html">Реални променљиви и непроменљиви подаци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realni_io.html">Унос и приказ реалних бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realni_kviz.html">Квиз: Реални тип</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izvedeni_tip.html">Изведени тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nabrojivi_tip.html">Набројиви тип података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izvedeni_kviz.html">Квиз: изведени и набројиви типови</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_operatori.html">Оператори над битовима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_kviz.html">Квиз: оператори над битовима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela.html">Оператори сложене доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela_kviz.html">Квиз: Оператори сложене доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement.html">Оператори инкрементирања и декрементирања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement_kviz.html">Квиз: Оператори инкрементирања и декрементирања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operator_sizeof.html">Оператор <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_funkcije.html">Стандардне библиотечке функције</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_matematicke.html">Библиотечке математичке функције</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_kviz.html">Квиз: библиотечке функције</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linijska_struktura/index.html">Линијске програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Линијске програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/linijska_struktura.html">Линијска структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_geometrijske_formule.html">Задаци: Геометријске формуле</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_linearne_jednacine_i_sistemi.html">Задаци: Линеарне једначине и системи линеарних једначина</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_linearna_zavisnost.html">Задаци: Линеарна зависност и пропорција</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_stepenovanje_i_korenovanje.html">Задаци: Степеновање и кореновање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_kretanje.html">Задаци: Кретање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_pojam_div_i_mod.html">Задаци: Појам целобројног количника и остатка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_pozicioni_zapis.html">Задаци: Позициони запис</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../razgranata_struktura/index.html">Разгранате програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Разгранате програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/razgranata_struktura.html">Разграната структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/relacijski_operatori.html">Релацијски оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/logicki_operatori.html">Логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/operatori_kviz.html">Квиз: Релацијски и логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja.html">Наредба гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja_kviz.html">Квиз: Наредба гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni.html">Тернарни условни оператор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni_kviz.html">Квиз: Тернарни условни оператор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_grananje.html">Наредба вишеструког гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_kviz.html">Квиз: Наредба вишеструког гранања</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_relacijski_operatori.html">Задаци: Релацијски оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_logicki_operatori.html">Задаци: Логички оператори</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_intervali.html">Задаци: Гранање на основу припадности интервалима</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_diskretni_skup_vrednosti.html">Задаци: Гранање на основу коначног скупа вредности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_leksikografsko.html">Задаци: Лексикографско поређење торки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_hijerarhijsko.html">Задаци: Хијерархија услова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_minimum_i_maksimum.html">Задаци: Минимум и максимум два броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_razno.html">Задаци: Разни задаци са гранањем</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ciklicna_struktura/index.html">Цикличне програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Цикличне програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/ciklicna_struktura.html">Циклична структура програма</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_ciklus.html">Наредба бројачког циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_kviz.html">Квиз: наредба бројачког циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov.html">Наредбе циклуса са предусловом и постусловом</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov_kviz.html">Квиз: циклуси са предусловом и постусловом</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/prevremeni_break.html">Превремени излазак из циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/kviz_niz.html">Квиз: Једнодимензионални низ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pretrazivanje_niza.html">Претраживање низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z.html">Задаци из збирке - IN PROGRESS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/tipovi_podataka.html">Основни типови података</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/celobrojni_ogranicenja.html">Провера опсега вредности целобројних типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/ascii_tabela.html">ASCII табела</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/znakovni_ogranicenja.html">Провера опсега вредности знаковног типа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/prelazne_sekvence.html">Табела прелазних секвенци</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/realni_ogranicenja.html">Провера опсега вредности и прецизности реалних типова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prilozi/operatori_prioritet.html">Приоритет оператора</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Целобројни променљиви и непроменљиви подаци<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>Декларација целобројних променљивих<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Све променљиве које ћеш користити у програму прво мораш декларисати.
+Декларација садржи тип и један или више идентификатора. Ако у декларацији има
+више идентификатора, онда идентификаторе одвајаш оператором <code class="docutils literal notranslate"><span class="pre">,</span></code>. Декларација
+променљивих може да има следећи општи облик:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>tip identifikator;
+</pre></div>
+</div>
+<p>односно</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>tip identifikator_1, identifikator_2, ... identifikator_n;
+</pre></div>
+</div>
+<p>Променљиве целобројног типа најчешће ћеш декларисати коришћењем кључне речи
+<code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Напиши програм у програмском језику C у којем су декларисане променљиве које
+ће чувати тренутне температуре у Београду и Вршцу изражене као цели бројеви
+у степенима целзијуса.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>или</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У оба случаја целобројне променљиве <code class="docutils literal notranslate"><span class="pre">b</span></code> и <code class="docutils literal notranslate"><span class="pre">v</span></code> декларисане су на исправан начин
+и можеш их даље користити у функцији <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<p>Целобројна променљива типа <code class="docutils literal notranslate"><span class="pre">int</span></code> у меморији рачунара заузима 4 бајта. Пошто
+један бајт има 8 бита, то значи да целобројна променљива заузима 32 бита у
+меморији рачунара. Код променљивих типа <code class="docutils literal notranslate"><span class="pre">int</span></code> први бит од 32 бита резервисан је
+за знак, што значи да за представљање броја остаје још 31 бит. Због тога је
+опсег вредности које можеш представити променљивом типа <code class="docutils literal notranslate"><span class="pre">int</span></code> од <span class="math notranslate nohighlight">\(-2^{31}\)</span> до
+<span class="math notranslate nohighlight">\(2^{31}-1\)</span>, односно од <span class="math notranslate nohighlight">\(-2147483648\)</span> до <span class="math notranslate nohighlight">\(2147483647\)</span>.</p>
+</section>
+<section id="id3">
+<h2>Модификатори<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Може се десити да ти приликом решавања некод задатка не треба променљива за
+чување великих целобројних вредности, односно, може се десити да ти је потребна
+променљива која треба да чува вредност много већу од оне предвиђене опсегом.
+Може се десити и да си сигуран да ће вредност променљиве увек бити позитиван
+цео број, односно, да ти одговара да променљива може бити позитиван или
+негативан цео број. За наведене случајеве у програмском језику C користе се
+модификатори. Модификатори за целобројни тип <code class="docutils literal notranslate"><span class="pre">int</span></code> су <code class="docutils literal notranslate"><span class="pre">signed</span></code>, <code class="docutils literal notranslate"><span class="pre">unsigned</span></code>,
+<code class="docutils literal notranslate"><span class="pre">short</span></code> и <code class="docutils literal notranslate"><span class="pre">long</span></code>.</p>
+<p>Модификатором <code class="docutils literal notranslate"><span class="pre">signed</span></code> <em>(срп. означен)</em> наглашава се да цео број има знак,
+односно, модификатором <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> <em>(срп. неозначен)</em> да нема тј. да је увек
+позитиван. Коришћењем модификатора <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> ослобађа се бит који се чува за
+знак, чиме се повећава опсег вредности које промељива може да добије, па тако,
+неозначена целобројна променљива може да добије вредност од <span class="math notranslate nohighlight">\(0\)</span> до
+<span class="math notranslate nohighlight">\(4,294,967,295\)</span>, односно од <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(2^{32}-1\)</span>.</p>
+<p>Модификатор <code class="docutils literal notranslate"><span class="pre">short</span></code> <em>(срп. кратак)</em> дупло смањује количину меморије која се
+додељује целобројној променљивој. Модификатор <code class="docutils literal notranslate"><span class="pre">long</span></code> <em>(срп. дугачак)</em> дупло
+повећава количину меморије која се додељује целобројној променљивој, а
+модификатор <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code> <em>(срп. двоструко дугачак)</em> четвороструко. Треба
+напоменути да је у свим савременим C компајлерима променљива типа <code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">int</span></code>
+величине 2 бајта, променљива типа <code class="docutils literal notranslate"><span class="pre">int</span></code> 4 бајта, променљива типа <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">int</span></code>
+и даље 4 бајта, док је променљива типа <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span> <span class="pre">int</span></code> величине 8 бајтова.</p>
+<p>Модификатори <code class="docutils literal notranslate"><span class="pre">signed</span></code> и <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> се могу комбиновати са модификаторима
+<code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code> и <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code> па увек можеш одабрати тип који ти највише
+одговара за конкретан случај.</p>
+<p>Када се декларишу подаци са модификаторима, није увек обавезно записати и
+модификаторе и тип. На пример, тип података <code class="docutils literal notranslate"><span class="pre">int</span></code> може да има и негативне и
+позитивне вредности што значи да означен, па се променљива типа <code class="docutils literal notranslate"><span class="pre">int</span></code> може
+декларисати као <code class="docutils literal notranslate"><span class="pre">signed</span> <span class="pre">int</span></code> или као <code class="docutils literal notranslate"><span class="pre">signed</span></code>. Сва три случаја су еквивалентна
+и валидна.</p>
+<p>Напиши програм у програмском језику C у којем је декларисана променљива која
+ће чувати редни број дана у месецу. Редни број дана у месецу је увек позитиван
+цео број који не може бити већи од <span class="math notranslate nohighlight">\(31\)</span>. Према томе, променљиву која треба да
+чува редни број дана у месецу можеш декларисати са <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">short</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">dan</span><span class="p">;</span><span class="w"> </span><span class="c1">// rezervisano 2 bajta u memoriji</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Неће бити грешка уколико је декларишеш са <code class="docutils literal notranslate"><span class="pre">int</span></code>, али си таквом декларацијом
+непотребно заузео дупло више меморије.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dan</span><span class="p">;</span><span class="w"> </span><span class="c1">// rezervisano 4 bajta u memoriji</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Напиши програм у програмском језику C у којем је декларисана променљива која
+ће чувати губитак или добитак у пословању једне веће компаније изражен у
+динарима. Супротно претходном задатку, ако је у питању годишње пословање неке
+веће компаније, опсег вредности од <span class="math notranslate nohighlight">\(-2,147,483,648\)</span> до <span class="math notranslate nohighlight">\(2,147,483,647\)</span> може да
+буде недовољан. Ако вредност изађе из дозвољеног опсега доћи ће до грешке и
+пуцања програма. У овом случају требаш користити модификатор <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">poslovanje</span><span class="p">;</span><span class="w"> </span><span class="c1">// rezervisano 8 bajtа u memoriji</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У <a class="reference internal" href="../prilozi/tipovi_podataka.html"><span class="std std-doc">табели у прилогу</span></a> наведене су све дозвољене
+комбинације модификатора целобројног типа, потребна количина меморије у
+бајтовима и опсези дозвољених вредности.</p>
+<p>Модификатори целобројног типа дозвољавају ти да декларишеш променљиве које
+заузимају 2, 4 или 8 бајтова у меморији, од чега један бит може бити резервисан
+за знак:</p>
+<a class="reference internal image-reference" href="../_images/modifikatori.png"><img alt="Модификатори целобројног типа" class="align-center" src="../_images/modifikatori.png" style="width: 100%;" /></a>
+<p>Као што је већ напоменуто, опсег вредности за податке зависи од декларације,
+али зависи и од компајлера! У одређеној литератури или на интернету можеш
+прочитати да целобројна вредност типа <code class="docutils literal notranslate"><span class="pre">int</span></code> заузима два бајта у меморији
+рачунара што је нетачно. Наведена вредност од два бајта је заправо минимална
+вредност по стандарду, док је та вредност данас увек четири.</p>
+<p>Уколико желиш да провериш минималне и максималне вредности које може да има
+податак целобројног типа на твом рачунарском систему са C компајлером којег ти
+користиш, то можеш урадити извршавањем <a class="reference internal" href="../prilozi/celobrojni_ogranicenja.html"><span class="std std-doc">програма датог у прилогу</span></a>.</p>
+</section>
+<section id="id4">
+<h2>Иницијализација целобројних променљивих<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Иницијализацијом променљивих, променљивама додељујеш почетне вредности.
+Иницијализација садржи тип, идентификатор, оператор доделе <code class="docutils literal notranslate"><span class="pre">=</span></code> и одговарајућу
+вредност и има следећи општи облик:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>tip identifikator = vrednost;
+</pre></div>
+</div>
+<p>Слично као код декларације променљивих, истовремено можеш иницијализовати више
+променљивих. Тада иницијализација има следећи општи облик:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>tip identifikator_1 = vrednost_1, identifikator_2 = vrednost_2, ... identifikator_n = vrednost_n;
+</pre></div>
+</div>
+<p>Обрати пажњу да знак <code class="docutils literal notranslate"><span class="pre">=</span></code> у програмском језику C представља оператор доделе
+којим се, у овом случају, вредност са десне стране додељује променљивој на
+левој страни. Знак <code class="docutils literal notranslate"><span class="pre">=</span></code> није релациони оператор, као у математици, којим се
+констатује да је лева страна једнака десној. Више о операторима научићеш у
+следећем поглављу.</p>
+<p>Напиши програм у програмском језику C у којем ћеш иницијализовати целобројне
+променљиве <code class="docutils literal notranslate"><span class="pre">t</span></code> и <code class="docutils literal notranslate"><span class="pre">v</span></code> са вредностима које представљају број година које ученици
+Тамара и Влада имају на данашњи дан. Нека су то вредности <span class="math notranslate nohighlight">\(16\)</span> и <span class="math notranslate nohighlight">\(18\)</span>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>или</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У истој линији можеш комбиновати и декларацију и иницијализацију променљивих.</p>
+<p>Напиши програм у програмском језику C у којем ћеш иницијализовати целобројне
+променљиве са вредностима које представљају број година које ученици Тамара и
+Влада имају на данашњи дан (као у претходном програму) и у којем ћеш декларисати
+променљиве <code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">b</span></code> у којима ће се чувати године ученика Алисе и Боба.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>Целобројни константни подаци<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>У претходној лекцији научио си како се у програмском језику C записују подаци
+целобројног типа у декадном, окталном и хексадекадном систему, а у овој, како
+се декларишу и иницијализују целобројне променљиве. Променљиве могу да мењају
+вредност током извршавања програма, као што променљиве у математици мењају
+вредност током израде задатка.</p>
+<section id="id6">
+<h3>Целобројни константни податак<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p><strong>Константни податак</strong> <em>(енгл. constant)</em> је податак чија је вредност унапред
+задата у програму и не може се мењати током извршавања програма. Позитивна или
+негативна вредност целобројног константног податка може бити задата у окталном,
+декадном или хексадекадном бројевном систему - исто као и вредност целобројне
+променљиве.</p>
+<p>Целобројне константне податке можеш дефинисати на два начина, помоћу кључне
+речи <code class="docutils literal notranslate"><span class="pre">const</span></code> или коришћењем препроцесорске директиве <code class="docutils literal notranslate"><span class="pre">#define</span></code>.</p>
+<p>Општи облик дефиниције константног податка помоћу кључне речи <code class="docutils literal notranslate"><span class="pre">const</span></code> је:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>const tip identifikator = vrednost;
+</pre></div>
+</div>
+<p>где тип може бити основни целобројни тип <code class="docutils literal notranslate"><span class="pre">int</span></code> са или без <code class="docutils literal notranslate"><span class="pre">signed</span></code> или
+<code class="docutils literal notranslate"><span class="pre">unsigned</span></code>, и <code class="docutils literal notranslate"><span class="pre">short</span></code> или <code class="docutils literal notranslate"><span class="pre">long</span></code> модификатором.</p>
+<p>Напиши програм у програмском језику C у којем ћеш користити вредност брзине
+светлости у вакууму. Брзина светлости у вакууму је физичка константа чија се
+вредност не мења <span class="math notranslate nohighlight">\(c=299792458ms^{−1}\)</span>. То значи да <span class="math notranslate nohighlight">\(c\)</span> требаш дефинисати као
+константни податак, а не као променљиву.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">299792458</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Константним подацима вредности мораш доделити у тренутку дефинисања -
+константни податак није могуће прво декларисати, а касније иницијализовати.</p>
+<p>Због тога је следеће решење претходног задатка погрешно и изазваће грешку током
+компајлирања.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">299792458</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Такође, у току програма не можеш мењати вредност константног податка па ће се и
+у следећем програму јавити грешка током компајлирања.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">299792458</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3>Симболичке целобројне константе<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>Kонстанта дефинисана препроцесорском директивом <code class="docutils literal notranslate"><span class="pre">#define</span></code> назива се симболичка
+константа. Општи облик дефиниције симболичке константе је:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#define IDENTIFIKATOR vrednost
+</pre></div>
+</div>
+<p>Препорука је по конвенцији, али не синтаксно правило, да се идентификатори
+симболичких константи пишу великим словима. Ако се идентификатор симболичке
+константе састоји из више речи, онда се речи раздвајају знаком <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+<p>Претходни задатак у програмском језику C могао си да решиш дефиницијом
+симболичке константе <code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#define BRZINA_SVETLOSTI_U_VAKUUMU 299792458</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Можеш приметити да у општем облику дефиниције симболичке константе нигде није
+наведен тип. То значи да вредност симболичке константе може бити цео број, знак
+или реалан број - препроцесор ће сам одредити о ком типу податка је реч.
+Пошто се не наводи тип, не могу се наводити ни модификатори. Целобројне
+симболичке константе подразумевано се смештају у меморијске локације величине 4
+бајта, а ако то није довољно, величина меморијске локације аутоматски ће се
+повећати на 8.</p>
+<p>Симболичка константа назива се <em>симболичка</em> јер се њеним идентификатором,
+односно симболом (који се назива и макро), замењује нека вредност. У претходном
+примеру, целобројна вредност <span class="math notranslate nohighlight">\(299792458\)</span> замењена је <em>симболом</em>
+<code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code>. Након дефиниције симболичке константе, њен
+идентификатор можеш користити било где у програму уместо вредности.</p>
+<p>Напиши програм у програмском језику C у којем ћеш дефинисати симболичку
+константу <code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code> доделивши јој вредност <span class="math notranslate nohighlight">\(299792458\)</span>, па
+након тога, дефиниши константи целобројни податак <code class="docutils literal notranslate"><span class="pre">c</span></code> и додели му вредност
+<code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#define BRZINA_SVETLOSTI_U_VAKUUMU 299792458</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BRZINA_SVETLOSTI_U_VAKUUMU</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Дефиницију симболичке константе можеш да поништиш препроцесорском директивом
+<code class="docutils literal notranslate"><span class="pre">#undef</span></code>, а да ли је нека константа дефинисана или није, можеш да провериш
+препроцесорским директивана <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">defined()</span></code>, <code class="docutils literal notranslate"><span class="pre">#else</span></code> и <code class="docutils literal notranslate"><span class="pre">#endif</span></code>.</p>
+<p>Напиши програм у програмском језику C у којем ћеш дефинисати симболичку
+константу <code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code> као у претходним примерима. У функцији
+<code class="docutils literal notranslate"><span class="pre">main()</span></code> провери да ли је симболичка константа дефинисана и на крају поништи
+њену дефиницију.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#define BRZINA_SVETLOSTI_U_VAKUUMU 299792458</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if defined(BRZINA_SVETLOSTI_U_VAKUUMU)</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Definisana je&quot;</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Nije definisana&quot;</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="cp">#undef BRZINA_SVETLOSTI_U_VAKUUMU</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Извршавањем програма на стандардном излазу исписаће се:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Definisana je
+</pre></div>
+</div>
+<p>Извршавањем следећег програма:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#define BRZINA_SVETLOSTI_U_VAKUUMU 299792458</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#undef BRZINA_SVETLOSTI_U_VAKUUMU</span>
+<span class="cp">#if defined(BRZINA_SVETLOSTI_U_VAKUUMU)</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Definisana je&quot;</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Nije definisana&quot;</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>на стандардном излазу исписаће се:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Nije definisana
+</pre></div>
+</div>
+<p>јер је дефиниција поништена пре провере.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="celobrojni_io.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Унос и приказ целих бројева</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="celobrojni_tip.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Целобројни тип података</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Фондација Петља
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Целобројни променљиви и непроменљиви подаци</a><ul>
+<li><a class="reference internal" href="#id2">Декларација целобројних променљивих</a></li>
+<li><a class="reference internal" href="#id3">Модификатори</a></li>
+<li><a class="reference internal" href="#id4">Иницијализација целобројних променљивих</a></li>
+<li><a class="reference internal" href="#id5">Целобројни константни подаци</a><ul>
+<li><a class="reference internal" href="#id6">Целобројни константни податак</a></li>
+<li><a class="reference internal" href="#id7">Симболичке целобројне константе</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
