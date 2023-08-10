@@ -1,7 +1,7 @@
 # Задаци: Логички оператори
 
 Алгоритми и програми у програмском језику C:
-[релацијски оператори](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/01%20Jednostavno%20grananje/02%20logicki_operatori).
+[логички оператори](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/01%20Jednostavno%20grananje/02%20logicki_operatori).
 
 (radno_vreme-target)=
 
