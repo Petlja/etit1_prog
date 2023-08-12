@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -262,7 +262,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pravilne_serije.html">Итерација кроз правилне серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ucitavanje.html">Учитавање серија бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_preslikavanje.html">Пресликавање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_elementarne_statistike.html">Елементарне статистике</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_filtriranje.html">Филтрирање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_maksimum_minumum.html">Минимум и максимум</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pretraga.html">Линеарна претрага</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_cifre_broja.html">Позициони запис броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_odnos_susednih_elemenata_serije.html">Однос суседних елемената серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_kombinatorni_objekti.html">Генерисање свих могућности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_segmenti.html">Сви подсегменти серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ASCII_crtezi.html">Цртежи помоћу карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_razno.html">Генерисање неких правилних серија</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_podserije.html">Подсерије</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -317,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -325,6 +338,193 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Лексикографско поређење торки<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/02%20Ugnezdjeno%20grananje/03%20leksikografsko">лексикографско поређење торки</a>.</p>
+<section id="id2">
+<h2>Пунолетство<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/punoletstvo">текст задатка</a>.</p>
+<p>У задатку се захтева поређење два датума - датума који је тачно 18 година након
+године рођења и задатог датума у којем се испитује пунолетство. Ако се датуми
+представе уређеним тројкама облика <span class="math notranslate nohighlight">\((g,m,d)\)</span> тада се поређење датума своди на
+лексикографско поређење ових уређених тројки. Постоје различити начини да се то
+уради.</p>
+<p>Особа рођена на дан <span class="math notranslate nohighlight">\((d_r,m_r,g_r)\)</span> биће пунолетна (имати пуних <span class="math notranslate nohighlight">\(18\)</span> година) на
+дан <span class="math notranslate nohighlight">\((d,m,g)\)</span>:</p>
+<ul class="simple">
+<li><p>ако је <span class="math notranslate nohighlight">\(g_r+18&lt;g\)</span>, или;</p></li>
+<li><p>ако је <span class="math notranslate nohighlight">\(g_r+18=g\)</span>, али и <span class="math notranslate nohighlight">\(m_r&lt;m\)</span>, или;</p></li>
+<li><p>ако је <span class="math notranslate nohighlight">\(g_r+18=g\)</span> и <span class="math notranslate nohighlight">\(m_r=m\)</span>, али и <span class="math notranslate nohighlight">\(d_r\leq d\)</span>.</p></li>
+</ul>
+<p>Дакле, на основу овога могуће је формирати сложени логички израз који одређује
+да ли је особа пунолетна.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d1</span><span class="p">,</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="n">d2</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">g2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">g2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">g2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="p">(</span><span class="n">g2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">m1</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="p">(</span><span class="n">g2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">d1</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;DA&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;NE&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Постоји могућност да се поређење тројки реализује угнежђеним (хијерархијским)
+гранањем којим може да се утврди да ли је прва тројка лексикографски испред
+друге, да ли је иза ње или да ли су тројке једнаке. Такво лексикографско
+поређење почиње поређењем прве компоненте (у овом случају године). Ако је
+година у првом датуму мања од године у другом датуму онда је први датум пре
+другог, ако је година у првом датуму већа од године у другом датуму онда је
+први датум после другог, а ако су године једнаке, наставља се поређење наредних
+компоненти (месеци, евентуално и дана) по истом принципу. Приликом поређења
+могуће је постављати вредност променљиве која чува резултат поређења.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d1</span><span class="p">,</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="n">d2</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">g2</span><span class="p">,</span><span class="w"> </span><span class="n">punoletan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">g2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span>
+<span class="w">        </span><span class="n">punoletan</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">g1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">m1</span><span class="p">)</span>
+<span class="w">            </span><span class="n">punoletan</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">d1</span><span class="p">)</span>
+<span class="w">                </span><span class="n">punoletan</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">punoletan</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;DA&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;NE&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Бољи у две дисциплине<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/bolji_u_dve_discipline">текст задатка</a>.</p>
+<p>Сваки такмичар је представљен уређеним паром бројева (поенима из математике и
+програмирања) и потребно је одредти већи од два уређена пара, при чему је
+релација поретка међу тим паровима одређена условима задатка (пореди се прво
+укупан број поена, па онда поени из програмирања). Ово је класичан пример
+релације лексикографског поређења.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">pobednik</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">m2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">pobednik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">m2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">))</span>
+<span class="w">        </span><span class="n">pobednik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">pobednik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">pobednik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pobednik</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Поређење се може реализовати и помоћу сложеног логичког израза.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">pobednik</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">m2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">m2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">pobednik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span>
+<span class="w">        </span><span class="n">pobednik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pobednik</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Ко је пре стигао<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/ko_je_pre_stigao">текст задатка</a>.</p>
+<p>Најједноставнији начин да се задатак уради је да се оба времена претворе у број
+секунди протеклих од почетка дана и да се затим упореди број секунди са три
+могућа исхода (најбоље конструкцијом <code class="docutils literal notranslate"><span class="pre">else-if</span></code>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">hp</span><span class="p">,</span><span class="w"> </span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="n">sp</span><span class="p">,</span><span class="w"> </span><span class="n">hm</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="p">,</span><span class="w"> </span><span class="n">sm</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hp</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sp</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sm</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">hp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sp</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">hm</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mm</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sm</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pera&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">hm</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mm</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sm</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">hp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sp</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Mika&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;istovremeno&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Времена могу да се упореде тако што ће се упоредити прво сат, затим, ако је сат
+једнак, минут и на крају, ако је и минут једнак онда секунд доласка. Ово је
+лексикографско поређење (у овом случају уређених тројки) у којем се прво пореде
+почетни подаци, ако су они једнаки прелази се на поређење следећих података и
+тако даље.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">hp</span><span class="p">,</span><span class="w"> </span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="n">sp</span><span class="p">,</span><span class="w"> </span><span class="n">hm</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="p">,</span><span class="w"> </span><span class="n">sm</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hp</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mp</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sp</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sm</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hm</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pera&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">hm</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Mika&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mm</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pera&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">mm</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Mika&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sm</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pera&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">sm</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Mika&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;istovremeno&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -370,8 +570,29 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Лексикографско поређење торки</a><ul>
+<li><a class="reference internal" href="#id2">Пунолетство</a></li>
+<li><a class="reference internal" href="#id3">Бољи у две дисциплине</a></li>
+<li><a class="reference internal" href="#id4">Ко је пре стигао</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -384,5 +605,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

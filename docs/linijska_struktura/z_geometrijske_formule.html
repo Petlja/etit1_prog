@@ -262,7 +262,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pravilne_serije.html">Итерација кроз правилне серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ucitavanje.html">Учитавање серија бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_preslikavanje.html">Пресликавање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_elementarne_statistike.html">Елементарне статистике</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_filtriranje.html">Филтрирање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_maksimum_minumum.html">Минимум и максимум</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pretraga.html">Линеарна претрага</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_cifre_broja.html">Позициони запис броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_odnos_susednih_elemenata_serije.html">Однос суседних елемената серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_kombinatorni_objekti.html">Генерисање свих могућности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_segmenti.html">Сви подсегменти серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ASCII_crtezi.html">Цртежи помоћу карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_razno.html">Генерисање неких правилних серија</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_podserije.html">Подсерије</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -468,8 +481,8 @@
 </div>
 </div>
 </section>
-<section id="rastojanje-tacaka-target">
-<span id="id6"></span><h2>Растојање тачака<a class="headerlink" href="#rastojanje-tacaka-target" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2>Растојање тачака<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/rastojanje_tacaka">текст задатка</a>.</p>
 <a class="reference internal image-reference" href="../_images/rastojanje_tacaka.jpg"><img alt="Растојање тачака" class="align-center" src="../_images/rastojanje_tacaka.jpg" style="width: 50%;" /></a>
 <p>Посматрајмо тачку <span class="math notranslate nohighlight">\(C\)</span> која има координате <span class="math notranslate nohighlight">\((B_x,A_y)\)</span>. Троугао <span class="math notranslate nohighlight">\(ABC\)</span> је
@@ -518,8 +531,7 @@
 <p>Један начин је да применимо Херонов образац
 <span class="math notranslate nohighlight">\(P=\sqrt{s\cdot(s-a)\cdot(s-b)\cdot(s-c)}\)</span>, где су <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> и <span class="math notranslate nohighlight">\(c\)</span> дужине
 страница троугла, а <span class="math notranslate nohighlight">\(s=(a+b+c)/2\)</span> његов полуобим. Дужине страница можемо
-израчунати као растојање између темена троугла, применом Питагорине теореме,
-како је то показано у задатку <a class="reference internal" href="#rastojanje-tacaka-target">Растојање тачака</a>.
+израчунати као растојање између темена троугла, применом Питагорине теореме.
 Мана овог решења је то што се у њему користи квадратни корен, иако се до решења
 може доћи и без кореновања.</p>
 <div class="tip admonition">
@@ -619,19 +631,17 @@
 <section id="id11">
 <h2>Правоугаоник дат наспрамним теменима<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/pravougaonik_dat_naspramnim_temenima">текст задатка</a>.</p>
-<p>Странице правоугаоника су паралелне координатним осама. Дужину дужи паралелних
-<span class="math notranslate nohighlight">\(x\)</span> тј. <span class="math notranslate nohighlight">\(y\)</span>-оси већ смо рачунали у задатку <a class="reference internal" href="#rastojanje-tacaka-target">Растојање тачака</a>
-и опет можемо употребити исту технику. Дужине страница једнаке су дужинама
-интервала праве који се добијају кад се правоугаоник пројектује на <span class="math notranslate nohighlight">\(x\)</span>, односно
-на <span class="math notranslate nohighlight">\(y\)</span>-осу. Пројекцијом правоугаоника на <span class="math notranslate nohighlight">\(x\)</span>-осу добијамо интервал чије су
-границе <span class="math notranslate nohighlight">\(x\)</span>-координате наспрамних темена. Ако наспрамна темена правоугаоника
-имају координате <span class="math notranslate nohighlight">\((x_1,y_1)\)</span> и <span class="math notranslate nohighlight">\((x_2,y_2)\)</span>, интервал добијен пројекцијом на
-<span class="math notranslate nohighlight">\(x\)</span>-осу је интервал <span class="math notranslate nohighlight">\([x_1,x_2]\)</span> или интервал <span class="math notranslate nohighlight">\([x_2,x_1]\)</span> у зависности да ли је
-<span class="math notranslate nohighlight">\(x_1&lt;x_2\)</span> или је <span class="math notranslate nohighlight">\(x_1&gt;x_2\)</span>. Дужина добијеног интервала, односно дужина странице
-<span class="math notranslate nohighlight">\(a\)</span> правоугаоника је <span class="math notranslate nohighlight">\(x_2-x_1\)</span> ако је <span class="math notranslate nohighlight">\(x_1&lt;x_2\)</span>, односно <span class="math notranslate nohighlight">\(x_1-x_2\)</span> ако је
-<span class="math notranslate nohighlight">\(x_1&gt;x_2\)</span>. Према томе дужину странице <span class="math notranslate nohighlight">\(a\)</span> можемо добити као апсолутну разлику
-<span class="math notranslate nohighlight">\(x\)</span>-координата наспрамних темена правоугаоника (<span class="math notranslate nohighlight">\(a=|x_2-x_1|\)</span>). Слично добијамо
-и дужину странице <span class="math notranslate nohighlight">\(b\)</span> (<span class="math notranslate nohighlight">\(b=|y_2-y_1|\)</span>).</p>
+<p>Странице правоугаоника су паралелне координатним осама. Дужине страница једнаке
+су дужинама интервала праве који се добијају кад се правоугаоник пројектује на
+<span class="math notranslate nohighlight">\(x\)</span>, односно на <span class="math notranslate nohighlight">\(y\)</span>-осу. Пројекцијом правоугаоника на <span class="math notranslate nohighlight">\(x\)</span>-осу добијамо интервал
+чије су границе <span class="math notranslate nohighlight">\(x\)</span>-координате наспрамних темена. Ако наспрамна темена
+правоугаоника имају координате <span class="math notranslate nohighlight">\((x_1,y_1)\)</span> и <span class="math notranslate nohighlight">\((x_2,y_2)\)</span>, интервал добијен
+пројекцијом на <span class="math notranslate nohighlight">\(x\)</span>-осу је интервал <span class="math notranslate nohighlight">\([x_1,x_2]\)</span> или интервал <span class="math notranslate nohighlight">\([x_2,x_1]\)</span> у
+зависности да ли је <span class="math notranslate nohighlight">\(x_1&lt;x_2\)</span> или је <span class="math notranslate nohighlight">\(x_1&gt;x_2\)</span>. Дужина добијеног интервала,
+односно дужина странице <span class="math notranslate nohighlight">\(a\)</span> правоугаоника је <span class="math notranslate nohighlight">\(x_2-x_1\)</span> ако је <span class="math notranslate nohighlight">\(x_1&lt;x_2\)</span>,
+односно <span class="math notranslate nohighlight">\(x_1-x_2\)</span> ако је <span class="math notranslate nohighlight">\(x_1&gt;x_2\)</span>. Према томе дужину странице <span class="math notranslate nohighlight">\(a\)</span> можемо
+добити као апсолутну разлику <span class="math notranslate nohighlight">\(x\)</span>-координата наспрамних темена правоугаоника
+(<span class="math notranslate nohighlight">\(a=|x_2-x_1|\)</span>). Слично добијамо и дужину странице <span class="math notranslate nohighlight">\(b\)</span> (<span class="math notranslate nohighlight">\(b=|y_2-y_1|\)</span>).</p>
 <p>После одрeђивања дужина страница <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span> применом одговарајућих формула
 израчунавамо обим (<span class="math notranslate nohighlight">\(O=2\cdot(a+b)\)</span>) и површину (<span class="math notranslate nohighlight">\(P=a\cdot{b}\)</span>) правоугаоника.
 Дијагоналу правоугаоника можемо израчунати применом Питагорине теореме која
@@ -685,8 +695,6 @@
 <li><p>хипотенуза <span class="math notranslate nohighlight">\(MN\)</span>, означимо је са <span class="math notranslate nohighlight">\(hipotenuza\)</span>, на основу Питагорине теореме,
 има дужину <span class="math notranslate nohighlight">\(\sqrt{katetaX^2+katetaY^2}\)</span></p></li>
 </ul>
-<p>Подсетимо се, рачунање растојања између тачака чије су координате познате и
-Питагорину теорему описали смо у задатку <a class="reference internal" href="#rastojanje-tacaka-target">Растојање тачака</a>.</p>
 <p>Према томе, површина троугла је <span class="math notranslate nohighlight">\(\frac{katetaX\cdot{katetaY}}{2}\)</span> (јер је свака
 катета уједно и висина правоуглог троугла), а обим
 <span class="math notranslate nohighlight">\(katetaX+katetaY+hipotenuza\)</span>.</p>
@@ -774,7 +782,7 @@
 <li><a class="reference internal" href="#id3">Лист папира</a></li>
 <li><a class="reference internal" href="#id4">Столњак</a></li>
 <li><a class="reference internal" href="#id5">Фудбалски терен</a></li>
-<li><a class="reference internal" href="#rastojanje-tacaka-target">Растојање тачака</a></li>
+<li><a class="reference internal" href="#id6">Растојање тачака</a></li>
 <li><a class="reference internal" href="#id7">Површина троугла датих темена</a><ul>
 <li><a class="reference internal" href="#id8">Херонов образац</a></li>
 <li><a class="reference internal" href="#id9">Формула пертле</a></li>

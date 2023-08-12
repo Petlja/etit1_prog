@@ -262,7 +262,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pravilne_serije.html">Итерација кроз правилне серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ucitavanje.html">Учитавање серија бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_preslikavanje.html">Пресликавање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_elementarne_statistike.html">Елементарне статистике</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_filtriranje.html">Филтрирање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_maksimum_minumum.html">Минимум и максимум</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pretraga.html">Линеарна претрага</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_cifre_broja.html">Позициони запис броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_odnos_susednih_elemenata_serije.html">Однос суседних елемената серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_kombinatorni_objekti.html">Генерисање свих могућности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_segmenti.html">Сви подсегменти серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ASCII_crtezi.html">Цртежи помоћу карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_razno.html">Генерисање неких правилних серија</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_podserije.html">Подсерије</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -357,8 +370,8 @@
 </div>
 </div>
 </section>
-<section id="vrsta-i-kolona-target">
-<span id="id3"></span><h2>Врста и колона<a class="headerlink" href="#vrsta-i-kolona-target" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2>Врста и колона<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/vrsta_i_kolona">текст задатка</a>.</p>
 <p>Ако се спортиста са редним бројем <span class="math notranslate nohighlight">\(x\)</span> налази у врсти <span class="math notranslate nohighlight">\(v\)</span> и колони <span class="math notranslate nohighlight">\(k\)</span> тада се
 испред њега налази <span class="math notranslate nohighlight">\((v-1)\cdot{5}\)</span> спортиста из претходних врста и <span class="math notranslate nohighlight">\(k-1\)</span>
@@ -423,16 +436,14 @@
 одредимо редни број врсте <span class="math notranslate nohighlight">\(v\)</span>, а затим и редни број колоне <span class="math notranslate nohighlight">\(k\)</span> (оба редна броја
 бројимо од нуле до два и то почевши од доњег левог квадрта, па надесно тј.
 навише). Тада редни број квадрата можемо добити као <span class="math notranslate nohighlight">\(3v+k+1\)</span> (јер се квадрати
-броје од 1), на сличан начин као у задатку
-<a class="reference internal" href="#vrsta-i-kolona-target"><span class="std std-ref">Врста и колона</span></a>. Редни број врсте и колоне можемо
-одредити целобројним дељењем. Ако је дужину странице означимо са <span class="math notranslate nohighlight">\(a=100\)</span>, тада
-су <span class="math notranslate nohighlight">\(x\)</span> координате пиксела који припадају врсти <span class="math notranslate nohighlight">\(0\)</span> између <span class="math notranslate nohighlight">\(1\)</span> и <span class="math notranslate nohighlight">\(a\)</span>, координате
-пиксела који припадају врсти <span class="math notranslate nohighlight">\(1\)</span> су између <span class="math notranslate nohighlight">\(a+1\)</span> и <span class="math notranslate nohighlight">\(2a\)</span>, а врсти <span class="math notranslate nohighlight">\(3\)</span> су између
-<span class="math notranslate nohighlight">\(2a+1\)</span> и <span class="math notranslate nohighlight">\(3a\)</span>. Ако пиксел има x-координату једнаку <span class="math notranslate nohighlight">\(x\)</span>, редни број колоне је
-највећи број <span class="math notranslate nohighlight">\(k\)</span> такав да је <span class="math notranslate nohighlight">\(k\cdot{a}+1\leq{x}\)</span>, тј. да је
-<span class="math notranslate nohighlight">\(k\leq\frac{x-1}{a}\)</span>, па знамо да је <span class="math notranslate nohighlight">\(k=\lfloor{\frac{x-1}{a}}\rfloor\)</span>. Слично,
-ако је y-координата пиксела једнака <span class="math notranslate nohighlight">\(y\)</span>, број врсте је
-<span class="math notranslate nohighlight">\(v=\lfloor{\frac{y-1}{a}}\rfloor\)</span>.</p>
+броје од 1). Редни број врсте и колоне можемо одредити целобројним дељењем. Ако
+је дужину странице означимо са <span class="math notranslate nohighlight">\(a=100\)</span>, тада су <span class="math notranslate nohighlight">\(x\)</span> координате пиксела који
+припадају врсти <span class="math notranslate nohighlight">\(0\)</span> између <span class="math notranslate nohighlight">\(1\)</span> и <span class="math notranslate nohighlight">\(a\)</span>, координате пиксела који припадају врсти
+<span class="math notranslate nohighlight">\(1\)</span> су између <span class="math notranslate nohighlight">\(a+1\)</span> и <span class="math notranslate nohighlight">\(2a\)</span>, а врсти <span class="math notranslate nohighlight">\(3\)</span> су између <span class="math notranslate nohighlight">\(2a+1\)</span> и <span class="math notranslate nohighlight">\(3a\)</span>. Ако пиксел има
+x-координату једнаку <span class="math notranslate nohighlight">\(x\)</span>, редни број колоне је највећи број <span class="math notranslate nohighlight">\(k\)</span> такав да је
+<span class="math notranslate nohighlight">\(k\cdot{a}+1\leq{x}\)</span>, тј. да је <span class="math notranslate nohighlight">\(k\leq\frac{x-1}{a}\)</span>, па знамо да је
+<span class="math notranslate nohighlight">\(k=\lfloor{\frac{x-1}{a}}\rfloor\)</span>. Слично, ако је y-координата пиксела једнака
+<span class="math notranslate nohighlight">\(y\)</span>, број врсте је <span class="math notranslate nohighlight">\(v=\lfloor{\frac{y-1}{a}}\rfloor\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Предложено решење задатка</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
@@ -511,7 +522,7 @@
             <ul>
 <li><a class="reference internal" href="#">Задаци: Појам целобројног количника и остатка</a><ul>
 <li><a class="reference internal" href="#id2">Разломак у мешовит број</a></li>
-<li><a class="reference internal" href="#vrsta-i-kolona-target">Врста и колона</a></li>
+<li><a class="reference internal" href="#id3">Врста и колона</a></li>
 <li><a class="reference internal" href="#id4">Шаховска табла број црних поља</a></li>
 <li><a class="reference internal" href="#id5">Икс-окс</a></li>
 </ul>

@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -262,7 +262,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pravilne_serije.html">Итерација кроз правилне серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ucitavanje.html">Учитавање серија бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_preslikavanje.html">Пресликавање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_elementarne_statistike.html">Елементарне статистике</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_filtriranje.html">Филтрирање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_maksimum_minumum.html">Минимум и максимум</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pretraga.html">Линеарна претрага</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_cifre_broja.html">Позициони запис броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_odnos_susednih_elemenata_serije.html">Однос суседних елемената серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_kombinatorni_objekti.html">Генерисање свих могућности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_segmenti.html">Сви подсегменти серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ASCII_crtezi.html">Цртежи помоћу карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_razno.html">Генерисање неких правилних серија</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_podserije.html">Подсерије</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -317,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -325,6 +338,495 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Логички оператори<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/01%20Jednostavno%20grananje/02%20logicki_operatori">логички оператори</a>.</p>
+<section id="id2">
+<h2>Радно време<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/radno_vreme">текст задатка</a>.</p>
+<p>Мејл је стигао током радног времена ако и само ако је сат у интервалу <span class="math notranslate nohighlight">\([9,17)\)</span>
+тј. ако је већи или једнак <span class="math notranslate nohighlight">\(9\)</span> и строго мањи од <span class="math notranslate nohighlight">\(17\)</span> (број минута је небитан).</p>
+<p>Иако математичка нотација допушта да се запише услов <span class="math notranslate nohighlight">\(a\leq c&lt;b\)</span>, у програмским
+језицима такав запис најчешће није исправан. То је случај и у језику C и тај
+услов треба записати као <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">c</span> <span class="pre">&amp;&amp;</span> <span class="pre">c</span> <span class="pre">&lt;</span> <span class="pre">b</span></code>. Додатно, треба бити веома обазрив
+јер је израз <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">c</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> синтаксно исправан, али даје погрешну вредност (овде
+се истинитосна вредност израза <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">c</span></code> тумачи као бројевна вредност 0 или 1 и
+она се онда пореди са бројевном вредношћу <code class="docutils literal notranslate"><span class="pre">b</span></code>).</p>
+<p>Наравно, слично бисмо поступили и у случају потпуно отворених или потпуно
+затворених интервала, једино треба правилно одабрати одговарајући релацијски
+оператор (<span class="math notranslate nohighlight">\(&lt;\)</span> или <span class="math notranslate nohighlight">\(\leq\)</span>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sat</span><span class="p">,</span><span class="w"> </span><span class="n">minut</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sat</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">minut</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">17</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Кућни ред<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/kucni_red">текст задатка</a>.</p>
+<p>Једно решење можемо засновати на томе да су радови дозвољени ако и само ако сат
+припада интервалу <span class="math notranslate nohighlight">\([6,13)\)</span> или <span class="math notranslate nohighlight">\([17,22)\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sat</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sat</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="mi">6</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="mi">17</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">22</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;moze&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne moze&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Друго решење можемо засновати на томе да радови нису дозвољени ако и само ако
+је сат мањи од шест, ако припада интервалу <span class="math notranslate nohighlight">\([13,17)\)</span> или је већи или једнак
+<span class="math notranslate nohighlight">\(22\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sat</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sat</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="mi">13</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">17</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">sat</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">22</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne moze&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;moze&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Постоји ли троугао датих дужина страница<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/postoji_li_trougao_datih_duzina_stranica">текст задатка</a>.</p>
+<p>Познато је да је дужина сваке странице троугла мања од збира дужина друге две
+странице (ова особина се назива <em>неједнакост троугла</em>). Да би троугао са
+дужинама страница <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> и <span class="math notranslate nohighlight">\(c\)</span> постојао, довољно је да важи <span class="math notranslate nohighlight">\(a&lt;b+c\)</span>, <span class="math notranslate nohighlight">\(b&lt;a+c\)</span>
+и <span class="math notranslate nohighlight">\(c&lt;a+b\)</span>. Ако важе сва три услова постоји троугао са датим страницама, иначе
+не постоји такав троугао.  Бројеви <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> и <span class="math notranslate nohighlight">\(c\)</span> су по претпоставци задатка
+позитивни, тако да тај услов није неопходно посебно проверавати.</p>
+<p>Напоменимо и да се неједнакост троугла некада помиње и у облику у којем се
+тражи да је разлика дужина сваке две странице мања од дужине треће странице,
+но, тај услов није потребно посебно проверавати јер он следи из услова за збир
+страница (на пример, ако се покаже да је <span class="math notranslate nohighlight">\(a&lt;b+c\)</span>, тада важи и да је <span class="math notranslate nohighlight">\(a-b&lt;c\)</span> и
+да је <span class="math notranslate nohighlight">\(a-c&lt;b\)</span>).</p>
+<p>Пошто сва три услова треба да важе, могуће је повезати их оператором логичке
+конјункције (оператором <em>И</em> тј. <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>Преступна година<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/prestupna_godina">текст задатка</a>.</p>
+<p>По грегоријанском календару, који је у званичној употреби, година је преступна
+ако је дељива са 4, а није дељива са 100 или је дељива са 400. Тиме се постиже
+да је на 400 година тачно 97 преступних и да је трајање једне године 365,2425
+дана, што је веома блиску трајању астрономске године. Проверу дељивости вршимо
+израчунавајући остатак при дељењу и провером да ли је он једнак нули.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">godina</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">godina</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">godina</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">godina</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">godina</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="istog-znaka-target">
+<span id="id6"></span><h2>Два броја истог знака<a class="headerlink" href="#istog-znaka-target" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/dva_broja_istog_znaka">текст задатка</a>.</p>
+<p>Бројеви <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span> истог су знака ако су оба позитивна (<span class="math notranslate nohighlight">\(a&gt;0\)</span> и <span class="math notranslate nohighlight">\(b&gt;0\)</span>) или оба
+негативна (<span class="math notranslate nohighlight">\(a&lt;0\)</span> и <span class="math notranslate nohighlight">\(b&lt;0\)</span>), па задатак можемо решити постављањем тих услова.
+Подсетимо се да у језику C везник <em>и</em> можемо записати оператором логичке
+конјункције <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, а везник <em>или</em> можемо записати оператором логичке дисјункције
+<code class="docutils literal notranslate"><span class="pre">||</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Још елегантније решење је да се услов да су два броја истог знака искаже као
+<span class="math notranslate nohighlight">\(a&gt;0\Leftrightarrow b&gt;0\)</span> тј. да је број <span class="math notranslate nohighlight">\(a\)</span> позитиван ако и само ако је број
+<span class="math notranslate nohighlight">\(b\)</span> позитиван (то је оправдано јер бројеви нису једнаки нули). У програмским
+језицима не постоји посебан оператор еквиваленције, међутим, еквиваленција две
+логичке вредности се може заправо испитати њиховим поређењем оператором <code class="docutils literal notranslate"><span class="pre">==</span></code>.
+Једнакост два логичка израза ће бити тачна ако су оба израза тачна или ако су
+оба израза нетачна, што је управо исто оно што је семантика њихове
+еквиваленције.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Један трик да лако испитамо да ли су два броја истог знака је да приметимо то
+да су бројеви, различити од нуле, истог знака ако и само ако је њихов производ
+већи од 0. Према томе довољно је проверити да ли је <span class="math notranslate nohighlight">\(a\cdot b&gt;0\)</span>. При томе
+морамо бити обазриви да ли производ бројева не доводи до прекорачења. У нашем
+задатку до прекорачења неће доћи јер су бројеви <span class="math notranslate nohighlight">\(a,b\)</span> из интервала
+<span class="math notranslate nohighlight">\([-10^4,10^4]\)</span> па је њихов производ у интервалу <span class="math notranslate nohighlight">\([-10^8,10^8]\)</span> што може да се
+региструје коришћењем целобројног типа податка.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (3)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Исти квадрант<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/isti_kvadrant">текст задатка</a>.</p>
+<p>Да тачке на осама нису обухваћене задатком или да је формулација била таква да
+осе не припадају ниједном квадранту могло би се рећи да су две тачке
+<span class="math notranslate nohighlight">\(A(x_1,y_1)\)</span>, <span class="math notranslate nohighlight">\(B(x_2,y_2)\)</span> у истом квадранту ако су њихове <span class="math notranslate nohighlight">\(x\)</span> координате истог
+знака (истовремено стриктно позитивне или истовремено стриктно негативне) и ако
+су њихове <span class="math notranslate nohighlight">\(y\)</span> координате истог знака. Међутим, чињеница да су осе обухваћене и
+да припадају квадрантима који их додирују захтевају мало прилагођавање.</p>
+<p>Можемо приметити да тачке припадају истом квадранту ако су истовремено испуњени
+следећи услови:</p>
+<ul class="simple">
+<li><p>њихове <span class="math notranslate nohighlight">\(x\)</span> координате су обе позитивне, или обе негативне, или је нека од њих
+једнака 0</p></li>
+<li><p>њихове <span class="math notranslate nohighlight">\(y\)</span> координате су обе позитивне, или обе негативне, или је нека од њих
+једнака 0</p></li>
+</ul>
+<p>Дакле, задатак се може решити испитивањем истинитосне вредности следећег
+израза.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\left(x_1=0 \ \vee \ x_2=0 \ \vee \ (x_1&gt;0 \ \wedge \ x_2&gt;0) \ \vee \ (x_1&lt;0 \ \wedge \ x_2&lt;0)\right)&amp; \ \wedge \ \\
+\left(y_1=0 \ \vee \ y_2=0 \ \vee \ (y_1&gt;0 \ \wedge \ y_2&gt;0) \ \vee \ (y_1&lt;0 \ \wedge \ y_2&lt;0\right))
+\end{align*}\end{split}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">x1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Овај израз се може мало поједноставити на разне начине.</p>
+<p>На пример, можемо приметити да су тачке у истом квадранту ако су њихове <span class="math notranslate nohighlight">\(x\)</span>
+координате истог знака или је једна од њих 0, и ако су <span class="math notranslate nohighlight">\(y\)</span> координате истог
+знака или је једна од њих 0. Два броја <code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">b</span></code> су истог знака или је један од
+њих 0 ако важи да је</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a=0 \ \vee \ b=0 \ \vee \ (a&gt;0)\Leftrightarrow(b&gt;0)\]</div>
+</div>
+<p>што доводи до израза</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+(x_1 = 0 \ \vee\  x_2 = 0 \ \vee\  (x_1 &gt; 0) = (x_2 &gt; 0)) &amp; \ \wedge\ \\
+(y_1 = 0 \ \vee\  y_2 = 0 \ \vee\  (y_1 &gt; 0) = (y_2 &gt; 0))
+\end{align*}\end{split}\]</div>
+</div>
+<p>Напоменимо да услов</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a\geq 0 \ \Leftrightarrow b\geq 0\]</div>
+</div>
+<p>није одговарајући (на пример, ако <span class="math notranslate nohighlight">\(a\)</span> има вредност 0, а <span class="math notranslate nohighlight">\(b\)</span> има
+вредност -1, његова вредност је нетачно, што је супротно од онога што
+би требало да буде).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">x1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">x2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">y2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Можемо приметити да је полазни услов еквивалентан услову да су оба броја
+ненегативна или оба броја непозитивна.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(a\geq 0 \ \wedge \ b\geq 0) \ \vee \ (a\leq 0 \ \wedge \ b\leq 0)\]</div>
+</div>
+<p>Према томе задатак можемо решити испитивањем истинитосне вредности израза</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+((x_1\geq 0 \ \wedge \ x_2 \geq 0) \ \vee \ (x_1\leq 0 \ \wedge \ x_2\leq 0)) &amp; \ \wedge \ \\
+((y_1\geq 0 \ \wedge \ y_2 \geq 0) \ \vee \ (y_1\leq 0 \ \wedge \ y_2\leq 0))
+\end{align*}\end{split}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (3)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(((</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="p">((</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Приметимо даље и да тачке припадају истом квадаранту ако њихове <span class="math notranslate nohighlight">\(x\)</span> координате
+нису различитог знака и њихове <span class="math notranslate nohighlight">\(y\)</span> координате нису различитог знака. Бројеви
+<code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">b</span></code> су различитог знака ако је први позитиван а други негативан или први
+негативан или је први негативан тј. ако важи</p>
+<p><span class="math notranslate nohighlight">\((a&gt;0 \ \wedge \ b&lt;0) \ \vee \ (a&lt;0 \ \wedge \ b&gt;0)\)</span>$</p>
+<p>На основу овога задатак можемо решити и испитивањем вредности израза</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\neg((x_1&gt;0 \ \wedge \ x_2&lt;0) \ \vee \ (x_1&lt;0 \ \wedge \ x_2&gt;0))&amp; \ \wedge \ \\
+\neg((y_1&gt;0 \ \wedge \ y_2&lt;0) \ \vee \ (x_1&lt;0 \ \wedge \ x_2&gt;0))
+\end{align*}\end{split}\]</div>
+</div>
+<p>Напоменимо и да то што бројеви нису различитог знака не значи да су истог знака
+(јер је и вредност 0 укључена).</p>
+<p>Још један начин да се провера изврши је да се производ бројева упореди са
+нулом. Ако њихов производ није негативан тј. ако је већи или једнак нули
+(<span class="math notranslate nohighlight">\(x_1\cdot x_2\geq 0\)</span>) координате нису различитог знака. Слично извршимо
+проверу за <span class="math notranslate nohighlight">\(y\)</span> координте. Дакле, задатак се може решити следећим изразом</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_1\cdot x_2\geq 0 \ \wedge \ y_1\cdot y_2\geq 0\]</div>
+</div>
+<p>Напоменимо да иако је веома кратко и елегантно, ово решење се може користити
+ако смо сигурни да производ координата неће довести до прекорачења (што је
+случај у нашем задатку).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (4)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>Тачка у правоугаонику и кругу<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/tacka_u_pravougaoniku_i_krugu">текст задатка</a>.</p>
+<p>Тачка припада <span class="math notranslate nohighlight">\((x,y)\)</span> припада кругу са центром у <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> ако је њено
+растојање од центра круга мање или једнако полупречнику круга <span class="math notranslate nohighlight">\(r\)</span>. Растојање
+између тачака рачуна се применом Питагорине теореме. Дакле, потребно је
+испитати да ли важи да је <span class="math notranslate nohighlight">\(\sqrt{(x-x_0)^2+(y-y_0)^2}\leq r\)</span>, или, још
+једноставније, пошто су све величине ненегативне, њему еквивалентан услов
+<span class="math notranslate nohighlight">\((x-x_0)^2+(y-y_0)^2\leq r^2\)</span>.</p>
+<p>Правоугаоник се по <span class="math notranslate nohighlight">\(x\)</span>-координати простире између вредности <span class="math notranslate nohighlight">\(x_0-\frac{w}{2}\)</span> и
+<span class="math notranslate nohighlight">\(x_0+\frac{w}{2}\)</span>, док се по <span class="math notranslate nohighlight">\(y\)</span>-координати простире између вредности
+<span class="math notranslate nohighlight">\(y_0-\frac{h}{2}\)</span> и <span class="math notranslate nohighlight">\(y_0+\frac{h}{2}\)</span> (пројекција правоугаоника на осу <span class="math notranslate nohighlight">\(x\)</span> је
+интервал <span class="math notranslate nohighlight">\([x_0-\frac{w}{2},x_0+\frac{w}{2}]\)</span>, а на осу <span class="math notranslate nohighlight">\(y\)</span> интервал
+<span class="math notranslate nohighlight">\([y_0-\frac{h}{2},y_0+\frac{h}{2}]\)</span>). Тачка <span class="math notranslate nohighlight">\((x,y)\)</span> припадала правоугаонику ако
+и само ако њене пројекције на <span class="math notranslate nohighlight">\(x\)</span>-осу и <span class="math notranslate nohighlight">\(y\)</span>-осу припадају наведеним
+интервалима. Ако тачка на правој има координату <span class="math notranslate nohighlight">\(c\)</span> она припада интервалу
+<span class="math notranslate nohighlight">\([a,b]\)</span> ако и само ако је <span class="math notranslate nohighlight">\(a\leq c\leq b\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="n">y0</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%lf%lf%lf%lf%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">h</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;jeste u krugu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;nije u krugu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">y0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;jeste u pravougaoniku&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;nije u pravougaoniku&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2>Статус објављен током школе<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/status_u_skoli">текст задатка</a>.</p>
+<p>Да бисмо проверили да ли време објаве статуса припада времену од 8:30 до 13:50
+часова, најједноставније је да свако време преведемо у минуте. Задатак се онда
+своди на проверу дисјункције (операције <em>или</em> тј. <code class="docutils literal notranslate"><span class="pre">||</span></code>) три услова припадности
+интервалу.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">s3</span><span class="p">,</span><span class="w"> </span><span class="n">m3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m3</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(((</span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m1</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="mi">13</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">50</span><span class="p">))</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="p">((</span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="n">s2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">s2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="mi">13</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">50</span><span class="p">))</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="p">((</span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="n">s3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m3</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">s3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="mi">13</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">50</span><span class="p">)))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h2>Да ли се две даме нападају<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/da_li_se_dve_dame_napadaju">текст задатка</a>.</p>
+<p>Претпоставимо да се прва краљица налази на пољу <span class="math notranslate nohighlight">\((x_1,y_1)\)</span>, а друга на
+<span class="math notranslate nohighlight">\((x_2,y_2)\)</span>.</p>
+<p>Провера да ли се даме налазе у истој врсти или истој колони је веома
+једноставна (довољно је проверити да ли важи да је <span class="math notranslate nohighlight">\(x_1=x_2\)</span> или је <span class="math notranslate nohighlight">\(y_1=y_2\)</span>).
+Две даме се налазе на истој дијагонали ако и само ако је део дијагонале између
+њих хипотенуза једног једнакокраког правоуглог троугла (коме су катете
+паралелне ивицама табле). Тада је растојање између краљица по <span class="math notranslate nohighlight">\(x\)</span>-оси и по <span class="math notranslate nohighlight">\(y\)</span>
+оси једнако. Та два растојања су редом <span class="math notranslate nohighlight">\(|x_1-x_2|\)</span> и <span class="math notranslate nohighlight">\(|y_1-y_2|\)</span> и краљице су
+на истој дијагонали ако и само ако су она међусобно једнака.</p>
+<p>У језику C апсолутну вредност можемо израчунати библиотечком функцијом <code class="docutils literal notranslate"><span class="pre">abs</span></code>,
+декларисаној у заглављу <code class="docutils literal notranslate"><span class="pre">stdlib.h</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -370,8 +872,35 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Логички оператори</a><ul>
+<li><a class="reference internal" href="#id2">Радно време</a></li>
+<li><a class="reference internal" href="#id3">Кућни ред</a></li>
+<li><a class="reference internal" href="#id4">Постоји ли троугао датих дужина страница</a></li>
+<li><a class="reference internal" href="#id5">Преступна година</a></li>
+<li><a class="reference internal" href="#istog-znaka-target">Два броја истог знака</a></li>
+<li><a class="reference internal" href="#id7">Исти квадрант</a></li>
+<li><a class="reference internal" href="#id8">Тачка у правоугаонику и кругу</a></li>
+<li><a class="reference internal" href="#id9">Статус објављен током школе</a></li>
+<li><a class="reference internal" href="#id10">Да ли се две даме нападају</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -384,5 +913,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

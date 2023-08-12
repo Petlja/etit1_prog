@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -262,7 +262,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z.html">Задаци из збирке - IN PROGRESS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pravilne_serije.html">Итерација кроз правилне серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ucitavanje.html">Учитавање серија бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_preslikavanje.html">Пресликавање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_elementarne_statistike.html">Елементарне статистике</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_filtriranje.html">Филтрирање серије бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_maksimum_minumum.html">Минимум и максимум</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pretraga.html">Линеарна претрага</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_cifre_broja.html">Позициони запис броја</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_odnos_susednih_elemenata_serije.html">Однос суседних елемената серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_kombinatorni_objekti.html">Генерисање свих могућности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_segmenti.html">Сви подсегменти серије</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ASCII_crtezi.html">Цртежи помоћу карактера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_razno.html">Генерисање неких правилних серија</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_podserije.html">Подсерије</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -317,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -325,6 +338,572 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Минимум и максимум два броја<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/02%20Ugnezdjeno%20grananje/03%20minimum_i_maksimum">минимум и максимум два броја</a>.</p>
+<section id="id2">
+<h2>Куглице<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/kuglice">текст задатка</a>.</p>
+<p>Претпоставимо да је број црвених и плавих куглица у првој и другој кутији
+<span class="math notranslate nohighlight">\(c_1\)</span>, <span class="math notranslate nohighlight">\(p_1\)</span> тј. <span class="math notranslate nohighlight">\(c_2\)</span>, <span class="math notranslate nohighlight">\(p_2\)</span>. Прва могућност је да се све црвене куглице из
+прве кутије пребаце у другу, а да све плаве куглице из друге кутије пребаце у
+прву, чиме се добија <span class="math notranslate nohighlight">\(c_1+p_2\)</span> премештања. Друга могућност је да се све плаве
+куглице из прве кутије пребаце у другу, а да све црвене куглице из друге кутије
+пребаце у прву, чиме се добија <span class="math notranslate nohighlight">\(p_1+c_2\)</span> премештања. Решење се добија
+одређивањем мањег од ова два броја тј. њиховог <em>минимума</em>.</p>
+<p>Минимум је могуће одредити а могуће је имплементирати и коришћењем гранања, на
+пример, коришћењем наредбе <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">iz1u2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">iz2u1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">iz1u2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">iz2u1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iz1u2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iz2u1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Гранање којим се одређује минимум је могуће имплементирати и коришћењем
+условног израза.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">iz1u2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">iz2u1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iz1u2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">iz2u1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">iz1u2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">iz2u1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Проја<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/proja">текст задатка</a>.</p>
+<p>Да би се од постојећих намирница направила највећа могућа количина хлеба
+потребно је задовољити све услове рецепта који захтева да кукурузно брашно чини
+два дела смеше а пшенично један. Укупна количина брашна је збирна количина та
+три дела а потребна количина воде коју треба одредити је пола укупне количине
+брашна.</p>
+<p>Дакле, ако са <span class="math notranslate nohighlight">\(M\)</span> означимо количину једног дела смеше, количина пшеничног
+брашна је <span class="math notranslate nohighlight">\(M\)</span>, кукурузног брашна је <span class="math notranslate nohighlight">\(2M\)</span>, укупна количина брашна је
+<span class="math notranslate nohighlight">\(M+2\cdot M=3\cdot M\)</span>, а воде је <span class="math notranslate nohighlight">\(\frac{3\cdot M}{2}\)</span>. Ако је расположива
+количина пшеничног брашна <span class="math notranslate nohighlight">\(P_b\)</span>, а кукурузног <span class="math notranslate nohighlight">\(K_b\)</span>, потребно је наћи највећу
+вредност <span class="math notranslate nohighlight">\(M\)</span> такву да важи <span class="math notranslate nohighlight">\(M\leq P_b\)</span> и <span class="math notranslate nohighlight">\(2\cdot M\leq K_b\)</span>, тј.
+<span class="math notranslate nohighlight">\(M\leq\frac{K_b}{2}\)</span>. Пошто је <span class="math notranslate nohighlight">\(M\)</span> мање или једнако од вредности <span class="math notranslate nohighlight">\(P_b\)</span> и
+<span class="math notranslate nohighlight">\(\frac{K_b}{2}\)</span>, оно је мање или једнако од мање од те две вредности тј. од
+<span class="math notranslate nohighlight">\(\min{(P_b,\frac{K_b}{2})}\)</span> и то је уједно највећа могућа вредност за <span class="math notranslate nohighlight">\(M\)</span>. Када
+се одреди вредност <span class="math notranslate nohighlight">\(M=\min{(P_b,\frac{K_b}{2})}\)</span>, израчунава се и исписује
+количина воде <span class="math notranslate nohighlight">\(\frac{3\cdot M}{2}\)</span>.</p>
+<p>Минимум два броја је могуће одредити гранањем помоћу наредбе гранања <code class="docutils literal notranslate"><span class="pre">if-else</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">kb</span><span class="p">,</span><span class="w"> </span><span class="n">pb</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">kb</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pb</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pb</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">kb</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pb</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kb</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Минимум два броја је могуће одредити и гранањем помоћу условног израза.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">kb</span><span class="p">,</span><span class="w"> </span><span class="n">pb</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">kb</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pb</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pb</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">kb</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">pb</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">kb</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Генерално, највеће <span class="math notranslate nohighlight">\(x\)</span> које задовољава систем неједначина
+<span class="math notranslate nohighlight">\(x\leq a_1, \ \ldots, \ x\leq a_n\)</span> je <span class="math notranslate nohighlight">\(x=\min{(a_1,\ldots,a_n)}\)</span>. Дуално,
+најмање <span class="math notranslate nohighlight">\(x\)</span> које задовољава систем неједначина
+<span class="math notranslate nohighlight">\(x\geq a_1, \ \ldots, \ x\geq a_n\)</span> je <span class="math notranslate nohighlight">\(x=\max{(a_1,\ldots, a_n)}\)</span>.</p>
+</section>
+<section id="id4">
+<h2>Скупови спортиста<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/skupovi_sportista">текст задатка</a>.</p>
+<p>На основу принципа укључивања-искључивања важи да је
+<span class="math notranslate nohighlight">\(|K\cup F|=|K|+|F|-|K\cap F|\)</span>, где <span class="math notranslate nohighlight">\(|K\cup F|\)</span> означава број елемената уније
+скупа кошаркаша и фудбалера, <span class="math notranslate nohighlight">\(|K|\)</span> означава број кошаркаша и једнак је датом
+броју <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(|F|\)</span> број фудбалера и једнак је датом броју <span class="math notranslate nohighlight">\(f\)</span>, а <span class="math notranslate nohighlight">\(|K\cap F|\)</span>
+означава број оних који играју и фудбал и кошарку. Пошто су и фудбалери и
+кошаркаши ученици одељења у коме има <span class="math notranslate nohighlight">\(n\)</span> ученика важи да је <span class="math notranslate nohighlight">\(|K\cup F|\leq n\)</span>.
+Зато је <span class="math notranslate nohighlight">\(|K|+|F|-|K\cap F|\leq n\)</span>, тј. <span class="math notranslate nohighlight">\(|K\cap F|\geq k+f-n\)</span>. Са друге стране,
+важи да је <span class="math notranslate nohighlight">\(|K\cap F|\geq 0\)</span>. Зато је <span class="math notranslate nohighlight">\(|K\cap F|\geq\max{(k+f-n, 0)}\)</span>.</p>
+<p>Докажимо да се ова доња граница увек може достићи, тј. да је најмања вредност
+броја ученика који су добри у оба спорта управо <span class="math notranslate nohighlight">\(\max{(k+f-n,0)}\)</span>. Заиста, ако
+је <span class="math notranslate nohighlight">\(k+f\leq n\)</span> могуће је да се фудбалери и кошаркаши не преклапају. Са друге
+стране, ако је <span class="math notranslate nohighlight">\(k+f&gt;n\)</span> тада је могуће да њих <span class="math notranslate nohighlight">\(k+f-n\)</span> тренирају оба спорта, да
+<span class="math notranslate nohighlight">\(n-f\)</span> игра само кошарку, а <span class="math notranslate nohighlight">\(n-k\)</span> игра само фудбал (сви ови бројеви су
+ненегативни, па је могуће направити баш овакав распоред).</p>
+<p>Са друге стране важи да је <span class="math notranslate nohighlight">\(K\cap F\subseteq K,K\cap F\subseteq F\)</span>, па је
+<span class="math notranslate nohighlight">\(|K\cap F|\leq |K|=k,|K\cap F|\leq |F|=f\)</span>, тј. <span class="math notranslate nohighlight">\(|K\cap F|\leq\min{(k,f)}\)</span>.</p>
+<p>Та вредност се може постићи ако је <span class="math notranslate nohighlight">\(K\subseteq F\)</span> или је <span class="math notranslate nohighlight">\(F\subseteq K\)</span> тј. ако
+сви они који тренирају онај спорт којег тренира мање ђака, уједно тренирају и
+онај други спорт.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">f</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>Домине<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/dve_domine">текст задатка</a>.</p>
+<p>Сваку од две домине је потребно окренути тако да већа цифра на тој домини буде
+испред мање (ако су цифре једнаке, свеједно је како се домина окреће). Редослед
+две домине се одређује тако да број записан на првој домини буде већи од броја
+записаног на другој.</p>
+<p>Прву цифру сваке од две домине одређујемо као максимум две цифре на тој домини,
+а другу као њихов минимум. Два двоцифрена броја можемо упоредити и
+лексикографски: прва домина иде испред друге ако је њена прва цифра већа од
+прве цифре друге домине или су те цифре једнаке, а друга цифра прве домине је
+већа од друге цифре друге домине.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d11</span><span class="p">,</span><span class="w"> </span><span class="n">d12</span><span class="p">,</span><span class="w"> </span><span class="n">d21</span><span class="p">,</span><span class="w"> </span><span class="n">d22</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d11</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d12</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d21</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d22</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m11</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d11</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d12</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">d11</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">d12</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m12</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d11</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">d12</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">d11</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">d12</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m21</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d21</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d22</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">d21</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">d22</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m22</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d21</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">d22</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">d21</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">d22</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m11</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">m21</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">m11</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m21</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m12</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">m22</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d %d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m11</span><span class="p">,</span><span class="w"> </span><span class="n">m12</span><span class="p">,</span><span class="w"> </span><span class="n">m21</span><span class="p">,</span><span class="w"> </span><span class="n">m22</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d %d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m21</span><span class="p">,</span><span class="w"> </span><span class="n">m22</span><span class="p">,</span><span class="w"> </span><span class="n">m11</span><span class="p">,</span><span class="w"> </span><span class="n">m12</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Једно могуће решење је и да експлицитно формирамо двоцифрене бројеве множењем
+прве цифре са 10 и додавањем друге, да их затим упоредимо и да тражени
+четвороцифрени број добијемо множењем већег двоцифреног са 100 и додавањем
+мањег (ово решење је исправно јер смо сигурни да се не јавља цифра 0). Када је
+број формиран, цифре можемо да издвојимо коришћењем целобројног дељења са 10.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d11</span><span class="p">,</span><span class="w"> </span><span class="n">d12</span><span class="p">,</span><span class="w"> </span><span class="n">d21</span><span class="p">,</span><span class="w"> </span><span class="n">d22</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d11</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d12</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d21</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d22</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d11</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d12</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d11</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d12</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d12</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d11</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d21</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d22</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d21</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d22</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d22</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d21</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d %d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>Интервали<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/intervali">текст задатка</a>.</p>
+<p>Почетак покривача два интервала је мањи од два лева краја та два интервала (тј.
+<span class="math notranslate nohighlight">\(a_{pokrivac}=\min{(a_1,a_2)}\)</span>), а крај покривача је већи од два десна краја
+(тј. <span class="math notranslate nohighlight">\(b_{pokrivac}=\max{(b_1,b_2)}\)</span>). Напоменимо и да покривач увек постоји
+(пробај да објасниш зашто). Почетак евентуалног пресека је већи од два лева
+краја (тј. <span class="math notranslate nohighlight">\(a_{presek}=\max{(a_1,a_2)}\)</span>), а крај евентуалног пресека је мањи од
+два десна краја (тј. <span class="math notranslate nohighlight">\(b_{presek}=\min{(b_1,b_2)}\)</span>). Пресек постоји ако и само
+ако је <span class="math notranslate nohighlight">\(b_{presek}&gt;a_{presek}\)</span>. На крају, дужину уније можемо једноставно
+одредити тако што од збира дужина једног и другог интервала одузме дужина
+пресека (дужину интервала рачунамо као разлику између његовог десног и левог
+краја).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">b1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">,</span><span class="w"> </span><span class="n">b2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%lf%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">bp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf %.2lf</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">bp</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">bl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dp</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bl</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">ad</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf %.2lf</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ad</span><span class="p">,</span><span class="w"> </span><span class="n">bl</span><span class="p">);</span>
+<span class="w">        </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ad</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;presek ne postoji</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">b1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">b2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dp</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">du</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Позитиван део интервала<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/pozitivan_deo_intervala">текст задатка</a>.</p>
+<p>Један начин да одредимо дужину дела интервала <span class="math notranslate nohighlight">\([a,b]\)</span> који лежи на позитивном
+делу праве је да применимо технику проналажења пресека два интервала, при чему
+је први интервал <span class="math notranslate nohighlight">\([a,b]\)</span>, а други је <span class="math notranslate nohighlight">\([0,+\infty)\)</span>. Пресек одређујемо тако што
+одредимо већи од два почетка (то је број <span class="math notranslate nohighlight">\(\max{(a,0)}\)</span>) и леви од два краја
+(пошто је један крај <span class="math notranslate nohighlight">\(+\infty\)</span> то је број <span class="math notranslate nohighlight">\(b\)</span>), и затим ако је крај десно од
+почетка та два броја одузмемо, док је у супротном резултат нула.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Још један начин је да одредимо десни и леви крај пресека и да их одузмемо.
+Десни крај је већи од бројева <span class="math notranslate nohighlight">\(b\)</span> и 0, док је леви крај већи од бројева <span class="math notranslate nohighlight">\(a\)</span> и
+<span class="math notranslate nohighlight">\(0\)</span>. Зато је тражена дужина једнака <span class="math notranslate nohighlight">\(\max{(b,0)}-\max{(a,0)}\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Задатак се може решити и тако што се примени угнежђено (хијерархијско) гранање.
+Ако је <span class="math notranslate nohighlight">\(b\leq 0\)</span> тада цео интервал лежи лево од координатног почетка и дужина
+његовог позитивног дела је 0. У супротном, ако је <span class="math notranslate nohighlight">\(a\geq 0\)</span> тада цео интервал
+лежи десно од координатног почетка и дужина позитивног дела је <span class="math notranslate nohighlight">\(b-a\)</span>, а у
+супротном, ако је <span class="math notranslate nohighlight">\(a&lt;0\)</span> тада је позитивни део интервала интервал <span class="math notranslate nohighlight">\([0,b]\)</span> чија
+је дужина <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (3)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>Део правоугаоника у првом квадранту<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/deo_pravougaonika_u_prvom_kvadrantu">текст задатка</a>.</p>
+<p>Ако одредимо доње лево и горње десно теме (што можемо урадити применом минимума
+и максимума), тада површину можемо израчунати анализом разних случајева. Прво,
+ако се горње десно теме налази ван првог квадранта, тада је површина једнака
+нули. У супротном анализирамо положај доњег левог темена и у зависности од
+квадранта коме оно припада одређујемо површину.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">yd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">yg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">xd</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">yg</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">xl</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">yd</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xd</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">yg</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">xl</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">yd</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">xl</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">yg</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">xl</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">yd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xd</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">yg</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">yd</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">xl</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">yg</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">yd</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Задатак можемо решити и тако што одредимо дужину дела горње странице
+правоугаоника и дужину дела десне странице правоугаоника који припадају првом
+квадранту (површина дела правоугаоника у првом квадранту је онда производ те
+две дужине). То се своди на проналажење дела дужи на <span class="math notranslate nohighlight">\(x\)</span>-оси тј. <span class="math notranslate nohighlight">\(y\)</span>-оси који
+припадају позитивном делу те осе.</p>
+<p>Пошто не знамо у ком редоследу су задате координате <span class="math notranslate nohighlight">\(x_1\)</span> и <span class="math notranslate nohighlight">\(x_2\)</span> нити у ком
+редоследу су задате координате <span class="math notranslate nohighlight">\(y_1\)</span> и <span class="math notranslate nohighlight">\(y_2\)</span>, пре одређивања дужине позитивног
+дела сваког од њих врши се одређивање мањег и већег од њих (ако су <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span>
+бројеви који представљају крајње тачке неког интервала, онда се помоћу
+<span class="math notranslate nohighlight">\(l=\min{(a,b)}\)</span> и <span class="math notranslate nohighlight">\(d=\max{(a,b)}\)</span> могу одредити леви и десни крај тог
+интервала).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">-</span>
+<span class="w">             </span><span class="p">((</span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">-</span>
+<span class="w">             </span><span class="p">((</span><span class="n">y1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ax</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">by</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Још један начин је да одредимо леви и десни крај дужи (применом
+минимума и максимума) и да позитивни део дужи одредимо анализом
+случајева (ако је десни крај негативан дужина тог дела је нула, ако је
+позитиван, а леви је негативан, онда је једнака вредности тог десног
+краја, а у супротном је једнака разлици између десног и левог краја).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (3)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">xl</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">xl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">xd</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xd</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">yl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">yd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">yl</span><span class="p">)</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">yl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">yd</span><span class="p">)</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yd</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2>Темена правоугаоника<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/temena_pravougaonika">текст задатка</a>.</p>
+<p>Координата x леве ивице се може одредити као мања од две x-координате датих
+темена, док се координата x десне ивице може одредити као већа од њих. Слично,
+координата y горње ивице се може одредити као мања од две y-координате, док се
+координата y доње ивице може одредити као већа од њих. Координате горњег левог
+темена се добијају комбиновањем x-координате леве ивице и y-координате горње
+ивице, док се координате доњег десног темена добијају комбиновањем x-координате
+десне ивице и y-координате доње ивице.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">yg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">yd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d</span><span class="se">\n</span><span class="s">%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xl</span><span class="p">,</span><span class="w"> </span><span class="n">yg</span><span class="p">,</span><span class="w"> </span><span class="n">xd</span><span class="p">,</span><span class="w"> </span><span class="n">yd</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Један начин да се дође до решења је да се координате <span class="math notranslate nohighlight">\(x_1\)</span> и <span class="math notranslate nohighlight">\(x_2\)</span> уреде по
+величини, тј. да се размене ако је <span class="math notranslate nohighlight">\(x_1&gt;x_2\)</span>. Размену вредности две променљиве
+вршимо тако што користимо трећу, привремену. Након уређивања (кажемо и
+сортирања) знамо да <span class="math notranslate nohighlight">\(x_1\)</span> представља координату леве, а <span class="math notranslate nohighlight">\(x_2\)</span> десне ивице, док
+<span class="math notranslate nohighlight">\(y_1\)</span> представља координату горње, а <span class="math notranslate nohighlight">\(y_2\)</span> доње ивице.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">y1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d</span><span class="se">\n</span><span class="s">%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="h2so4">
+<h2>H2SO4<a class="headerlink" href="#h2so4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/h2so4">текст задатка</a>.</p>
+<p>Претпоставимо да је дат број атома водоника <span class="math notranslate nohighlight">\(h\)</span>, сумпора <span class="math notranslate nohighlight">\(s\)</span> и кисеоника <span class="math notranslate nohighlight">\(o\)</span>.
+Ако претпоставимо да је могуће направити <span class="math notranslate nohighlight">\(x\)</span> молекула <span class="math notranslate nohighlight">\(H_2SO_4\)</span>, тада мора да
+важи да је <span class="math notranslate nohighlight">\(2x\leq h\)</span>, <span class="math notranslate nohighlight">\(x\leq s\)</span> и <span class="math notranslate nohighlight">\(4x\leq o\)</span>. Дакле, потребно је пронаћи
+највећи цео број <span class="math notranslate nohighlight">\(x\)</span> тако да важи <span class="math notranslate nohighlight">\(x\leq h/2\)</span>, <span class="math notranslate nohighlight">\(x\leq s\)</span> и <span class="math notranslate nohighlight">\(x\leq o/4\)</span>. Знамо
+да је <span class="math notranslate nohighlight">\(x\leq\left\lfloor{\frac{h}{2}}\right\rfloor\)</span>, <span class="math notranslate nohighlight">\(x\leq s\)</span> и
+<span class="math notranslate nohighlight">\(x\leq\left\lfloor{\frac{o}{4}}\right\rfloor\)</span> па можемо закључити да је
+<span class="math notranslate nohighlight">\(x=\min{(h\div 2, \ s, \ o\div 4)}\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">o</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span>
+<span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span>
+<span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h2>Краљево растојање<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/kraljevo_rastojanje">текст задатка</a>.</p>
+<p>Нека су <span class="math notranslate nohighlight">\((x_1,y_1)\)</span> координате полазног поља, а <span class="math notranslate nohighlight">\((x_2,y_2)\)</span> координате долазног
+поља. Растојање по првој координати једнако је <span class="math notranslate nohighlight">\(|x_2-x_1|\)</span>, а по другој
+координати једнако је <span class="math notranslate nohighlight">\(|y_1-y_2|\)</span>. Да би краљ стигао на жељено поље, оба ова
+растојања морају бити смањена на нулу. У сваком кораку (било хоризонталном,
+било вертикалном, било дијагоналном) свака од координата се може променити
+највише за један (у дијагоналном потезу истовремено се мењају обе координате,
+али свака за по један). Зато се у сваком од потеза хоризонтално и вертикално
+растојање могу смањити за један. У почетку краљ може ићи дијагонално
+истовремено смањујући оба растојања за по један, све док једно од растојања не
+постане једнако нули (док не стигне у врсту или колону у којој се налази циљно
+поље). Након тога може се кретати хоризонтално тј. вертикално до циља.</p>
+<p>Дакле, број потеза потребан да се стигне до циљаног поља је једнак већем од
+растојања по координатама <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span> тј. једнако је вредности
+<span class="math notranslate nohighlight">\(\max{(|x_2-x_1|,|y_2-y_1|)}\)</span>. Максимум два броја се може израчунати гранањем.
+Апсолутну вредност је могуће израчунати коришћењем функције <code class="docutils literal notranslate"><span class="pre">abs</span></code> која је за
+целе бројеве декларисана у заглављу <code class="docutils literal notranslate"><span class="pre">stdlib.h</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -370,8 +949,36 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Минимум и максимум два броја</a><ul>
+<li><a class="reference internal" href="#id2">Куглице</a></li>
+<li><a class="reference internal" href="#id3">Проја</a></li>
+<li><a class="reference internal" href="#id4">Скупови спортиста</a></li>
+<li><a class="reference internal" href="#id5">Домине</a></li>
+<li><a class="reference internal" href="#id6">Интервали</a></li>
+<li><a class="reference internal" href="#id7">Позитиван део интервала</a></li>
+<li><a class="reference internal" href="#id8">Део правоугаоника у првом квадранту</a></li>
+<li><a class="reference internal" href="#id9">Темена правоугаоника</a></li>
+<li><a class="reference internal" href="#h2so4">H2SO4</a></li>
+<li><a class="reference internal" href="#id10">Краљево растојање</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -384,5 +991,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
