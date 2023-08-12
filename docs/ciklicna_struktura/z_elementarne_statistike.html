@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -330,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -338,6 +338,458 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Елементарне статистике<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/04%20elementarne_statistike">елементарне статистике</a>.</p>
+<section id="id2">
+<h2>Факторијел<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/faktorijel">текст задатка</a>.</p>
+<p>За одређивање факторијела природног броја <span class="math notranslate nohighlight">\(n\)</span> користимо променљиву <code class="docutils literal notranslate"><span class="pre">faktorijel</span></code>
+у којој редом акумулирамо производ бројева од 1 до <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>На почетку вредност променљиве <code class="docutils literal notranslate"><span class="pre">faktorijel</span></code> поставимо на 1. Након тога,
+коришћењем петље у којој ћемо бројачкој променљивој <span class="math notranslate nohighlight">\(i\)</span>, додељивати редом
+вредности од 1 до <span class="math notranslate nohighlight">\(n\)</span>, у сваком пролазу кроз петљу променљиву <code class="docutils literal notranslate"><span class="pre">faktorijel</span></code>
+множити са <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Збир се иницијализује на вредност 0, што је неутрални елемент при сабирању,
+слично као што се производ инцијализује на вредност 1, што је неутрални елемент
+при множењу. Такође, у сваком кораку збир се увећава, док се производ множи
+текућим елементом серије.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">f</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Степен<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/stepen">текст задатка</a>.</p>
+<p>Резултат можемо добити ако израчунамо производ
+<span class="math notranslate nohighlight">\(\underbrace{x\cdot\ldots\cdot x}_n\)</span>. Производ серије итеративно можемо
+израчунати тако што вредност производа иницијализујемо на јединицу, а затим га
+у сваком кораку петље множимо са наредним елементом серије (у овом случају
+вредношћу <span class="math notranslate nohighlight">\(x\)</span>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Већина језика већ пружа готову функцију или операцију степеновања. У језику C
+степеновање реалних бројева се врши функцијом <code class="docutils literal notranslate"><span class="pre">pow</span></code> декларисаној у заглављу
+<code class="docutils literal notranslate"><span class="pre">math.h</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span><span class="w">    </span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Просек свих бројева до краја улаза<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/prosek_svih_brojeva_do_kraja_ulaza">текст задатка</a>.</p>
+<p>Као што смо већ видели, рачунање просека серије бројева своди се на засебно
+израчунавање збира и броја елемената серије и њихово дељење (ако су и збир и
+број цели бројеви, пре дељења је потребно конвертовати их у реални тип).</p>
+<p>Видели смо и да се збир серије бројева израчунава тако што се променљива у
+којој се акумулира збир иницијализује на нулу, а затим се у петљи пролази кроз
+елементе серије и збир се увећава за текући елемент.</p>
+<p>Видели смо и да се број елемената серије одређује тако што се бројачка
+променљива у којој се тај број акумулира иницијализује на нулу, а затим се у
+петљи пролази кроз елементе серије и бројач се у сваком кораку увећава за
+један.</p>
+<p>Показано је и како се може организовати петља која учитава све бројеве са
+стандардног улаза.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">z</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">z</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>Средине<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/sredine">текст задатка</a>.</p>
+<p>Просечна брзина представља однос укупног пређеног пута и укупног времена
+трајања пута.</p>
+<p>Претпоставимо да је сваки део пута трајао исто време <span class="math notranslate nohighlight">\(t\)</span> (у сатима). Тада је на
+првом делу пута аутомобил прешао <span class="math notranslate nohighlight">\(v_1\cdot t\)</span> километара, на другом
+<span class="math notranslate nohighlight">\(v_2\cdot t\)</span> километара, и тако даље, док је на последњем делу прешао
+<span class="math notranslate nohighlight">\(v_n\cdot t\)</span> километара. Дакле, укупан пређени пут је
+<span class="math notranslate nohighlight">\((v_1+v_2+\ldots+v_n)\cdot t\)</span> километара. Укупно време је <span class="math notranslate nohighlight">\(n\cdot t\)</span> сати. Зато
+је просечна брзина једнака
+<span class="math notranslate nohighlight">\(\frac{(v_1+v_2+\ldots+v_n)\cdot t}{n\cdot t}=\frac{v_1+v_2+\ldots+v_n}{n}\)</span>.</p>
+<p>Претпоставимо сада да је на сваком делу пута аутомобил прешао исто растојање
+<span class="math notranslate nohighlight">\(s\)</span> (у километрима). Тада се на првом делу пута кретао <span class="math notranslate nohighlight">\(\frac{s}{v_1}\)</span> сати, на
+другом <span class="math notranslate nohighlight">\(\frac{s}{v_2}\)</span> сати и тако даље, све до последњег дела где се кретао
+<span class="math notranslate nohighlight">\(\frac{s}{v_n}\)</span> сати. Дакле, укупни пређени пут је <span class="math notranslate nohighlight">\(n\cdot s\)</span>, док је укупно
+време једнако <span class="math notranslate nohighlight">\(\frac{s}{v_1}+\frac{s}{v_2}+\ldots+\frac{s}{v_n}\)</span>. Дакле,
+просечна брзина једнака је
+<span class="math notranslate nohighlight">\(\frac{s\cdot n}{\frac{s}{v_1}+\frac{s}{v_2}+\ldots+\frac{s}{v_n}}=\frac{n}{\frac{1}{v_1}+\frac{1}{v_2}+\ldots+\frac{1}{v_n}}\)</span>.</p>
+<p>Приметимо да се у првом случају просечна брзина израчунава као <em>аритметичка
+средина</em> појединачних брзина, док се у другом случају израчунава као
+<em>хармонијска средина</em> појединачних брзина.</p>
+<p>Израчунавање аритметичке средине (просечне вредности) свих бројева учитаних са
+стандардног улаза приказали смо раније. У овом случају радимо са реалним
+бројевима, па је имплементација још једноставнија јер не морамо да водимо
+рачуна о конверзији типова. Што се тиче израчунавања хармонијске средине, она
+се може израчунати тако што се израчуна збир реципрочних вредности свих брзина,
+а затим се <span class="math notranslate nohighlight">\(n\)</span> подели тим бројем. Збир реципрочних вредности се рачуна тако што
+се на променљиву коју иницијализујемо на нулу у петљи додају једна по једна
+реципрочна вредност.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">zr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="n">z</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">zr</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">hs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">zr</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf</span><span class="se">\n</span><span class="s">%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">as</span><span class="p">,</span><span class="w"> </span><span class="n">hs</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>Просечан раст цена<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/prosecan_rast_cena">текст задатка</a>.</p>
+<p>Претпоставимо да је основна цена производа <span class="math notranslate nohighlight">\(C\)</span>. Тада је цена након првог месеца
+једнака <span class="math notranslate nohighlight">\(C\cdot(1+\frac{p_1}{100})\)</span>, након два месеца једнака
+<span class="math notranslate nohighlight">\(C\cdot(1+\frac{p_1}{100})\cdot(1+\frac{p_2}{100})\)</span> и тако даље, да би на крају
+<span class="math notranslate nohighlight">\(n\)</span> месеци била једнака
+<span class="math notranslate nohighlight">\(C\cdot(1+\frac{p_1}{100})(1+\frac{p_2}{100})\cdot\ldots\cdot(1+\frac{p_n}{100})\)</span>.
+Ако би пораст цене у сваком месецу било <span class="math notranslate nohighlight">\(p\)</span> тада би цена након <span class="math notranslate nohighlight">\(n\)</span> месеци била
+једнака <span class="math notranslate nohighlight">\(C\cdot(1+\frac{p}{100})^n\)</span>. Пошто желимо да овако израчунате коначне
+цене буду једнаке, тј. да важи
+<span class="math notranslate nohighlight">\(C\cdot(1+\frac{p_1}{100})\cdot\ldots\cdot(1+\frac{p_n}{100})=C\cdot(1+\frac{p}{100})^n\)</span>,
+<span class="math notranslate nohighlight">\(p\)</span> се може израчунати као
+<span class="math notranslate nohighlight">\(p=100\cdot(\sqrt[n]{(1+\frac{p_1}{100})\cdot\ldots\cdot(1+\frac{p_n}{100})}-1)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(n\)</span>-ти корен из производа <span class="math notranslate nohighlight">\(n\)</span> бројева назива се <em>геометријска средина</em>.</p>
+<p>Производ серије можемо израчунати алгоритмом у коме резултат иницијализујемо на
+1 и множимо га редом једним по једним кофицијентом повећања <span class="math notranslate nohighlight">\(1+\frac{p}{100}\)</span>.</p>
+<p>Корен можемо израчунати свођењем на степеновање <span class="math notranslate nohighlight">\(\sqrt[n]{x}=x^\frac{1}{n}\)</span> и
+применом функције <code class="docutils literal notranslate"><span class="pre">pow</span></code></p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100.0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">pow</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pp</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Производња малина<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/proizvodnja_malina">текст задатка</a>.</p>
+<p>Производња сваког месеца чини <em>геометриски низ</em> тј. <em>геометријску прогресију</em>
+(низ бројева у коме је количник сваког члана и њему претходног константан) и да
+је у овом задатку потребно одредити његов <span class="math notranslate nohighlight">\(n\)</span>-ти члан.</p>
+<p>Маринко прве године планира да произведе <span class="math notranslate nohighlight">\(t\)</span> тона малина. Друге године планира
+за <span class="math notranslate nohighlight">\(p\%\)</span> више тона него прве године. Значи друге године планира да произведе
+<span class="math notranslate nohighlight">\(t\cdot(1+\frac{p}{100})\)</span> тона. Слично, треће године за <span class="math notranslate nohighlight">\(p\%\)</span> више тона него
+друге године, односно <span class="math notranslate nohighlight">\(t\cdot(1+\frac{p}{100})\cdot(1+\frac{p}{100})\)</span> што
+износи <span class="math notranslate nohighlight">\(t\cdot(1+\frac{p}{100})^2\)</span> тона. Закључујемо да за последњу годину,
+<span class="math notranslate nohighlight">\(n\)</span>-тy годину, планира производњу <span class="math notranslate nohighlight">\(t\cdot(1+\frac{p}{100})^{n-1}\)</span> тона.</p>
+<p>У језику C степен броја се може израчунати функцијом <code class="docutils literal notranslate"><span class="pre">pow</span></code> декларисаној у
+заглављу <code class="docutils literal notranslate"><span class="pre">math.h</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Задатак може бити решен и уз помоћ петље у којој се производ иницијализује на
+вредност <span class="math notranslate nohighlight">\(t\)</span> и у сваком од <span class="math notranslate nohighlight">\(n\)</span> корака се множи са <span class="math notranslate nohighlight">\(1+\frac{p}{100}\)</span> (израчунава
+се производ серије), али тиме би се добило ружније и неефикасније решење.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>Сума низа бројева<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/suma_geometrijskog_niza">текст задатка</a>.</p>
+<p>Обележимо са <span class="math notranslate nohighlight">\(a_1,a_2,\ldots,a_n\)</span> бројеве које треба да саберемо. Oни
+представљају геометријски низ (у коме је количник свака два суседна броја исти)
+и тражена вредност је сума првих <span class="math notranslate nohighlight">\(n\)</span> чланова тог низа.</p>
+<p>Једноставном анализом можемо закључити да је <span class="math notranslate nohighlight">\(a_i=a\cdot q^{i-1}\)</span> за
+<span class="math notranslate nohighlight">\(1\leq i\leq n\)</span>. Задатак је одредити суму <span class="math notranslate nohighlight">\(a_1+a_2+\ldots+a_{n-1}+a_n\)</span>.
+Обележимо тражену суму са <span class="math notranslate nohighlight">\(S\)</span>. Применом формуле за <span class="math notranslate nohighlight">\(a_i\)</span> добијамо да је</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[S=a+a\cdot q^1+a\cdot q^2+\ldots+a\cdot q^{n-2}+a\cdot q^{n-1}\]</div>
+</div>
+<p>Ако леву и десну страну претходне једнакости помножимо са <span class="math notranslate nohighlight">\(1-q\)</span> (напоменимо
+<span class="math notranslate nohighlight">\(1-q\neq 0\)</span>) добијамо једнакост:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[S\cdot(1-q)=a\cdot(1-q)+a\cdot q\cdot(1-q)+a\cdot q^2\cdot(1-q)+\ldots+a\cdot q^{n-2}\cdot(1-q)+a\cdot q^{n-1}\cdot(1-q)\]</div>
+</div>
+<p>Извршимо множења на десној страни једнакости:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[S\cdot(1-q)=a-a\cdot q+a\cdot q-a\cdot q^2+a\cdot q^2-a\cdot q^3+\ldots+a\cdot q^{n-2}-a\cdot q^{n-1}+a\cdot q^{n-1}-a\cdot q^n\]</div>
+</div>
+<p>Сређивањем последњег израза добијамо <span class="math notranslate nohighlight">\(S\cdot(1-q)=a-a\cdot q^n\)</span>. Према томе</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[S=a\cdot\frac{1-q^n}{1-q}\]</div>
+</div>
+<p>У језику C степен броја се може израчунати функцијом <code class="docutils literal notranslate"><span class="pre">pow</span></code> декларисаној у
+заглављу <code class="docutils literal notranslate"><span class="pre">math.h</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">q</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">q</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Рецимо и да је збир било могуће одредити и тако што бисмо употребили алгоритам
+сабирања елемената серије коришћењем петље, при чему бисмо сваки наредни
+елемент могли инкрементално израчунати од претходног множењем са <span class="math notranslate nohighlight">\(q\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">q</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2>Једнакост растојања<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/jednakost_rastojanja">текст задатка</a>.</p>
+<p>Тражена тачка је аритметичка средина унетих тачака.</p>
+<p>Докажимо претходно тврђење. Ако са <span class="math notranslate nohighlight">\(x\)</span> означимо тражену тачку тада, за низ
+тачака <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(i=1,\ldots,n\)</span>, важи:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1\atop x_i\leq x}^n (x-x_i)=\sum_{i=1\atop x_i&gt;x}^n (x_i-x)\]</div>
+</div>
+<p>Ако се израз са десне стране пребаци на леву и када знак $<span class="math notranslate nohighlight">\(-\)</span>$ уђе у другу суму добија се:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1\atop x_i\leq x}^n (x-x_i)+\sum_{i=1\atop x_i&gt;x}^n (x-x_i)=0\]</div>
+</div>
+<p>што је еквивалентно са</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^n (x-x_i)=0\]</div>
+</div>
+<p>Одавде се добија:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^n x=n\cdot x=\sum_{i=1}^n x_i\]</div>
+</div>
+<p>Према томе, тражена тачка је аритметичка средина унетих тачака:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x=\frac{\sum_{i=1}^n x_i}{n}\]</div>
+</div>
+<p>Израчунавање аритметичке средине серије бројева већ смо разматрали раније.
+Потребно је израчунати збир елемената серије и затим га поделити са бројем
+елемената серије (који је у овом случају унапред познат).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h2>Тежиште<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/teziste">текст задатка</a>.</p>
+<p>Већ смо разматрали тежиште скупа тачака на правој које је одређено као просечна
+вредност координата тачака. Исто ће се догодити и код тачака у равни. Заиста,
+обележимо тежиште са <span class="math notranslate nohighlight">\(T\)</span>, а тачке са <span class="math notranslate nohighlight">\(A_1,\ldots,A_n\)</span>, a са
+<span class="math notranslate nohighlight">\(\overrightarrow{OT}=(T_x,T_y)\)</span>, <span class="math notranslate nohighlight">\(\overrightarrow{OA_1}=(A_{1x},A_{1y})\)</span>, …,
+<span class="math notranslate nohighlight">\(\overrightarrow{OA_n}=(A_{nx},A_{ny})\)</span> векторе њихових координата. Кренимо од
+услова да је
+<span class="math notranslate nohighlight">\(\overrightarrow{A_1T}+\ldots+\overrightarrow{A_nT}=\overrightarrow{0}\)</span>. У
+последњој једнакости додамо на обе стране
+<span class="math notranslate nohighlight">\(\overrightarrow{OA_1}+\overrightarrow{OA_2}+\ldots+\overrightarrow{OA_n}\)</span> и
+добијамо
+<span class="math notranslate nohighlight">\(n\cdot\overrightarrow{OT}=\overrightarrow{OA_1}+\overrightarrow{OA_2}+\ldots+\overrightarrow{OA_n}\)</span>,
+односно
+<span class="math notranslate nohighlight">\(\overrightarrow{OT}=\frac{\overrightarrow{OA_1}+\overrightarrow{OA_2}+\ldots+\overrightarrow{OA_n}}{n}\)</span>.</p>
+<p>Одатле следи:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[T_x=\frac{A_{1x}+A_{2x}+\ldots A_{nx}}{n}\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[T_y=\frac{A_{1y}+A_{2y}+\ldots A_{ny}}{n}\]</div>
+</div>
+<p>Задатак се решава једноставним израчунавањем аритметичких средина координата
+<span class="math notranslate nohighlight">\(x\)</span> и координата <span class="math notranslate nohighlight">\(y\)</span> датих тачака.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">zx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">zy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+<span class="w">        </span><span class="n">zx</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">zy</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zx</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zy</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.5lf</span><span class="se">\n</span><span class="s">%.5lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tx</span><span class="p">,</span><span class="w"> </span><span class="n">ty</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -383,8 +835,35 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Елементарне статистике</a><ul>
+<li><a class="reference internal" href="#id2">Факторијел</a></li>
+<li><a class="reference internal" href="#id3">Степен</a></li>
+<li><a class="reference internal" href="#id4">Просек свих бројева до краја улаза</a></li>
+<li><a class="reference internal" href="#id5">Средине</a></li>
+<li><a class="reference internal" href="#id6">Просечан раст цена</a></li>
+<li><a class="reference internal" href="#id7">Производња малина</a></li>
+<li><a class="reference internal" href="#id8">Сума низа бројева</a></li>
+<li><a class="reference internal" href="#id9">Једнакост растојања</a></li>
+<li><a class="reference internal" href="#id10">Тежиште</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -397,5 +876,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
