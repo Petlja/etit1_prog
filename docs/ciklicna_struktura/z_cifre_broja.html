@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -330,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -338,6 +338,794 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Позициони запис броја<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/08%20cifre_broja">позициони запис броја</a>.</p>
+<section id="id2">
+<h2>Број и збир цифара броја<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/broj_i_zbir_cifara_broja">текст задатка</a>.</p>
+<p>Серију цифара у декадном запису броја (здесна налево) можемо одредити
+операцијом целобројног дељења са 10, као што смо то видели. Последња декадна
+цифра броја одређује се као остатак при дељењу са 10, а уклања се када се
+израчуна целобројни количник са 10. Подсетимо се, један начин да одредимо
+последње три цифре броја био јe следећи итеративни поступак.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>c0 = n mod 10; n = n div 10;
+c1 = n mod 10; n = n div 10;
+c2 = n mod 10; n = n div 10;
+</pre></div>
+</div>
+<p>При том, ако је почетни број био троцифрен, тада ће вредност променљиве <code class="docutils literal notranslate"><span class="pre">n</span></code>
+након извршавања овог фрагмента кода бити 0.</p>
+<p>За разлику од ранијих задатака у којима је број цифара био фиксиран (и обично
+мали), у овом задатку није унапред познат број цифара броја. Зато је цифре
+броја потребно одређивати у петљи. У сваком кораку текућу цифру одређујемо као
+<span class="math notranslate nohighlight">\(n\mod 10\)</span>, а затим је уклањамо тако што вредност променљиве <span class="math notranslate nohighlight">\(n\)</span> замењујемо
+вредношћу <span class="math notranslate nohighlight">\(n \div 10\)</span>. Петља се завршава када се уклоне све цифре и када
+вредност променљиве <span class="math notranslate nohighlight">\(n\)</span> постане нула. Да би се и у случају када је број <span class="math notranslate nohighlight">\(n\)</span>
+једнак 0 ова цифра обрадила мора се организовати петља са постусловом
+<code class="docutils literal notranslate"><span class="pre">do-while</span></code>. У неким случајевима, на пример, код бројања цифара, то утиче на
+исправност алгоритма, док у неким другим, на пример, код сабирања свих цифара,
+то није неопходно (наиме обрада цифре подразумева њено додавање на збир, а
+сасвим је свеједно да ли ће се збир увећати за цифру нула или ће остати
+непромењен - ефекат је исти). Тако се добија следећи алгоритам.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Када знамо како се одређује серија цифара, онда је лако одредити њене
+статистике - број и збир. Број цифара се израчунава бројањем елемената серије,
+на стандардни начин. Бројач се пре петље иницијализује на нулу и увећава се за
+један у телу петље, приликом одређивања сваке наредне цифре. Збир се израчунава
+сабирањем елемената серије, опет на веома стандардан начин. У почетку се
+променљива која треба да садржи збир иницијализује на нулу (неутрални елемент
+за сабирање), а затим се у сваком кораку петље увећава за вредност тренутно
+одређене цифре броја (она је одређена вредношћу <span class="math notranslate nohighlight">\(n\mod 10\)</span>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Да ли запис броја садржи цифру<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/ima_li_cifru">текст задатка</a>.</p>
+<p>Провера да ли број садржи цифру заснива се на алгоритму издвајања цифара броја
+сдесна налево и на алгоритму претраге којим се проверава да ли у серији постоји
+тражени елемент тј. елемент са траженим својством.</p>
+<p>Као што смо видели, постоје разни начини да се алгоритам претраге имплементира.
+Једна променљива би на почетку имала вредност 0, па би се у тренутку проналаска
+тражене цифре постављала на 1 (ефикасности ради, у том тренутку би се петља
+могла прекинути, било наредбом <code class="docutils literal notranslate"><span class="pre">break</span></code> било ојачавањем услова петље у којем би
+се тражило да претрага траје само док је вредност те променљиве 0).</p>
+<p>Рецимо и да уобичајени алгоритам издвајања цифара броја сдесна постепено мења
+његову вредност. Зато, ако је потребно након претраге имати оригиналну вредност
+броја на располагању (а у овом задатку јесте, да би се могла исписати
+одговарајућа порука), онда је потребно направити његову копију пре претраге.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;broj %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot; ne &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;sadrzi cifru %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Различите цифре<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/razlicite_cifre">текст задатка</a>.</p>
+<p>Постоје различити начини да се провери да ли су све цифре броја различите.</p>
+<p>Један је да се за сваку цифру броја провери да ли се јавља у префиксу броја
+испред себе (делу броја испред те цифре). На пример, за број <span class="math notranslate nohighlight">\(132345\)</span>
+проверавамо да ли се цифра <span class="math notranslate nohighlight">\(5\)</span> јавља у броју <span class="math notranslate nohighlight">\(13234\)</span>, пошто се не јавља,
+проверавамо да ли се цифра <span class="math notranslate nohighlight">\(4\)</span> јавља у броју <span class="math notranslate nohighlight">\(1323\)</span>, пошто се не јавља,
+проверавамо да ли се цифра <span class="math notranslate nohighlight">\(3\)</span> јавља у броју <span class="math notranslate nohighlight">\(132\)</span> и пошто се јавља, можемо да
+закључимо да полазни број нема све различите цифре. Дакле, у петљи у којој се
+одређују цифре броја сдесна налево, за сваку цифру одређену као <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">10</span></code>
+проверавамо dа ли је садржана у запису броја <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">/</span> <span class="pre">10</span></code> добијеног њеним
+уклањањем. У основни лежи алгоритам претраге (испитујемо да ли постоји цифра
+која задовољава услов да се појављује) - први пут када се у петљи наиђе на
+цифру која је садржана у префиксу испред ње прекида се са претрагом.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;DA&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;NE&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>Армстронгов број<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/armstrongovi_brojevi">текст задатка</a>.</p>
+<p>Проверу да ли је број Армстронгов можемо разложити на неколико подзадатака.</p>
+<p>Прво, на основу дефиниције Армстронговог броја изложилац на који ће се
+степеновати све цифре директно зависи од броја цифара броја (на пример, за
+троцифрене бројеве рачуна се збир кубова цифара, а за петоцифрене бројеве збир
+петих степена цифара). Зато је потребно да пребројимо цифре учитаног броја.</p>
+<p>Друго, потребно је да умемо да рачунамо степене цифара. Један начин да то
+урадимо је да искористимо библиотечку функцију за степеновање (<code class="docutils literal notranslate"><span class="pre">pow</span></code>), међутим,
+пошто она ради са реалним бројевима написаћемо сами петљу за специјалан случај
+степеновања када су основа и изложилац природни бројеви. Ако рачунамо <span class="math notranslate nohighlight">\(x^n\)</span>,
+потребно је да израчунамо производ у којем се <span class="math notranslate nohighlight">\(n\)</span> пута јавља чинилац <span class="math notranslate nohighlight">\(x\)</span>. Зато
+је потребно да производ иницијализујемо на <span class="math notranslate nohighlight">\(1\)</span>, а затим да га у петљи чије се
+тело извршава <span class="math notranslate nohighlight">\(n\)</span> пута помножимо са <span class="math notranslate nohighlight">\(x\)</span> у којем се такође израчунава производ.</p>
+<p>Када умемо да рачунамо степен, потребно је да израчунамо збир степена цифара
+броја. Серију цифара броја одређујемо на уобичајени начин, сдесна на лево,
+коришћењем целобројног дељења са 10. За сваку издвојену цифру израчунавамо
+степен и добијени резултат додајемо на текући збир, који пре петље
+иницијализујемо на нулу. Дакле, у сваком кораку пресликавамо текућу цифру
+степеном функцијом и сабирамо серију добијених слика, тј. примењујемо алгоритам
+сабирања пресликане серије.</p>
+<p>На крају веома једноставно можемо проверити да ли је број Армстронгов
+тако што га упоредимо са добијеним збиром степена.</p>
+<p>Потребно је нагласити да се током извршавања неколико наведених корака број
+мења (на пример, приликом бројања цифара број у сваком кораку делимо са 10, све
+док не постане једнак нули). Зато је потребно да уведемо посебну променљиву у
+којој се чува оригинална вредност броја, да бисмо након измене броја могли да
+повратимо његову праву вредност (алтернативно тумачење исте имплементације је
+да се пре спровођења алгоритма оригинална вредност копира у помоћну променљиву
+која се током спровођења алгоритма мења).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">b</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="n">p</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">n0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;DA&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;NE&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>Трансформација броја у производ цифара<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/transformacija_proizvodom_cifara">текст задатка</a>.</p>
+<p>Да би се израчунао производа цифара датог броја, потребно је одредити серију
+цифара броја и пронаћи производ елемената те серије. У петљи, прoизвод, чија је
+вредност на почетку 1, ћемо множити, редом, цифрама броја, почев од цифре
+јединица. Цифру јединица броја одређујемо као остатак при дељењу броја са 10.
+Дељењем броја са 10 уклањамо цифру јединица па у следећем извршавању тела
+петље, приступамо следећој цифри. Понављамо поступак док полазни број не
+постане 0.</p>
+<p>У петљи, броју додељујемо производ његових цифара док не постане једноцифрен
+(мањи од 10). Број извршавања тела петље је тражени број трансформација (њега
+ћемо одредити коришћењем посебног бројача који ћемо иницијализовати на нулу и
+увећавати у сваком кораку петље).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">p</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">            </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Најмањи број са највећим збиром парних цифара<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/najmanji_broj_sa_najvecim_zbirom_parnih_cifara">текст задатка</a>.</p>
+<p>У овом задатку се комбинују разне технике приказане у ранијим задацима. Прво,
+потребно је уносити серију бројева, све док се не учита број -1. Међу учитаним
+бројевима анализирамо само оне који садрже бар једну парну цифру, тј. вршимо
+филтрирање серије на основу услова да садржи бар једну парну цифру. Испитивање
+да ли број садржи бар једну парну цифру засновано је на комбинацији алгоритма
+одређивања цифара броја и алгоритму претраге. Међу бројевима који садрже парне
+цифре одређујемо максимум (врши се одређивање максимума тј. минимума филтриране
+серије). Максимум се одређује у односу на релацију лексикографског поретка.
+Прво се пореди збир парних цифара. Цифре броја издвајамо и сабирамо оне које су
+парне, што је алгоритам одређивања статистике филтриране серије.</p>
+<p>Имајући речено у виду, можемо описати основну варијанту алгоритма.</p>
+<p>Имплементираћемо петљу која одређује да ли декадни запис датог броја садржи
+неку парну цифру. У петљи одређујемо и уклањамо цифру по цифру сдесна
+коришћењем целобројног дељења са 10. Иницијализоваћемо помоћну променљиву <code class="docutils literal notranslate"><span class="pre">p</span></code>
+на нулу. Ако је цифра парна (тј. ако јој је остатак при дељењу са 2 једнак
+нули), тада променљиву <code class="docutils literal notranslate"><span class="pre">p</span></code> постављамо на <code class="docutils literal notranslate"><span class="pre">1</span></code>. Ако се током извршавања петље не
+пронађе парна цифра променљива <code class="docutils literal notranslate"><span class="pre">p</span></code> остаје <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Имплементираћемо и петље које одређују збир цифара декадног записа датог броја
+(збир који ћемо иницијализовати на нулу ћемо увећавати за једну по једну цифру
+броја).</p>
+<p>У бесконачној петљи можемо учитавати број по број и након сваког учитаног броја
+проверавати да ли је учитана вредност -1. Ако јесте, прекидаћемо петљу. За
+сваки учитани број провераваћемо да ли садржи неку парну цифру и број ћемо даље
+обрађивати само ако садржи парну цифру. Одржаваћемо променљиву <code class="docutils literal notranslate"><span class="pre">max</span></code> која чува
+вредност до сада најбољег учитаног елемента (најмањег до сада учитаног броја
+који садржи бар једну парну цифру и има збир парних цифара већи или једнак
+збировима парних цифара свих до сада учитаних бројева). Одржаваћемо и
+променљиву <code class="docutils literal notranslate"><span class="pre">pmax</span></code> која ће указивати на то да ли је до сада учитан неки број
+који садржи парну цифру, тј. да ли је променљива <code class="docutils literal notranslate"><span class="pre">max</span></code> постављена (друга
+могућност је да максимум иницијализујемо на неку специјалну, негативну
+вредност). За сваки учитани број за који је утврђено да садржи парну цифру,
+провераваћемо да ли је бољи од свих раније учитаних тј. да ли вредност
+променљиве <code class="docutils literal notranslate"><span class="pre">max</span></code> треба ажурирати и поставити на тај број. Постоји неколико
+случајева када је то потребно урадити:</p>
+<ul class="simple">
+<li><p>први случај је када је ово први од свих до сада учитаних бројева који садржи
+парну цифру (што лако испитујемо на основу вредности променљиве <code class="docutils literal notranslate"><span class="pre">pmax</span></code>),
+и у том случају нема потребе за поређењима са вредношћу променљиве <code class="docutils literal notranslate"><span class="pre">max</span></code> (она у
+том тренутку ни нема постављену вредност),</p></li>
+<li><p>други случај је када је збир парних цифара тренутног броја мањи од вредности
+збира парних цифара броја <code class="docutils literal notranslate"><span class="pre">max</span></code>,</p></li>
+<li><p>трећи случај је када су та два збира једнака, али је тренутни број мањи од
+броја <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p></li>
+</ul>
+<p>У првом случају треба ажурирати и вредност променљиве <code class="docutils literal notranslate"><span class="pre">pmax</span></code> и поставити је на
+вредност <code class="docutils literal notranslate"><span class="pre">1</span></code> (а не смета да се то уради и у осталим случајевима, увек када се
+ажурира вредност <code class="docutils literal notranslate"><span class="pre">max</span></code>).</p>
+<p>На крају, по завршетку бесконачне петље у којој се учитавају сви бројеви, на
+основу уведене променљиве знамо да ли је био учитан бар један број чији декадни
+запис садржи парну цифру и ако јесте, исписујемо вредност променљиве <code class="docutils literal notranslate"><span class="pre">max</span></code>, а
+ако није, исписујемо вредност -1.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="p">,</span><span class="w"> </span><span class="n">pmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">p</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">zn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">            </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">zn</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">                </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">zmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+<span class="w">            </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">zmax</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">                </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">pmax</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">zn</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">zmax</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">zn</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">zmax</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">                </span><span class="n">pmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pmax</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;-1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Овако дефинисан алгоритам исправно ради, али га је могуће оптимизовати у
+неколико аспеката. Један од проблема је то што се приликом сваког упоређивања
+изнова рачуна и збир цифара броја <code class="docutils literal notranslate"><span class="pre">max</span></code> и збир цифара тренутно учитаног броја.
+Зато има смисла уз променљиву <code class="docutils literal notranslate"><span class="pre">max</span></code> чувати и променљиву која садржи збир њених
+парних цифара. Приликом обраде сваког новог броја који садржи бар једну парну
+цифру, треба израчунати њен збир парних цифара, проверити да ли је испуњен неки
+од наведених услова за ажурирање вредности <code class="docutils literal notranslate"><span class="pre">max</span></code> и ако јесте, уз ажурирање
+вредности <code class="docutils literal notranslate"><span class="pre">max</span></code> на вредност текућег броја, променљивој која чува збир парних
+цифара броја <code class="docutils literal notranslate"><span class="pre">max</span></code> треба доделити раније израчунату вредност збира парних
+цифара текућег броја.</p>
+<p>Још једно место могуће оптимизације је замена две целине (једне која проверава
+да ли број садржи парну цифру и друге која рачуна збир парних цифара) једном
+целином која ради оба задатка. Ипак, не може се очекивати да би ово довело до
+убрзања, јер се захваљујући раном прекиду детекције постојања парних цифара,
+детекција изврши доста брже него обилазак и сабирање парних цифара свих
+бројева.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="p">,</span><span class="w"> </span><span class="n">zmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">p</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">zn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">            </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">zn</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">                </span><span class="n">m</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">zn</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">zmax</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">zn</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">zmax</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">                </span><span class="n">zmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zn</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">zmax</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;-1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>Број формиран од датих цифра с лева на десно<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/broj_formiran_od_datih_cifra_sleva_na_desno">текст задатка</a>.</p>
+<p>Читамо цифру по цифру са стандардног улаза, све док не дођемо до краја и
+формирамо број додавајући му прочитану цифру на десну страну (као цифру најмање
+тежине). Формирање броја на основу цифара с лева надесно разматрали смо и
+раније. Подсетимо се, алгоритам се назива Хорнерова шема и на основу тог
+алгоритма број се гради тако што се у сваком кораку претходна вредност броја
+помножи са 10 и добијени производ се увећа за вредност наредне цифре (тако се
+цифра допише на десни крај претходног броја). Анализирајмо пример у којем
+учитавамо редом цифре 3, 2, 7 и 5 и треба да добијемо број 3275. На основу
+дефиниције позиционог записа тај број је једнак вредности израза
+<span class="math notranslate nohighlight">\(3\cdot 10^3+2\cdot 10^2+7\cdot 10+5\)</span>. Међутим, претходни израз можемо
+израчунати на следећи начин <span class="math notranslate nohighlight">\(((3\cdot 10+2)\cdot 10+7)\cdot 10+5\)</span>, што доводи
+до Хорнеровог поступка.</p>
+<p>Пошто број цифара није унапред познат, цифре ћемо учитавати у петљи којом
+учитавамо бројеве до краја стандардног улаза. Број који формирамо памтићемо у
+променљивој <code class="docutils literal notranslate"><span class="pre">n</span></code> коју иницијизујемо на нулу. Када прочитамо цифру, додајемо је
+као цифру јединица на до сада формирани број. Додавање цифре јединица на број
+<code class="docutils literal notranslate"><span class="pre">n</span></code>, постижемо тако што помножимо броја <code class="docutils literal notranslate"><span class="pre">n</span></code> са 10 и додамо му учитану цифру.
+Ако унесемо <span class="math notranslate nohighlight">\(k\)</span> цифара, на описан начин цифру коју смо прву прочитали множићемо
+са 10 тачно <span class="math notranslate nohighlight">\(k-1\)</span> пут, другу прочитану цифру множимо са 10 тачно <span class="math notranslate nohighlight">\(k-2\)</span> пута, и
+тако редом, последњу прочитану цифру не множимо са 10 (то је цифра јединица).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2>Број формиран од датих цифара здесна на лево<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/broj_formiran_od_datih_cifara_zdesna_na_levo">текст задатка</a>.</p>
+<p>Читамо цифру по цифру са стандардног улаза, све док не дођемо до краја и
+формирамо број додавајући му прочитану цифру на леву страну (као цифру највеће
+тежине). Формирање броја на основу цифара здесна налево разматрали смо и
+раније. Цифре се учитавају здесна на лево па су њихове позиције редом цифра
+јединица, цифра десетица, стотина и тако даље. На пример ако учитамо цифре
+редом 3, 2, 7 и 5, треба да добијемо број 5723. Тај број можемо формирати као
+<span class="math notranslate nohighlight">\(3+2\cdot 10+7\cdot 10^2+5\cdot 10^3\)</span>. Тежину текуће цифре можемо одредити уз
+помоћ променљиве у којој памтимо одговарајући степен броја 10.</p>
+<p>Пошто број цифара није унапред познат, цифре ћемо учитавати у петљи којом
+учитавамо бројеве до краја стандардног улаза. Број који формирамо памтићемо у
+променљивоj <code class="docutils literal notranslate"><span class="pre">n</span></code> коју иницијализујемо на нулу, а тежину цифре, тј. степен броја
+10 у променљивој <code class="docutils literal notranslate"><span class="pre">s</span></code> коју иницијализујемо на 1. Цифру додајемо броју <code class="docutils literal notranslate"><span class="pre">n</span></code> с лева
+тако што број <code class="docutils literal notranslate"><span class="pre">n</span></code> увећамо за производ те цифре и одговарајућег степена броја 10
+(променљиве <code class="docutils literal notranslate"><span class="pre">s</span></code>). У сваком кораку вредност променљиве <code class="docutils literal notranslate"><span class="pre">s</span></code> коригујемо множећи је
+са 10 (тако ће, с обзиром да је иницијализована на вредност 1, она редом
+узимати вредности 1, 10, 100, 1000 …).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h2>Замени цифре 0 са 5<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/zameni_cifre_0_sa_5">текст задатка</a>.</p>
+<p>У решењу овог задатка комбинујемо алгоритам одређивања серије цифара броја
+здесна налево, заснован на целобројном дељењу са 10 и алгоритам формирања броја
+од серије његових цифара здесна налево. Издвајаћемо цифру по цифру полазног
+броја и додаваћемо их на почетак новог броја, при чему ћемо проверавати да ли
+је тренутна цифра једнака цифри коју треба заменити. Ако јесте, на почетак
+броја додаће се цифра којом се мења цифра коју треба заменити, а ако није,
+додаће се тренутна цифра.</p>
+<p>Имплементираћемо петљу која мења цифру 0 цифром 5. Променљиву која ће садржати
+модификовани број ћемо пре петље иницијализовати на нулу. Увешћемо и променљиву
+која одређује тежину наредне цифре и иницијализоваћемо је на 1 (тежина цифре
+јединица). У петљи ћемо издвајати последњу цифру текуће вредности броја <code class="docutils literal notranslate"><span class="pre">n</span></code>
+(одређивањем остатка при дељењу са <span class="math notranslate nohighlight">\(10\)</span>), уклањати је из броја (одређиваћем
+целобројног количника броја <code class="docutils literal notranslate"><span class="pre">n</span></code> са 10) и проверавати да ли је цифра јединица
+једнака 0. Ако јесте, нови број ћемо увећавати за производ цифре 5 и текуће
+тежине, а у супротном за производ текуће цифре и текуће тежине. Након тога ћемо
+тежину увећати <span class="math notranslate nohighlight">\(10\)</span> пута тј. постављаћемо је на тежину наредне цифре. Тело
+петље се понавља док се из датог броја <code class="docutils literal notranslate"><span class="pre">n</span></code> не издвоје све цифре, тј. док
+вредност <code class="docutils literal notranslate"><span class="pre">n</span></code> не постане <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">t</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="n">
+<h2>Децимале броја 1/n<a class="headerlink" href="#n" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/k_decimala_broja_1_kroz_n">текст задатка</a>.</p>
+<p>Због јако великог броја децимала (<span class="math notranslate nohighlight">\(k\)</span> може бити и 1000) не можемо користити рад
+са реалним бројевима (тип <code class="docutils literal notranslate"><span class="pre">double</span></code> подржава највише 15-16 децимала).</p>
+<p>Децимале одређујемо стандардним поступком дељења бројева. Размотримо, на
+пример, како се одређују прве три децимале броја <span class="math notranslate nohighlight">\(\frac{1}{7}\)</span>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 : 7 = 0.142
+10
+ 7
+--
+ 30
+ 28
+ --
+  20
+  14
+  --
+   6
+</pre></div>
+</div>
+<p>Кренули смо од броја 1, помножили смо га са 10 (спустили наредну нулу),
+одредили смо количник са 7 и тако смо добили прву децималу 1. Након тога смо од
+броја 10 одузели производ броја 1 и броја 7 и тако добили број 3. Приметимо да
+је број 3 заправо остатак при дељењу броја 10 бројем 7. Након тога, помножили
+смо број 3 бројем 10, одредили смо количник са 7 и тако добили наредну
+децималу 4. Након тога, смо од броја 30 одузели количник броја 4 и броја 7 и
+тако добили број 2, што је заправо остатак при дељењу броја 30 бројем 7.
+Помножили смо 2 бројем 10, одредили количник са 7 и добили наредну децималу 2.
+Уједно смо припремили и наредни корак тако што смо од броја 20 одузели производ
+бројева 2 и 7 и тако добили број 6, што је заправо, остатак при дељењу бројева
+20 и 7.</p>
+<p>Приметимо да се у сваком кораку понавља исти поступак. Претходни број множимо
+са 10, а наредну децималу и наредни број одређујемо као целобројни количник и
+остатак добијеног производа бројем <span class="math notranslate nohighlight">\(n\)</span>. Овај корак треба поновити тачно <span class="math notranslate nohighlight">\(k\)</span>
+пута.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>broj = 1;
+ponovi k puta:
+    decimala = (10 * broj) div n;
+    broj = (10 * broj) mod n;
+</pre></div>
+</div>
+<p>Покажимо и формално да се на овај начин исправно добијају децимале броја.
+Претпоставимо да је <span class="math notranslate nohighlight">\(0\leq x&lt;n\)</span>, и да је</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{x}{n}=0,a_1a_2\ldots a_k\ldots\]</div>
+</div>
+<p>Тада је</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[10\cdot\frac{x}{n}=a_1,a_2\ldots a_k\ldots\]</div>
+</div>
+<p>Пошто је <span class="math notranslate nohighlight">\(0,a_2\ldots a_k\ldots&lt;1\)</span>, а <span class="math notranslate nohighlight">\(0\leq a_1&lt;10\)</span>, важи да је</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a_1=\left\lfloor{\frac{10\cdot x}{n}}\right\rfloor=(10\cdot x)\div n\]</div>
+</div>
+<p>На основу дефиниције целобројног количника и остатка важи да је
+<span class="math notranslate nohighlight">\(10\cdot x=((10\cdot x)\div n)\cdot n+(10\cdot x)\mod n\)</span>. Зато је</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{(10\cdot x)\mod n}{n}=\frac{10\cdot x}{n}-((10\cdot x)\div n)=(a_1,a_2\ldots a_k\ldots)-a_1=0,a_2\ldots a_k\ldots\]</div>
+</div>
+<p>Дакле, прва децимала броја <span class="math notranslate nohighlight">\(\frac{x}{n}\)</span> се може одредити као
+<span class="math notranslate nohighlight">\((10\cdot x)\div n\)</span> док се остале децимале могу одредити тако што се исти
+поступак примени на број <span class="math notranslate nohighlight">\(\frac{x'}{n}\)</span>, где је <span class="math notranslate nohighlight">\(x'=(10\cdot x)\mod n\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;0,&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="k">
+<h2>K децимала у бинарном запису<a class="headerlink" href="#k" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/k_decimala_u_binarnom_zapisu_realnog_broja">текст задатка</a>.</p>
+<p>Пошто тражени број децимала може бити велики, не можемо користити системску
+репрезентацију реалних бројева (која јесте бинарна), тј. резултат не можемо
+добити ишчитавањем битова мантисе. Наиме, мантиса у запису података типа
+<code class="docutils literal notranslate"><span class="pre">double</span></code> има око 50 битова, а у задатку се тражи и до 1000 битова.</p>
+<p>Да бисмо објаснили бинарни запис реалних бројева, подсетимо се прво дефиниције
+позиционог записа броја. Као што је то раније показано запис
+<span class="math notranslate nohighlight">\((x_nx_{n-1}\ldots x_1)_b\)</span> има вредност
+<span class="math notranslate nohighlight">\(x_n\cdot b^n+x_{n-1}\cdot b^{n-1}+\ldots+x_1\cdot b+x_0\)</span>. На пример, декадни
+запис <span class="math notranslate nohighlight">\(123\)</span> означава <span class="math notranslate nohighlight">\(1\cdot 10^2+2\cdot 10+3\)</span>, док бинарни запис <span class="math notranslate nohighlight">\((1001)_2\)</span>
+означава <span class="math notranslate nohighlight">\(1\cdot 2^3+0\cdot 2^2+0\cdot 2+1=9\)</span>.</p>
+<p>Слично, децимални запис <span class="math notranslate nohighlight">\(0,123\)</span> представља број
+<span class="math notranslate nohighlight">\(1\cdot\frac{1}{10}+2\cdot\frac{1}{100}+3\cdot\frac{1}{1000}\)</span>. Заиста,
+децимални запис <span class="math notranslate nohighlight">\((0,x_1x_2\ldots x_k\ldots)_b\)</span> има вредност</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_1\cdot b^{-1}+x_2\cdot b^{-2}+\ldots+x_kb^{-k}+\ldots=x_1\cdot\frac{1}{b}+x_2\cdot\frac{1}{b^2}+\ldots+x_k\cdot\frac{1}{b^k}+\ldots\]</div>
+</div>
+<p>Зато запис броја <span class="math notranslate nohighlight">\(x\)</span> (<span class="math notranslate nohighlight">\(0\leq x&lt;1\)</span>) у бинарном систему
+<span class="math notranslate nohighlight">\(0,x_1x_2x_3\ldots x_k\ldots\)</span> значи да је
+<span class="math notranslate nohighlight">\(x=\frac{x_1}{2}+\frac{x_2}{2^2}+\frac{x_3}{2^3}+\ldots+\frac{x_k}{2^k}+\ldots\)</span>
+На пример, запис <span class="math notranslate nohighlight">\(0,101\)</span> означава
+<span class="math notranslate nohighlight">\(1\cdot\frac{1}{2}+0\cdot\frac{1}{4}+1\cdot\frac{1}{8}=0,5+0,125=0,625\)</span>.
+Множењем са 2 добијамо
+<span class="math notranslate nohighlight">\(x\cdot 2=x_1+\frac{x_2}{2}+\frac{x_3}{2^2}+\ldots+\frac{x_k}{2^{k-1}}+\ldots\)</span>.
+Пошто је <span class="math notranslate nohighlight">\(\frac{x_2}{2}+\frac{x_3}{2^2}+\ldots+\frac{x_k}{2^{k-1}}+\ldots&lt;1\)</span>,
+закључујемо да је <span class="math notranslate nohighlight">\(x_1\)</span> цео део производа <span class="math notranslate nohighlight">\(x\cdot 2\)</span>, тј.
+<span class="math notranslate nohighlight">\(x_1=\left\lfloor{x\cdot 2}\right\rfloor\)</span>, и да разломљени (децимални) део
+броја <span class="math notranslate nohighlight">\(x\cdot 2\)</span> има вредност
+<span class="math notranslate nohighlight">\(\frac{x_2}{2}+\frac{x_3}{2^2}+\ldots+\frac{x_k}{2^{k-1}}\)</span>, тј. да је његов
+бинарни запис <span class="math notranslate nohighlight">\(0,x_2\ldots x_k\)</span>. Постоји неколико начина да се децимални број
+раздвоји на свој цео и разломљени део (на пример, цео део можемо израчунати
+функцијом <code class="docutils literal notranslate"><span class="pre">floor</span></code> или конверзијом у цео број, а можемо употребити и функцију
+<code class="docutils literal notranslate"><span class="pre">modf</span></code>).</p>
+<p>Настављајући исти поступак за разломљени део броја <span class="math notranslate nohighlight">\(x\cdot 2\)</span> добијамо и остале
+цифре бинарног записа.</p>
+<p>Дакле, решење формулишемо тако што у петљи која се извршава <span class="math notranslate nohighlight">\(k\)</span> пута понављамо
+следеће:</p>
+<ul class="simple">
+<li><p>израчунавамо производ броја <span class="math notranslate nohighlight">\(x\)</span> и броја 2,</p></li>
+<li><p>приказујемо цео деo добијеног производа (то је наредна цифра у бинарном
+запису),</p></li>
+<li><p>постављамо број <span class="math notranslate nohighlight">\(x\)</span> на вредност разломљеног дела нађеног производа,
+припремајући се тако за наредну итерацију.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;0.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id11">
+<h2>Бројеви који не садрже цифру 5<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/ne_sadrze_cifru_5">текст задатка</a>.</p>
+<p>Задатак можемо решити тако што за сваки учитани број проверимо да ли садржи
+цифру 5, и ако не садржи увећамо бројач бројева који не садрже цифру 5 (тај
+бројач у почетку иницијализујемо на нулу). У том решењу примењује се алгоритам
+одређивања броја елемената серије који задовољавају дати услов, тј. алгоритам
+бројања филтриране серије.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="w">                </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">p</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">m</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id12">
+<h2>Комбинација два броја минимумом и максимумом одговарајућих цифара<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/kombinacija_dva_broja_min_max_cifara">текст задатка</a>.</p>
+<p>У овом задатку комбинујемо алгоритам одређивања серије цифара броја и алгоритам
+изградње броја од серије његових цифара сдесна налево. Потребно је приступати
+редом цифрама оба броја које се налазе на позицијама исте тежине. Издвојене
+цифре треба упоредити и мању цифру уписати у један, а већу у други резултујући
+број.</p>
+<p>Током петље која се извршава док се не исцрпу све цифре оба броја (док је бар
+један од бројева различит од нуле) издвајамо (као остатак при дељењу са 10) и
+уклањамо (одређивањем целобројног количника при дељењу са 10) цифре јединице
+оба броја, поредимо их и мању од њих додајемо на jeдан, а већу на други текући
+резултат. Цифре додајемо на леву страну резултата, на место цифре највеће
+тежине, тако да је потребно да одржавамо и помоћну променљиву која чува
+одговарајућу тежину, тј. одговарајући степен броја 10. Петљу за одређивање
+минимума је могуће било завршити у тренутку када било који од два броја постане
+нула, јер ће он надаље бити допуњаван нулама, а нула је мањи или једнак било
+којој другој цифри и њено додавање на почетак резултата нема никаквог ефекта.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">nmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">nmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">nmin</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">        </span><span class="n">nmax</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nmin</span><span class="p">,</span><span class="w"> </span><span class="n">nmax</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -383,8 +1171,39 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Позициони запис броја</a><ul>
+<li><a class="reference internal" href="#id2">Број и збир цифара броја</a></li>
+<li><a class="reference internal" href="#id3">Да ли запис броја садржи цифру</a></li>
+<li><a class="reference internal" href="#id4">Различите цифре</a></li>
+<li><a class="reference internal" href="#id5">Армстронгов број</a></li>
+<li><a class="reference internal" href="#id6">Трансформација броја у производ цифара</a></li>
+<li><a class="reference internal" href="#id7">Најмањи број са највећим збиром парних цифара</a></li>
+<li><a class="reference internal" href="#id8">Број формиран од датих цифра с лева на десно</a></li>
+<li><a class="reference internal" href="#id9">Број формиран од датих цифара здесна на лево</a></li>
+<li><a class="reference internal" href="#id10">Замени цифре 0 са 5</a></li>
+<li><a class="reference internal" href="#n">Децимале броја 1/n</a></li>
+<li><a class="reference internal" href="#k">K децимала у бинарном запису</a></li>
+<li><a class="reference internal" href="#id11">Бројеви који не садрже цифру 5</a></li>
+<li><a class="reference internal" href="#id12">Комбинација два броја минимумом и максимумом одговарајућих цифара</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -397,5 +1216,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

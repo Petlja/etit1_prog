@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -330,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -338,6 +338,363 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Линеарна претрага<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/06%20pretraga">линеарна претрага</a>.</p>
+<section id="id2">
+<h2>Негативан број<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/negativan_broj">текст задатка</a>.</p>
+<p>Потребно је испитати да ли међу учитаним бројевима постоји неки који је
+негативан. Променљивом <code class="docutils literal notranslate"><span class="pre">neg</span></code> можемо пратити да ли смо учитали неки негативан
+број. Пошто на почетку нисмо још учитали ни један број, нисмо видели ни један
+негативан, и на почетку вредност променљиве <code class="docutils literal notranslate"><span class="pre">neg</span></code> поставимо на 0. Затим у петљи
+редом учитавамо бројеве и за сваки број проверавамо да ли је негативан. Ако је
+тренутно учитани број негативан вредност променљиве <code class="docutils literal notranslate"><span class="pre">neg</span></code> поставимо на 1 (јер
+сада знамо да међу до сада учитаним бројевима постоји један који је негативан).
+После читања свих бројева, на основу вредности променљиве <code class="docutils literal notranslate"><span class="pre">neg</span></code> исписујемо
+одговарајућу поруку.</p>
+<p>Нагласимо да је честа грешка да се унутар петље провери да ли је тренутно
+учитани број негативан и да се, ако јесте, вредност променљиве постави на <code class="docutils literal notranslate"><span class="pre">1</span></code>,
+а да се у супротном она постави на <code class="docutils literal notranslate"><span class="pre">0</span></code> или (са истим ефектом) <code class="docutils literal notranslate"><span class="pre">neg</span> <span class="pre">=</span> <span class="pre">(x</span> <span class="pre">&lt;</span> <span class="pre">0);</span></code>.
+Наилазак на негативан број одређује дефинитивно да у серији постоје негативни
+бројеви, док наилазак на ненегативни број не указује на то да су у серији сви
+бројеви ненегативни (зато грану <code class="docutils literal notranslate"><span class="pre">else</span></code> не треба писати). Исправно решење може
+бити следеће.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">neg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">neg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">neg</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;da&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Приметимо да читање бројева можемо прекинути када прочитамо први негативан број
+тј. када вредност променљиве <code class="docutils literal notranslate"><span class="pre">neg</span></code> постане <code class="docutils literal notranslate"><span class="pre">1</span></code> јер тада знамо да међу бројевима
+постоји негативан број. Према томе, читамо бројеве и проверавамо да ли је
+учитани број негативан, док не прочитамо све бројеве и док је вредност
+променљиве <code class="docutils literal notranslate"><span class="pre">neg</span></code> једнака <code class="docutils literal notranslate"><span class="pre">0</span></code>. Нагласимо да овакав ранији прекид петље не би био
+могућ да је у неком случају било потребно учитати све бројеве. Рани прекид
+петље можемо остварити на различите начине.</p>
+<p>Један је да се услов петље ојача условом да је вредност променљиве једнака <code class="docutils literal notranslate"><span class="pre">0</span></code>,
+(на пример, да се тражи да је <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">n</span> <span class="pre">&amp;&amp;</span> <span class="pre">!neg</span></code>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">neg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">neg</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">neg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">neg</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;da&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Један начин да се оствари рани прекид приликом постављања променљиве <code class="docutils literal notranslate"><span class="pre">neg</span></code> на
+<code class="docutils literal notranslate"><span class="pre">1</span></code> је да се употреби наредба <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (3)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">neg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">neg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">neg</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;da&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Задатак можемо решити и без коришћења променљиве <code class="docutils literal notranslate"><span class="pre">neg</span></code>. У петљи читамо број по
+број, и ако је учитани број негативан прекинемо извршавање петље коришћењем
+наредбе <code class="docutils literal notranslate"><span class="pre">break</span></code>. После завршетка петље на основу вредности бројачке променљиве
+можемо закључити да ли је међу учитаним бројевима постојао негативан број. Ако
+је бројачка променљива имала почетну вредност 0 и ако је после завршетка петље
+њена вредност мања од <span class="math notranslate nohighlight">\(n\)</span> онда је петља завршена пре читања свих бројева, према
+томе постоји негативан број међу учитаним бројевима. Слично ако је почетна
+вредност бројачке променљиве 1 и ако је после завршетка петље њена вредност
+мања или једнака <span class="math notranslate nohighlight">\(n\)</span>, постојао је негативан број међу учитаним бројевима. Важно
+је напоменути да бројачка променљива мора бити декларисана пре петље (не сме
+бити локална променљива петље), да бисмо је могли користити после петље.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (4)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;da&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Прва негативна температура<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/prva_negativna_temperatura">текст задатка</a>.</p>
+<p>У овом задатку треба да одредимо прву позицију на којој се јавља неки негативан
+број. Задатак можемо решити алгоритмом линеарне претраге.</p>
+<p>Уместо логичке променљиве којом региструјемо да ли се међу учитаним бројевима
+налази неки негативан, користићемо целобројну променљиву којом ћемо
+регистровати редни број (позицију тј. индекс) дана у којем се јавила негативна
+температура. Вредност те променљиве иницијализујемо на <code class="docutils literal notranslate"><span class="pre">-1</span></code> што указује да се
+до тог тренутка још није учитала негативна вредност. Након тога, учитавамо
+температуре једну по једну и ако је тренутна температура негативна,
+региструјемо редни број дана (то ће бити вредност бројачке променљиве у петљи,
+чије су вредности од 1 до <span class="math notranslate nohighlight">\(n\)</span>) и прекидамо петљу. На крају, штампамо променљиве
+у којој се региструје редни број (ако се није наишло на негативну температуру,
+она и даље има вредност -1).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (1)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Могуће је избећи коришћење помоћне променљиве. Редом читамо температуру по
+температуру, при томе бројачком променљивом пратимо редни број текућег дана
+периода (почињемо бројање од 1). Приликом наиласка на негативну температуру,
+петљу прекидамо наредбом <code class="docutils literal notranslate"><span class="pre">break</span></code>. Након петље проверавамо да је услов петље
+испуњен (да ли је вредност бројачке променљиве мања или једнака броју дана
+периода <span class="math notranslate nohighlight">\(n\)</span>) и ако јесте, значи да је дошло до раног прекида и тада вредност
+бројачке променљиве садржи тражени број дана. У супротном можемо да прикажемо
+<code class="docutils literal notranslate"><span class="pre">-1</span></code>, јер се дошло до краја петље и није извршен рани прекид, што значи да међу
+учитаним температурама није постојала негативна.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка (2)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;-1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Последња негативна температура<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/poslednja_negativna_temperatura">текст задатка</a>.</p>
+<p>Након проналажења прве негативне температуре петља се не прекида, већ је увек
+неопходно учитати и обрадити све температуре. Целобројном променљивом пратимо
+редни број дана када је температура последњи пут међу учитаним температурама
+била негативна. На почетку вредност те променљиве је <span class="math notranslate nohighlight">\(-1\)</span>, јер још није учитана
+ни једна негативна температура. У петљи чија бројачка променљива узима
+вредности од <span class="math notranslate nohighlight">\(1\)</span> до <span class="math notranslate nohighlight">\(n\)</span> тј. која представља редни број дана учитавамо редом
+температуре за сваки дан. За сваку учитану температуру проверавамо да ли је
+негативна и ако јесте коригујемо вредност променљиве којом памтимо редни број
+дана када је температура последњи пут била негативна. Корекцију вршимо
+постављањем вредности те променљиве на вредност бројачке променљиве (јер је то
+редни број дана периода у којем је била управо прочитана температура).</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>Парно непарни<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/parno_neparni">текст задатка</a>.</p>
+<p>Током провере наш програм се налази у два стања. У почетку смо у стању у којем
+прихватамо парне бројеве. Када се у том стању први пут појави неки непаран број
+прелазимо у стање у којем надаље смемо да прихватамо само непарне бројеве. Ако
+се у том стању појави неки паран број, онда низ не задовољава тражени услов.
+Тренутно стање се може регистровати једном променљивом (на пример, променљива
+<code class="docutils literal notranslate"><span class="pre">nep</span></code> која ће бити иницијализована на <code class="docutils literal notranslate"><span class="pre">0</span></code> и постављена на <code class="docutils literal notranslate"><span class="pre">1</span></code> први пут када се
+учита непаран број). Дакле, у петљи учитавамо број по број све док не дођемо до
+краја улаза. Променљивом <code class="docutils literal notranslate"><span class="pre">ok</span></code> коју иницијализујемо на <code class="docutils literal notranslate"><span class="pre">1</span></code> бележимо да ли
+бројеви задовољавају услов задатка. У услову петље захтевамо да је вредност
+променљиве <code class="docutils literal notranslate"><span class="pre">ok</span></code> једнака <code class="docutils literal notranslate"><span class="pre">1</span></code>, јер у супротном знамо да бројеви не задовољавају
+тражени распоред и нема потребе вршити даље провере. У телу петље, након
+учитавања наредног броја проверавамо да ли смо наишли на непаран број у
+тренутку док променљива <code class="docutils literal notranslate"><span class="pre">nep</span></code> има вредност <code class="docutils literal notranslate"><span class="pre">0</span></code>. Када се то догоди вредност
+променљиве <code class="docutils literal notranslate"><span class="pre">nep</span></code> постављамо на <code class="docutils literal notranslate"><span class="pre">1</span></code>. Такође, проверавамо да ли је учитан
+паран број док је вредност променљиве <code class="docutils literal notranslate"><span class="pre">nep</span></code> једнака <code class="docutils literal notranslate"><span class="pre">1</span></code> и у том случају
+променљиву <code class="docutils literal notranslate"><span class="pre">ok</span></code> постављамо на <code class="docutils literal notranslate"><span class="pre">0</span></code> (јер знамо да се појавио паран број након
+непарног). На крају резултат пријављујемо у зависности од вредности <code class="docutils literal notranslate"><span class="pre">ok</span></code>.</p>
+<p>Приметимо да се овде заправо у две фазе примењује алгоритам линеарне претраге.
+У првом стању се врши претрага за непарним бројем и када се он нађе, прелази се
+у друго стање. У другом стању се врши претрага за парним бројем и ако се он
+нађе, пријављује се да низ не задовољава услов.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ok</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">nep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nep</span><span class="p">)</span>
+<span class="w">            </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">ok</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;da&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>Провера тробојке<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/provera_trobojke">текст задатка</a>.</p>
+<p>Током провере наш програм може бити у једном од три стања: читању негативног
+дела низа, читању нула и читању позитивног дела иза.</p>
+<ul class="simple">
+<li><p>Ако се у стању читања негативног дела низа појави нула прелази се у стање
+читање нула, а ако се појави неки позитивни број прелази се у стање читања
+позитивних бројева.</p></li>
+<li><p>Ако се у стању читања нула појави неки негативан број, улаз није исправан, а
+ако се појави неки позитиван број прелази се у стање читања позитивних бројева.</p></li>
+<li><p>Ако се у стању читања позитивних бројева појави било шта осим позитивног
+броја, улаз није исправан.</p></li>
+</ul>
+<p>Стање се може представити једном целобројном променљивом и током читања сваког
+броја гранањем можемо одредити како се мења стање. Променљивом можемо
+представити да ли је дошло до грешке и чим први пут дође до грешке, можемо
+прекинути петљу и пријавити да улаз није исправан.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">neg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">nul</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">poz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">neg</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">neg</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nul</span><span class="p">;</span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">poz</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nul</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">poz</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">poz</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">ok</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;da&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ne&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -383,8 +740,31 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Линеарна претрага</a><ul>
+<li><a class="reference internal" href="#id2">Негативан број</a></li>
+<li><a class="reference internal" href="#id3">Прва негативна температура</a></li>
+<li><a class="reference internal" href="#id4">Последња негативна температура</a></li>
+<li><a class="reference internal" href="#id5">Парно непарни</a></li>
+<li><a class="reference internal" href="#id6">Провера тробојке</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -397,5 +777,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

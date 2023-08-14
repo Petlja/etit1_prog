@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -330,7 +330,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -338,6 +338,163 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Филтрирање серије бројева<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Алгоритми и програми у програмском језику C:
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/07%20filtriranje">филтрирање серије бројева</a>.</p>
+<section id="id2">
+<h2>Бројеви дељиви са 3<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/brojevi_deljivi_sa_3">текст задатка</a>.</p>
+<p>Потребно је исписати само оне учитане бројеве који су дељиви са 3. Учитавање
+<span class="math notranslate nohighlight">\(n\)</span> бројева постижемо коришћењем петље.</p>
+<p>У овом задатку је природно да се користи петља <code class="docutils literal notranslate"><span class="pre">for</span></code>, мада је могуће користити
+и <code class="docutils literal notranslate"><span class="pre">while</span></code>. У телу петље учитавамо текући број и коришћењем наредбе гранања
+проверавамо да ли је дељив са 3. Проверу дељивости вршимо упоређивањем остатка
+при дељењу са 3 и нуле. Ако број јесте дељив са 3, исписујемо га.</p>
+<p>Овај задатак је класичан пример тзв. алгоритма <em>филтрирања серије</em> тј.
+издвајања елемената који задовољавају неки дати услов. У општем случају у петљи
+пролазимо кроз елементе серије, наредбом гранања проверавамо да ли текући
+елемент задовољава задати услов, и ако задовољава у телу наредбе гранања га
+обрађујемо на одговарајући начин.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Бројање гласова за омиљеног глумца<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/broj_pojavljivanja">текст задатка</a>.</p>
+<p>Потребно је избројати колико елемената серије задовољава неки дати услов (у
+овом случају услов је да су једнаки броју <span class="math notranslate nohighlight">\(x\)</span>). Уобичајени начин да се то уради
+је да се уведе бројач елемената који иницијализујемо на нулу, да у петљи
+учитавамо један по један елемент серије и да ако елемент задовољава тражени
+услов увећавамо бројач за један.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="w">            </span><span class="n">g</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Просек одличних<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/prosek_odlicnih">текст задатка</a>.</p>
+<p>Како број ученика није унапред фиксиран, у решењу је потребно употребити петљу
+у којој се учитавају и обрађују просеци појединачних ученика. Међу свим
+учитаним елементима серије потребно је анализирати само оне који задовољавају
+дати услов.</p>
+<p>Просек просечних оцена одличних ученика одређујемо тако што збир просечних
+оцена одличних ученика поделимо бројем одличних ученика. У овом задатку не
+рачуна се просек свих учитаних просечних оцена ученика, већ само оних који су
+одлични, тј. пре израчунавања просека серија се филтрира на основу услова да је
+просечна оцена већа или једнака <span class="math notranslate nohighlight">\(4.5\)</span>.</p>
+<p>Користимо променљиве у којима редом чувамо збир просека и број одличних
+ученика. На почетку обе променљиве постављамо на 0, јер у почетку још нисмо
+учитали ни један просек ученика. Затим у петљи редом читамо просеке ученика и
+ако је ученик одличан (ако је текући просек већи од 4,5) додајемо његову
+просечну оцену збиру просека одличних док број одличних ученика увећавамо за 1.
+Кад смо прочитали просечне оцене свих ученика одељења, након петље, проверавамо
+да ли је број одличних ученика једнак нули и ако јесте приказујемо <code class="docutils literal notranslate"><span class="pre">-</span></code>, a иначе
+одређујемо просечну вредност просека одличних ученика дељењем вредности збира и
+броја одличних.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">zo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">po</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">4.5</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">zo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">            </span><span class="n">bo</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bo</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">po</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zo</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">bo</span><span class="p">;</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">po</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>Категорије џудиста<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/kategorije_dzudista">текст задатка</a>.</p>
+<p>Основу задатка чини разврставање џудиста по категоријама (што можемо урадити
+гранањем на основу припадности интервалима, конструкцијом <code class="docutils literal notranslate"><span class="pre">else-if</span></code>). Увешћемо
+три бројачке променљиве, сваку иницијализовати на нулу и повећавати за 1 сваки
+пут када наиђемо на џудисту у одговарајућој категорији. Дакле, разврставамо
+серију бројева на три подсерије и израчунавамо број елемената сваке од три
+подсерије.</p>
+<div class="tip admonition">
+<p class="admonition-title">Предложено решење задатка</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">d50</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">o51d75</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">o76</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+<span class="w">            </span><span class="n">d50</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">75</span><span class="p">)</span>
+<span class="w">            </span><span class="n">o51d75</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">o76</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">%d</span><span class="se">\n</span><span class="s">%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">d50</span><span class="p">,</span><span class="w"> </span><span class="n">o51d75</span><span class="p">,</span><span class="w"> </span><span class="n">o76</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
         </article>
@@ -383,8 +540,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Задаци: Филтрирање серије бројева</a><ul>
+<li><a class="reference internal" href="#id2">Бројеви дељиви са 3</a></li>
+<li><a class="reference internal" href="#id3">Бројање гласова за омиљеног глумца</a></li>
+<li><a class="reference internal" href="#id4">Просек одличних</a></li>
+<li><a class="reference internal" href="#id5">Категорије џудиста</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -397,5 +576,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
