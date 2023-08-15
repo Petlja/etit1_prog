@@ -15,7 +15,10 @@ pretrazivanje_niza
 minimum_maksimum
 sortiranje_niza
 selection_sort
-z
+z_elementarno_koriscenje_nizova
+z_transformacije_nizova
+z_vektori_polinomi_veliki_brojevi
+z_sortiranje_osnove
 ```
 
 ## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓
