@@ -16,9 +16,10 @@ author = 'Велимир Радловачки'
 extensions = [ "myst_parser",
                "sphinx_design",
                "sphinx_copybutton",
-                "petlja_sphinx_extensions.extensions.notes",
-                "petlja_sphinx_extensions.extensions.multiple_choice"  ,            
-                "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
+               "sphinxpackagingtool.builder.petlja_builder",
+               "petlja_sphinx_extensions.extensions.notes",
+               "petlja_sphinx_extensions.extensions.multiple_choice",            
+               "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
 
 myst_enable_extensions = [ "colon_fence",
                            "dollarmath",
