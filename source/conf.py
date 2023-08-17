@@ -36,5 +36,5 @@ html_static_path = petlja_sphinx_extensions.extensions.static_dirs()
 
 html_title = 'Програмирање I за информатичке профиле у електротехничким школама'
 html_theme = 'furo'
-#additional_build_targets =['scrom']
+#additional_build_targets =['scorm']
 content_uri = 'https://petljamediastorage.blob.core.windows.net/temp/etit1_prog'
