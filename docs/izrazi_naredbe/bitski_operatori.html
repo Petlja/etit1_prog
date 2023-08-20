@@ -384,30 +384,29 @@
 <code class="docutils literal notranslate"><span class="pre">11111111</span> <span class="pre">11111111</span> <span class="pre">00101001</span> <span class="pre">11101111</span></code> у комплементу двојке.</p>
 <p>У овој лекцији ћеш, због тога, битске операторе примењивати само над операндима
 који су неозначени цели бројеви.</p>
-<div class="tip admonition">
-<p class="admonition-title">Комплемент двојке</p>
+
+    <div class="note-wrapper learnmorenote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
+        <div class="course-content">
+            
 <p>Ако ипак желиш да научиш више, конверзија негативних означених целих бројева у
 бинарне врши се на следећи начин:</p>
-<ol class="arabic simple">
-<li><p>Рачуна се апсолутна вредност негативног декадног броја: <span class="math notranslate nohighlight">\(|-54321|=54321\)</span>.</p></li>
-<li><p>Добијени декадни број конвертује се у бинарни:
-<span class="math notranslate nohighlight">\(54321_{(10)} = 11010110 \ 00010001_{(2)}\)</span>.</p></li>
-<li><p>Нулама се допуњује лева страна добијеног бинарног броја до жењеног броја
-бинарних цифара (нпр. до 32 бинарне цифре за целе бројеве типа <code class="docutils literal notranslate"><span class="pre">int</span></code>):
-<span class="math notranslate nohighlight">\(00000000 \ 00000000 \ 11010110 \ 00010001\)</span></p></li>
-<li><p>Инвертују се све битове у бинарном броју, <span class="math notranslate nohighlight">\(0\)</span> у <span class="math notranslate nohighlight">\(1\)</span>, тј. <span class="math notranslate nohighlight">\(1\)</span> у <span class="math notranslate nohighlight">\(0\)</span>:
-<span class="math notranslate nohighlight">\(11111111 \ 11111111 \ 00101001 \ 11101110\)</span>.</p></li>
-<li><p>На крају се добијени бираним број сабира са један:
-<span class="math notranslate nohighlight">\(11111111 \ 11111111 \ 00101001 \ 11101110 + 1\)</span>.</p></li>
-</ol>
-<p>Добијени збир представља негативан означен цео број <span class="math notranslate nohighlight">\(-54321\)</span> записан у бинарном
-облику у нотацији комплемента двојке: <span class="math notranslate nohighlight">\(11111111 \ 11111111 \ 00101001 \ 11101111\)</span></p>
-<p>У овом случају, у петом кораку, сабирање је било једноставно јер су последњи
-битови сабирака били <span class="math notranslate nohighlight">\(0\)</span> и <span class="math notranslate nohighlight">\(1\)</span>, чији збир износи <span class="math notranslate nohighlight">\(1\)</span>. Ако се сабирају битови
-<span class="math notranslate nohighlight">\(1\)</span> и <span class="math notranslate nohighlight">\(1\)</span>, збир износи <span class="math notranslate nohighlight">\(2\)</span>, па се једна јединица записује, а друга се преноси -
-слично као приликом сабирања декадних бројева, где се врши пренос када збир је
-збир већи од <span class="math notranslate nohighlight">\(9\)</span>.</p>
-</div>
+<p>Рачуна се апсолутна вредност негативног декадног броја: |-54321|=54321.
+Добијени декадни број конвертује се у бинарни: 54321 = 11010110 00010001.
+Нулама се допуњује лева страна добијеног бинарног броја до жењеног броја
+бинарних цифара (нпр. до 32 бинарне цифре за целе бројеве типа int): 00000000
+00000000 11010110 00010001. Инвертују се све битови у бинарном броју (0 у 1 и 1
+у 0): 11111111 11111111 00101001 11101110. На крају се добијени бинарни број
+сабира са један: 11111111 11111111 00101001 11101110 + 1.</p>
+<p>Добијени збир представља негативан означен цео број -54321 записан у бинарном
+облику у нотацији комплемента двојке: 11111111 11111111 00101001 11101111. У
+овом случају сабирање је било једноставно јер су последњи битови сабирака били
+0 и 1, чији збир износи 1. Ако се сабирају битови 1 и 1, збир износи 2, па се
+једна јединица записује, а друга се преноси - слично као приликом сабирања
+декадних бројева, где се врши пренос када збир је збир већи од 9.</p>
+
+    </div></div>
 <section id="id2">
 <h2>Битски оператор И<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Битски оператор <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> се примењује над битовима два бинарна броја једнаке дужине

@@ -553,22 +553,27 @@
 податка,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dužina</span></code>, се задаје карактером <code class="docutils literal notranslate"><span class="pre">l</span></code> за <code class="docutils literal notranslate"><span class="pre">double</span></code>, или <code class="docutils literal notranslate"><span class="pre">L</span></code> за <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code>.</p></li>
 </ul>
-<div class="warning admonition">
-<p class="admonition-title">Упозорење</p>
-<p>Функција <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> сматра се небезбедном функцијом јер не проверава величину
+
+    <div class="note-wrapper technicalnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/technicalnote-img.svg" class="note-image technicalnote-image" /> 
+        <div class="course-content">
+            
+<p>Функција scanf() сматра се небезбедном функцијом јер не проверава величину
 унетих података. Ово се показало изузетно опасно, нарочито када је у питању
-унос низа карактера <em>(енгл. string)</em>, о чему ћеш учити у другом разреду. Ако
-корисник програма унесе дужи низ карактера од предвиђеног, може се десити да
-се у оперативној меморији препишу подаци који су смештени близу тог низа. То
+унос низа карактера (енгл. string), о чему ћеш учити следеће школске године.
+Ако корисник програма унесе дужи низ карактера од предвиђеног, може се десити
+да се у оперативној меморији препишу подаци који су смештени близу тог низа. То
 може да узрокује пуцање програма, грешке у раду оперативног система и озбиљне
 безбедносне пропусте. Због свега наведеног, у новијим верзијама Microsoft C/C++
-компајлера, моћи ћеш да користиш функцију <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> само уз обавезно навођење
-директиве <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">_CRT_SECURE_NO_WARNINGS</span></code> на почетку програма. Исто ће важити
-и за групу функција за унос коју ћеш учити у другом разреду. Ова директива неће
-сметати другим компајлерима, док алтернативна функција <code class="docutils literal notranslate"><span class="pre">scanf_s()</span></code> коју
-Microsoft C/C++ компајлер нуди, у другим компајлерима неће бити препозната као
-библиотечка функција.</p>
-</div>
+компајлера, моћи ћеш да користиш функцију scanf() само уз обавезно навођење
+директиве #define _CRT_SECURE_NO_WARNINGS на почетку програма. Исто ће важити
+и за групу функција за унос коју ћеш учити следеће школске године. Ова
+директива неће сметати другим компајлерима, док алтернативна функција scanf_s()
+коју Microsoft C/C++ компајлер нуди, у другим компајлерима неће бити препозната
+као библиотечка функција.</p>
+
+    </div></div>
 <p>Напиши програм у програмском језику C којим се са стандардног улаза уноси број
 година корисника програма, а потом тај податак исписује на стандардни излаз:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>

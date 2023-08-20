@@ -1,13 +1,11 @@
 # Visual Studio Code едитор и GCC
 
-:::{admonition} Напомена
-:class: warning
-
+```{technicalnote}
 Ова лекција намењена је само оним ученицима који, из неког разлога, нису у
 могућности да инсталирају и користе интегрисано развојно окружење Visual
 Studio. Ако си већ инсталирао Visual Studio, онда нема потребе да инсталираш
 и Visual Studio Code едитор и GCC сет алата!
-:::
+```
 
 Једна од алтернатива интегрисаном развојном окружењу Visual Studio је Visual
 Studio Code едитор и GCC сет алата. Остале алтернативе, Code::Blocks и DevC++

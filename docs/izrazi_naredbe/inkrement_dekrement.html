@@ -485,8 +485,12 @@ a += 1;
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>4 2
 </pre></div>
 </div>
-<div class="warning admonition">
-<p class="admonition-title">Упозорење</p>
+
+    <div class="note-wrapper technicalnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/technicalnote-img.svg" class="note-image technicalnote-image" /> 
+        <div class="course-content">
+            
 <p>У стандарду програмског језика C није изричито прописано када се инкрементирање
 или декрементирање дешава ако се оператори инкрементирања или декрементирања
 употребљавају над истом променљивом у истом изразу - да ли пре или после
@@ -496,12 +500,9 @@ a += 1;
 код произвешће различите резултате када се компајлира различитим компајлерима,
 или истим компајлером са различитим оптимизационим подешавањима.</p>
 <p>Због тога, избегавај да користиш операторе инкрементирања или декрементирања
-над истом променљивом у истој наредби, као на пример:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
+над истом променљивом у истој наредби, као на пример: int x = 1; x = x++ + ++x;</p>
+
+    </div></div>
 </section>
 
         </article>
