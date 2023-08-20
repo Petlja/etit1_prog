@@ -346,25 +346,34 @@
 <h1>Квиз: библиотечке функције<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
 <h2>Питање 1<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Списак заглавља стандардне библиотеке програмског језика C дефинисан је првим
-C89 стандардом и не може се проширивати усвајањем нових стандарда.</p>
-<ul class="simple">
-<li><p>Тачно</p></li>
-<li><p>Нетачно <strong>ТАЧНО</strong></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Списак заглавља стандардне библиотеке програмског језика C дефинисан је првим
+C89 стандардом и не може се проширивати усвајањем нових стандарда."  answer1="Тачно"  answer2="Нетачно"  correct-answers="2">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id3">
 <h2>Питање 2<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>Дата је формула <span class="math notranslate nohighlight">\(c=\sqrt{a^2+b^2}\)</span>. Како би записао ову формулу у програмском
-језику C, ако су декларисане променљиве <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c;</span></code>. Штиклирај тачне
-одговоре.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">sqrt(a</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">b);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">sqrt(pow(a,</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">pow(b,</span> <span class="pre">2));</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">pow((a</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">b),</span> <span class="pre">1.</span> <span class="pre">/</span> <span class="pre">2.);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">sqrt(a</span> <span class="pre">^</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">^</span> <span class="pre">2);</span></code></p></li>
-</ul>
-</section>
+<p>Дата је формула:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[c=\sqrt{a^2+b^2}\]</div>
+</div>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Ако су декларисане променљиве double a, b, c; како би записао дату формулу?"  answer1="c = sqrt(a * a + b * b);"  answer2="c = sqrt(pow(a, 2) + pow(b, 2));"  answer3="c = pow((a * a + b * b), 1. / 2.);"  answer4="c = sqrt(a ^ 2 + b ^ 2);"  correct-answers="1,2,3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id4">
 <h2>Питање 3<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Наставник закључује оцене на основну просечних оцена ученика по правилу да се
@@ -376,35 +385,41 @@ C89 стандардом и не може се проширивати усвај
 <li><p><span class="math notranslate nohighlight">\(2\)</span> закључује за просечну оцену од <span class="math notranslate nohighlight">\(1.50\)</span> до <span class="math notranslate nohighlight">\(2.49\)</span> и</p></li>
 <li><p><span class="math notranslate nohighlight">\(1\)</span> закључује за просечну оцену мању од <span class="math notranslate nohighlight">\(1.50\)</span>.</p></li>
 </ul>
-<p>Ако је декларисана променљива <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">prosek;</span></code> у коју се уноси просечна оцена
-ученика, којом ће се наредбом исправно закључити оцене ученика?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">zakljucna</span> <span class="pre">=</span> <span class="pre">round(prosek);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">zakljucna</span> <span class="pre">=</span> <span class="pre">trunc(prosek);</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">zakljucna</span> <span class="pre">=</span> <span class="pre">floor(prosek);</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">zakljucna</span> <span class="pre">=</span> <span class="pre">ceil(prosek);</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Ако је декларисана променљива double prosek; у коју се уноси просечна оцена
+ученика, којом ће се наредбом исправно закључити оцене ученика?"  answer1="double zakljucna = round(prosek);"  answer2="double zakljucna = trunc(prosek);"  answer3="int zakljucna = floor(prosek);"  answer4="int zakljucna = ceil(prosek);"  correct-answers="1">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id5">
 <h2>Питање 4<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<p>Штиклирај наредбе у којима се неће вршити имплицитне конверзије типова:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">abs(-5);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">fabs(-1.23);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">floor(1.23);</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">ceil(1.23);</span></code> <strong>ТАЧНО</strong></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Штиклирај наредбе у којима се неће вршити имплицитне конверзије типова."  answer1="int x = abs(-5);"  answer2="double x = fabs(-1.23);"  answer3="int x = floor(1.23);"  answer4="double x = ceil(1.23);"  correct-answers="1,2,4">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id6">
 <h2>Питање 5<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>Ако је декларисана променљива <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">x;</span></code>, штиклирај тачне исказе.</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\sqrt[3]{x}\)</span> може се израчунати једним позивом библиотечке функције <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\sqrt[3]{x}\)</span> може се израчунати са два позива библиотечке функције <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>. <strong>ТАЧНО</strong></p></li>
-<li><p><span class="math notranslate nohighlight">\(\sqrt[3]{x}\)</span> може се израчунати једним позивом библиотечке функције <code class="docutils literal notranslate"><span class="pre">pow()</span></code>. <strong>ТАЧНО</strong></p></li>
-<li><p><span class="math notranslate nohighlight">\(\sqrt[3]{x}\)</span> не може се израчунати библиотечким функцијама у програмском језику C.</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Ако је декларисана променљива double x; штиклирај тачне исказе."  answer1="Кубни корен из x може се израчунати једним позивом библиотечке функције sqrt()."  answer2="Кубни корен из x може се израчунати са два позива библиотечке функције sqrt()."  answer3="Кубни корен из x може се израчунати једним позивом библиотечке функције pow()."  answer4="Кубни корен из x не може се израчунати библиотечким функцијама у програмском језику C."  correct-answers="2,3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 </section>
 
         </article>
