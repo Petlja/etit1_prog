@@ -10,6 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -289,10 +292,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Сортирање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -550,22 +553,27 @@
 податка,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dužina</span></code>, се задаје карактером <code class="docutils literal notranslate"><span class="pre">l</span></code> за <code class="docutils literal notranslate"><span class="pre">double</span></code>, или <code class="docutils literal notranslate"><span class="pre">L</span></code> за <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code>.</p></li>
 </ul>
-<div class="warning admonition">
-<p class="admonition-title">Упозорење</p>
-<p>Функција <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> сматра се небезбедном функцијом јер не проверава величину
+
+    <div class="note-wrapper technicalnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/technicalnote-img.svg" class="note-image technicalnote-image" /> 
+        <div class="course-content">
+            
+<p>Функција scanf() сматра се небезбедном функцијом јер не проверава величину
 унетих података. Ово се показало изузетно опасно, нарочито када је у питању
-унос низа карактера <em>(енгл. string)</em>, о чему ћеш учити у другом разреду. Ако
-корисник програма унесе дужи низ карактера од предвиђеног, може се десити да
-се у оперативној меморији препишу подаци који су смештени близу тог низа. То
+унос низа карактера (енгл. string), о чему ћеш учити следеће школске године.
+Ако корисник програма унесе дужи низ карактера од предвиђеног, може се десити
+да се у оперативној меморији препишу подаци који су смештени близу тог низа. То
 може да узрокује пуцање програма, грешке у раду оперативног система и озбиљне
 безбедносне пропусте. Због свега наведеног, у новијим верзијама Microsoft C/C++
-компајлера, моћи ћеш да користиш функцију <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> само уз обавезно навођење
-директиве <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">_CRT_SECURE_NO_WARNINGS</span></code> на почетку програма. Исто ће важити
-и за групу функција за унос коју ћеш учити у другом разреду. Ова директива неће
-сметати другим компајлерима, док алтернативна функција <code class="docutils literal notranslate"><span class="pre">scanf_s()</span></code> коју
-Microsoft C/C++ компајлер нуди, у другим компајлерима неће бити препозната као
-библиотечка функција.</p>
-</div>
+компајлера, моћи ћеш да користиш функцију scanf() само уз обавезно навођење
+директиве #define _CRT_SECURE_NO_WARNINGS на почетку програма. Исто ће важити
+и за групу функција за унос коју ћеш учити следеће школске године. Ова
+директива неће сметати другим компајлерима, док алтернативна функција scanf_s()
+коју Microsoft C/C++ компајлер нуди, у другим компајлерима неће бити препозната
+као библиотечка функција.</p>
+
+    </div></div>
 <p>Напиши програм у програмском језику C којим се са стандардног улаза уноси број
 година корисника програма, а потом тај податак исписује на стандардни излаз:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
@@ -692,6 +700,9 @@ Ti imas 15 godina i visok si 176 cm.
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     </body>

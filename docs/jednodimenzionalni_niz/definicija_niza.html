@@ -10,6 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -289,10 +292,10 @@
 <li class="toctree-l2"><a class="reference internal" href="minimum_maksimum.html">Минимум и максимум низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sortiranje_niza.html">Сортирање елемената низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_elementarno_koriscenje_nizova.html">Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_transformacije_nizova.html">Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_vektori_polinomi_veliki_brojevi.html">Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_sortiranje_osnove.html">Сортирање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -350,12 +353,17 @@
 елемента низа <code class="docutils literal notranslate"><span class="pre">0</span></code>, другог <code class="docutils literal notranslate"><span class="pre">1</span></code>, трећег <code class="docutils literal notranslate"><span class="pre">2</span></code>, … и <span class="math notranslate nohighlight">\(n\)</span>-тог <code class="docutils literal notranslate"><span class="pre">n-1</span></code>. Максималан број
 елемената неког низа назива се и <strong>димензија низа</strong>, па отуд назив
 једнодимензионални низ.</p>
-<div class="warning admonition">
-<p class="admonition-title">Индекси елемената низа</p>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
 <p>Ученици који се први пут сусрећу са низовима у програмирању, често греше у раду
 са индексима низа јер их посматрају као у математици. У програмирању, први
-елемент низа има <code class="docutils literal notranslate"><span class="pre">0</span></code> а не <code class="docutils literal notranslate"><span class="pre">1</span></code>, други елемент има индекс <code class="docutils literal notranslate"><span class="pre">1</span></code> а не <code class="docutils literal notranslate"><span class="pre">2</span></code> итд.</p>
-</div>
+елемент низа има индекс 0, а не 1, други елемент има индекс 1, а не 2 итд.</p>
+
+    </div></div>
 <a class="reference internal image-reference" href="../_images/niz.png"><img alt="Низ од 15 елемената" class="align-center" src="../_images/niz.png" style="width: 70%;" /></a>
 <p>Сви елементи низа увек се налазе у секвенцијалним меморијским локацијама, један
 поред другог, почевши од меморијске адресе нултог елемента и завршавајући са
@@ -461,6 +469,9 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>

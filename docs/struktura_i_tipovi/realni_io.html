@@ -10,6 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -289,10 +292,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Сортирање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -343,23 +346,27 @@
 <h1>Унос и приказ реалних бројева<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Као и за целобројни и знаковни тип, за унос и приказ реалних бројева користићеш
 функције форматираног улаза и излаза <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> и <code class="docutils literal notranslate"><span class="pre">printf()</span></code>.</p>
-<div class="warning admonition">
-<p class="admonition-title">Напомена</p>
-<p>У табели у <a class="reference internal" href="../prilozi/tipovi_podataka.html"><span class="std std-doc">прилогу</span></a> приметићеш да се за сваки
-реални тип података може користи час осам симбола конверзије <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>,
-<code class="docutils literal notranslate"><span class="pre">G</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">A</span></code> приликом формирања спецификатора конверзије.</p>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
+<p>Приметићеш да се за сваки реални тип података може користи час осам симбола
+конверзије f, F, g, G, e, E, a и A приликом формирања спецификатора конверзије.</p>
 <p>Разлика између спецификатора у којима се користе мала и велика слова је само
 естетска. Уколико је на излазу потребно исписати слово, спецификатори са малим
-словима на излазу исписаће све малим словима (нпр. <code class="docutils literal notranslate"><span class="pre">inf</span></code>, <code class="docutils literal notranslate"><span class="pre">nan</span></code> и <code class="docutils literal notranslate"><span class="pre">e</span></code>), док ће
-они са великим словима исписати све великим словима (нпр. <code class="docutils literal notranslate"><span class="pre">INF</span></code>, <code class="docutils literal notranslate"><span class="pre">NAN</span></code> и <code class="docutils literal notranslate"><span class="pre">E</span></code>).
-Значи, разлике су само естетске, а не и сусштинске, па да на даље можеш
-користити нпр. само спецификаторе са малим словима.</p>
+словима на излазу исписаће све малим словима (нпр. inf, nan и e), док ће они са
+великим словима исписати све великим словима (нпр. INF, NAN и E). Значи,
+разлике су само естетске, а не и сусштинске, па да на даље можеш користити нпр.
+само спецификаторе са малим словима.</p>
 <p>Симболи конверзије у спецификаторима за рад са хексадекадним реалним бројевима
-<code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">A</span></code> уведени су тек каснијим <strong>C99</strong> стандардном и њих нећеш користити у
-овом курсу.</p>
+a и A уведени су тек каснијим C99 стандардном и њих нећеш користити у овом
+курсу.</p>
 <p>Сада се број симбола коверзије за спецификаторе конверзије које требаш научити
-свео са осам на три: <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code> и <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
-</div>
+свео са осам на три: f, g и e.</p>
+
+    </div></div>
 <section id="id2">
 <h2>Форматирани излаз<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>За приказ реалних бројева такође важи општи облик функције <code class="docutils literal notranslate"><span class="pre">printf()</span></code>, где по
@@ -595,6 +602,9 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>

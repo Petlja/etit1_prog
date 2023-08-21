@@ -11,5 +11,3 @@ prelazne_sekvence
 realni_ogranicenja
 operatori_prioritet
 ```
-
-## ТЕКСТ ИСПОД НИЈЕ ЗА ОБЈАВЉИВАЊЕ ВЕЋ ЗА ИНТЕРНУ УПОТРЕБУ ↓

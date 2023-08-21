@@ -10,6 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -289,10 +292,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Сортирање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -343,135 +346,165 @@
 <h1>Квиз: Оператори инкрементирања и декрементирања<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
 <h2>Питање 1<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Попуни празнине. Програмски језик C располаже унарним оператором инкрементирања
-<code class="docutils literal notranslate"><span class="pre">++</span></code> којим се вредност операнда повећава за <code class="docutils literal notranslate"><span class="pre">1</span></code> и унарним оператором
-декрементирања <code class="docutils literal notranslate"><span class="pre">--</span></code> којим се вредност операнда смањује за <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box fitb-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <fill-in-the-blank
+    question="Попуни празнине речима написаним ћириличним писмом (не цифрама). Програмски
+језик C располаже унарним оператором |blank| ++ којим се вредност операнда
+увећава за |blank| и унарним оператором |blank| -- којим се вредност операнда
+умањује за |blank|."
+    regex="инкрементирања,један,декрементирања,један">
+    
+      </fill-in-the-blank>
+    </div>
+    </section>
 <section id="id3">
 <h2>Питање 2<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>Нека је наредбом <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">1;</span></code> иницијализована целобројна променљива <code class="docutils literal notranslate"><span class="pre">x</span></code>. Повежи
-наредбе на левој страни са значењем наредбе на десној страни.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">++x;</span></code> ||| наредбом је префиксно инкрементирана променљива <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--x;</span></code> ||| наредбом је префиксно декрементирана променљива <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x++;</span></code> ||| наредбом је постфиксно инкрементирана променљива <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x--;</span></code> ||| наредбом је постфиксно декрементирана променљива <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-</ul>
+<!---
+```{dragndrop}
+- ++x; ||| наредбом је префиксно инкрементирана променљива x
+- --x; ||| наредбом је префиксно декрементирана променљива x
+- x++; ||| наредбом је постфиксно инкрементирана променљива x
+- x--; ||| наредбом је постфиксно декрементирана променљива x
+
+Нека је наредбом int x = 1; иницијализована целобројна променљива x. Повежи
+наредбе на левој страни са значењем наредбе на десној страни.
+```
+-->
 </section>
 <section id="id4">
 <h2>Питање 3<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Шта ће се исписати на стандардном излазу након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">;</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">22</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">23</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">32</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">33</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Шта ће се исписати на стандардном излазу након извршења датог кода?"  answer1="22"  answer2="23"  answer3="32"  answer4="33"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id5">
 <h2>Питање 4<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<p>Шта ће се исписати на стандардном излазу након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">;</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">22</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">23</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">32</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">33</span></code> <strong>ТАЧНО</strong></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Шта ће се исписати на стандардном излазу након извршења датог кода?"  answer1="22"  answer2="23"  answer3="32"  answer4="33"  correct-answers="4">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id6">
 <h2>Питање 5<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>Којa jе вредност променљивe <code class="docutils literal notranslate"><span class="pre">x</span></code> након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 <span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Вредност променљивe <code class="docutils literal notranslate"><span class="pre">x</span></code> je <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
-<li><p>Вредност променљивe <code class="docutils literal notranslate"><span class="pre">x</span></code> je <code class="docutils literal notranslate"><span class="pre">6</span></code></p></li>
-<li><p>Вредност променљивe <code class="docutils literal notranslate"><span class="pre">x</span></code> je <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
-<li><p>Вредност променљивe <code class="docutils literal notranslate"><span class="pre">x</span></code> је непредвидива. <strong>ТАЧНО</strong></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Колика ће бити вредност променљивe x након извршења датог кода?"  answer1="Вредност променљивe x биће 5."  answer2="Вредност променљивe x биће 6."  answer3="Вредност променљивe x биће 7."  answer4="Вредност променљивe x биће непредвидива."  correct-answers="4">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id7">
 <h2>Питање 6<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<p>Коју ће вредност променљива <code class="docutils literal notranslate"><span class="pre">z</span></code> имати након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">--</span><span class="n">y</span><span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code><strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Коју ће вредност променљива z имати након извршења датог кода?"  answer1="-1"  answer2="0"  answer3="1"  answer4="2"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id8">
 <h2>Питање 7<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<p>Коју ће вредност променљива <code class="docutils literal notranslate"><span class="pre">z</span></code> имати након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">--</span><span class="n">y</span><span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">90</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">99</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">110</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Коју ће вредност променљива z имати након извршења датог кода?"  answer1="90"  answer2="99"  answer3="100"  answer4="110"  correct-answers="2">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id9">
 <h2>Питање 8<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
-<p>Коју ће вредност променљива <code class="docutils literal notranslate"><span class="pre">z</span></code> имати након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.0</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">y</span><span class="o">--</span><span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">1.111111</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">2.2</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Коју ће вредност променљива z имати након извршења датог кода?"  answer1="1.111111"  answer2="1.0"  answer3="2.0"  answer4="2.2"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id10">
 <h2>Питање 9<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
-<p>Коју ће вредност променљива <code class="docutils literal notranslate"><span class="pre">z</span></code> имати након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="o">--</span><span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">14</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">15</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">16</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">17</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Коју ће вредност променљива z имати након извршења датог кода?"  answer1="14"  answer2="15"  answer3="16"  answer4="17"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id11">
 <h2>Питање 10<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
-<p>Шта ће се исписати на стандардном излазу након извршења следећег кода?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">--</span><span class="p">,</span><span class="w"> </span><span class="o">--</span><span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">10101010</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1011109</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">111298</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">111199</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Шта ће се исписати на стандардном излазу након извршења датог кода?"  answer1="10101010"  answer2="1011109"  answer3="111298"  answer4="111199"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 </section>
 
         </article>
@@ -557,6 +590,9 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     </body>

@@ -10,6 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -289,10 +292,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Сортирање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -343,108 +346,145 @@
 <h1>Квиз: Знаковни тип<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
 <h2>Питање 1<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Који је од наведених исказа тачан?</p>
-<ul class="simple">
-<li><p>Карактер се чувају у меморији као цео број. <strong>ТАЧНО</strong></p></li>
-<li><p>Карактер се чувају у меморији као реалан број.</p></li>
-<li><p>Карактер се чувају у меморији као један бит.</p></li>
-<li><p>Карактери се не чувају у меморији.</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Који је од наведених исказа тачан?"  answer1="Карактер се чува у меморији као цео број."  answer2="Карактер се чува у меморији као реалан број."  answer3="Карактер се чува у меморији као један бит."  answer4="Карактери се не чувају у меморији."  correct-answers="1">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id3">
 <h2>Питање 2<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>Штиклирај тачне одговоре. Које су знаковне променљиве иницијализоване
-карактером <code class="docutils literal notranslate"><span class="pre">A</span></code>?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">'A';</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">65;</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'\101';</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">'\x41';</span></code> <strong>ТАЧНО</strong></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Штиклирај тачне одговоре. Које су знаковне променљиве иницијализоване
+карактером `A`?"  answer1="char a = 'A';"  answer2="char b = 65;"  answer3="char c = '\101';"  answer4="char d = '\x41';"  correct-answers="1,2,3,4">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id4">
 <h2>Питање 3<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Којa je од наведених знаковних променљивих исправно иницијализованa?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'&quot;';</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'\\';</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'//';</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'?';</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Којa je од наведених знаковних променљивих исправно иницијализованa?"  answer1="char c = '"';"  answer2="char c = '\\';"  answer3="char c = '//';"  answer4="char c = '?';"  correct-answers="2">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id5">
 <h2>Питање 4<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<p>Која се прелазана секвенца користи за прелазак у нови ред?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Која се прелазана секвенца користи за прелазак у нови ред?"  answer1="\n"  answer2="\r"  answer3="\t"  answer4="\b"  correct-answers="1">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id6">
 <h2>Питање 5<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>Која је вредност следећег израза <code class="docutils literal notranslate"><span class="pre">'A'</span> <span class="pre">-</span> <span class="pre">'A'</span></code>?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AА</span></code></p></li>
-<li><p>вредност није дефинисана.</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Која је вредност израза 'A' - 'A'?"  answer1="0"  answer2="A"  answer3="A-А"  answer4="вредност није дефинисана."  correct-answers="1">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id7">
 <h2>Питање 6<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<p>Штиклирај тачне одговоре. Која ће наредба на излазу одштампати карактер <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">printf(&quot;%c&quot;,</span> <span class="pre">64);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">printf(&quot;%c&quot;,</span> <span class="pre">0100);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">printf(&quot;%c&quot;,</span> <span class="pre">0x40);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">printf(&quot;%c&quot;,</span> <span class="pre">'&#64;');</span></code> <strong>ТАЧНО</strong></p></li>
-</ul>
-</section>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="p">);</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mo">0100</span><span class="p">);</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x40</span><span class="p">);</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;@&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Која ће наредба на излазу одштампати карактер `@`?"  answer1="Наредбом 1."  answer2="Наредбом 2."  answer3="Наредбом 3."  answer4="Наредбом 4."  correct-answers="1,2,3,4">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id8">
 <h2>Питање 7<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<p>Који је од наведених исказа тачан?</p>
-<p>Подаци типа <code class="docutils literal notranslate"><span class="pre">char</span></code>…</p>
-<ul class="simple">
-<li><p>…никада се не користе се за представљање целих бројева.</p></li>
-<li><p>…увек су неозначени и могу имати вредност од <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(255\)</span>.</p></li>
-<li><p>…могу се иницијализовати навођењем карактера између знакова <code class="docutils literal notranslate"><span class="pre">'</span></code>. <strong>ТАЧНО</strong></p></li>
-<li><p>…припадају подскупу скупа реалних бројева.</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Који је од наведених исказа тачан? Подаци типа char..."  answer1="...никада се не користе се за представљање целих бројева."  answer2="...увек су неозначени и могу имати вредност од 0 до 255."  answer3="...могу се иницијализовати навођењем карактера између апострофа ''."  answer4="...припадају подскупу скупа реалних бројева."  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id9">
 <h2>Питање 8<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
-<p>Који je константни знаковни податак исправно дефинисан?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'A';</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">const</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'A';</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'A';</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">constant</span> <span class="pre">char</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">'A';</span></code></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Који je константни знаковни податак исправно дефинисан?"  answer1="char c = 'A';"  answer2="char const c = 'A';"  answer3="const char c = 'A';"  answer4="constant char c = 'A';"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id10">
 <h2>Питање 9<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
-<p>Којом групом наредби се са стандардног улаза учитава карактер, па се на
-стандардни излаз исписује декадна вредност учитаног карактера?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%c&quot;,</span> <span class="pre">&amp;c);</span> <span class="pre">printf(&quot;%c&quot;,</span> <span class="pre">c);</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%c&quot;,</span> <span class="pre">&amp;c);</span> <span class="pre">printf(&quot;%d&quot;,</span> <span class="pre">c);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%d&quot;,</span> <span class="pre">&amp;c);</span> <span class="pre">printf(&quot;%d&quot;,</span> <span class="pre">c);</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%c&quot;,</span> <span class="pre">c);</span> <span class="pre">printf(&quot;%d&quot;,</span> <span class="pre">c);</span></code></p></li>
-</ul>
-</section>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+</pre></div>
+</div>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Којом групом наредби се са стандардног улаза учитава карактер, па се на
+стандардни излаз исписује декадна вредност учитаног карактера?"  answer1="Групом наредби 1."  answer2="Групом наредби 2."  answer3="Групом наредби 3."  answer4="Групом наредби 4."  correct-answers="2">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id11">
 <h2>Питање 10<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
-<p>Којом групом наредби се са стандардног улаза учитава карактер, па се на
-стандардни излаз исписује учитани карактер?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%c&quot;,</span> <span class="pre">&amp;c);</span> <span class="pre">printf(&quot;%c&quot;,</span> <span class="pre">c);</span></code> <strong>ТАЧНО</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%c&quot;,</span> <span class="pre">&amp;c);</span> <span class="pre">printf(&quot;%d&quot;,</span> <span class="pre">c);</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%d&quot;,</span> <span class="pre">&amp;c);</span> <span class="pre">printf(&quot;%d&quot;,</span> <span class="pre">c);</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scanf(&quot;%c&quot;,</span> <span class="pre">c);</span> <span class="pre">printf(&quot;%d&quot;,</span> <span class="pre">c);</span></code></p></li>
-</ul>
-</section>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+</pre></div>
+</div>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Којом групом наредби се са стандардног улаза учитава карактер, па се на
+стандардни излаз исписује учитани карактер?"  answer1="Групом наредби 1."  answer2="Групом наредби 2."  answer3="Групом наредби 3."  answer4="Групом наредби 4."  correct-answers="1">
+    
+      </multiple-choice>
+    </div>
+    </section>
 </section>
 
         </article>
@@ -530,9 +570,10 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

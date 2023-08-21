@@ -10,6 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -289,10 +292,10 @@
 <li class="toctree-l2"><a class="reference internal" href="minimum_maksimum.html">Минимум и максимум низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sortiranje_niza.html">Сортирање елемената низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_elementarno_koriscenje_nizova.html">Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_transformacije_nizova.html">Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_vektori_polinomi_veliki_brojevi.html">Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="z_sortiranje_osnove.html">Сортирање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -343,67 +346,89 @@
 <h1>Квиз: Једнодимензионални низ<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
 <h2>Питање 1<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Ако се говори о једнодимензионалним низовима повежи термине на левој страни са
-њиховим значењем на десној страни.</p>
-<ul class="simple">
-<li><p>Низ ||| Хомогени тип података</p></li>
-<li><p>Елемент ||| Појединачни податак</p></li>
-<li><p>Индекс ||| Позиција елемента</p></li>
-<li><p>Димензија ||| Максималан број елемената</p></li>
-</ul>
+<!---
+```{dragndrop}
+:match_1: Низ ||| Хомогени тип података
+:match_2: Елемент ||| Појединачни податак
+:match_3: Индекс ||| Позиција елемента
+:match_4: Димензија ||| Максималан број елемената
+
+Ако се говори о једнодимензионалним низовима, повежи термине на левој страни са
+њиховим значењем на десној страни.
+```
+-->
 </section>
 <section id="id3">
 <h2>Питање 2<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>Који је од наведених исказа тачан?</p>
-<ul class="simple">
-<li><p>Индекси елемената низа су увек целобројног типа <code class="docutils literal notranslate"><span class="pre">int</span></code>. <strong>ТАЧНО</strong></p></li>
-<li><p>Индекси елемената низа могу бити целобројног или реалног типа.</p></li>
-<li><p>Индекси елемената низа су увек реалног типа <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p></li>
-<li><p>Индекси елемената низа немају одређен тип.</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Који је од наведених исказа тачан?"  answer1="Индекси елемената низа су увек целобројног типа int."  answer2="Индекси елемената низа могу бити целобројног или реалног типа."  answer3="Индекси елемената низа су увек реалног типа double."  answer4="Индекси елемената низа немају одређен тип."  correct-answers="1">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id4">
 <h2>Питање 3<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Попуни празнине.</p>
-<p>Ако једнодимензионални низ има <span class="math notranslate nohighlight">\(n\)</span> елемената, онда је индекс првог елемента
-низа <strong>0</strong>, другог елемента <strong>1</strong>  … и <span class="math notranslate nohighlight">\(n\)</span>-тог елемента <strong>n-1</strong>.</p>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box fitb-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <fill-in-the-blank
+    question="Попуни празнине цифрама (не речима). Ако једнодимензионални низ има 10
+елемената, онда је индекс првог елемента низа |blank|, другог елемента |blank|,
+... и десетог елемента |blank|."
+    regex="0,1,9">
+    
+      </fill-in-the-blank>
+    </div>
+    </section>
 <section id="id5">
 <h2>Питање 4<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<p>Повежи наредбе на левој страни са њиховим значењем на десној страни.</p>
-<ul class="simple">
-<li><p>int А[] = {1,2,3,4,5}; ||| Иницијализација низа А</p></li>
-<li><p>int А[5] = {1,2,3,4}; ||| Делимична иницијализација низа А</p></li>
-<li><p>int А[5]; ||| Декларација низа А</p></li>
-<li><p>А[0] = 2; ||| Додела вредности првом елементу низа А</p></li>
-<li><p>А[1] = 1; ||| Додела вредности другом елементу низа А</p></li>
-<li><p>scanf(„%d”, &amp;А[0]); ||| Унос вредности првог елемента низа А</p></li>
-<li><p>printf(„%d”, А[0]); ||| Испис вредности првог елемента низа А</p></li>
-</ul>
+<!---
+```{dragndrop}
+:match_1: int А[] = {1,2,3,4,5}; ||| Иницијализација низа А
+:match_2: int А[5] = {1,2,3,4}; ||| Делимична иницијализација низа А
+:match_3: int А[5]; ||| Декларација низа А
+:match_4: А[0] = 2; ||| Додела вредности првом елементу низа А
+:match_5: А[1] = 1; ||| Додела вредности другом елементу низа А
+:match_6: scanf("%d", &А[0]); ||| Унос вредности првог елемента низа А
+:match_7: printf("%d", А[0]); ||| Испис вредности првог елемента низа А
+
+Повежи наредбе на левој страни са њиховим значењем на десној страни.
+```
+-->
 </section>
 <section id="id6">
 <h2>Питање 5<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>Ако је декларисан низ <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">arr[10];</span></code>, онда ће извршавањем наредбе
-<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">sizeof(arr);</span></code> променљива <code class="docutils literal notranslate"><span class="pre">n</span></code> добити вредност:</p>
-<ul class="simple">
-<li><p>4</p></li>
-<li><p>10</p></li>
-<li><p>40 <strong>ТАЧНО</strong></p></li>
-<li><p>80</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Ако је декларисан низ int arr[10];, онда ће извршавањем наредбе
+int n = sizeof(arr); променљива n добити вредност..."  answer1="4"  answer2="10"  answer3="40"  answer4="80"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id7">
 <h2>Питање 6<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<p>Декларисан је једнодимензионални низ <code class="docutils literal notranslate"><span class="pre">arr</span></code> димензије <span class="math notranslate nohighlight">\(10\)</span>. Извршавањем наредбе
-<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">sizeof(arr);</span></code> променљива <code class="docutils literal notranslate"><span class="pre">n</span></code> добила је вредност <span class="math notranslate nohighlight">\(80\)</span>. Којег је типа
-низ <code class="docutils literal notranslate"><span class="pre">arr</span></code>?</p>
-<ul class="simple">
-<li><p>Целобројног типа <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
-<li><p>Реалног типа <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
-<li><p>Реалног типа <code class="docutils literal notranslate"><span class="pre">double</span></code></p></li>
-<li><p>Знаковног типа</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Декларисан је једнодимензионални низ arr димензије 10. Извршавањем наредбе
+int n = sizeof(arr); променљива n добила је вредност 80. Којег је типа
+низ arr?"  answer1="Целобројног типа int"  answer2="Реалног типа float"  answer3="Реалног типа double"  answer4="Знаковног типа char"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 </section>
 
         </article>
@@ -485,9 +510,10 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

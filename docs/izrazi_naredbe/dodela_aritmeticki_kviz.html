@@ -10,6 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -289,10 +292,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Сортирање</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -343,33 +346,36 @@
 <h1>Квиз: Једноставна додела и аритметички оператори<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
 <h2>Питање 1<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Која ће вредност бити додељена променљивој <code class="docutils literal notranslate"><span class="pre">res</span></code>?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>29 <strong>ТАЧНО</strong></p></li>
-<li><p>41</p></li>
-<li><p>47</p></li>
-<li><p>77</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Која ће вредност бити додељена променљивој `res`?"  answer1="29"  answer2="41"  answer3="47"  answer4="77"  correct-answers="1">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id3">
 <h2>Питање 2<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>Која ће вредност бити додељена променљивој <code class="docutils literal notranslate"><span class="pre">res</span></code>?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>4</p></li>
-<li><p>6</p></li>
-<li><p>10 <strong>ТАЧНО</strong></p></li>
-<li><p>11</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Која ће вредност бити додељена променљивој `res`?"  answer1="4"  answer2="6"  answer3="10"  answer4="11"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id4">
 <h2>Питање 3<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Шта ће се исписати на стандардном излазу након покретања следећег програма?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -380,16 +386,18 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>5.75</p></li>
-<li><p>6.71</p></li>
-<li><p>10.00 <strong>ТАЧНО</strong></p></li>
-<li><p>10.25</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Шта ће се исписати на стандардном излазу након покретања датог програма?"  answer1="5.75"  answer2="6.71"  answer3="10.0"  answer4="10.25"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id5">
 <h2>Питање 4<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<p>Шта ће се исписати на стандардном излазу након покретања следећег програма?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -400,16 +408,18 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>5.75</p></li>
-<li><p>6.71</p></li>
-<li><p>10.00</p></li>
-<li><p>10.25 <strong>ТАЧНО</strong></p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Шта ће се исписати на стандардном излазу након покретања датог програма?"  answer1="5.75"  answer2="6.71"  answer3="10.0"  answer4="10.25"  correct-answers="4">
+    
+      </multiple-choice>
+    </div>
+    </section>
 <section id="id6">
 <h2>Питање 5<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>Шта ће се исписати на стандардном излазу након покретања следећег програма?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -421,13 +431,16 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>5.00</p></li>
-<li><p>6.00</p></li>
-<li><p>6.67 <strong>ТАЧНО</strong></p></li>
-<li><p>7.00</p></li>
-</ul>
-</section>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice question="Шта ће се исписати на стандардном излазу након покретања датог програма?"  answer1="5.0"  answer2="6.0"  answer3="6.67"  answer4="7.0"  correct-answers="3">
+    
+      </multiple-choice>
+    </div>
+    </section>
 </section>
 
         </article>
@@ -508,6 +521,9 @@
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
     <script src="../_static/translations.js"></script>
     <script src="../_static/design-tabs.js"></script>
     </body>
