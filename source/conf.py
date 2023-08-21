@@ -35,6 +35,34 @@ html_static_path = petlja_sphinx_extensions.extensions.static_dirs()
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_title = 'Програмирање I за информатичке профиле у електротехничким школама'
-html_theme = 'furo'
+
+
+html_theme = 'alabaster'
+html_theme_options = {
+    'show_powered_by' : False,
+    'show_relbars' : False,
+}
+html_context = {
+    'theme_nosidebar': True,
+}
+html_show_copyright = False
+html_show_sourcelink = False
+theme_nosidebar = True
+
+#caption_font_size: Font size of caption block text.
+
+#caption_font_family: Font family of caption block text.
+
+#code_font_size: Font size of code block text.
+
+#code_font_family: Font family of code block text. Defaults to 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace.
+
+#font_family: Font family of body text.
+
+#font_size: Font size of body text.
+
+#head_font_family: Font family of headings. Defaults to 'Garamond', 'Georgia',
+
+
 #additional_build_targets =['scorm']
 content_uri = 'https://petljamediastorage.blob.core.windows.net/temp/etit1_prog'
