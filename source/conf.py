@@ -40,13 +40,14 @@ html_title = 'Програмирање I за информатичке проф�
 html_theme = 'alabaster'
 html_theme_options = {
     'show_powered_by' : False,
-    #caption_font_size: Font size of caption block text.
-    #caption_font_family: Font family of caption block text.
+    'caption_font_size': '32px',
+    'caption_font_family': 'Source Sans Pro',
     #code_font_size: Font size of code block text.
     #code_font_family: Font family of code block text. Defaults to 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace.
-    #font_family: Font family of body text.
-    #font_size: Font size of body text.
+    'font_family': 'Source Sans Pro',
+    'font_size': '16px',
     #head_font_family: Font family of headings. Defaults to 'Garamond', 'Georgia',
+    'pre_bg' : '#f8f8f8'
 }
 html_context = {
     'theme_nosidebar': True,
