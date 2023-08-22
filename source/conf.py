@@ -40,14 +40,12 @@ html_title = 'Програмирање I за информатичке проф�
 html_theme = 'alabaster'
 html_theme_options = {
     'show_powered_by' : False,
-    'show_relbars' : False,
 }
 html_context = {
     'theme_nosidebar': True,
 }
 html_show_copyright = False
 html_show_sourcelink = False
-theme_nosidebar = True
 
 #caption_font_size: Font size of caption block text.
 
