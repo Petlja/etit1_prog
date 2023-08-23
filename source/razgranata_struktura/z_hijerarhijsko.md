@@ -1,7 +1,7 @@
 # Задаци: Хијерархија услова
 
 Алгоритми и програми у програмском језику C:
-[хијерархија услова](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/02%20Ugnezdjeno%20grananje/04%20hijerarhijsko).
+[Хијерархија услова](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/02%20Ugnezdjeno%20grananje/04%20hijerarhijsko).
 
 ## Два броја истог знака
 
