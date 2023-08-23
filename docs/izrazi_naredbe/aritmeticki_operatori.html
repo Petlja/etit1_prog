@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Конверзије типова" href="konverzije_tipova.html" /><link rel="prev" title="Оператор једноставе доделе" href="jednostavna_dodela.html" />
+<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Конверзије типова" href="konverzije_tipova.html" /><link rel="prev" title="Оператор једноставне доделе" href="jednostavna_dodela.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
         <title>Аритметички оператори - Програмирање I за информатичке профиле у електротехничким школама</title>
@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Изрази и наредбе</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -345,12 +345,12 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Аритметички оператори<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Аритметички оператори извршавају стандардне аритметичке операције над
-операндима и могу се поделити на <strong>унарне</strong>:</p>
+операндима и могу се поделити на <strong>унарне</strong>…</p>
 <ul class="simple">
 <li><p>унарно плус <code class="docutils literal notranslate"><span class="pre">+</span></code> и</p></li>
 <li><p>унарно минус <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
 </ul>
-<p>и <strong>бинарне</strong>:</p>
+<p>…и <strong>бинарне</strong>:</p>
 <ul class="simple">
 <li><p>сабирање <code class="docutils literal notranslate"><span class="pre">+</span></code>,</p></li>
 <li><p>одузимање <code class="docutils literal notranslate"><span class="pre">-</span></code>,</p></li>
@@ -365,20 +365,20 @@
 стим да је негативна вредност нуле и даље нула. Унарни плус испред операнда не
 мења знак операнда, већ само потврђује знак и ретко се може пронаћи образложење
 за потребом његовог коришћења. Након извршења унарног оператора над операндом,
-операнд остаје истог типа. У следећем примеру:</p>
+операнд остаје истог типа. У следећем примеру…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 <span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>у првој линији, променљиве <code class="docutils literal notranslate"><span class="pre">x</span></code> иницијализује се са вредношћу <span class="math notranslate nohighlight">\(2\)</span>. У другој
+<p>…у првој линији, променљива <code class="docutils literal notranslate"><span class="pre">x</span></code> иницијализује се са вредношћу <span class="math notranslate nohighlight">\(2\)</span>. У другој
 линији, прво се израчунава израз на десној страни (мења се знак променљивој
 <code class="docutils literal notranslate"><span class="pre">x</span></code>), па се резултат <span class="math notranslate nohighlight">\(-2\)</span> додељује променљивој <code class="docutils literal notranslate"><span class="pre">x</span></code> на левој страни. У следећем
-примеру:</p>
+примеру…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
 <span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>у првој линији, променљиве <code class="docutils literal notranslate"><span class="pre">y</span></code> иницијализује се са вредношћу <span class="math notranslate nohighlight">\(2.0\)</span>. У другој
+<p>…у првој линији, променљива <code class="docutils literal notranslate"><span class="pre">y</span></code> иницијализује се са вредношћу <span class="math notranslate nohighlight">\(2.0\)</span>. У другој
 линији, израз <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">+y;</span></code> је синтаксно тачан, али нема много смисла јер никако не
 утиче на вредност променљиве - само је потврђује.</p>
 </section>
@@ -396,13 +396,13 @@
 извршавања оператора. Пре него што почнеш да пишеш програме користећи
 аритметичке операторе, изузетно је важно да се упознаш са овим специфичностима.</p>
 <p>У овој лекцији научићеш како функционишу аритметички оператори над операндима
-истог типа, а у следећој, како функционишу над операндима различитих типова.</p>
+истог типа, а у следећој како функционишу над операндима различитих типова.</p>
 <section id="id4">
 <h3>Аритметички оператори и целобројни операнди<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Како функционишу бинарни аритметички оператори над целобројним операндима
 научио си још у нижим разредима основне школе.</p>
 <p>Основна аритметичка операција је <strong>сабирање</strong>. Збир бројева <span class="math notranslate nohighlight">\(7\)</span> и <span class="math notranslate nohighlight">\(2\)</span> у
-математици записао би као <span class="math notranslate nohighlight">\(7+2\)</span>. У програмском језику C користићеш исти запис
+математици би записао као <span class="math notranslate nohighlight">\(7+2\)</span>. У програмском језику C користићеш исти запис
 <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">+</span> <span class="pre">2</span></code>. Исто важи и за променљиве. Еквивалентан запис математичког израза
 <span class="math notranslate nohighlight">\(x+y\)</span> у програмском језику C је <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>.</p>
 <p>Напиши програм у програмском језику C који ће променљивој <code class="docutils literal notranslate"><span class="pre">z</span></code> доделити збир
@@ -426,11 +426,11 @@
 </div>
 <p>Поред сабирања, једна од основних аритметичких операција је <strong>одузимање</strong>.
 Разлика бројева <span class="math notranslate nohighlight">\(7\)</span> и <span class="math notranslate nohighlight">\(2\)</span> у математици се записује као <span class="math notranslate nohighlight">\(7-2\)</span>, исто као и у
-програмском језику C, <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">-</span> <span class="pre">2</span></code>. Такође, еквивалентан запис математичког израза
+програмском језику C <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">-</span> <span class="pre">2</span></code>. Такође, еквивалентан запис математичког израза
 <span class="math notranslate nohighlight">\(x-y\)</span> у програмском језику C је <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code>.</p>
 <p>Напиши програм у програмском језику C који ће променљивој <code class="docutils literal notranslate"><span class="pre">z</span></code> доделити разлику
 вредности променљивих <code class="docutils literal notranslate"><span class="pre">x</span></code> и <code class="docutils literal notranslate"><span class="pre">y</span></code>, па након тога исписати вредност променљиве <code class="docutils literal notranslate"><span class="pre">z</span></code>
-на стандардни излаз, ако су променљиве иницијализове и декларисане као у
+на стандардни излаз, ако су променљиве иницијализоване и декларисане као у
 претходном примеру.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -450,12 +450,12 @@
 <p>Још једна од основних аритметичких операција је <strong>множење</strong>. Множење бројева
 <span class="math notranslate nohighlight">\(7\)</span> и <span class="math notranslate nohighlight">\(2\)</span> у математици се записује као <span class="math notranslate nohighlight">\(7⋅2\)</span>, док се у програмском језику C
 множење означава оператором <code class="docutils literal notranslate"><span class="pre">*</span></code>, па се множење бројева <code class="docutils literal notranslate"><span class="pre">7</span></code> и <code class="docutils literal notranslate"><span class="pre">2</span></code> записује као
-<code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">*</span> <span class="pre">2</span></code>. У математици се производ две променљиве може саписати као <span class="math notranslate nohighlight">\(x⋅y\)</span> или
+<code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">*</span> <span class="pre">2</span></code>. У математици се производ две променљиве може записати као <span class="math notranslate nohighlight">\(x⋅y\)</span> или
 као <span class="math notranslate nohighlight">\(xy\)</span>. У програмском језику C оператор <code class="docutils literal notranslate"><span class="pre">*</span></code> се не може изоставити, па се
 производ две променљиве записује као <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code>.</p>
 <p>Напиши програм у програмском језику C који ће променљивој <code class="docutils literal notranslate"><span class="pre">z</span></code> доделити вредност
 производа променљивих <code class="docutils literal notranslate"><span class="pre">x</span></code> и <code class="docutils literal notranslate"><span class="pre">y</span></code>, па након тога исписати вредност променљиве <code class="docutils literal notranslate"><span class="pre">z</span></code>
-на стандардни излаз, ако су променљиве иницијализове и декларисане као у
+на стандардни излаз, ако су променљиве иницијализоване и декларисане као у
 претходном примеру.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -472,10 +472,10 @@
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>14
 </pre></div>
 </div>
-<p>Последња од основних аритметичких операције је <strong>дељење</strong>. Дељење бројева <span class="math notranslate nohighlight">\(7\)</span>
+<p>Последња од основних аритметичких операција је <strong>дељење</strong>. Дељење бројева <span class="math notranslate nohighlight">\(7\)</span>
 и <span class="math notranslate nohighlight">\(2\)</span> у математици се записује као <span class="math notranslate nohighlight">\(7:2\)</span> или као <span class="math notranslate nohighlight">\(\frac{7}{2}\)</span>. У програмском
 језику C дељење се означава оператором <code class="docutils literal notranslate"><span class="pre">/</span></code>, па се дељење бројева <code class="docutils literal notranslate"><span class="pre">7</span></code> и <code class="docutils literal notranslate"><span class="pre">2</span></code>
-записује као <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">2</span></code>. Приликом дељења двa цела броја оператором <code class="docutils literal notranslate"><span class="pre">/</span></code>, као
+записује као <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">2</span></code>. Приликом дељења два цела броја оператором <code class="docutils literal notranslate"><span class="pre">/</span></code>, као
 резултат добија се само цео део броја, док се разломљени део одбацује - врши се
 целобројно дељење. Остатак приликом целобројног дељења израчунава се дељењем по
 модулу, означава оператором <code class="docutils literal notranslate"><span class="pre">%</span></code> и записује као <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">%</span> <span class="pre">2</span></code>. Исто важи и за
@@ -483,7 +483,7 @@
 операнда.</p>
 <p>Напиши програм у програмском језику C који ће променљивој <code class="docutils literal notranslate"><span class="pre">z</span></code> доделити резултат
 целобројног дељења променљивих <code class="docutils literal notranslate"><span class="pre">x</span></code> и <code class="docutils literal notranslate"><span class="pre">y</span></code>, па након тога исписати ту вредност на
-стандардни излаз, ако су променљиве иницијализове и декларисане као у
+стандардни излаз, ако су променљиве иницијализоване и декларисане као у
 претходном примеру.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -496,11 +496,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>На стандардном излазу исписаће се:</p>
+<p>На стандардном излазу исписаће се…</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
-<p>а остатак <code class="docutils literal notranslate"><span class="pre">1</span></code> се занемарује.</p>
+<p>…а остатак <code class="docutils literal notranslate"><span class="pre">1</span></code> се занемарује.</p>
 <p>Напиши програм у програмском језику C који ће променљивој <code class="docutils literal notranslate"><span class="pre">z</span></code> доделити остатак
 приликом целобројног дељења променљивих <code class="docutils literal notranslate"><span class="pre">x</span></code> и <code class="docutils literal notranslate"><span class="pre">y</span></code>, па га након тога исписати на
 стандардни излаз, ако су променљиве иницијализове и декларисане као у
@@ -531,7 +531,7 @@
 <p>Напиши програм у програмском језику C који ће редом извршити операције
 сабирања, одузимања, множења и дељења над операндима <code class="docutils literal notranslate"><span class="pre">x</span></code> и <code class="docutils literal notranslate"><span class="pre">y</span></code>, па након тога,
 резултате тих операција, заокружене на две децимале, исписати у једној линији
-стандардног излаза, ако су иницијализове и декларисане следеће реалне
+стандардног излаза, ако су иницијализоване и декларисане следеће реалне
 променљиве <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">7.0,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">2.0,</span> <span class="pre">zbir,</span> <span class="pre">razlika,</span> <span class="pre">proizvod,</span> <span class="pre">kolicnik;</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -585,7 +585,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Оператор једноставе доделе</div>
+                <div class="title">Оператор једноставне доделе</div>
                 
               </div>
             </a>

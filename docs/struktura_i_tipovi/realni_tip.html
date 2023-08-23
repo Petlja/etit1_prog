@@ -346,7 +346,7 @@
 <h1>Реални тип података<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Реални тип података служи за представљање реалних бројева, који се у
 програмском језику C називају бројевима са покретном тачком
-<em>(енгл. floating point)</em> - а не запетом као у математици. Бројевима са
+(енгл. <em>floating point</em>) - а не запетом као у математици. Бројевима са
 покретном тачком може да претходи знак <code class="docutils literal notranslate"><span class="pre">+</span></code> или знак <code class="docutils literal notranslate"><span class="pre">-</span></code>, где се знак <code class="docutils literal notranslate"><span class="pre">+</span></code> може
 изоставити уколико је број позитиван. У рачунарским наукама бројеви са
 покретном тачком приближно представљају реалне бројеве користећи негативан или
@@ -358,12 +358,12 @@
 </div>
 <p>У изразу изнад, са леве стране налази се негативан реалан број, а са десне:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(-\)</span> представља знак <em>(енгл. sign)</em>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(12345\)</span> представља сигнификанд или мантису <em>(енгл. significand, mantissa)</em>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(10\)</span> представља основу <em>(енгл. base или radix)</em>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(-3\)</span> представља експонент <em>(енгл. exponent)</em> и</p></li>
+<li><p><span class="math notranslate nohighlight">\(-\)</span> представља знак (енгл. <em>sign</em>),</p></li>
+<li><p><span class="math notranslate nohighlight">\(12345\)</span> представља сигнификанд или мантису (енгл. <em>significand</em>, <em>mantissa</em>),</p></li>
+<li><p><span class="math notranslate nohighlight">\(10\)</span> представља основу (енгл. <em>base</em>, <em>radix</em>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(-3\)</span> представља експонент (енгл. <em>exponent</em>) и</p></li>
 </ul>
-<p>Израз „покретна тачка” односи се на чињеницу да се тачка <em>(енгл. radix point)</em>
+<p>Израз „покретна тачка” односи се на чињеницу да се тачка (енгл. <em>radix point</em>)
 креће између цифара броја.</p>
 <section id="id2">
 <h2>Запис бројева са покретном тачком<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
@@ -385,13 +385,13 @@
 који имају мали број значајних цифара. За овај запис исто важи да се знак <code class="docutils literal notranslate"><span class="pre">+</span></code>
 може изоставити испред мантисе или експонента уколико су мантиса или експонент
 позитивни бројеви.</p>
-<p>На пример, број <span class="math notranslate nohighlight">\(0.0000000012\)</span> можеш записати као <code class="docutils literal notranslate"><span class="pre">1.2e-9</span></code> или <code class="docutils literal notranslate"><span class="pre">1.2E-9</span></code>, или,
-број <span class="math notranslate nohighlight">\(1200000000\)</span> можеш записати као <code class="docutils literal notranslate"><span class="pre">1.2e9</span></code> или <code class="docutils literal notranslate"><span class="pre">1.2E9</span></code>.</p>
+<p>На пример, број <span class="math notranslate nohighlight">\(0.0000000012\)</span> можеш записати као <code class="docutils literal notranslate"><span class="pre">1.2e-9</span></code> или <code class="docutils literal notranslate"><span class="pre">1.2E-9</span></code>,
+односно, број <span class="math notranslate nohighlight">\(1200000000\)</span> можеш записати као <code class="docutils literal notranslate"><span class="pre">1.2e9</span></code> или <code class="docutils literal notranslate"><span class="pre">1.2E9</span></code>.</p>
 </section>
 <section id="id3">
 <h2>Прецизност<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>У програмском језику C опсег могућих вредности и прецизност бројева са
-покретном тачком зависи од декларације, и често од компајлера. Пошто нису
+покретном тачком зависи од декларације, а често и од компајлера. Пошто нису
 доступни модификатори, доступно је више различитих реалних типова:</p>
 <ul class="simple">
 <li><p>Број са покретном тачком типа <code class="docutils literal notranslate"><span class="pre">float</span></code> има <strong>једноструку прецизност</strong> и
@@ -402,7 +402,7 @@
 основом 2 и <span class="math notranslate nohighlight">\(52b\)</span> за сигнификанд.</p></li>
 <li><p>Број са покретном тачком типа <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code> има <strong>проширену прецизност</strong> и
 заузима <span class="math notranslate nohighlight">\(10B\)</span>, <span class="math notranslate nohighlight">\(12B\)</span> или <span class="math notranslate nohighlight">\(16B\)</span> меморијског простора у зависности од комплајера.
-Изузетак је баш Microsoft C/C++ компајлер кога ћеш користи у овом предмету, где
+Изузетак је баш Microsoft C/C++ компајлер који ћеш користити у овом предмету, где
 је тип <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code> идентичан типу <code class="docutils literal notranslate"><span class="pre">double</span></code>, што значи да број са покретном
 тачком типа <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code> заузима <span class="math notranslate nohighlight">\(8B\)</span>, меморијског простора.</p></li>
 <li><p>Број са покретном тачком може имати <strong>четвороструку прецизност</strong> ако заузима
@@ -413,7 +413,7 @@
 четвороструке прецизности, њих на даље нећеш користити.</p></li>
 </ul>
 <p>Уколико желиш да провериш минималне и максималне вредности које може да има
-податак реалног типа на твом рачунарском систему са C компајлером којег ти
+податак реалног типа на твом рачунарском систему са C компајлером који ти
 користиш, то можеш урадити извршавањем програма датог у
 <a class="reference internal" href="../prilozi/realni_ogranicenja.html"><span class="std std-doc">прилогу</span></a>.</p>
 </section>

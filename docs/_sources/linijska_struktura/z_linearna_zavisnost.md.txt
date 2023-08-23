@@ -1,7 +1,7 @@
 # Задаци: Линеарна зависност и пропорција
 
 Алгоритми и програми у програмском језику C:
-[линеарна зависност и пропорција](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/04%20linearna_zavisnost).
+[Линеарна зависност и пропорција](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/04%20linearna_zavisnost).
 
 ## Подела интервала
 

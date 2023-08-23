@@ -346,7 +346,7 @@
 <h1>Изведени тип података<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Програмски језик C ти омогућава да дефинишеш сопствене типове података. То
 можеш да урадиш помоћу кључне речи <code class="docutils literal notranslate"><span class="pre">typedef</span></code> тако што ћеш дефинисати друго име
-за већ постојеће тип или за сложени тип који је изведен из постојећих типова.
+за већ постојећи тип или за сложени тип који је изведен из постојећих типова.
 Општи облик дефиниције новог типа података је:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>typedef tip novo_ime;
 </pre></div>
@@ -367,7 +367,7 @@
 познате вредности броја бодова <span class="math notranslate nohighlight">\(100\)</span> и <span class="math notranslate nohighlight">\(85\)</span> које су Тамара и Влада добили на
 тесту, а није познат број бодова Алисе и Боба. Након тога, обезбеди унос броја
 бодова за Алису и Боба и обезбеди испис свих података у једном реду стандардног
-излаза, где подаци одвојени размаком.</p>
+излаза, где су подаци одвојени размаком.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -378,13 +378,13 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Ако корисник програм унесе 90 и 75, на стандардном излазу исписаће се</p>
+<p>Ако корисник у програм унесе 90 и 75, на стандардном излазу исписаће се</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span><span class="w"> </span><span class="mi">85</span><span class="w"> </span><span class="mi">90</span><span class="w"> </span><span class="mi">75</span>
 </pre></div>
 </div>
 <p>Над типовима података дефинисаним кључном речју <code class="docutils literal notranslate"><span class="pre">typedef</span></code> не можеш користити
 модификаторе - модификатори се наводе приликом дефиниције типа.</p>
-<p>Због тога ће у следећем програму:</p>
+<p>Због тога ће у следећем програму…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -395,10 +395,10 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>компајлер јавити грешку.</p>
+<p>…компајлер јавити грешку.</p>
 <p>Иако си дефинисао друго име за већ постојеће тип, тај постојећи тип можеш и
 даље користити у програму.</p>
-<p>У следећем програму:</p>
+<p>У следећем програму…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -410,8 +410,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>променљиве <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">b</span></code> заправо су истог типа. Кључном речи <code class="docutils literal notranslate"><span class="pre">typedef</span></code> не
-креирају се нови типови - креирају се синоними за већ постојеће типове.</p>
+<p>…променљиве <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">b</span></code> заправо су истог типа. Кључном речи <code class="docutils literal notranslate"><span class="pre">typedef</span></code>
+не креирају се нови типови - креирају се синоними за већ постојеће типове.</p>
 <p>Кључном речју <code class="docutils literal notranslate"><span class="pre">const</span></code> можеш дефинисати константне податке изведеног типа.</p>
 <p>Напиши програм у програмском језику C у којем су дефинисани константни подаци
 изведеног типа минимум бодова <span class="math notranslate nohighlight">\(0\)</span>, максимум <span class="math notranslate nohighlight">\(100\)</span> и број бодова за позитивну

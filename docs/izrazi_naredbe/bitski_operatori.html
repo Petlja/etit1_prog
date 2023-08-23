@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Изрази и наредбе</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -347,12 +347,12 @@
 <p>За рад над битовима броја у програмском језику C користе се следећи битски
 оператори <em>(енгл. Bitwise Operators)</em>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, битски оператор И <em>(енгл. Bitwise AND)</em>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code>, битски оператор ИЛИ <em>(енгл. Bitwise OR)</em>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code>, битски оператор ЕКСИЛИ <em>(енгл. Bitwise XOR)</em>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code>, битски оператор НЕ <em>(енгл. Bitwise NOT)</em>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, битски оператор померања у лево <em>(енгл. Shift Left)</em> и</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>, битски оператор померања у десно <em>(енгл. Shift Right)</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, битски оператор И (енгл. <em>Bitwise AND</em>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code>, битски оператор ИЛИ (енгл. <em>Bitwise OR</em>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code>, битски оператор ЕКСИЛИ (енгл. <em>Bitwise XOR</em>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code>, битски оператор НЕ (енгл. <em>Bitwise NOT</em>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, битски оператор померања у лево (енгл. <em>Shift Left</em>) и</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>, битски оператор померања у десно (енгл. <em>Shift Right</em>).</p></li>
 </ul>
 <p>Примењују се над целобројним (и знаковним) операндима.</p>
 <p>Битски оператори се често користе приликом израде системких програма, програма
@@ -365,7 +365,7 @@
 да неозначен број (<code class="docutils literal notranslate"><span class="pre">unsigned</span></code>) може добити вредности од <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(4,294,967,295\)</span>,
 односно до <span class="math notranslate nohighlight">\(2^{32}-1\)</span>. Тако, <span class="math notranslate nohighlight">\(0\)</span> се представља као бинарни број
 <code class="docutils literal notranslate"><span class="pre">00000000</span> <span class="pre">00000000</span> <span class="pre">00000000</span> <span class="pre">00000000</span></code>, а <span class="math notranslate nohighlight">\(4,294,967,295\)</span> као бинарни број
-<code class="docutils literal notranslate"><span class="pre">11111111</span> <span class="pre">11111111</span> <span class="pre">11111111</span> <span class="pre">11111111</span></code>, оба добијена директном коверзијом
+<code class="docutils literal notranslate"><span class="pre">11111111</span> <span class="pre">11111111</span> <span class="pre">11111111</span> <span class="pre">11111111</span></code>, оба добијена директном конверзијом
 декадног броја у бинарни.</p>
 <p>Међутим, цели бројеви могу бити и позитивни и негативни, односно могу бити
 означени (<code class="docutils literal notranslate"><span class="pre">signed</span></code>). Ако је број означен, први бит од <span class="math notranslate nohighlight">\(32\)</span> бита мора се
@@ -379,8 +379,8 @@
 комплемента двојке што превазилази знања из математике ученика првих и других
 разреда средње стручне школе. На пример, неозначен цео број <span class="math notranslate nohighlight">\(54,321\)</span> представља
 се у меморији као бинарни број <code class="docutils literal notranslate"><span class="pre">00000000</span> <span class="pre">00000000</span> <span class="pre">11010110</span> <span class="pre">00010001</span></code> добијен
-директном коверзијом декадног броја у бинарни, док се негативан означен цео
-број <span class="math notranslate nohighlight">\(-54,321\)</span> представља се као бинарни број
+директном конверзијом декадног броја у бинарни, док се негативан означен цео
+број <span class="math notranslate nohighlight">\(-54,321\)</span> представља као бинарни број
 <code class="docutils literal notranslate"><span class="pre">11111111</span> <span class="pre">11111111</span> <span class="pre">00101001</span> <span class="pre">11101111</span></code> у комплементу двојке.</p>
 <p>У овој лекцији ћеш, због тога, битске операторе примењивати само над операндима
 који су неозначени цели бројеви.</p>
@@ -394,7 +394,7 @@
 бинарне врши се на следећи начин:</p>
 <p>Рачуна се апсолутна вредност негативног декадног броја: |-54321|=54321.
 Добијени декадни број конвертује се у бинарни: 54321 = 11010110 00010001.
-Нулама се допуњује лева страна добијеног бинарног броја до жењеног броја
+Нулама се допуњује лева страна добијеног бинарног броја до жељеног броја
 бинарних цифара (нпр. до 32 бинарне цифре за целе бројеве типа int): 00000000
 00000000 11010110 00010001. Инвертују се све битови у бинарном броју (0 у 1 и 1
 у 0): 11111111 11111111 00101001 11101110. На крају се добијени бинарни број
@@ -404,13 +404,13 @@
 овом случају сабирање је било једноставно јер су последњи битови сабирака били
 0 и 1, чији збир износи 1. Ако се сабирају битови 1 и 1, збир износи 2, па се
 једна јединица записује, а друга се преноси - слично као приликом сабирања
-декадних бројева, где се врши пренос када збир је збир већи од 9.</p>
+декадних бројева, где се врши пренос када је збир већи од 9.</p>
 
     </div></div>
 <section id="id2">
 <h2>Битски оператор И<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Битски оператор <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> се примењује над битовима два бинарна броја једнаке дужине
-извођењем логичка операција И над наспрамним битовима. Ако су оба бита која се
+извођењем логичке операције И над наспрамним битовима. Ако су оба бита која се
 пореде јединице, резултирајући бит биће јединица, а у супротном биће нула.</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -457,7 +457,7 @@
 </div>
 <p>Ако се на стандардни улаз унесу бројеви <span class="math notranslate nohighlight">\(10\)</span> и <span class="math notranslate nohighlight">\(12\)</span> на стандардном излазу
 исписаће се број <span class="math notranslate nohighlight">\(8\)</span>. Зашто? У овом случају довољно је да посматраш само
-последње битове унетих бројева, јер су пре тога сви битови нуле. На последљој
+последње битове унетих бројева, јер су пре тога сви битови нуле. На последњој
 позицији, <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">0</span></code> резултира битом <code class="docutils literal notranslate"><span class="pre">0</span></code>, на позицији пре, <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">1</span></code> резултира битом
 <code class="docutils literal notranslate"><span class="pre">0</span></code>, на позицији пре, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">0</span></code> резултира битом <code class="docutils literal notranslate"><span class="pre">0</span></code> и на позицији пре, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">1</span></code>
 резултира битом <code class="docutils literal notranslate"><span class="pre">1</span></code>. Према томе, резултат претворен у декадни број има вредност
@@ -472,7 +472,7 @@ a &amp; b = 8   00000000 00000000 00000000 00001000
 <section id="id3">
 <h2>Битски оператор ИЛИ<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Битски оператор <code class="docutils literal notranslate"><span class="pre">|</span></code> се примењује над битовима два бинарна броја једнаке дужине
-извођењем логичка операција ИЛИ над наспрамним битовима. Ако је макар један од
+извођењем логичке операције ИЛИ над наспрамним битовима. Ако је макар један од
 битова који се пореде различит од нуле, резултирајући бит биће јединица, а у
 супротном биће нула.</p>
 <p>| <code class="docutils literal notranslate"><span class="pre">a</span></code> | <code class="docutils literal notranslate"><span class="pre">b</span></code> | <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">|</span> <span class="pre">b</span></code> |
@@ -498,7 +498,7 @@ a &amp; b = 8   00000000 00000000 00000000 00001000
 </div>
 <p>Ако се на стандардни улаз унесу бројеви <span class="math notranslate nohighlight">\(10\)</span> и <span class="math notranslate nohighlight">\(12\)</span> на стандардном излазу
 исписаће се број <span class="math notranslate nohighlight">\(14\)</span>. Зашто? И у овом случају довољно је да посматраш само
-последње битове унетих бројева, јер су пре тога сви битови нуле. На последљој
+последње битове унетих бројева, јер су пре тога сви битови нуле. На последњој
 позицији, <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">0</span></code> резултира битом <code class="docutils literal notranslate"><span class="pre">0</span></code>, на позицији пре <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">1</span></code> резултира битом
 <code class="docutils literal notranslate"><span class="pre">1</span></code>, на позицији пре <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">0</span></code> резултира битом <code class="docutils literal notranslate"><span class="pre">1</span></code> и на позицији пре <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">1</span></code>
 резултира битом <code class="docutils literal notranslate"><span class="pre">1</span></code>. Према томе, резултат претворен у декадни број има вредност
@@ -513,7 +513,7 @@ a | b = 14  00000000 00000000 00000000 00001110
 <section id="id4">
 <h2>Битски оператор ЕКСИЛИ<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Битски оператор <code class="docutils literal notranslate"><span class="pre">^</span></code> се примењује над битовима два бинарна броја једнаке дужине
-извођењем логичка операција ЕКСИЛИ над наспрамним битовима. Ако су битови који
+извођењем логичке операције ЕКСИЛИ над наспрамним битовима. Ако су битови који
 се пореде различити, резултирајући бит биће јединица, а у супротном биће нула.</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -560,7 +560,7 @@ a | b = 14  00000000 00000000 00000000 00001110
 </div>
 <p>Ако се на стандардни улаз унесу бројеви <span class="math notranslate nohighlight">\(10\)</span> и <span class="math notranslate nohighlight">\(12\)</span> на стандардном излазу
 исписаће се број <span class="math notranslate nohighlight">\(6\)</span>. Зашто? И у овом случају довољно је да посматраш само
-последње битове унетих бројева, јер су пре тога сви битови нуле. На последљој
+последње битове унетих бројева, јер су пре тога сви битови нуле. На последњој
 позицији, <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">0</span></code> резултира битом <code class="docutils literal notranslate"><span class="pre">0</span></code>, на позицији пре <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">1</span></code> резултира битом
 <code class="docutils literal notranslate"><span class="pre">1</span></code>, на позицији пре <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">0</span></code> резултира битом <code class="docutils literal notranslate"><span class="pre">1</span></code> и на позицији пре <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">1</span></code>
 резултира битом <code class="docutils literal notranslate"><span class="pre">0</span></code>. Према томе, резултат претворен у декадни број има вредност
@@ -576,7 +576,7 @@ a ^ b = 6   00000000 00000000 00000000 00000110
 <h2>Битски оператор НЕ<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>Битски оператор <code class="docutils literal notranslate"><span class="pre">^</span></code> је оператор који се примењује над битовима једног бинарног
 броја за који се рачуна његов комплемент. У најједноставнијем случају, ако је
-број неозначен, вршиће се инвертовање, за бит јединица резултирајући бит биће
+број неозначен, вршиће се инвертовање за бит јединица резултирајући бит биће
 нула, односно, за бит нула резултирајући бит биће јединица.</p>
 <p>Напиши програм у програмском језику C за извођење логичке операције НЕ над
 битовима унетог неозначеног целог броја.</p>
@@ -631,15 +631,15 @@ a ^ b = 6   00000000 00000000 00000000 00000110
 </pre></div>
 </div>
 <p>Ако после операције померања улево са леве стране има битова са вредношћу <span class="math notranslate nohighlight">\(1\)</span>
-за које нема места, резултат је неодређен (дешава се преливање). На пример,
-Ако се на стандардни улаз унесу бројеви <span class="math notranslate nohighlight">\(48\)</span> и <span class="math notranslate nohighlight">\(31\)</span> на стандардном излазу
+за које нема места, резултат је неодређен (дешава се „преливање”). На пример,
+ако се на стандардни улаз унесу бројеви <span class="math notranslate nohighlight">\(48\)</span> и <span class="math notranslate nohighlight">\(31\)</span>, на стандардном излазу
 исписаће се <span class="math notranslate nohighlight">\(0\)</span>, јер резултату није остао ни један бит - сви су се прелили на
 леву страну.</p>
 <p>Ако су вредности оператора које изазивају преливање у изразу наведене у самом
 програму, Microsoft C/C++ компајлер ће издати упозорење:
 <code class="docutils literal notranslate"><span class="pre">Warning</span> <span class="pre">C26450:</span> <span class="pre">Arithmetic</span> <span class="pre">overflow:</span> <span class="pre">'operator'</span> <span class="pre">operation</span> <span class="pre">causes</span> <span class="pre">overflow</span> <span class="pre">at</span> <span class="pre">compile</span> <span class="pre">time.</span> <span class="pre">Use</span> <span class="pre">a</span> <span class="pre">wider</span> <span class="pre">type</span> <span class="pre">to</span> <span class="pre">store</span> <span class="pre">the</span> <span class="pre">operands</span> <span class="pre">(io.1)</span></code>.
 На пример, у следећем програму операција померања за <span class="math notranslate nohighlight">\(31\)</span> место улево битова
-неозначеног целог броја <span class="math notranslate nohighlight">\(48\)</span> изазваће преливање:</p>
+неозначеног целог броја <span class="math notranslate nohighlight">\(48\)</span> изазваће „преливање”:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -657,8 +657,8 @@ a ^ b = 6   00000000 00000000 00000000 00000110
 <p>Битски оператор померањау десно <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> је бинарни оператор помоћу којег се
 померају битови целобројне променљиве за одређени број места у десно. Битови
 првог операнда померају се удесно за број позиција дефинисаних другим
-операндом. Битови са десне стране, за које након померања нема места се
-занемарују, док се са леве стране додају нуле.</p>
+операндом. Битови са десне стране, за које након померања нема места
+занемарују се, док се са леве стране додају нуле.</p>
 <p>Напиши програм у програмском језику C за померање <code class="docutils literal notranslate"><span class="pre">b</span></code> битова удесно унетог
 неозначеног целог броја <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
@@ -680,7 +680,7 @@ a ^ b = 6   00000000 00000000 00000000 00000110
 48 &gt;&gt; 1   00000000 00000000 00000000 00011000
 </pre></div>
 </div>
-<p>Као што је напоменуто, битови који се прелију са десне стране се занемарују -
+<p>Као што је напоменуто, битови који се „прелију” са десне стране се занемарују -
 то је предвиђена ситуација и не изазива грешку.</p>
 </section>
 </section>

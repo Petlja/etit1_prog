@@ -352,25 +352,25 @@
         <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
         <div class="course-content">
             
-<p>Приметићеш да се за сваки реални тип података може користи час осам симбола
+<p>Приметићеш да се за сваки реални тип података може користити чак осам симбола
 конверзије f, F, g, G, e, E, a и A приликом формирања спецификатора конверзије.</p>
 <p>Разлика између спецификатора у којима се користе мала и велика слова је само
 естетска. Уколико је на излазу потребно исписати слово, спецификатори са малим
 словима на излазу исписаће све малим словима (нпр. inf, nan и e), док ће они са
 великим словима исписати све великим словима (нпр. INF, NAN и E). Значи,
-разлике су само естетске, а не и сусштинске, па да на даље можеш користити нпр.
+разлике су само естетске, а не и сусштинске, па на даље можеш користити нпр.
 само спецификаторе са малим словима.</p>
 <p>Симболи конверзије у спецификаторима за рад са хексадекадним реалним бројевима
 a и A уведени су тек каснијим C99 стандардном и њих нећеш користити у овом
 курсу.</p>
-<p>Сада се број симбола коверзије за спецификаторе конверзије које требаш научити
+<p>Сада се број симбола конверзије за спецификаторе конверзије које требаш научити
 свео са осам на три: f, g и e.</p>
 
     </div></div>
 <section id="id2">
 <h2>Форматирани излаз<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>За приказ реалних бројева такође важи општи облик функције <code class="docutils literal notranslate"><span class="pre">printf()</span></code>, где по
-датом редоследу и следеће необавезне елементе:</p>
+датом редоследу можеш навести и следеће необавезне елементе:</p>
 <ul class="simple">
 <li><p><strong>параметар <code class="docutils literal notranslate"><span class="pre">–</span></code></strong> означава да се излазни податак поравна у пољу улево
 (подразумевано је поравнање удесно и додавање размака с леве стране),</p></li>
@@ -390,8 +390,8 @@ a и A уведени су тек каснијим C99 стандардном и
 симболе <code class="docutils literal notranslate"><span class="pre">f</span></code> и <code class="docutils literal notranslate"><span class="pre">e</span></code>, односно, број цифара за симбол <code class="docutils literal notranslate"><span class="pre">g</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dužina</span></code> се задаје карактером <code class="docutils literal notranslate"><span class="pre">l</span></code> за <code class="docutils literal notranslate"><span class="pre">double</span></code> и <code class="docutils literal notranslate"><span class="pre">L</span></code> за <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code> тип.</p></li>
 </ul>
-<p>Уместо ширине поља може се ставити знак <code class="docutils literal notranslate"><span class="pre">*</span></code> након чега се вредност за
-минималну ширину поља наводи у листи аргумената функције који мора бити
+<p>Уместо ширине поља може се ставити знак <code class="docutils literal notranslate"><span class="pre">*</span></code>, након чега се вредност за
+минималну ширину поља наводи у листи аргумената функције која мора бити
 целобројног типа <code class="docutils literal notranslate"><span class="pre">int</span></code> и претходити идентификатору променљиве која се исписује.
 Исто важи и за прецизност.</p>
 <p>У лекцији о реалном типу научио си да се реални бројеви представљају као
@@ -482,29 +482,29 @@ a и A уведени су тек каснијим C99 стандардном и
 5.1
 </pre></div>
 </div>
-<p>У нотацији са децималном тачком, са коришћењем додатне опције <code class="docutils literal notranslate"><span class="pre">.2</span></code> за
+<p>У нотацији са децималном тачком, коришћењем додатне опције <code class="docutils literal notranslate"><span class="pre">.2</span></code> за
 прецизност у спецификатору конверзије, на излазу би се исписали бројеви <code class="docutils literal notranslate"><span class="pre">4.85</span></code>,
-<code class="docutils literal notranslate"><span class="pre">5.00</span></code> и <code class="docutils literal notranslate"><span class="pre">5.10</span></code>, па у овом случају, свакако је једноставије прочитате резултате
-у оптималној нотацији.</p>
+<code class="docutils literal notranslate"><span class="pre">5.00</span></code> и <code class="docutils literal notranslate"><span class="pre">5.10</span></code>, па је у овом случају, свакако је једноставније прочитати
+резултате у оптималној нотацији.</p>
 </section>
 <section id="id3">
 <h2>Форматирани улаз<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>За унос реалних бројева такође важи општи облик функције <code class="docutils literal notranslate"><span class="pre">scanf()</span></code>, где по
-датом редоследу и следеће необавезне елементе:</p>
+датом редоследу можеш навести и следеће необавезне елементе:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>, је карактер који означава да ће се улазни податак прочитати и
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>, карактер који означава да ће се улазни податак прочитати и
 игнорисати,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">širina</span></code>, је целобројна вредност која задаје највећи број карактера улазног
+<li><p><code class="docutils literal notranslate"><span class="pre">širina</span></code>, целобројна вредност која задаје највећи број карактера улазног
 податка,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dužina</span></code>, се задаје карактером <code class="docutils literal notranslate"><span class="pre">l</span></code> за <code class="docutils literal notranslate"><span class="pre">double</span></code>, или <code class="docutils literal notranslate"><span class="pre">L</span></code> за <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dužina</span></code>, задаје се карактером <code class="docutils literal notranslate"><span class="pre">l</span></code> за <code class="docutils literal notranslate"><span class="pre">double</span></code>, или <code class="docutils literal notranslate"><span class="pre">L</span></code> за <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code>.</p></li>
 </ul>
 <p>Реалне бројеве можеш уносити и у нотацији са децималном тачком и у научној
 нотацији.</p>
-<p>Напиши програм у програмском језику C који ће се на стандардни излазу исписати
-у оптимизованој нотацији дужина пута на релацији Београд-Вршац и релацији
-Вршац-Београд у киломентрима, које се уносе са стандардног улаза. Приликом
+<p>Напиши програм у програмском језику C који ће на стандардном излазу исписати
+у оптимизованој нотацији дужину пута на релацији Београд-Вршац и релацији
+Вршац-Београд у километрима, које се уносе са стандардног улаза. Приликом
 тестирања програма унеси дужину пута Београд-Вршац као реалан број у нотацији
-са децималном тачком <code class="docutils literal notranslate"><span class="pre">86.400000</span></code>, а дужиму пута Вршац-Београд као реалан број у
+са децималном тачком <code class="docutils literal notranslate"><span class="pre">86.400000</span></code>, а дужима пута Вршац-Београд као реалан број у
 научној нотацији <code class="docutils literal notranslate"><span class="pre">8.64e1</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>

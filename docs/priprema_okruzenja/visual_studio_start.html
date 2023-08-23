@@ -358,9 +358,9 @@
 <a class="reference internal image-reference" href="../_images/vs_project1.png"><img alt="Креирање Visual Studio пројекта" class="align-center" src="../_images/vs_project1.png" style="width: 100%;" /></a>
 <p>Конфигурација пројекта је прилично једноставна. Потребно је да одабереш неко
 име за свој пројекат и да одабереш локацију, односно директоријум у којем ћеш
-сачувати пројекат. Након тога унеси име решења <em>(енгл. Solution name)</em> или
+сачувати пројекат. Након тога унеси име решења (енгл. <em>Solution name</em>) или
 штиклирај опцију <code class="docutils literal notranslate"><span class="pre">Place</span> <span class="pre">solution</span> <span class="pre">and</span> <span class="pre">project</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">directory</span></code>. У
-развојном окружењу Visual Studio, <em>Solution</em> је контејнер у овиру којег можеш
+развојном окружењу Visual Studio, <em>Solution</em> је контејнер у оквиру којег можеш
 чувати више пројеката. Рад са решењима није тема овог курса, па препоручујем да
 увек штиклираш опцију <code class="docutils literal notranslate"><span class="pre">Place</span> <span class="pre">solution</span> <span class="pre">and</span> <span class="pre">project</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">directory</span></code>.
 Након именовања пројекта и одабира локације кликни <code class="docutils literal notranslate"><span class="pre">Create</span></code>.</p>
@@ -370,14 +370,14 @@
 </section>
 <section id="id2">
 <h2>Додавање изворног фајла у пројекат<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>У празном пројекту потребно је да додаш изворни фајл - фајл у којем ћеш писати
+<p>У празан пројекат потребно је да додаш изворни фајл - фајл у којем ћеш писати
 програм у програмском језику C. У <code class="docutils literal notranslate"><span class="pre">Solution</span> <span class="pre">explorer</span></code> секцији, десним кликом на
 <code class="docutils literal notranslate"><span class="pre">Source</span> <span class="pre">files</span></code>, иди на опцију <code class="docutils literal notranslate"><span class="pre">Add</span></code>, па кликни на <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Item</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/vs_project4.png"><img alt="Креирање Visual Studio пројекта" class="align-center" src="../_images/vs_project4.png" style="width: 100%;" /></a>
 <p>Потом унеси име фајла са екстензијом <code class="docutils literal notranslate"><span class="pre">.c</span></code>, а не са понуђеном екстензијом
-<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>. Ако направиш изворни фајл са екстензијом <code class="docutils literal notranslate"><span class="pre">.c</span></code> компајлер ће знати да се
+<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>. Ако направиш изворни фајл са екстензијом <code class="docutils literal notranslate"><span class="pre">.c</span></code>, компајлер ће знати да се
 ради о програму у програмском језику C, односно, ако изворни фајл има <code class="docutils literal notranslate"><span class="pre">.cpp</span></code>
-екстензију, компајлер ће очекивати програму у програмском језику C++. Обично се
+екстензију, компајлер ће очекивати програм у програмском језику C++. Обично се
 изворни фајл именује са <code class="docutils literal notranslate"><span class="pre">source.c</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/vs_project5.png"><img alt="Креирање Visual Studio пројекта" class="align-center" src="../_images/vs_project5.png" style="width: 50%;" /></a>
 <p>Сада је интегрисано развојно окружење Microsoft Visual Studio Community Edition
@@ -387,7 +387,7 @@
 <section id="id3">
 <h2>Унос и покретање програма<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Да би проверио да ли је све исправно инсталирано и да ли је исправно креиран
-нови пројекат унеси следећи програм:</p>
+нови пројекат, унеси следећи програм:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -399,9 +399,9 @@
 </div>
 <p>Унети програм у изворном фајлу треба да изгледа овако:</p>
 <a class="reference internal image-reference" href="../_images/vs_project7.png"><img alt="Креирање Visual Studio пројекта" class="align-center" src="../_images/vs_project7.png" style="width: 100%;" /></a>
-<p>У главном падајућем менију одабери <code class="docutils literal notranslate"><span class="pre">Debug</span></code> па <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Without</span> <span class="pre">Debugging</span></code> или
+<p>У главном падајућем менију одабери <code class="docutils literal notranslate"><span class="pre">Debug</span></code>, па <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Without</span> <span class="pre">Debugging</span></code> или
 кликни на икону <code class="docutils literal notranslate"><span class="pre">⏵</span></code> или на тастатури притисни тастере <code class="docutils literal notranslate"><span class="pre">CTRL</span></code> и <code class="docutils literal notranslate"><span class="pre">F5</span></code>. Ако је
-програм успешно покренут појавиће се конзолни прозор у којем се види резултат
+програм успешно покренут, појавиће се конзолни прозор у којем се види резултат
 извршавања програма.</p>
 <a class="reference internal image-reference" href="../_images/vs_project8.png"><img alt="Креирање Visual Studio пројекта" class="align-center" src="../_images/vs_project8.png" style="width: 100%;" /></a>
 <p>Такође, у дну изворног фајла појавиће се секција <code class="docutils literal notranslate"><span class="pre">Output</span></code>.</p>
@@ -419,8 +419,9 @@
 1 апликација успешно креирана и 0 неуспешно. У четвртој линији стрелица у
 поруци показује на локацију на којој се налази извршни фајл апликације
 <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">-&gt;</span> <span class="pre">C:\dev\C\Pozdrav\x64\Debug\Pozdrav.exe</span></code>.</p>
-<p>Овај пројекат можеш да сачуваш тако што ћеш из главног падајуће менија одабрати
-<code class="docutils literal notranslate"><span class="pre">File</span></code> па <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">All</span></code> или на тастатури притиснути тастере <code class="docutils literal notranslate"><span class="pre">CTRL</span></code>, <code class="docutils literal notranslate"><span class="pre">SHIFT</span></code> и <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
+<p>Овај пројекат можеш да сачуваш тако што ћеш из главног падајућег менија
+одабрати <code class="docutils literal notranslate"><span class="pre">File</span></code> па <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">All</span></code> или на тастатури притиснути тастере <code class="docutils literal notranslate"><span class="pre">CTRL</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SHIFT</span></code> и <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
 </section>
 <section id="id4">
 <h2>Покретање програма из конзоле<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>

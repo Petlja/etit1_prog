@@ -350,9 +350,9 @@
 избор типова података. У реалном свету, поред бројева и карактера, често ћеш
 наићи на стандардне скупове података који нису дефинисани у програмском језику
 C, као на пример називи дана у недељи или називи месеца у години. Овакве
-скупове података можеш сам дефинисати помоћу кључне речи <code class="docutils literal notranslate"><span class="pre">enum</span></code>.</p>
+скупове података можеш сâм дефинисати помоћу кључне речи <code class="docutils literal notranslate"><span class="pre">enum</span></code>.</p>
 <p>Пошто поменути скупови имају коначан број вредности називају се набројивим
-<em>(енгл. enumeration)</em>. У набројивим скуповима, елементе скупа чине
+(енгл. <em>enumeration</em>). У набројивим скуповима, елементе скупа чине
 идентификатори, а општи облик дефинисања набројивог скупа података је:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>enum ime_skupa { identifikator_1, identifikator_2, ... identifikator_n };
 </pre></div>
@@ -393,9 +393,9 @@ C, као на пример називи дана у недељи или наз�
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Иницијализацију вредности елемената можеш вршити и сам приликом дефиниције
+<p>Иницијализацију вредности елемената можеш вршити и сâм приликом дефиниције
 <code class="docutils literal notranslate"><span class="pre">enum</span></code> скупа, где неки елементи могу бити иницијализовани, а неки само
-декларисани. У следећем програму:</p>
+декларисани. У следећем програму…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -405,13 +405,13 @@ C, као на пример називи дана у недељи или наз�
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>елемент <code class="docutils literal notranslate"><span class="pre">sep</span></code> иницијализован је са целобројном вредношћу <code class="docutils literal notranslate"><span class="pre">9</span></code>, потом је елементу
-<code class="docutils literal notranslate"><span class="pre">okt</span></code> додељена вредност <code class="docutils literal notranslate"><span class="pre">10</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">nov</span></code> вредност <code class="docutils literal notranslate"><span class="pre">11</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">dec</span></code>
-вредност <code class="docutils literal notranslate"><span class="pre">12</span></code>, па је елемент <code class="docutils literal notranslate"><span class="pre">jan</span></code> иницијализован са вредношћу <code class="docutils literal notranslate"><span class="pre">1</span></code>, елементу
-<code class="docutils literal notranslate"><span class="pre">feb</span></code> додељена је вредност <code class="docutils literal notranslate"><span class="pre">2</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">mar</span></code> вредност <code class="docutils literal notranslate"><span class="pre">3</span></code> и тако даље.
-Правило за доделу вредности елементима је једноставно: ако први елемент није
-иницијализован добиће вредност нула, односно, ако било који елемент осим првог
-није иницијализован добиће вредност претходног елемента увећану за један.</p>
+<p>…елемент <code class="docutils literal notranslate"><span class="pre">sep</span></code> иницијализован је са целобројном вредношћу <code class="docutils literal notranslate"><span class="pre">9</span></code>, потом је
+елементу <code class="docutils literal notranslate"><span class="pre">okt</span></code> додељена вредност <code class="docutils literal notranslate"><span class="pre">10</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">nov</span></code> вредност <code class="docutils literal notranslate"><span class="pre">11</span></code>, елементу
+<code class="docutils literal notranslate"><span class="pre">dec</span></code> вредност <code class="docutils literal notranslate"><span class="pre">12</span></code>, па је елемент <code class="docutils literal notranslate"><span class="pre">jan</span></code> иницијализован са вредношћу <code class="docutils literal notranslate"><span class="pre">1</span></code>,
+елементу <code class="docutils literal notranslate"><span class="pre">feb</span></code> додељена је вредност <code class="docutils literal notranslate"><span class="pre">2</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">mar</span></code> вредност <code class="docutils literal notranslate"><span class="pre">3</span></code> и тако
+даље. Правило за доделу вредности елементима је једноставно: ако први елемент
+није иницијализован добиће вредност нула, односно, ако било који елемент осим
+првог није иницијализован добиће вредност претходног елемента увећану за један.</p>
 <p>Дозвољено је и да различити елементи набројивог скупа имају исту вредност. У
 следећем програму дефинисана су стања сервера:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>

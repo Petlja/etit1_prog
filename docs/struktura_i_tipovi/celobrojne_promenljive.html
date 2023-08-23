@@ -393,7 +393,7 @@
 </section>
 <section id="id3">
 <h2>Модификатори<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>Може се десити да ти приликом решавања некод задатка не треба променљива за
+<p>Може се десити да ти приликом решавања неког задатка не треба променљива за
 чување великих целобројних вредности, односно, може се десити да ти је потребна
 променљива која треба да чува вредност много већу од оне предвиђене опсегом.
 Може се десити и да си сигуран да ће вредност променљиве увек бити позитиван
@@ -402,9 +402,9 @@
 модификатори. Модификатори за целобројни тип <code class="docutils literal notranslate"><span class="pre">int</span></code> су <code class="docutils literal notranslate"><span class="pre">signed</span></code>, <code class="docutils literal notranslate"><span class="pre">unsigned</span></code>,
 <code class="docutils literal notranslate"><span class="pre">short</span></code> и <code class="docutils literal notranslate"><span class="pre">long</span></code>.</p>
 <p>Модификатором <code class="docutils literal notranslate"><span class="pre">signed</span></code> <em>(срп. означен)</em> наглашава се да цео број има знак,
-односно, модификатором <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> <em>(срп. неозначен)</em> да нема тј. да је увек
+а модификатором <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> <em>(срп. неозначен)</em> да нема тј. да је увек
 позитиван. Коришћењем модификатора <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> ослобађа се бит који се чува за
-знак, чиме се повећава опсег вредности које промељива може да добије, па тако,
+знак, чиме се повећава опсег вредности које променљива може да добије, па тако,
 неозначена целобројна променљива може да добије вредност од <span class="math notranslate nohighlight">\(0\)</span> до
 <span class="math notranslate nohighlight">\(4,294,967,295\)</span>, односно од <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(2^{32}-1\)</span>.</p>
 <p>Модификатор <code class="docutils literal notranslate"><span class="pre">short</span></code> <em>(срп. кратак)</em> дупло смањује количину меморије која се
@@ -414,12 +414,12 @@
 напоменути да је у свим савременим C компајлерима променљива типа <code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">int</span></code>
 величине 2 бајта, променљива типа <code class="docutils literal notranslate"><span class="pre">int</span></code> 4 бајта, променљива типа <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">int</span></code>
 и даље 4 бајта, док је променљива типа <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span> <span class="pre">int</span></code> величине 8 бајтова.</p>
-<p>Модификатори <code class="docutils literal notranslate"><span class="pre">signed</span></code> и <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> се могу комбиновати са модификаторима
+<p>Модификатори <code class="docutils literal notranslate"><span class="pre">signed</span></code> и <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> могу се комбиновати са модификаторима
 <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code> и <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code> па увек можеш одабрати тип који ти највише
 одговара за конкретан случај.</p>
 <p>Када се декларишу подаци са модификаторима, није увек обавезно записати и
 модификаторе и тип. На пример, тип података <code class="docutils literal notranslate"><span class="pre">int</span></code> може да има и негативне и
-позитивне вредности што значи да означен, па се променљива типа <code class="docutils literal notranslate"><span class="pre">int</span></code> може
+позитивне вредности, што значи да је означен, па се променљива типа <code class="docutils literal notranslate"><span class="pre">int</span></code> може
 декларисати као <code class="docutils literal notranslate"><span class="pre">signed</span> <span class="pre">int</span></code> или као <code class="docutils literal notranslate"><span class="pre">signed</span></code>. Сва три случаја су еквивалентна
 и валидна.</p>
 <p>Напиши програм у програмском језику C у којем је декларисана променљива која
@@ -542,7 +542,7 @@
 вредност током израде задатка.</p>
 <section id="id6">
 <h3>Целобројни константни податак<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
-<p><strong>Константни податак</strong> <em>(енгл. constant)</em> је податак чија је вредност унапред
+<p><strong>Константни податак</strong> (енгл. <em>constant</em>) је податак чија је вредност унапред
 задата у програму и не може се мењати током извршавања програма. Позитивна или
 негативна вредност целобројног константног податка може бити задата у окталном,
 декадном или хексадекадном бројевном систему - исто као и вредност целобројне
@@ -615,7 +615,7 @@
 </div>
 <p>Можеш приметити да у општем облику дефиниције симболичке константе нигде није
 наведен тип. То значи да вредност симболичке константе може бити цео број, знак
-или реалан број - препроцесор ће сам одредити о ком типу податка је реч.
+или реалан број - препроцесор ће сâм одредити о ком типу податка је реч.
 Пошто се не наводи тип, не могу се наводити ни модификатори. Целобројне
 симболичке константе подразумевано се смештају у меморијске локације величине 4
 бајта, а ако то није довољно, величина меморијске локације аутоматски ће се
@@ -627,7 +627,7 @@
 идентификатор можеш користити било где у програму уместо вредности.</p>
 <p>Напиши програм у програмском језику C у којем ћеш дефинисати симболичку
 константу <code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code> доделивши јој вредност <span class="math notranslate nohighlight">\(299792458\)</span>, па
-након тога, дефиниши константи целобројни податак <code class="docutils literal notranslate"><span class="pre">c</span></code> и додели му вредност
+након тога, дефиниши константни целобројни податак <code class="docutils literal notranslate"><span class="pre">c</span></code> и додели му вредност
 <code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define BRZINA_SVETLOSTI_U_VAKUUMU 299792458</span>
@@ -640,7 +640,7 @@
 </div>
 <p>Дефиницију симболичке константе можеш да поништиш препроцесорском директивом
 <code class="docutils literal notranslate"><span class="pre">#undef</span></code>, а да ли је нека константа дефинисана или није, можеш да провериш
-препроцесорским директивана <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">defined()</span></code>, <code class="docutils literal notranslate"><span class="pre">#else</span></code> и <code class="docutils literal notranslate"><span class="pre">#endif</span></code>.</p>
+препроцесорским директивама <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">defined()</span></code>, <code class="docutils literal notranslate"><span class="pre">#else</span></code> и <code class="docutils literal notranslate"><span class="pre">#endif</span></code>.</p>
 <p>Напиши програм у програмском језику C у којем ћеш дефинисати симболичку
 константу <code class="docutils literal notranslate"><span class="pre">BRZINA_SVETLOSTI_U_VAKUUMU</span></code> као у претходним примерима. У функцији
 <code class="docutils literal notranslate"><span class="pre">main()</span></code> провери да ли је симболичка константа дефинисана и на крају поништи
