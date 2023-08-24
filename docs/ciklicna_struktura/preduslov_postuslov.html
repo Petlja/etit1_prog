@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -360,18 +360,18 @@
 проверу тачности управљачког израза. Поступак се понавља све док је управљачки
 израз тачан. Ако је управљачки израз нетачан, односно једнак нули, излази се из
 петље.</p>
-<p>За разлику од <code class="docutils literal notranslate"><span class="pre">for</span></code> петље, у <code class="docutils literal notranslate"><span class="pre">while</span></code> петљи број итерације није унапред познат.
+<p>За разлику од <code class="docutils literal notranslate"><span class="pre">for</span></code> петље, у <code class="docutils literal notranslate"><span class="pre">while</span></code> петљи број итерација није унапред познат.
 Ако је при уласку у петљу управљачки израз нетачан тело петље неће се ни једном
 извршити, односно број итерација биће једнак нули. Ако управљачки израз јесте
 тачан, у телу петље мора се обезбедити механизам за промену вредности која
 утиче на вредност управљачког израза у заглављу, иначе ће петља постати
 бесконачна.</p>
 <p>Напиши поново програм у програмском језику C који на стандардном излазу
-исписује бројеве од <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(9\)</span> користећи петља са предусловом <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
-<p>Алогитам за решавање овог задатка представљен дијаграмом тока може да изгледа
+исписује бројеве од <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(9\)</span> користећи петљу са предусловом <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>Алгоритам за решавање овог задатка представљен дијаграмом тока може да изгледа
 овако:</p>
 <a class="reference internal image-reference" href="../_images/preduslov.png"><img alt="Петља са предусловом" class="align-center" src="../_images/preduslov.png" style="width: 30%;" /></a>
-<p>а програм у програмском језику C овако:</p>
+<p>Програм у програмском језику C може да изгледа овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -459,7 +459,7 @@ while (izraz)
 <p>Алогитам за решавање овог задатка представљен дијаграмом тока могао би да изгледа
 овако:</p>
 <a class="reference internal image-reference" href="../_images/postuslov.png"><img alt="Петља са постсловом" class="align-center" src="../_images/postuslov.png" style="width: 30%;" /></a>
-<p>а програм у програмском језику C овако:</p>
+<p>Програм у програмском језику C могао би да изгледа овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>

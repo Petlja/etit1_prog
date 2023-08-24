@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -344,10 +344,10 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Релацијски оператори<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<p>Изрази са релацијски операторима најчешће се користе за задавање услова у
+<p>Изрази са релацијским операторима најчешће се користе за задавање услова у
 разгранатим или цикличним структурама програма па их из тог разлога тек сада
 обрађујемо.</p>
-<p><strong>Релацијски оператори</strong>, тзв. оператори поређења су бинарни оператори који
+<p><strong>Релацијски оператори</strong>, тзв. оператори поређења, бинарни су оператори који
 врше поређење два операнда. У програмском језику C постоји шест релацијских
 оператора и сви имају леву асоцијативност. Четири релацијска оператора имају
 приоритет 6:</p>
@@ -374,7 +374,7 @@
 или изражавају односи између операнада на левој и десној страни, док се у
 програмирању тај однос увек израчунава!</p>
 <section id="id2">
-<h2>Релацијски оператори мање<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Релацијски оператор мање<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Релацијским оператором мање <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> формира се логички израз којим се испитује да
 ли је операнд на левој мањи од операнда на десној страни.</p>
 <p>Напиши програм у програмском језику C којим се на стандардни излаз исписују
@@ -447,8 +447,8 @@
 испитује да ли је операнд на левој страни већи или једнак операнду на десној
 страни.</p>
 <p>Напиши програм у програмском језику C којим се на стандардни излаз исписују
-резултати испитивања: да ли је по ASCII табели <code class="docutils literal notranslate"><span class="pre">a</span></code> је веће или једнако од <code class="docutils literal notranslate"><span class="pre">A</span></code> и
-да ли је <code class="docutils literal notranslate"><span class="pre">A</span></code> веће или једнако <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+резултати испитивања: да ли је по ASCII табели <code class="docutils literal notranslate"><span class="pre">a</span></code> веће или једнако од <code class="docutils literal notranslate"><span class="pre">A</span></code> и
+да ли је <code class="docutils literal notranslate"><span class="pre">A</span></code> веће или једнако од <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -569,7 +569,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Релацијски оператори</a><ul>
-<li><a class="reference internal" href="#id2">Релацијски оператори мање</a></li>
+<li><a class="reference internal" href="#id2">Релацијски оператор мање</a></li>
 <li><a class="reference internal" href="#id3">Релацијски оператор мање или једнако</a></li>
 <li><a class="reference internal" href="#id4">Релацијски оператор веће</a></li>
 <li><a class="reference internal" href="#id5">Релацијски оператор веће или једнако</a></li>

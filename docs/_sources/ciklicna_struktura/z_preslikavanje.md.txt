@@ -1,7 +1,7 @@
 # Задаци: Пресликавање серије бројева
 
 Алгоритми и програми у програмском језику C:
-[пресликавање серије бројева](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/03%20preslikavanje).
+[Пресликавање серије бројева](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/03%20preslikavanje).
 
 ## Прерачунавање миља у километре
 

@@ -1,7 +1,7 @@
 # Задаци: Учитавање серија бројева
 
 Алгоритми и програми у програмском језику C:
-[учитавање серија бројева](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/02%20ucitavanje).
+[Учитавање серија бројева](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/02%20ucitavanje).
 
 ## Збир n бројева
 

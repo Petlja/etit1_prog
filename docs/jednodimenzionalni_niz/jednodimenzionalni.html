@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Дефиниција једнодимнезионалног низа" href="definicija_niza.html" /><link rel="prev" title="Једнодимензионални низ" href="index.html" />
+<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Дефиниција једнодимензионалног низа" href="definicija_niza.html" /><link rel="prev" title="Једнодимензионални низ" href="index.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
         <title>Једнодимензионални низ - Програмирање I за информатичке профиле у електротехничким школама</title>
@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Једнодимензионални низ</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sizeof_niz.html">Одређивање величине низа</a></li>
@@ -365,17 +365,17 @@
 <p>За решавање оваквих проблема користе се <strong>изведени типови података</strong> који могу
 да имају комплекснију структуру од једне променљиве, односно једног бројчаног
 податка. Једини изведени тип података којег ћеш користити у првој години учења
-програмског језика C јесте <strong>низ</strong> <em>(енгл. array)</em>. 15 декларација променљивих
+програмског језика C јесте <strong>низ</strong> (енгл. <em>array</em>). 15 декларација променљивих
 за чување података о твојих 15 оцена можеш заправо да замениш са само једном
 декларацијом низа који ће чувати 15 елемената.</p>
-<p>У овом поглављу научићеш да користиш једнодимензионалне низове, како да их
+<p>У овом поглављу научићеш да користиш једнодимензионалне низове, да их
 претражујеш, обрађујеш и сортираш. Након тога, из
 <a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/Zbirka">Методичке збирке задатака из основа програмирања</a>
 моћи ћеш да решаваш разне задатке са програмима у којима се појављују
 <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija">низови</a>, а сви задаци
 сврстани су у поткатегорије на следећи начин:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="z_elementarno_koriscenje_nizova.html"><span class="std std-doc">Eлементарно коришћење низова</span></a></p></li>
+<li><p><a class="reference internal" href="z_elementarno_koriscenje_nizova.html"><span class="std std-doc">Елементарно коришћење низова</span></a></p></li>
 <li><p><a class="reference internal" href="z_transformacije_nizova.html"><span class="std std-doc">Трансформације низова</span></a></p></li>
 <li><p><a class="reference internal" href="z_vektori_polinomi_veliki_brojevi.html"><span class="std std-doc">Низови као репрезентација вектора, полинома и великих бројева</span></a></p></li>
 <li><p><a class="reference internal" href="z_sortiranje_osnove.html"><span class="std std-doc">Сортирање</span></a></p></li>
@@ -396,7 +396,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Дефиниција једнодимнезионалног низа</div>
+                <div class="title">Дефиниција једнодимензионалног низа</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

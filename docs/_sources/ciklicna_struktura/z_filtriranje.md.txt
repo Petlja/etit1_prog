@@ -1,7 +1,7 @@
 # Задаци: Филтрирање серије бројева
 
 Алгоритми и програми у програмском језику C:
-[филтрирање серије бројева](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/07%20filtriranje).
+[Филтрирање серије бројева](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/07%20filtriranje).
 
 ## Бројеви дељиви са 3
 

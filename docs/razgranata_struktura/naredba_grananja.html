@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -345,7 +345,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Наредба гранања<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Наредбом гранања <code class="docutils literal notranslate"><span class="pre">if</span></code> можеш да контролишеш условно гранање у програму. Општи
-облик наредбе <code class="docutils literal notranslate"><span class="pre">if</span></code> може да се представи са два облика. Први најједноставнији
+облик наредбе <code class="docutils literal notranslate"><span class="pre">if</span></code> може да се представи са два облика. Први и најједноставнији
 облик изгледа овако:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>if (izraz)
     naredbа
@@ -353,7 +353,7 @@
 </div>
 <p>Прво се израчунава вредност израза <code class="docutils literal notranslate"><span class="pre">izraz</span></code> који може бити различит од нуле,
 односно тачан, или једнак нули, односно нетачан. Ако је вредност израза
-различита он нуле извршава се <code class="docutils literal notranslate"><span class="pre">naredba</span></code>, која може бити појединачне наредба
+различита од нуле извршава се <code class="docutils literal notranslate"><span class="pre">naredba</span></code>, која може бити појединачна наредба
 или блок наредби између витичастих заграда.</p>
 <p>Сложенији облик наредбе гранања <code class="docutils literal notranslate"><span class="pre">if-else</span></code> изгледа овако:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>if (izraz)
@@ -362,7 +362,7 @@ else
     naredbа_2
 </pre></div>
 </div>
-<p>где <code class="docutils literal notranslate"><span class="pre">izraz</span></code> представља логички услов који може бити тачан, односно различит од
+<p>Овде <code class="docutils literal notranslate"><span class="pre">izraz</span></code> представља логички услов који може бити тачан, односно различит од
 нуле, или нетачан, односно једнак нули. <code class="docutils literal notranslate"><span class="pre">naredbа_1</span></code> и <code class="docutils literal notranslate"><span class="pre">naredbа_2</span></code> могу бити или
 појединачне наредбе које се завршавају симболом <code class="docutils literal notranslate"><span class="pre">;</span></code> или блокови наредби
 сачињених од појединачних наредби записаних између витичастих заграда.</p>
@@ -461,7 +461,7 @@ else
 <p>Алгоритамско решење овог задатка представљено дијаграмом тока може да изгледа
 овако:</p>
 <a class="reference internal image-reference" href="../_images/if1.png"><img alt="Наредба гранања if-else" class="align-center" src="../_images/if1.png" style="width: 50%;" /></a>
-<p>а програм у програмском језику C овако:</p>
+<p>Програм у програмском језику C може да изгледа овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -496,13 +496,13 @@ else
 </div>
 <p>Често, логички израз може имати више услова између којих се налазе логички
 оператори.</p>
-<p>Напиши алгоритма и програм у програмском језику C који на основу унетог броја
+<p>Напиши алгоритам и програм у програмском језику C који на основу унетог броја
 година ученика, на стандардни излаз исписује да ли је ученик тинејџер или није.
 Ученик је тинејџер ако има више од 12 и мање од 20 година.</p>
 <p>Алгоритамско решење овог задатка представљено дијаграмом тока може да изгледа
 овако:</p>
 <a class="reference internal image-reference" href="../_images/if3.png"><img alt="Логички оператор у логичком изразу" class="align-center" src="../_images/if3.png" style="width: 70%;" /></a>
-<p>а програм у програмском језику C овако:</p>
+<p>Програм у програмском језику C може да изгледа овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -547,7 +547,7 @@ else
 <p>Алгоритамско решење овог задатка представљено дијаграмом тока може да изгледа
 овако:</p>
 <a class="reference internal image-reference" href="../_images/if2.png"><img alt="Угнежђена наредба гранања if-else" class="align-center" src="../_images/if2.png" style="width: 70%;" /></a>
-<p>а програм у програмском језику C овако:</p>
+<p>Програм у програмском језику C може да изгледа овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -616,11 +616,11 @@ else
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">else</span></code> грана односи на прву <code class="docutils literal notranslate"><span class="pre">if</span></code> грану.</p>
-<p>Увлачење односно назубљавање <em>(енгл. indentation)</em>, у програмском језику C има
+<p>Увлачење односно назубљивање (енгл. <em>indentation</em>), у програмском језику C има
 искључиво естетску улогу, па погрешно назубљене <code class="docutils literal notranslate"><span class="pre">if-else</span></code> наредбе могу да
 преваре и искусне програмере. Добра програмерска пракса је да, без обзира што
 увлачење редова не утиче на функционалност програма, увек треба да увлачиш блок
-наредби <code class="docutils literal notranslate"><span class="pre">if</span></code> и <code class="docutils literal notranslate"><span class="pre">else</span></code> грана. Такође, увек треба да користити исти размак за
+наредби <code class="docutils literal notranslate"><span class="pre">if</span></code> и <code class="docutils literal notranslate"><span class="pre">else</span></code> грана. Такође, увек треба користити исти размак за
 увлачење, без обзира да ли га реализујеш помоћу четири узастопне празнине или
 помоћу табулатора.</p>
 <p>Ради лакшег разумевања програма често се користи и <code class="docutils literal notranslate"><span class="pre">else-if</span></code> запис који може да
@@ -634,7 +634,7 @@ else
 </pre></div>
 </div>
 <p>У програмском језику C нема ограничења у дозвољеном броју угнежђавања <code class="docutils literal notranslate"><span class="pre">if-else</span></code>
-наредби, али постоји елегантније решење коришћењем наредбе вишеструког гранање
+наредби, али постоји елегантније решење коришћењем наредбе вишеструког гранања
 <code class="docutils literal notranslate"><span class="pre">switch-case</span></code>, која ће бити тема у наредним лекцијама.</p>
 </section>
 
