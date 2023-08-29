@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Једнодимензионални низ</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Одређивање величине низа</a></li>
@@ -348,9 +348,9 @@
 изоставиш његову величину, односно димензију. Ако у програму постоји такав низ,
 а ти желиш, на пример, да испишеш његове елементе на стандардни излаз, онда ће
 ти требати величина тог низа.</p>
-<p>Можеш сам пребројиш колико је елемената наведено током иницијализације, што
+<p>Можеш сâм да пребројиш колико је елемената наведено током иницијализације, што
 није добро решење. Ако се у коду програма касније промени број елемената који
-се иницијализује, онда ћеш морати да мењаш и код у којем си експицитно навео
+се иницијализује, онда ћеш морати да мењаш и кôд у којем си експлицитно навео
 тај број.</p>
 <p>Друго, боље решење је да користиш <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code> оператор. У лекцији
 <a class="reference internal" href="../izrazi_naredbe/operator_sizeof.html"><span class="std std-doc">Оператор <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code></span></a> научио си да
@@ -380,7 +380,7 @@
 низа.</p>
 <p>Треће, једнако функционално решење је да као делилац, уместо првог елемента
 низа, користиш тип података којим је низ иницијализован. Претходни програм би
-онда изгледало овако:</p>
+онда изгледао овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -414,7 +414,7 @@
 </pre></div>
 </div>
 <p>Исти је случај и са статичком алокацијом низа без иницијализације. Ако је
-алоциран низ од <code class="docutils literal notranslate"><span class="pre">n</span></code> елемената, па након тога, у њега унет број елемената мањи
+алоциран низ од <code class="docutils literal notranslate"><span class="pre">n</span></code> елемената, па је након тога, у њега унет број елемената мањи
 од <code class="docutils literal notranslate"><span class="pre">n</span></code>, оператор <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code> вратиће опет величину целог низа, без обзира што
 низ поседује елементе који нису иницијализовани. У следећем примеру:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
@@ -442,7 +442,7 @@
 аутоматски иницијализовани нулама, у овом примеру исписане вредности
 <code class="docutils literal notranslate"><span class="pre">-858993460</span></code> (хексадекадно <code class="docutils literal notranslate"><span class="pre">0xCCCCCCCC</span></code>) говоре ти да елементи низа којима
 приступаш нису иницијализовани. Ако не желиш да се на стандардном излазу
-исписују неицијализовани елементи, то можеш решити условним наредбама - у овом
+исписују неиницијализовани елементи, то можеш решити условним наредбама - у овом
 случају:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 

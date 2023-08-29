@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -358,7 +358,7 @@
 итерацији петље. <code class="docutils literal notranslate"><span class="pre">izraz3</span></code> извршава се у свакој итерацији петље и служи за
 ажурирање вредности бројача. Вредност бројача утиче на тачност управљачког
 израза, а операција ажурирања бројача најчешће је инкрементација. <code class="docutils literal notranslate"><span class="pre">naredba</span></code>
-представља тело петље кога чини или једна наредба или блок наредби сачињен
+представља тело петље које чини или једна наредба или блок наредби сачињен
 од појединачних наредби записаних између витичастих заграда.</p>
 <p>По уласку у <code class="docutils literal notranslate"><span class="pre">for</span></code> петљу извршава се додела почетних вредности, након чега се
 проверава тачност управљачког израза. Ако је управљачки израз тачан (различит
@@ -368,9 +368,9 @@
 Када управљачки израз постане нетачан (једнак нули), излази се из петље.</p>
 <p>Напиши програм у програмском језику C који на стандардни излаз исписује
 цифре од 0 до 9.</p>
-<p>Алогитам за решавање овог задатка представљен дијаграмом тока изгледао овако:</p>
+<p>Алгоритам за решавање овог задатка представљен дијаграмом тока изгледао би овако:</p>
 <a class="reference internal image-reference" href="../_images/postuslov.png"><img alt="Бројачка петља" class="align-center" src="../_images/postuslov.png" style="width: 30%;" /></a>
-<p>и програм у програмском језику C овако:</p>
+<p>Програм у програмском језику C изгледао би овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -386,7 +386,7 @@
 </pre></div>
 </div>
 <p>Уласком у петљу иницијализована је бројачка променљива <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>. Затим се
-проверава <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>, извршава се тело петље - на стандардном излазу исписује се
+проверава <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> и извршава се тело петље - на стандардном излазу исписује се
 тренутна вредност променљиве <code class="docutils literal notranslate"><span class="pre">i</span></code> која износи <code class="docutils literal notranslate"><span class="pre">0</span></code>. Потом се ажурира вредност
 бројача изразом <code class="docutils literal notranslate"><span class="pre">i++</span></code>, чиме се <code class="docutils literal notranslate"><span class="pre">i</span></code> ажурира на <code class="docutils literal notranslate"><span class="pre">1</span></code>. Ток програма се враћа на
 проверу тачности израза <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>. Пошто је и тај израз тачан, на стандардном
@@ -394,8 +394,8 @@
 редом. Поступак се понавља све док је израз <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> тачан.</p>
 <p>Након извршавања петље променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> има вредност <code class="docutils literal notranslate"><span class="pre">10</span></code>, али је та вредност у
 овом случају неупотребљива ван петље јер је променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> декларисана у оквиру
-петље - каже се да је област видљивости променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> само у оквиру петље. То
-значи да се следећи програм не би компајлирао:</p>
+петље - каже се да је област видљивости променљиве <code class="docutils literal notranslate"><span class="pre">i</span></code> само у оквиру петље. То
+значи да се следећи програм не би компајлирао…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -407,8 +407,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>јер је променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> у седмој линији недефинисана. Ако је неопходно да
-област видљивости променљиве буде и ван петље, онда се може она мора
+<p>…јер је променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> у седмој линији недефинисана. Ако је неопходно да
+област видљивости променљиве буде и ван петље, онда се она мора
 декларисати пре уласка у петљу, на пример, овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -426,9 +426,9 @@
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9 10
 </pre></div>
 </div>
-<p>Сада је програм исправан, па ће се након последље итерације петље, на
+<p>Сада је програм исправан, па ће се након последње итерације петље, на
 стандардни излаз исписати и вредност променљиве <code class="docutils literal notranslate"><span class="pre">i</span></code> која износи <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
-<p>Оба начина декларације бројача (ван петље или у петљи) су исправна, а када ћеш
+<p>Оба начина декларације бројача (ван петље и у петљи) су исправна, а када ћеш
 који користити зависи од ситуације, односно потребе.</p>
 <p>Бројач је могуће декларисати и као променљиву реалног типа, али то није
 препоручљиво. Вредности променљивих реалног типа могу бити приближне, односно
@@ -461,8 +461,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Управљачки израз у петљи не постоји, па се из петље „искаче” наредбом <code class="docutils literal notranslate"><span class="pre">break</span></code>.
-Овај програм написан је само ради демонстрације, а о искакањима из петље и
+<p>Управљачки израз у петљи не постоји, па се из петље <em>искаче</em> наредбом <code class="docutils literal notranslate"><span class="pre">break</span></code>.
+Овај програм написан је само ради демонстрације, а о <em>искакањима</em> из петље и
 сличним темама учићеш на крају овог поглавља.</p>
 </section>
 <section id="id3">
@@ -472,13 +472,13 @@
 она у којој се угнежђава. Спољашња и унутрашња петља чине двоструку петљу. Број
 петљи које ће се угнездити једна у другу није ограничен и зависи од потреба и
 конкретног случаја. Тако се могу имплементирати и вишеструке петље. Дозвољено је
-комбиновати петље написане било којом наредбом циклуса - <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> или
-<code class="docutils literal notranslate"><span class="pre">do-while</span></code> и наравно, унутар петљи дозвољено је користити наредбе гранања.</p>
+комбиновати петље написане било којом наредбом циклуса <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> или
+<code class="docutils literal notranslate"><span class="pre">do-while</span></code> - и наравно, унутар петљи дозвољено је користити наредбе гранања.</p>
 <p>Напиши програм који на стандардном излазу исписује таблицу множења бројева од
 <code class="docutils literal notranslate"><span class="pre">1</span></code> до <code class="docutils literal notranslate"><span class="pre">5</span></code>. Резултат треба да буде пет табела. У првој табели број <code class="docutils literal notranslate"><span class="pre">1</span></code> множи
 бројеве од <code class="docutils literal notranslate"><span class="pre">1</span></code> до <code class="docutils literal notranslate"><span class="pre">5</span></code>, у другој број <code class="docutils literal notranslate"><span class="pre">2</span></code> множи бројеве од <code class="docutils literal notranslate"><span class="pre">1</span></code> до <code class="docutils literal notranslate"><span class="pre">5</span></code> и тако
 редом до пете табеле где број <code class="docutils literal notranslate"><span class="pre">5</span></code> множи бројеве од <code class="docutils literal notranslate"><span class="pre">1</span></code> до <code class="docutils literal notranslate"><span class="pre">5</span></code>. Елегантно решење
-овог задатка захтева само једну двоструку петљу:</p>
+овог задатка захтева само једну двоструку петљу…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -493,7 +493,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>а резултат извршавања програма на стандардном излазу изгледа овако:</p>
+<p>…а резултат извршавања програма на стандардном излазу изгледа овако:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 * 1 = 1       1 * 2 = 2       1 * 3 = 3       1 * 4 = 4       1 * 5 = 5
 2 * 1 = 2       2 * 2 = 4       2 * 3 = 6       2 * 4 = 8       2 * 5 = 10
 3 * 1 = 3       3 * 2 = 6       3 * 3 = 9       3 * 4 = 12      3 * 5 = 15
@@ -508,7 +508,7 @@
 Инкрементира се вредност <code class="docutils literal notranslate"><span class="pre">j</span></code> на <code class="docutils literal notranslate"><span class="pre">2</span></code>, па како <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code>, исписује се <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">2</span></code>
 и прави се размак. Поступак се понавља све док је <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code>, након чега се
 излази из унутрашње петље и извршава наредба за прелазак у нови ред у спољашњој
-петљи. Овим је завршена анализа прве итерацији спољашње петље. Пошто је
+петљи. Овим је завршена анализа прве итерације спољашње петље. Пошто је
 извршено тело прве петље, врши се инкрементирање вредности бројача <code class="docutils literal notranslate"><span class="pre">i</span></code> на два.
 Како је и даље тачан израз у спољашњој петљи <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code>, из почетка се извршава
 унутрашња петља чиме се на излазу исписује и други ред. Поступак се понавља све

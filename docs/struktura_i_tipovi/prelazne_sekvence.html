@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -345,7 +345,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Прелазне секвенце<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>У програмском језику C често се користе прелазни карактери или прелазне
-секвенце <em>(енгл. escape characters или escape sequences)</em>, испред којих увек
+секвенце (енгл. <em>escape characters</em> или <em>escape sequences</em>), испред којих увек
 претходи обрнута коса црта <code class="docutils literal notranslate"><span class="pre">\</span></code>. Све прелазне секвенце наведене су у
 табели прелазних секвенци у <a class="reference internal" href="../prilozi/prelazne_sekvence.html"><span class="std std-doc">прилогу</span></a>, а у
 овој лекцији учићеш о онима које ћеш најчешће и користити.</p>
@@ -355,7 +355,7 @@
 два апострофа, осим карактера обрнута коса црта, наводник, апостроф и упитник.
 Навођење ових карактера решено је управо прелазним секвенцама тако што се
 испред карактера наводи обрнута коса црта.</p>
-<p>Напиши програм у програмској језику C у којем су иницијализоване четири
+<p>Напиши програм у програмском језику C у којем су иницијализоване четири
 знаковне променљиве <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code> и <code class="docutils literal notranslate"><span class="pre">d</span></code> са карактерима обрнута коса црта,
 наводник, апостроф и упитник. Ако не користиш прелазне секвенце, компајлер ће
 пронаћи много грешака током процеса превођења:</p>
@@ -368,7 +368,7 @@ int main(void)
 }
 </pre></div>
 </div>
-<p>Да би исправио грешке у програму потребно је да ставиш обрнуту косу црту пре
+<p>Да би исправио грешке у програму, потребно је да ставиш обрнуту косу црту пре
 навођења обрнуте косе црте, наводника, апострофа и упитника чиме си креирао
 прелазне секвенце.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
@@ -384,7 +384,7 @@ int main(void)
 <section id="id3">
 <h2>Нови ред<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Прелазна секвенца <code class="docutils literal notranslate"><span class="pre">\n</span></code> користи се за прелазак курсора у нови ред.</p>
-<p>Напиши програм у програмској језику C који на стандардни излаз исписује следећи
+<p>Напиши програм у програмском језику C који на стандардни излаз исписује следећи
 текст:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fondacija Petlja
 Koste Glavinica 2, Beograd
@@ -441,11 +441,11 @@ loop@petlja.org
 </section>
 <section id="id4">
 <h2>Табулатор<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Као и у текст процесорима и текст едиторима, табулатор можеш користити када
+<p>Као и у процесорима и едиторима текста, табулатор можеш користити када
 желиш да прикажеш податке на стандардном излазу тачно један испод другог, на
 пример табеларно. У програмском језику C, један притисак на тастер <code class="docutils literal notranslate"><span class="pre">TAB</span></code>
 симулира прелазна секвенца <code class="docutils literal notranslate"><span class="pre">\t</span></code>.</p>
-<p>Напиши програм у програмској језику C који на стандардни излаз исписује следећe
+<p>Напиши програм у програмском језику C који на стандардни излаз исписује следеће
 податке:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ime     Prezime Razred
 Ana     Anic    II

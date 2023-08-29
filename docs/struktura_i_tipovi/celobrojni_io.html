@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -347,7 +347,7 @@
 <p>Пошто програмски језик C потиче са UNIX система, он све уређаје третира као
 датотеке. Тако и податке које требаш унети у програм или исписати из програма
 можеш посматрати као датотеке које садрже низове сукцесивних знакова који се
-називају токови <em>(енгл. streams)</em>.</p>
+називају токови (енгл. <em>streams</em>).</p>
 <p>Улазни подаци читају се из тока <code class="docutils literal notranslate"><span class="pre">stdin</span></code>, излазни уписују у ток <code class="docutils literal notranslate"><span class="pre">stdout</span></code>, а
 кодови грешака насталих при извршењу програма уписују се у ток <code class="docutils literal notranslate"><span class="pre">stderr</span></code>.
 Извориште података за унос може бити тастатура, било који улазни уређај или
@@ -360,7 +360,7 @@
 одредишта биће теме следеће школске године.</p>
 <p>Подаци се са тастатуре уносе као низ знакова, у меморији представљају у
 бинарном облику и на екрану исписују у текстуалном облику. У току преноса
-знакова унешених са тастатуре у бинарни облик у меморији, врши се
+знакова унетих са тастатуре у бинарни облик у меморији, врши се
 <strong>улазна конверзија</strong>. У току преноса бинарних података из меморије у
 текстуални облик који се исписује на екрану врши се <strong>излазна конверзија</strong>.</p>
 <p>У програмском језику C наредбе за улаз/излаз формирају се коришћењем посебних
@@ -373,12 +373,12 @@
 између наводника. Међутим, ова функција има и могућност исписа података било
 ког типа на стандардном излазу тј. на екрану уз примену излазне конверзије.
 Каже се да ова функција обавља <strong>форматирани излаз</strong> јер као аргумент користи
-низ знакова којим се управља конверзијом, а који се назива формат.</p>
-<p>Библиотечка функција <code class="docutils literal notranslate"><span class="pre">printf()</span></code> има следећи општи облик:</p>
+низ знакова којима се управља конверзијом, а који се назива формат.</p>
+<p>Библиотечка функција <code class="docutils literal notranslate"><span class="pre">printf()</span></code> има следећи општи облик…</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>printf(format, lista_argumenata);
 </pre></div>
 </div>
-<p>где је <code class="docutils literal notranslate"><span class="pre">format</span></code> низ знакова записан између наводника који може наизменично
+<p>…где је <code class="docutils literal notranslate"><span class="pre">format</span></code> низ знакова записан између наводника који може наизменично
 да садржи текст (укључујући и размаке), управљачке карактере и спецификаторе
 конверзија, док <code class="docutils literal notranslate"><span class="pre">lista_argumenata</span></code> садржи вредности које ће бити исписане,
 обично у форми идентификатора или израза. Спецификатор конверзије прецизно
@@ -399,7 +399,7 @@
 <p>Спецификатор конверзије <code class="docutils literal notranslate"><span class="pre">%d</span></code> је један од симбола за целобројни податак типа
 <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <p>Напиши програм у програмском језику C који на стандардни излаз исписује
-вредности којем су иницијализоване целобројне променљиве <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">16</span></code> и <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">18</span></code>.
+вредности којима су иницијализоване целобројне променљиве <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">16</span></code> и <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">18</span></code>.
 Нека су то вредности које представљају број година које ученици Тамара и Влада
 имају на данашњи дан.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
@@ -417,7 +417,7 @@
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Tamara ima 16, a Vlada 18 godina.
 </pre></div>
 </div>
-<p>У оквиру једне <code class="docutils literal notranslate"><span class="pre">printf()</span></code> функције можеш користи више поља истовремено и
+<p>У оквиру једне <code class="docutils literal notranslate"><span class="pre">printf()</span></code> функције можеш користити више поља истовремено и
 претходни програм можеш написати и овако:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -484,17 +484,17 @@
 <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code> означене или неозначене излазне податке типа <code class="docutils literal notranslate"><span class="pre">int</span></code>. Задавањем <code class="docutils literal notranslate"><span class="pre">hh</span></code>
 исписује се карактер на основу задате бројчане вредности из ASCII табеле.</p></li>
 </ul>
-<p>Уместо ширине поља може се ставити знак <code class="docutils literal notranslate"><span class="pre">*</span></code> након чега се вредност за
-минималну ширину поља наводи у листи аргумената функције који мора бити
+<p>Уместо ширине поља може се ставити знак <code class="docutils literal notranslate"><span class="pre">*</span></code>, након чега се вредност за
+минималну ширину поља наводи у листи аргумената функције којa мора бити
 целобројног типа <code class="docutils literal notranslate"><span class="pre">int</span></code> и претходити идентификатору променљиве која се исписује.
 Исто важи и за прецизност.</p>
 <p>Напиши програм у програмском језику C којим се на стандарни излаз исписују четири
 формата записивања датума, раздвојена међусобно знаком <code class="docutils literal notranslate"><span class="pre">|</span></code>:</p>
 <ul class="simple">
-<li><p>Д.М.Г. формат, где поља нису фиксне ширине <em>(нпр. 1.9.2023.)</em>,</p></li>
-<li><p>ДД-ММ-ГГГГ формат, где су поља фиксне ширине <em>(нпр. 01-09-2023)</em>,</p></li>
-<li><p>ММ-ДД-ГГГГ формат, где су поља фиксне ширине <em>(нпр. 09-01-2023)</em>, као у САД и</p></li>
-<li><p>ГГГГ-ММ-ДД формат, где су поља фиксне ширине <em>(нпр. 2023-09-01)</em>, по ISO 8601
+<li><p>Д.М.Г. формат, где поља нису фиксне ширине (нпр. <em>1.9.2023.</em>),</p></li>
+<li><p>ДД-ММ-ГГГГ формат, где су поља фиксне ширине (нпр. <em>01-09-2023</em>),</p></li>
+<li><p>ММ-ДД-ГГГГ формат, где су поља фиксне ширине (нпр. <em>09-01-2023</em>), као у САД, и</p></li>
+<li><p>ГГГГ-ММ-ДД формат, где су поља фиксне ширине (нпр. <em>2023-09-01</em>), по ISO 8601
 стандарду.</p></li>
 </ul>
 <p>Нека је задат датум: први септембар 2023. године.</p>
@@ -518,11 +518,11 @@
 </section>
 <section id="id3">
 <h2>Функције за унос података<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>До сада си научио да на стандардни излаз исписујеш податке које си сам
+<p>До сада си научио да на стандардни излаз исписујеш податке које си сâм
 дефинисао у оквиру програма. Међутим, у већини случајева подаци нису унапред
-познати, односно, корисник програма треба сам да уноси податке. Функција
+познати, односно, корисник програма треба сâм да уноси податке. Функција
 <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> чита податке са стандардног улаза тј. са тастатуре уз примену улазне
-конверзије. Каже се да ова функција обављаја <strong>форматирани улаз</strong> јер као
+конверзије. Каже се да ова функција обавља <strong>форматирани улаз</strong> јер као
 аргумент користи низ знакова којим се управља конверзијом, а који се назива
 формат.</p>
 <p>Библиотечка функција <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> има следећи општи облик:</p>
@@ -531,8 +531,8 @@
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">format</span></code> је низ знакова записан између наводника који може наизменично
 да садржи размаке, управљачке карактере и спецификаторе конверзија.
-<code class="docutils literal notranslate"><span class="pre">lista_adresa</span></code> садржи адресe променљивих које се записују у облику
-<code class="docutils literal notranslate"><span class="pre">&amp;identifikator</span></code> у које се уносе конвертоване вредности учитаних података.
+<code class="docutils literal notranslate"><span class="pre">lista_adresa</span></code> садржи адресе променљивих које се записују у облику
+<code class="docutils literal notranslate"><span class="pre">&amp;identifikator</span></code>, у које се уносе конвертоване вредности учитаних података.
 Спецификатор конверзије прецизно одређује начин конверзије податка који се
 исписује. Увек почиње знаком <code class="docutils literal notranslate"><span class="pre">%</span></code> и има општи облик:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>%[dodatne_opcije]simbol_konverzije
@@ -547,11 +547,11 @@
 <p>Знак <code class="docutils literal notranslate"><span class="pre">%</span></code> и <code class="docutils literal notranslate"><span class="pre">simbol_konverzije</span></code> су обавезни елементи, а између њих можеш
 додатно навести, по датом редоследу и следеће необавезне елементе:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>, је карактер који означава да ће се улазни податак прочитати и
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>, карактер који означава да ће се улазни податак прочитати и
 игнорисати,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">širina</span></code>, је целобројна вредност која задаје највећи број карактера улазног
+<li><p><code class="docutils literal notranslate"><span class="pre">širina</span></code>, целобројна вредност која задаје највећи број карактера улазног
 податка,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dužina</span></code>, се задаје карактером <code class="docutils literal notranslate"><span class="pre">l</span></code> за <code class="docutils literal notranslate"><span class="pre">double</span></code>, или <code class="docutils literal notranslate"><span class="pre">L</span></code> за <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dužina</span></code>, задаје се карактером <code class="docutils literal notranslate"><span class="pre">l</span></code> за <code class="docutils literal notranslate"><span class="pre">double</span></code> или <code class="docutils literal notranslate"><span class="pre">L</span></code> за <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code>.</p></li>
 </ul>
 
     <div class="note-wrapper technicalnote-type">
@@ -594,7 +594,7 @@
 Uneo si broj 15
 </pre></div>
 </div>
-<p>Jедним позивом <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> функције можеш унети више података истовремено.</p>
+<p>Једним позивом <code class="docutils literal notranslate"><span class="pre">scanf()</span></code> функције можеш унети више података истовремено.</p>
 <p>Напиши програм у програмском језику C којим се са стандардног улаза уноси број
 година корисника програма и његова висина у центиметрима, па се потом унети
 подаци исписују на стандардни излаз.</p>

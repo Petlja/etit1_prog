@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Једнодимензионални низ</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sizeof_niz.html">Одређивање величине низа</a></li>
@@ -346,7 +346,7 @@
 <h1>Сортирање избором<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Постоји више алгоритама које можеш да примениш како би сортирао елементе низа
 бројева у растућем или опадајућем редоследу, а један од најједноставнијих је
-алгоритам за сортирање избором <em>(енгл. Selection Sort)</em>.</p>
+алгоритам за сортирање избором (енгл. <em>Selection Sort</em>).</p>
 <section id="id2">
 <h2>Опис алгоритма<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Идеја је да је да се сортирани низ формира тако што се за сваки индекс <code class="docutils literal notranslate"><span class="pre">ind</span></code>,
@@ -371,7 +371,7 @@
 </ul>
 <p>На пример, нека су у низу <code class="docutils literal notranslate"><span class="pre">arr[5]</span></code> дате закључне оцене ученика у виду
 несортираног низа целих бројева: <code class="docutils literal notranslate"><span class="pre">arr[5]</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">4</span> <span class="pre">}</span></code>. У <code class="docutils literal notranslate"><span class="pre">ind</span></code> памти се
-индекс првог елемента <code class="docutils literal notranslate"><span class="pre">0</span></code>. Пореде се сви следећи елементе у низу са елементом
+индекс првог елемента <code class="docutils literal notranslate"><span class="pre">0</span></code>. Пореде се сви следећи елементи у низу са елементом
 са индексом <code class="docutils literal notranslate"><span class="pre">0</span></code>. Ако је неки од њих мањи, његов индекс памти се у <code class="docutils literal notranslate"><span class="pre">ind</span></code>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arr[5] = { 5, 2, 4, 3, 4 }    ind = 0    2 &lt; 5 ? DA    ind = 1
                                          4 &lt; 2 ? NE
@@ -391,7 +391,7 @@
 </div>
 <p>Пошто је <code class="docutils literal notranslate"><span class="pre">ind</span></code> различито од <code class="docutils literal notranslate"><span class="pre">1</span></code> мењају се места елементима са индексом <code class="docutils literal notranslate"><span class="pre">1</span></code> и
 индексом <code class="docutils literal notranslate"><span class="pre">3</span></code>, па сада низ изгледа овако <code class="docutils literal notranslate"><span class="pre">arr[5]</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">4</span> <span class="pre">}</span></code>.</p>
-<p>У <code class="docutils literal notranslate"><span class="pre">ind</span></code> памти се индекс трећег елемента <code class="docutils literal notranslate"><span class="pre">2</span></code>. Пореде се сви следећи елементе у
+<p>У <code class="docutils literal notranslate"><span class="pre">ind</span></code> памти се индекс трећег елемента <code class="docutils literal notranslate"><span class="pre">2</span></code>. Пореде се сви следећи елементи у
 низу са елементом са индексом <code class="docutils literal notranslate"><span class="pre">ind</span></code>. Ако је неки од њих мањи, његов индекс
 памти се у <code class="docutils literal notranslate"><span class="pre">ind</span></code>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arr[5] = { 2, 3, 4, 5, 4 }    ind = 2    5 &lt; 4 ? NE
@@ -448,7 +448,7 @@
 <li><p>Нека је дат несортиран низ бројева.</p></li>
 <li><p>Вредност првог елемента низа пореди се са сваким следећим. Ако је неки од њих
 мањи, мењају им се места.</p></li>
-<li><p>Вредност другом елемента низа пореди се са сваким следећим. Ако је неки од
+<li><p>Вредност другог елемента низа пореди се са сваким следећим. Ако је неки од
 њих мањи, мењају им се места.</p></li>
 <li><p>… и тако редом.</p></li>
 <li><p>Овај поступак понавља се закључно са претпоследњим елементом, након чега ће
@@ -475,7 +475,7 @@
 </pre></div>
 </div>
 <p>Овај упрошћени алгоритам је знатно једноставнији за разумевање, али се
-једноставност плаћа већим бројем замена - у овом случају уместо три извршено је
+једноставност плаћа већим бројем замена - у овом случају, уместо три извршено је
 пет замена.</p>
 </section>
 <section id="while">
@@ -547,7 +547,7 @@
 </div>
 <p>Због ограничења датог текстом задатка о димензији низа <span class="math notranslate nohighlight">\(n(1\le{n}\le{10^{5}})\)</span>,
 статичком алокацијом низа од <span class="math notranslate nohighlight">\(100000\)</span> елемената типа <code class="docutils literal notranslate"><span class="pre">int</span></code>, резервише се
-велика количина меморије. На то ће ти указати и само развојно окружење поруком:
+велика количина меморије. На то ће ти указати и сâмо развојно окружење поруком:
 <code class="docutils literal notranslate"><span class="pre">C6262:</span> <span class="pre">Function</span> <span class="pre">uses</span> <span class="pre">400020</span> <span class="pre">bytes</span> <span class="pre">of</span> <span class="pre">stack.</span> <span class="pre">Consider</span> <span class="pre">moving</span> <span class="pre">some</span> <span class="pre">data</span> <span class="pre">to</span> <span class="pre">heap.</span></code>.
 Непоштовање ограничења задатих текстом задатка засигурно ће резултирати грешком
 приликом извршавања задатка са тест примерима на Петљи, тако да смањење
@@ -565,7 +565,7 @@
 <p>Из свега наведеног можеш да закључиш да је оправдано постојање различитих
 начина за алокацију низа и различитих алгоритама за сортирање низа. У овом
 задатку сортирање великог статички алоцираног низа није добро решење.
-Задатак са оваквим ограничењима је могуће решити у програмском језику C
+Задатак са оваквим ограничењима могуће је решити у програмском језику C
 динамичком алокацијом низа и применом других алгоритама сортирања, што ћеш
 учити у следећем разреду.</p>
 </section>

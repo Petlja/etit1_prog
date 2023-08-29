@@ -1,7 +1,7 @@
 # Задаци: Подсерије
 
 Алгоритми и програми у програмском језику C:
-[подсерије](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/03%20podserije).
+[Подсерије](https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/03%20podserije).
 
 ## Ледене недеље
 

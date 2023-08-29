@@ -1,7 +1,7 @@
 # Задаци: Лексикографско поређење торки
 
 Алгоритми и програми у програмском језику C:
-[лексикографско поређење торки](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/02%20Ugnezdjeno%20grananje/03%20leksikografsko).
+[Лексикографско поређење торки](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/02%20Ugnezdjeno%20grananje/03%20leksikografsko).
 
 ## Пунолетство
 

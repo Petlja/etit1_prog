@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Изрази и наредбе</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -345,11 +345,11 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Оператори сложене доделе<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Општи облик доделе вредности помоћу оператора сложене доделе
-<em>(енгл. compound assignment operator)</em> може се записати као:</p>
+(енгл. <em>compound assignment operator</em>) може се записати као…</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>promenljiva operator= izraz
 </pre></div>
 </div>
-<p>где <code class="docutils literal notranslate"><span class="pre">operator</span></code> може бити један од аритметичких оператора <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>,
+<p>…где <code class="docutils literal notranslate"><span class="pre">operator</span></code> може бити један од аритметичких оператора <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>,
 <code class="docutils literal notranslate"><span class="pre">%</span></code>, или један од битских оператора <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. Деловање
 оператора сложене доделе може се представити на следећи начин:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>promenljiva = promenljiva operator izraz
@@ -371,12 +371,12 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>што ће на стандарном излазу резултирати исписом:</p>
+<p>што ће на стандардном излазу резултирати исписом:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
-<p>или, наредбу <code class="docutils literal notranslate"><span class="pre">ana</span> <span class="pre">=</span> <span class="pre">ana</span> <span class="pre">*</span> <span class="pre">2;</span></code> можеш записати коришћењем сложеног оператора
-доделе на следећи начин:</p>
+<p>Такође, наредбу <code class="docutils literal notranslate"><span class="pre">ana</span> <span class="pre">=</span> <span class="pre">ana</span> <span class="pre">*</span> <span class="pre">2;</span></code> можеш записати коришћењем сложеног оператора
+доделе на следећи начин…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -388,14 +388,14 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>што ће на стандарном излазу резултирати истим исписом:</p>
+<p>..што ће на стандардном излазу резултирати истим исписом:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
-<p>Значи, наредба <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2;</span></code> je у програмском језику C еквивалентна наредби
+<p>Значи, наредба <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2;</span></code> је у програмском језику C еквивалентна наредби
 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">2;</span></code>. Суштински, обе наредбе производе исти резултат и потпуно је све
 једно коју ћеш користити. Међутим, C програмери воле да запишу свој програмски
-код што сажетије и велика је вероватноћа да ћеш често наилазити на запис
+кôд што сажетије и велика је вероватноћа да ћеш често наилазити на запис
 наредби као у другом решењу задатка.</p>
 <p>Напиши програм у програмском језику C који ће на стандардни излаз исписати
 редом декадне вредности бинарних бројева <code class="docutils literal notranslate"><span class="pre">00000001</span></code>, <code class="docutils literal notranslate"><span class="pre">00000010</span></code>, <code class="docutils literal notranslate"><span class="pre">00000100</span></code> и

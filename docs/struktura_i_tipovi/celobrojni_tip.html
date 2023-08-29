@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -345,7 +345,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Целобројни тип података<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Познато ти је из математике да постоје непозициони и позициони бројевни
-системи. Непозициони бројевни системи су на пример римским, грчки, египатски и
+системи. Непозициони бројевни системи су на пример римски, грчки, египатски и
 други старији бројевни системи. Они нису значајни у програмирању и програмском
 језику C и више их нећемо помињати у оквиру овог курса.</p>
 <p>Позициони бројевни системи су бројевни системи код којих вредност коју
@@ -361,12 +361,12 @@
 односно, целобројне константе.</p>
 <section id="id2">
 <h2>Декадни цели бројеви<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Декадни бројевни систем је најчепшће коришћен бројевни систем којег људи
+<p>Декадни бројевни систем је најчепшће коришћен бројевни систем који људи
 користе у свакодневном животу. То је систем записа бројева са базом десет, у
 којем се могу користити цифре <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(5\)</span>, <span class="math notranslate nohighlight">\(6\)</span>, <span class="math notranslate nohighlight">\(7\)</span>, <span class="math notranslate nohighlight">\(8\)</span> и
-<span class="math notranslate nohighlight">\(9\)</span>. <em>База десет</em> значи да се сваки цео декадан број може представити као збир
+<span class="math notranslate nohighlight">\(9\)</span>. <em>База десет</em> значи да се сваки цео декадни број може представити као збир
 експонената броја <span class="math notranslate nohighlight">\(10\)</span>.</p>
-<p>На пример, цео декадан број <span class="math notranslate nohighlight">\(123\)</span> можеш представити као</p>
+<p>На пример, цео декадни број <span class="math notranslate nohighlight">\(123\)</span> можеш представити као</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[123_{(10)}=\]</div>
@@ -386,21 +386,21 @@
 Број <span class="math notranslate nohighlight">\(-123\)</span> је негативан цео број у декадном бројевном систему којег би у
 програмском језику C записао као <code class="docutils literal notranslate"><span class="pre">-123</span></code>.</p>
 <p>Декадни цели бројеви представљају се као и у математици, стим да у програмском
-језику C важи да је цео број декадан уколико не почиње нулом. То значи да број
+језику C важи да је цео број декадни уколико не почиње нулом. То значи да број
 <code class="docutils literal notranslate"><span class="pre">123</span></code> у програмском језику C није једнак броју <code class="docutils literal notranslate"><span class="pre">0123</span></code>. Нула испред декадног
 броја у математици не мења вредност броја, док у програмском језику C нула
 испред броја има другачије значење.</p>
 </section>
 <section id="id3">
 <h2>Октални цели бројеви<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>У програмском језику C број који почиње са нулом третира се као цео број у
+<p>У програмском језику C број који почиње нулом третира се као цео број у
 окталном бројевном систему. На пример, број <code class="docutils literal notranslate"><span class="pre">0123</span></code> је број у окталном бројевном
 систему. Октални бројевни систем је систем записа бројева са базом осам, у
 којем се могу користити цифре  <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(5\)</span>, <span class="math notranslate nohighlight">\(6\)</span> и <span class="math notranslate nohighlight">\(7\)</span>.
 <em>База осам</em> значи да се сваки цео окталан број може представити као збир
 експонената броја <span class="math notranslate nohighlight">\(8\)</span>.</p>
 <p>Да би број из окталног бројевног система превео у декадни, последњу цифру у
-окталном систему множи са <span class="math notranslate nohighlight">\(8^0\)</span>, предпоследњу са <span class="math notranslate nohighlight">\(8^1\)</span>, следећу са <span class="math notranslate nohighlight">\(8^2\)</span> и тако
+окталном систему множи са <span class="math notranslate nohighlight">\(8^0\)</span>, претпоследњу са <span class="math notranslate nohighlight">\(8^1\)</span>, следећу са <span class="math notranslate nohighlight">\(8^2\)</span> и тако
 редом. Збир добијених производа представља број у декадном бројевном систему.</p>
 <p>На пример, претвори број <span class="math notranslate nohighlight">\(512\)</span> из окталног у декадни систем:</p>
 <div class="math-wrapper docutils container">
@@ -445,7 +445,7 @@
 </section>
 <section id="id4">
 <h2>Хексадекадни цели бројеви<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Aко број почиње са <code class="docutils literal notranslate"><span class="pre">0x</span></code> или <code class="docutils literal notranslate"><span class="pre">0X</span></code> третира се као хексадекадан цео број.
+<p>Ако број почиње са <code class="docutils literal notranslate"><span class="pre">0x</span></code> или <code class="docutils literal notranslate"><span class="pre">0X</span></code>, третира се као хексадекадни цео број.
 Хексадекадни бројевни систем је систем записа бројева са базом шеснаест, у
 којем се могу користити цифре <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(5\)</span>, <span class="math notranslate nohighlight">\(6\)</span>, <span class="math notranslate nohighlight">\(7\)</span>, <span class="math notranslate nohighlight">\(8\)</span>, <span class="math notranslate nohighlight">\(9\)</span>,
 <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(E\)</span> и <span class="math notranslate nohighlight">\(F\)</span>. Вредности цифара у декадном бројевном систему
@@ -458,15 +458,15 @@
 <li><p><span class="math notranslate nohighlight">\(E_{(16)}=14_{(10)}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(F_{(16)}=15_{(10)}\)</span></p></li>
 </ul>
-<p><em>База шестанест</em> значи да се сваки цео хексадекадан број може представити као
+<p><em>База шеснаест</em> значи да се сваки цео хексадекадан број може представити као
 збир експонената броја <span class="math notranslate nohighlight">\(16\)</span>.</p>
-<p>У програмском језику C, ако хексадекадан број почиње са <code class="docutils literal notranslate"><span class="pre">0x</span></code>, онда се цифре
+<p>У програмском језику C, ако хексадекадни број почиње са <code class="docutils literal notranslate"><span class="pre">0x</span></code>, онда се цифре
 које имају вредност од 10 до 15 пишу малим словима, односно, ако почиње са <code class="docutils literal notranslate"><span class="pre">0X</span></code>
 онда се пишу великим словима. На пример, декадни број <span class="math notranslate nohighlight">\(123_{(10)}\)</span> у
 програмском језику C можеш записати као хексадекадни број <code class="docutils literal notranslate"><span class="pre">0x7b</span></code> или као
 хексадекадни број <code class="docutils literal notranslate"><span class="pre">0X7B</span></code>.</p>
 <p>Да би број из хексадекадног бројевног система превео у декадни, последњу цифру
-у хексадекадном систему множи са <span class="math notranslate nohighlight">\(16^0\)</span>, предпоследњу са <span class="math notranslate nohighlight">\(16^1\)</span>, следећу са
+у хексадекадном систему множи са <span class="math notranslate nohighlight">\(16^0\)</span>, претпоследњу са <span class="math notranslate nohighlight">\(16^1\)</span>, следећу са
 <span class="math notranslate nohighlight">\(16^2\)</span> и тако редом. Збир добијених производа представља број у декадном
 бројевном систему.</p>
 <p>На пример, претвори број <span class="math notranslate nohighlight">\(14A\)</span> из хексадекадног у декадни бројевни систем:</p>
@@ -492,7 +492,7 @@
 <p>Да би број из декадног бројевног система превео у хексадекадни, потребно је да
 вршиш целобројно дељење броја са <span class="math notranslate nohighlight">\(16\)</span> и записујеш остатке све док количник не
 буде једнак нули. Остаци записани у супротном редоследу од оног којим су
-добијени представљају број у окталном бројевном систему.</p>
+добијени представљају број у хексадекадном бројевном систему.</p>
 <p>На пример, претвори број <span class="math notranslate nohighlight">\(330\)</span> из декадног у хексадекадни бројевни систем:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">

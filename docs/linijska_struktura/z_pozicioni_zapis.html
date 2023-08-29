@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -345,7 +345,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Позициони запис<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Алгоритми и програми у програмском језику C:
-<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/02%20Celobrojno%20deljenje/02%20Pozicioni%20zapis">позициони запис</a>.</p>
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/02%20Celobrojno%20deljenje/02%20Pozicioni%20zapis">Позициони запис</a>.</p>
 <section id="id2">
 <h2>Збир цифара четвороцифреног броја<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/zbir_cifara">текст задатка</a>.</p>
@@ -774,7 +774,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 уклонимо цифре јединица и стотина, тачније заменимо их нулама, а затим цифру
 јединица додамо у броју на место цифре стотина, а цифру стотина додамо на место
 цифре јединица.</p>
-<p>Прво одредимо цифру јединица <span class="math notranslate nohighlight">\(c_0\)</span> и цифру стотина <span class="math notranslate nohighlight">\(c_2\)</span> broja <span class="math notranslate nohighlight">\(n\)</span>. Цифру
+<p>Прво одредимо цифру јединица <span class="math notranslate nohighlight">\(c_0\)</span> и цифру стотина <span class="math notranslate nohighlight">\(c_2\)</span> броја <span class="math notranslate nohighlight">\(n\)</span>. Цифру
 јединица добијамо као остатaк при дељењу полазног броја са 10 (<span class="math notranslate nohighlight">\(c_0=n\mod 10\)</span>),
 а цифру стотина као остатак при дељењу са 10 количника полазног броја и броја
 100 (<span class="math notranslate nohighlight">\(c_2=(n\div 100)\mod 10\)</span>). Затим од броја одузмемо цифру јединица <span class="math notranslate nohighlight">\(c_0\)</span>, и
@@ -804,7 +804,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 </div>
 </div>
 <p>Замена цифре <span class="math notranslate nohighlight">\(c_i\)</span> која је на позицији <span class="math notranslate nohighlight">\(i\)</span> у броју <span class="math notranslate nohighlight">\(n\)</span> цифром <span class="math notranslate nohighlight">\(c\)</span> реализујемо
-изразом <span class="math notranslate nohighlight">\(n=n-10^i\cdot c_i+10^i\cdot c\)</span>. Одузимањем од полазног броја производ
+изразом <span class="math notranslate nohighlight">\(n=n-10^i\cdot c_i+10^i\cdot c\)</span>. Одузимањем од полазног броја производа
 <span class="math notranslate nohighlight">\(10^i\cdot c_i\)</span> цифру на позицији <span class="math notranslate nohighlight">\(i\)</span> постављамо на 0, а увећавањем добијене
 вредности за <span class="math notranslate nohighlight">\(10^i\cdot c\)</span> цифру на позицији <span class="math notranslate nohighlight">\(i\)</span> постављамо на вредност <span class="math notranslate nohighlight">\(c\)</span>.
 Израз записујемо краће <span class="math notranslate nohighlight">\(n+10^i\cdot(c-c_i)\)</span>. У нашем задатку то изгледа овако
@@ -834,7 +834,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 <p>Сваки прст на Јовановој руци представља једну овцу. Сваки прст на Дулетовој
 руци представља 5 оваца, зато што Дуле отвара следећи прст само кад Јован
 изброји 5 оваца. Сваки прст на Станојевој руци представља 25 оваца, зато што
-Станоје отвара следећи прст само кад Дуле избоји до 5. Већ смо објаснили да
+Станоје отвара следећи прст само кад Дуле изброји до 5. Већ смо објаснили да
 сваки Дулетов прст представља 5 оваца, према томе 5 Дулетових прстију вреди
 <span class="math notranslate nohighlight">\(5\cdot 5\)</span> оваца, дакле 25. Обележимо са <span class="math notranslate nohighlight">\(J, D, S\)</span> број отворених прстију десне
 руке редом код Јована, Дулета и Станоја. Тада је број оваца у стаду једнак
@@ -844,7 +844,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 још један прст.</p>
 <p>Ово је пример бројања у систему са основом 5. Уопште, ако су дате цифре
 <span class="math notranslate nohighlight">\(a_n,a_{n-1},\ldots,a_1,a_0\)</span>, такве да су све из интервала <span class="math notranslate nohighlight">\([0,b-1]\)</span>, тада
-можемо да оформимио запис <span class="math notranslate nohighlight">\((a_na_{n-1}\ldots a_1a_0)_b\)</span> чија је вредност једнака
+можемо да оформио запис <span class="math notranslate nohighlight">\((a_na_{n-1}\ldots a_1a_0)_b\)</span> чија је вредност једнака
 <span class="math notranslate nohighlight">\(a_nb^n+a_{n-1}b^{n-1}+\ldots+a_2b^2+a_1b+a_0\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Предложено решење задатка (1)</p>
@@ -900,7 +900,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 остатка и целобројног количника при дељењу са 10) и добићемо број 123456, затим
 ћемо уклонити следећу цифру и добити број 12345, затим број 1234 и на крају
 број 123. Након тога ћемо на тај број додати цифру јединица полазног броја
-(можењем са 10 и сабирањем) и добићемо 1237. Након тога ћемо на сличан начин
+(множењем са 10 и сабирањем) и добићемо 1237. Након тога ћемо на сличан начин
 добити 12376, након тога 123765 и на крају тражени број 1237654.</p>
 <div class="tip admonition">
 <p class="admonition-title">Предложено решење задатка (1)</p>
@@ -1075,7 +1075,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 апсолутна вредност њихове разлике. Као што је то обично случај, аритметику над
 временским тренуцима је лакше спроводити ако се времена представе преко броја
 секунди протеклих од почетка дана. Када се време представи на тај начин,
-апсолутна вредност разлике се може израчунати функцијом бибилотечком функцијом
+апсолутна вредност разлике се може израчунати библиотечком функцијом
 <code class="docutils literal notranslate"><span class="pre">abs</span></code>. На крају, добијени број секунди се преводи назад у време изражено
 сатима, минутима и секундама. Оба смера конверзије врше се на неки од
 уобичајених начина.</p>
@@ -1125,7 +1125,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 <span class="math notranslate nohighlight">\(t\)</span> израчунатој у првом делу задатка.</p>
 <p>Гледано другачије, израз <span class="math notranslate nohighlight">\(t_s=h\cdot 60^2+m\cdot 60+s\)</span> представља број секунди
 у том резултату (он је увек цео број). Са друге стране израз <span class="math notranslate nohighlight">\(t\cdot 60^2\)</span>
-представља реалан број секунди за које се тркачи сустигну. Та два броја треба
+представља реалан број секунди за који се тркачи сустигну. Та два броја треба
 да буду што ближа, тако да ћемо целобројну вредност израза
 <span class="math notranslate nohighlight">\(h\cdot 60^2+m\cdot 60+s\)</span> одредити заокруживањем броја <span class="math notranslate nohighlight">\(t\cdot 60^2\)</span> на
 најближу целобројну вредност (у имплементацији се ово може урадити коришћењем
@@ -1172,7 +1172,7 @@ h &amp;=&amp; (t_s\div 60^2)\mod 24
 реалним бројем степени.</p>
 <p>Превођење тог угла у реални број секунди је једноставно (множењем са 60 добије
 се реални број минута и новим множењем са 60 добија се реални број секунди).
-Пошто ми желимо да угао изразимо у степенима, минутама и секундама, потребно је
+Пошто ми желимо да угао изразимо у степенима, минутима и секундама, потребно је
 да добијемо цео број секунди и потребно је извршити заокруживање (овим кораком
 се утао може малчице променити, међутим, то је неопходно јер се степенима,
 минутима и секундама не може представити произвољан угао - најмањи угао који се

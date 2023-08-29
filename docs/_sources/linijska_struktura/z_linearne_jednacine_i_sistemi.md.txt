@@ -1,7 +1,7 @@
 # Задаци: Линеарне једначине и системи линеарних једначина
 
 Алгоритми и програми у програмском језику C:
-[линеарне једначине и система линеарних једначина](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/01%20geometrijske%20formule).
+[Линеарне једначине и система линеарних једначина](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/01%20geometrijske%20formule).
 
 ## Oграда терасе
 

@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -345,13 +345,13 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Коментари<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>У изворном коду написаном у програмском језику C можеш писати коментаре
-<em>(енгл. comments)</em> који се не извршавају као део програма. Они дају јасноћу
+(енгл. <em>comments</em>) који се не извршавају као део програма. Они дају јасноћу
 изворном коду и омогућавајући другима да боље разумеју функционалност кода.
 Коментари могу помоћи и аутору кода да се присети функционалности сопственог
 кода којег је раније написао. Коментари су посебно важни у великим пројектима
 који могу да садрже на хиљаде линија изворног кода или у пројектима у којима
 више програмера раде у тиму. Због свега наведеног писање коментара у изворном
-коду је веома препоручена пракса.</p>
+коду је веома препоручљива пракса.</p>
 <p>Након кодирања и тестирања, долази фаза израде програмске документације. У овој
 фази коментари могу да имају кључну улогу, јер их користе алати за генерисање
 програмске документације, као што је <a class="reference external" href="https://www.doxygen.nl/">Doxygen</a>.</p>
@@ -366,13 +366,13 @@
 <h2>Стандардни C коментари<a class="headerlink" href="#c" title="Permalink to this heading">#</a></h2>
 <p>Стандардни C коментари почињу комбинацијом карактера <code class="docutils literal notranslate"><span class="pre">/*</span></code> и завршавају се
 комбинацијом карактера <code class="docutils literal notranslate"><span class="pre">*/</span></code>. Компајлер игнорише коментаре - један коментар
-третира као један нештампајући карактер <em>(енгл. white-space character)</em>.
+третира као један нештампајући карактер (енгл. <em>white-space character</em>).
 Стандардни C коментари могу да садрже било који знак из азбуке језика C,
-укључујући и знак за нову линију <code class="docutils literal notranslate"><span class="pre">\n</span></code> <em>(енгл. newline)</em>. Коментари се могу
-писати у једној линији <em>(енгл. line или inline comments)</em> или у више линија
-<em>(енгл. block, prologue или stream comments)</em>.</p>
+укључујући и знак за нову линију <code class="docutils literal notranslate"><span class="pre">\n</span></code> (енгл. <em>newline</em>). Коментари се могу
+писати у једној линији (енгл. <em>line</em> или <em>inline comments</em>) или у више линија
+(енгл. <em>block</em>, <em>prologue</em> или <em>stream comments</em>).</p>
 <p>На пример, у следећем коду коментарисана је улога функције <code class="docutils literal notranslate"><span class="pre">printf()</span></code> у једној
-линији изнад те функције:</p>
+линији изнад те функције…</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -383,7 +383,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>или поред те функције</p>
+<p>…или поред те функције</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -393,7 +393,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Ако је коментар предугачак да би стао у једну линију може се написати у више линија:</p>
+<p>Ако је коментар предугачак да би стао у једну линију, може се написати у више линија:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * Sledeci program ispisuje tekst Hello, World! na standardni izlaz</span>
 <span class="cm"> * (stdout) koristeci bibliotecku funckiju printf(). Funkcija printf()</span>
@@ -408,7 +408,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Kоментаре не смеш угњежђавати! У следећем примеру, компајлер ће пронаћи грешку
+<p>Kоментаре не смеш угнежђавати! У следећем примеру, компајлер ће пронаћи грешку
 у петој линији. Након што је препознао почетак коментара у првој линији <code class="docutils literal notranslate"><span class="pre">/*</span></code>
 игнорисао је текст све до првог појављивања <code class="docutils literal notranslate"><span class="pre">*/</span></code> у другој линији. Потом је
 препознао почетак и крај у трећој линији, па почетак и крај у четвртој линији.

@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -344,19 +344,19 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Типови података<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<p>Не почетку овог курса написано је да је програмски језик C језик високог нивоа,
+<p>На почетку овог курса написано је да је програмски језик C језик високог нивоа,
 да је најближи хардверу и да ће ти програмирање у програмском језику C помоћи
 да боље разумеш како функционише хардвер и софтвер рачунара. Подсети се сада
 градива из предмета Рачунарство и информатика и дефиниције оперативне меморије.
 У оперативној меморији налазе се програми који се тренутно извршавају и подаци
 који се при томе користе.</p>
-<p>Приликом покретања програма, сам програм и подаци који се у том програму
+<p>Приликом покретања програма, сâм програм и подаци који се у том програму
 користе, наћи ће се у оперативној меморији рачунара. Основни типови података
 који се користе у програмима написаним у програмском језику C су
 <strong>целобројни</strong>, <strong>знаковни</strong> и <strong>реални</strong> тип података. Сви остали типови
 података изводе се из ових основних типова. Већ на основу назива типова можеш
 да претпоставиш да се подаци целобројног типа користе за представљање целих
-бројеви, подаци знаковног типа за представљање знакова, односно карактера и
+бројева, подаци знаковног типа за представљање знакова, односно карактера и
 подаци реалног типа за представљање реалних бројева.</p>
 <section id="id2">
 <h2>Чување података у рачунару<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
@@ -366,11 +366,11 @@
 најмања адресибилна јединица оперативне меморије један бајт, количина меморије
 која се додељује неком податку изражава се у бајтовима. Када је за чување неког
 податка потребно више бајтова, онда је то увек група узастопних бајтова.</p>
-<p>Подсети се да се један бајт чини осам бита и да један бит може бити нула или
+<p>Подсети се да један бајт чини осам бита и да један бит може бити нула или
 јединица - једине цифре у бинарном бројевном систему. То значи да се подаци
-које ти уносиш <em>(тзв. <strong>улаз</strong>)</em> претварају у бројеве у бинарном бројевном
+које ти уносиш (тзв. <strong>улаз</strong>) претварају у бројеве у бинарном бројевном
 систему ради обраде или чувања у рачунару. Такође, подаци који треба да се теби
-прикажу из рачунара <em>(тзв. <strong>излаз</strong>)</em>, претварају се из бинарног у бројевни
+прикажу из рачунара (тзв. <strong>излаз</strong>), претварају се из бинарног у бројевни
 систем који теби одговара - обично декадни бројевни систем.</p>
 <p>На пример, оцена <span class="math notranslate nohighlight">\(5\)</span> записана је као позитиван цео број у декадном бројевном
 систему и теби је сасвим јасно шта тај податак значи. Да би се тај податак унео
@@ -441,7 +441,7 @@
 </div>
 <p>Одмах треба напоменути да количина меморије која се резервише за податке
 одређеног типа може да зависи и од рачунарског система и од компајлера! Иако је
-програмски језик C стандардизован, стандардни дефишу минималну количину
+програмски језик C стандардизован, стандарди дефинишу минималну количину
 меморије која се мора резервисати за одређени тип података, док у пракси та
 вредност може да буде и већа. То не треба да те брине, јер ће такве разлике у
 току овог курса увек бити наглашене.</p>

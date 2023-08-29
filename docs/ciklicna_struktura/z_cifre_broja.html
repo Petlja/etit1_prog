@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -345,12 +345,12 @@
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Задаци: Позициони запис броја<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Алгоритми и програми у програмском језику C:
-<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/08%20cifre_broja">позициони запис броја</a>.</p>
+<a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/03%20Iteracija/01%20serije/08%20cifre_broja">Позициони запис броја</a>.</p>
 <section id="id2">
 <h2>Број и збир цифара броја<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/broj_i_zbir_cifara_broja">текст задатка</a>.</p>
 <p>Серију цифара у декадном запису броја (здесна налево) можемо одредити
-операцијом целобројног дељења са 10, као што смо то видели. Последња декадна
+операцијом целобројног дељења са 10, као што смо то већ видели. Последња декадна
 цифра броја одређује се као остатак при дељењу са 10, а уклања се када се
 израчуна целобројни количник са 10. Подсетимо се, један начин да одредимо
 последње три цифре броја био јe следећи итеративни поступак.</p>
@@ -464,7 +464,7 @@ c2 = n mod 10; n = n div 10;
 проверавамо да ли се цифра <span class="math notranslate nohighlight">\(3\)</span> јавља у броју <span class="math notranslate nohighlight">\(132\)</span> и пошто се јавља, можемо да
 закључимо да полазни број нема све различите цифре. Дакле, у петљи у којој се
 одређују цифре броја сдесна налево, за сваку цифру одређену као <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">10</span></code>
-проверавамо dа ли је садржана у запису броја <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">/</span> <span class="pre">10</span></code> добијеног њеним
+проверавамо да ли је садржана у запису броја <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">/</span> <span class="pre">10</span></code> добијеног њеним
 уклањањем. У основни лежи алгоритам претраге (испитујемо да ли постоји цифра
 која задовољава услов да се појављује) - први пут када се у петљи наиђе на
 цифру која је садржана у префиксу испред ње прекида се са претрагом.</p>
@@ -514,7 +514,7 @@ c2 = n mod 10; n = n div 10;
 је потребно да производ иницијализујемо на <span class="math notranslate nohighlight">\(1\)</span>, а затим да га у петљи чије се
 тело извршава <span class="math notranslate nohighlight">\(n\)</span> пута помножимо са <span class="math notranslate nohighlight">\(x\)</span> у којем се такође израчунава производ.</p>
 <p>Када умемо да рачунамо степен, потребно је да израчунамо збир степена цифара
-броја. Серију цифара броја одређујемо на уобичајени начин, сдесна на лево,
+броја. Серију цифара броја одређујемо на уобичајени начин, здесна на лево,
 коришћењем целобројног дељења са 10. За сваку издвојену цифру израчунавамо
 степен и добијени резултат додајемо на текући збир, који пре петље
 иницијализујемо на нулу. Дакле, у сваком кораку пресликавамо текућу цифру
@@ -528,7 +528,7 @@ c2 = n mod 10; n = n div 10;
 којој се чува оригинална вредност броја, да бисмо након измене броја могли да
 повратимо његову праву вредност (алтернативно тумачење исте имплементације је
 да се пре спровођења алгоритма оригинална вредност копира у помоћну променљиву
-која се током спровођења алгоритма мења).</p>
+која се током спровођења алгоритма не мења).</p>
 <div class="tip admonition">
 <p class="admonition-title">Предложено решење задатка</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
@@ -567,7 +567,7 @@ c2 = n mod 10; n = n div 10;
 <p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/transformacija_proizvodom_cifara">текст задатка</a>.</p>
 <p>Да би се израчунао производа цифара датог броја, потребно је одредити серију
 цифара броја и пронаћи производ елемената те серије. У петљи, прoизвод, чија је
-вредност на почетку 1, ћемо множити, редом, цифрама броја, почев од цифре
+вредност на почетку 1, множићем, редом, цифрама броја, почев од цифре
 јединица. Цифру јединица броја одређујемо као остатак при дељењу броја са 10.
 Дељењем броја са 10 уклањамо цифру јединица па у следећем извршавању тела
 петље, приступамо следећој цифри. Понављамо поступак док полазни број не
@@ -779,7 +779,7 @@ c2 = n mod 10; n = n div 10;
 <h2>Број формиран од датих цифра с лева на десно<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>Прочитај <a class="reference external" href="https://petlja.org/biblioteka/r/Zbirka/broj_formiran_od_datih_cifra_sleva_na_desno">текст задатка</a>.</p>
 <p>Читамо цифру по цифру са стандардног улаза, све док не дођемо до краја и
-формирамо број додавајући му прочитану цифру на десну страну (као цифру најмање
+формирамо број додајући му прочитану цифру на десну страну (као цифру најмање
 тежине). Формирање броја на основу цифара с лева надесно разматрали смо и
 раније. Подсетимо се, алгоритам се назива Хорнерова шема и на основу тог
 алгоритма број се гради тако што се у сваком кораку претходна вредност броја
@@ -792,12 +792,12 @@ c2 = n mod 10; n = n div 10;
 до Хорнеровог поступка.</p>
 <p>Пошто број цифара није унапред познат, цифре ћемо учитавати у петљи којом
 учитавамо бројеве до краја стандардног улаза. Број који формирамо памтићемо у
-променљивој <code class="docutils literal notranslate"><span class="pre">n</span></code> коју иницијизујемо на нулу. Када прочитамо цифру, додајемо је
+променљивој <code class="docutils literal notranslate"><span class="pre">n</span></code> коју иницијализујемо на нулу. Када прочитамо цифру, додајемо је
 као цифру јединица на до сада формирани број. Додавање цифре јединица на број
 <code class="docutils literal notranslate"><span class="pre">n</span></code>, постижемо тако што помножимо броја <code class="docutils literal notranslate"><span class="pre">n</span></code> са 10 и додамо му учитану цифру.
 Ако унесемо <span class="math notranslate nohighlight">\(k\)</span> цифара, на описан начин цифру коју смо прву прочитали множићемо
 са 10 тачно <span class="math notranslate nohighlight">\(k-1\)</span> пут, другу прочитану цифру множимо са 10 тачно <span class="math notranslate nohighlight">\(k-2\)</span> пута, и
-тако редом, последњу прочитану цифру не множимо са 10 (то је цифра јединица).</p>
+тако редом. Последњу прочитану цифру не множићемо са 10 (то је цифра јединица).</p>
 <div class="tip admonition">
 <p class="admonition-title">Предложено решење задатка</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define _CRT_SECURE_NO_WARNINGS</span>
@@ -868,7 +868,7 @@ c2 = n mod 10; n = n div 10;
 модификовани број ћемо пре петље иницијализовати на нулу. Увешћемо и променљиву
 која одређује тежину наредне цифре и иницијализоваћемо је на 1 (тежина цифре
 јединица). У петљи ћемо издвајати последњу цифру текуће вредности броја <code class="docutils literal notranslate"><span class="pre">n</span></code>
-(одређивањем остатка при дељењу са <span class="math notranslate nohighlight">\(10\)</span>), уклањати је из броја (одређиваћем
+(одређивањем остатка при дељењу са <span class="math notranslate nohighlight">\(10\)</span>), уклањати је из броја (одређивањем
 целобројног количника броја <code class="docutils literal notranslate"><span class="pre">n</span></code> са 10) и проверавати да ли је цифра јединица
 једнака 0. Ако јесте, нови број ћемо увећавати за производ цифре 5 и текуће
 тежине, а у супротном за производ текуће цифре и текуће тежине. Након тога ћемо
@@ -1104,7 +1104,7 @@ ponovi k puta:
 тежине, тако да је потребно да одржавамо и помоћну променљиву која чува
 одговарајућу тежину, тј. одговарајући степен броја 10. Петљу за одређивање
 минимума је могуће било завршити у тренутку када било који од два броја постане
-нула, јер ће он надаље бити допуњаван нулама, а нула је мањи или једнак било
+нула, јер ће он надаље бити допуњаван нулама, а нула је број мањи или једнак било
 којој другој цифри и њено додавање на почетак резултата нема никаквог ефекта.</p>
 <div class="tip admonition">
 <p class="admonition-title">Предложено решење задатка</p>

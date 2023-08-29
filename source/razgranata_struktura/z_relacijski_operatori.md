@@ -1,7 +1,7 @@
 # Задаци: Релацијски оператори
 
 Алгоритми и програми у програмском језику C:
-[релацијски оператори](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/01%20Jednostavno%20grananje/01%20relacijski_operatori).
+[Релацијски оператори](https://petlja.org/biblioteka/r/Zbirka/02%20Grananje/01%20Jednostavno%20grananje/01%20relacijski_operatori).
 
 ## Јабуке
 

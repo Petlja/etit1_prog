@@ -207,7 +207,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Изрази и наредбе</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставе доделе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jednostavna_dodela.html">Оператор једноставне доделе</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aritmeticki_operatori.html">Аритметички оператори</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Конверзије типова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
@@ -283,7 +283,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимнезионалног низа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
@@ -385,7 +385,7 @@ ASCII вредност <code class="docutils literal notranslate"><span class="p
 израчунат збир <code class="docutils literal notranslate"><span class="pre">97</span> <span class="pre">+</span> <span class="pre">3</span></code>, па је резултат <code class="docutils literal notranslate"><span class="pre">100</span></code>, који је типа <code class="docutils literal notranslate"><span class="pre">int</span></code>, конвертован
 у <code class="docutils literal notranslate"><span class="pre">100.0</span></code> типa <code class="docutils literal notranslate"><span class="pre">double</span></code> и додељен променљивој <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
 </ul>
-<p>Ако конверзију типова извршава компајлер аутоматски, као у претходном примеру,
+<p>Ако конверзију типова компајлер извршава аутоматски, као у претходном примеру,
 онда се таква конверзија назива <strong>имплицитна конверзија типова</strong>.</p>
 <p>Напиши програм у програмском језику C у којем се деле вредности променљивих
 <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">'a'</span></code> и <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">3</span></code>, па се резултат дељења додељује променљивој
@@ -411,12 +411,12 @@ ASCII вредност <code class="docutils literal notranslate"><span class="p
 <code class="docutils literal notranslate"><span class="pre">int</span></code>, па је тако и резултат дељења <code class="docutils literal notranslate"><span class="pre">32</span></code>. Тек је након операције дељења
 извршена имплицитна конверзија резултата у <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
 <p>Присети се да се приликом дељења две целобројне вредности оператором <code class="docutils literal notranslate"><span class="pre">/</span></code>, као
-резултат добија се само цео део броја, док се разломљени део одбацује. Остатак
+резултат добија само цео део броја, док се разломљени део одбацује. Остатак
 приликом целобројног дељења добија се оператором <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p>
 <p>Да ли је онда могуће у претходном примеру добити резултат у виду реалног броја
 <code class="docutils literal notranslate"><span class="pre">32.333333</span></code>? Јесте, али експлицитном конверзијом типова.
 <strong>Експлицитна конверзија типова</strong>, односно <strong>кастовање типова</strong> подразумева да
-програмер сам дефинише како ће се конверзија одвијати користећи каст операторе,
+програмер сâм дефинише како ће се конверзија одвијати користећи каст операторе,
 односно, наводећи жељени тип у заградама <code class="docutils literal notranslate"><span class="pre">()</span></code> испред израза.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 

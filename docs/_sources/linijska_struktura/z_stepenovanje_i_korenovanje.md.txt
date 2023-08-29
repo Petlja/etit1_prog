@@ -1,7 +1,7 @@
 # Задаци: Степеновање и кореновање
 
 Алгоритми и програми у програмском језику C:
-[степеновање и кореновање](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/05%20stepenovanje_i_korenovanje).
+[Степеновање и кореновање](https://petlja.org/biblioteka/r/Zbirka/01%20Aritmetika/01%20Formule/05%20stepenovanje_i_korenovanje).
 
 ## Степен и корен
 
