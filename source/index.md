@@ -1,7 +1,10 @@
 ---
 alias: etit1_prog
 short_descripiton: Kratak opis
-long_description: Dugacak opis
+long_description: >
+        Dugacak opis, dugacak opis.
+        Dugacak opis, dugacak opis
+        Dugacak opis, dugacak opis
 will_learn: ["C", "C++"]
 needed: ["PC", "Volja"]
 useful: 
