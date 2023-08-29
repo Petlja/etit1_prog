@@ -49,6 +49,9 @@ html_theme_options = {
     #head_font_family: Font family of headings. Defaults to 'Garamond', 'Georgia',
     'pre_bg' : '#f8f8f8'
 }
+html_css_files = [
+    'https://fonts.googleapis.com/css?family=Source+Sans+Pro',
+]
 html_context = {
     'theme_nosidebar': True,
 }
