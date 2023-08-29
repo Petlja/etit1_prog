@@ -7,6 +7,10 @@ REM Command file for Sphinx documentation
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
+if "%SPHINXAUTOBUILD%" == "" (
+	set SPHINXAUTOBUILD=sphinx-autobuild
+)
+
 set SOURCEDIR=source
 set BUILDDIR=build
 
@@ -24,12 +28,16 @@ if errorlevel 9009 (
 )
 
 if "%1" == "" goto help
+if "%1" == "live" goto live
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
 :help
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+
+:live
+%SPHINXAUTOBUILD%  %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 
 :end
 popd
