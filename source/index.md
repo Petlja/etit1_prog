@@ -1,3 +1,13 @@
+---
+alias: etit1_prog
+short_descripiton: Kratak opis
+long_description: Dugacak opis
+will_learn: ["C", "C++"]
+needed: ["PC", "Volja"]
+useful: 
+    - google:
+        google.com
+---
 # Програмирање I за информатичке профиле у електротехничким школама
 
 Овај курс је намењен ученицима електротехничких школа образовног профила
