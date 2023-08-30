@@ -16,7 +16,7 @@ author = 'Велимир Радловачки'
 extensions = [ "myst_parser",
                "sphinx_design",
                "sphinx_copybutton",
-               "sphinxpackagingtool.builder.petlja_builder",
+              # "sphinxpackagingtool.builder.petlja_builder",
                "petlja_sphinx_extensions.extensions.notes",
                "petlja_sphinx_extensions.extensions.multiple_choice",            
                "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
