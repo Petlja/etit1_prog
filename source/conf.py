@@ -16,7 +16,7 @@ author = 'Велимир Радловачки'
 extensions = [ "myst_parser",
                "sphinx_design",
                "sphinx_copybutton",
-              # "sphinxpackagingtool.builder.petlja_builder",
+               #"sphinxpackagingtool.builder.petlja_builder",
                "petlja_sphinx_extensions.extensions.notes",
                "petlja_sphinx_extensions.extensions.multiple_choice",            
                "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
@@ -42,12 +42,10 @@ html_theme_options = {
     'show_powered_by' : False,
     'caption_font_size': '32px',
     'caption_font_family': 'Source Sans Pro',
-    #code_font_size: Font size of code block text.
-    #code_font_family: Font family of code block text. Defaults to 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace.
     'font_family': 'Source Sans Pro',
     'font_size': '16px',
-    #head_font_family: Font family of headings. Defaults to 'Garamond', 'Georgia',
-    'pre_bg' : '#f8f8f8'
+    'pre_bg' : '#f8f8f8',
+    'page_width': '840px',
 }
 html_css_files = [
     'https://fonts.googleapis.com/css?family=Source+Sans+Pro',
