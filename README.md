@@ -2,7 +2,7 @@
 
 Ovaj repozitorijum posvećen je kursu za Programiranje I za informatičke profile u elektrotehničkim školama. 
 
-Kurs je na Petljom portalu dotupan ovde: [https://petlja.org/kurs/11231/1/7970](https://petlja.org/kurs/11231/1/7970)
+Kurs je na Petljinom portalu dotupan ovde: [https://petlja.org/kurs/11231/1/7970](https://petlja.org/kurs/11231/1/7970)
 
 Kurs možete integrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzeti sa: https://github.com/Petlja/etit1_prog/releases
 
