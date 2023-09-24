@@ -169,11 +169,25 @@ int main(void)
 вредност и има следећи општи облик:
 
 ```text
+tip identifikator;
+identifikator = vrednost;
+```
+
+или
+
+```text
 tip identifikator = vrednost;
 ```
 
 Слично као код декларације променљивих, истовремено можеш иницијализовати више
 променљивих. Тада иницијализација има следећи општи облик:
+
+```text
+tip identifikator_1, identifikator_2, ... identifikator_n;
+identifikator_1 = vrednost_1, identifikator_2 = vrednost_2, ... identifikator_n = vrednost_n;
+```
+
+или
 
 ```text
 tip identifikator_1 = vrednost_1, identifikator_2 = vrednost_2, ... identifikator_n = vrednost_n;
@@ -357,7 +371,9 @@ int main(void)
 
 Дефиницију симболичке константе можеш да поништиш препроцесорском директивом
 `#undef`, а да ли је нека константа дефинисана или није, можеш да провериш
-препроцесорским директивама `#if defined()`, `#else` и `#endif`.
+препроцесорским директивама `#if defined()`, `#else` и `#endif`, где се у
+загради директиве `#if defined()` наводи назив симболичке константе чија се
+дефинисаност проверава.
 
 Напиши програм у програмском језику C у којем ћеш дефинисати симболичку
 константу `BRZINA_SVETLOSTI_U_VAKUUMU` као у претходним примерима. У функцији

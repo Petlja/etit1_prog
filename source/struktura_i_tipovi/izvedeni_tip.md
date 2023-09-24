@@ -30,12 +30,15 @@ int main(void)
 излаза, где су подаци одвојени размаком.
 
 ```c
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main(void)
 {
     typedef unsigned short int bodovi;
     bodovi t = 100, v = 85, a, b;
+    scanf("%hu%hu", &a, &b);
+    printf("%hu %hu %hu %hu", t, v, a, b);
     return 0;
 }
 ```
