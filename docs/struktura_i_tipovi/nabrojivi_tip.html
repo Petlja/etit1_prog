@@ -1,351 +1,53 @@
-<!doctype html>
-<html class="no-js" lang="sr">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Квиз: изведени и набројиви типови" href="izvedeni_kviz.html" /><link rel="prev" title="Изведени тип података" href="izvedeni_tip.html" />
 
-    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>Набројиви тип података - Програмирање I за информатичке профиле у електротехничким школама</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+<!DOCTYPE html>
+
+<html lang="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Набројиви тип података &#8212; Програмирање I за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    
-    
-
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="../index.html"><div class="brand">Програмирање I за информатичке профиле у електротехничким школама</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/multiple-choice.js"></script>
+    <script src="../_static/fill-in-the-blank.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="search" title="Претрага" href="../search.html" />
+    <link rel="next" title="Квиз: изведени и набројиви типови" href="izvedeni_kviz.html" />
+    <link rel="prev" title="Изведени тип података" href="izvedeni_tip.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
   
-  <span class="sidebar-brand-text">Програмирање I за информатичке профиле у електротехничким школама</span>
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
   
-</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Претрага" name="q" aria-label="Претрага">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Садржај</span></p>
-<ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../uvod/index.html">Увод</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Увод</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezici.html">Програмски језици</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../uvod/programski_jezik_c.html">Програмски језик C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksa_i_semantika.html">Синтакса и семантика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../uvod/sintaksne_konstrukcije.html">Синтаксне конструкције језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../uvod/zivotni_ciklus.html">Животни циклус развоја софтвера</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../uvod/uvod_kviz.html">Квиз</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../priprema_okruzenja/index.html">Припрема радног окружења</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Припрема радног окружења</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/radno_okruzenje.html">Радно окружење програмера</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/visual_studio.html">Microsoft Visual Studio IDE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/visual_studio_start.html">Рад у Visual Studio окружењу</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/prevodjenje.html">Од изворног кода до извршног програма</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/vs_code.html">Visual Studio Code едитор и GCC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/flowgorithm.html">Софтвер за израду дијаграма тока</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/definicija_i_zadatak.html">Алгоритми</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../priprema_okruzenja/kviz.html">Квиз</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Структура језика и типови података</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Структура језика и типови података</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="struktura_jezika.html">Структура језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kljucne_reci.html">Кључне речи и идентификатори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="komentari.html">Коментари</a></li>
-<li class="toctree-l2"><a class="reference internal" href="struktura_kviz.html">Квиз: структура језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tipovi.html">Типови података</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celobrojni_tip.html">Целобројни тип података</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celobrojne_promenljive.html">Целобројни променљиви и непроменљиви подаци</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celobrojni_io.html">Унос и приказ целих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celobrojni_kviz.html">Квиз: Целобројни тип</a></li>
-<li class="toctree-l2"><a class="reference internal" href="znakovni_tip.html">Знаковни тип података</a></li>
-<li class="toctree-l2"><a class="reference internal" href="znakovne_promenljive.html">Знаковни променљиви и непроменљиви подаци</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prelazne_sekvence.html">Прелазне секвенце</a></li>
-<li class="toctree-l2"><a class="reference internal" href="znakovni_io.html">Унос и приказ карактера</a></li>
-<li class="toctree-l2"><a class="reference internal" href="znakovni_kviz.html">Квиз: Знаковни тип</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realni_tip.html">Реални тип података</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realne_promenljive.html">Реални променљиви и непроменљиви подаци</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realni_io.html">Унос и приказ реалних бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realni_kviz.html">Квиз: Реални тип</a></li>
-<li class="toctree-l2"><a class="reference internal" href="izvedeni_tip.html">Изведени тип података</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Набројиви тип података</a></li>
-<li class="toctree-l2"><a class="reference internal" href="izvedeni_kviz.html">Квиз: изведени и набројиви типови</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../izrazi_naredbe/index.html">Изрази и наредбе</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Изрази и наредбе</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operatori_jezika.html">Оператори језика</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/jednostavna_dodela.html">Оператор једноставне доделе</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/aritmeticki_operatori.html">Аритметички оператори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/konverzije_tipova.html">Конверзије типова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/dodela_aritmeticki_kviz.html">Квиз: Једноставна додела и аритметички оператори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_operatori.html">Оператори над битовима</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bitski_kviz.html">Квиз: оператори над битовима</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela.html">Оператори сложене доделе</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/slozena_dodela_kviz.html">Квиз: Оператори сложене доделе</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement.html">Оператори инкрементирања и декрементирања</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/inkrement_dekrement_kviz.html">Квиз: Оператори инкрементирања и декрементирања</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/operator_sizeof.html">Оператор <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_funkcije.html">Стандардне библиотечке функције</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_matematicke.html">Библиотечке математичке функције</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../izrazi_naredbe/bibliotecke_kviz.html">Квиз: библиотечке функције</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../linijska_struktura/index.html">Линијске програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Линијске програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/linijska_struktura.html">Линијска структура програма</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_geometrijske_formule.html">Задаци: Геометријске формуле</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_linearne_jednacine_i_sistemi.html">Задаци: Линеарне једначине и системи линеарних једначина</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_linearna_zavisnost.html">Задаци: Линеарна зависност и пропорција</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_stepenovanje_i_korenovanje.html">Задаци: Степеновање и кореновање</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_kretanje.html">Задаци: Кретање</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_pojam_div_i_mod.html">Задаци: Појам целобројног количника и остатка</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../linijska_struktura/z_pozicioni_zapis.html">Задаци: Позициони запис</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../razgranata_struktura/index.html">Разгранате програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Разгранате програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/razgranata_struktura.html">Разграната структура програма</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/relacijski_operatori.html">Релацијски оператори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/logicki_operatori.html">Логички оператори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/operatori_kviz.html">Квиз: Релацијски и логички оператори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja.html">Наредба гранања</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/naredba_grananja_kviz.html">Квиз: Наредба гранања</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni.html">Тернарни условни оператор</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/ternarni_uslovni_kviz.html">Квиз: Тернарни условни оператор</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_grananje.html">Наредба вишеструког гранања</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/visestruko_kviz.html">Квиз: Наредба вишеструког гранања</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_relacijski_operatori.html">Задаци: Релацијски оператори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_logicki_operatori.html">Задаци: Логички оператори</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_intervali.html">Задаци: Гранање на основу припадности интервалима</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_diskretni_skup_vrednosti.html">Задаци: Гранање на основу коначног скупа вредности</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_leksikografsko.html">Задаци: Лексикографско поређење торки</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_hijerarhijsko.html">Задаци: Хијерархија услова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_minimum_i_maksimum.html">Задаци: Минимум и максимум два броја</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../razgranata_struktura/z_razno.html">Задаци: Разни задаци са гранањем</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ciklicna_struktura/index.html">Цикличне програмске структуре и алгоритми</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Цикличне програмске структуре и алгоритми</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/ciklicna_struktura.html">Циклична структура програма</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_ciklus.html">Наредба бројачког циклуса</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/brojacki_kviz.html">Квиз: наредба бројачког циклуса</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov.html">Наредбе циклуса са предусловом и постусловом</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preduslov_postuslov_kviz.html">Квиз: циклуси са предусловом и постусловом</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/prevremeni_break.html">Превремени излазак из циклуса</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/preskakanje_continue.html">Прескакање наредби унутар циклуса</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/skokovi_goto.html">Скокови на произвољно одредиште</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/iskok_kviz.html">Квиз: искакања, прескакања и скокови</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pravilne_serije.html">Задаци: Итерација кроз правилне серије бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ucitavanje.html">Задаци: Учитавање серија бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_preslikavanje.html">Задаци: Пресликавање серије бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_elementarne_statistike.html">Задаци: Елементарне статистике</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_filtriranje.html">Задаци: Филтрирање серије бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_maksimum_minumum.html">Задаци: Минимум и максимум</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_pretraga.html">Задаци: Линеарна претрага</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_cifre_broja.html">Задаци: Позициони запис броја</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_odnos_susednih_elemenata_serije.html">Задаци: Однос суседних елемената серије</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_kombinatorni_objekti.html">Задаци: Генерисање свих могућности</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_segmenti.html">Задаци: Сви подсегменти серије</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_ASCII_crtezi.html">Задаци: Цртежи помоћу карактера</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_razno.html">Задаци: Генерисање неких правилних серија</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ciklicna_struktura/z_podserije.html">Задаци: Подсерије</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../jednodimenzionalni_niz/index.html">Једнодимензионални низ</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Једнодимензионални низ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/jednodimenzionalni.html">Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/definicija_niza.html">Дефиниција једнодимензионалног низа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/deklaracija_inicijalizacija.html">Декларација и иницијализација низа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pristupanje_elementima.html">Приступање елементима низа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sizeof_niz.html">Одређивање величине низа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/kviz_niz.html">Квиз: Једнодимензионални низ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/pretrazivanje_niza.html">Претраживање низа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/minimum_maksimum.html">Минимум и максимум низа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/sortiranje_niza.html">Сортирање елемената низа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/selection_sort.html">Сортирање избором</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_elementarno_koriscenje_nizova.html">Задаци: Eлементарно коришћење низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_transformacije_nizova.html">Задаци: Трансформације низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_vektori_polinomi_veliki_brojevi.html">Задаци: Низови као репрезентација вектора, полинома и великих бројева</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../jednodimenzionalni_niz/z_sortiranje_osnove.html">Задаци: Сортирање</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../prilozi/index.html">Прилози</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Прилози</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../prilozi/tipovi_podataka.html">Основни типови података</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prilozi/celobrojni_ogranicenja.html">Провера опсега вредности целобројних типова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prilozi/ascii_tabela.html">ASCII табела</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prilozi/znakovni_ogranicenja.html">Провера опсега вредности знаковног типа</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prilozi/prelazne_sekvence.html">Табела прелазних секвенци</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prilozi/realni_ogranicenja.html">Провера опсега вредности и прецизности реалних типова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prilozi/operatori_prioritet.html">Приоритет оператора</a></li>
-</ul>
-</li>
-</ul>
 
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
+    <div class="document">
+      <div class="documentwrapper">
           
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
-        <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Набројиви тип података<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Набројиви тип података<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <section id="id2">
-<h2>Дефинисање набројивог скупа података<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Дефинисање набројивог скупа података<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Могао си до сада да приметиш да програмски језик C нуди прилично оскудан
 избор типова података. У реалном свету, поред бројева и карактера, често ћеш
 наићи на стандардне скупове података који нису дефинисани у програмском језику
@@ -442,7 +144,7 @@ C, као на пример називи дана у недељи или наз�
 <code class="docutils literal notranslate"><span class="pre">dan_u_nedelji</span></code>.</p>
 </section>
 <section id="id3">
-<h2>Дефинисање набројивог типа података<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Дефинисање набројивог типа података<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>У претходној лекцији научио си како да дефинишеш изведене типове података
 помоћу кључне речи <code class="docutils literal notranslate"><span class="pre">typedef</span></code>. Комбинацијом кључних речи <code class="docutils literal notranslate"><span class="pre">typedef</span></code> и <code class="docutils literal notranslate"><span class="pre">enum</span></code>
 можеш дефинисати сопствени набројиви тип података. Општи облик дефинисања
@@ -474,85 +176,19 @@ C, као на пример називи дана у недељи или наз�
 </section>
 </section>
 
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="izvedeni_kviz.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Квиз: изведени и набројиви типови</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="izvedeni_tip.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Изведени тип података</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, Фондација Петља
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Набројиви тип података</a><ul>
-<li><a class="reference internal" href="#id2">Дефинисање набројивог скупа података</a></li>
-<li><a class="reference internal" href="#id3">Дефинисање набројивог типа података</a></li>
-</ul>
-</li>
-</ul>
 
           </div>
-        </div>
+          
       </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
       
       
-    </aside>
-  </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/notes.js"></script>
-    <script src="../_static/multiple-choice.js"></script>
-    <script src="../_static/fill-in-the-blank.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script src="../_static/design-tabs.js"></script>
-    </body>
+    </div>
+
+    
+
+    
+  </body>
 </html>
