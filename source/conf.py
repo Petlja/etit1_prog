@@ -26,7 +26,7 @@ myst_enable_extensions = [ "colon_fence",
                            "html_admonition" ]
 templates_path = ['_templates']
 exclude_patterns = []
-language = 'sr'
+language = 'sr-Cyrl'
 import petlja_sphinx_extensions
 html_static_path = petlja_sphinx_extensions.extensions.static_dirs()
 
