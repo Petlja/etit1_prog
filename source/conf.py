@@ -16,10 +16,10 @@ author = 'Велимир Радловачки'
 extensions = [ "myst_parser",
                "sphinx_design",
                "sphinx_copybutton",
-               #"sphinxpackagingtool.builder.petlja_builder",
-               "petlja_sphinx_extensions.extensions.notes",
-               "petlja_sphinx_extensions.extensions.multiple_choice",            
-               "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
+               "plct_bulder_for_sphinx.builder.plct_builder",
+               "plct_sphinx_components.extensions.notes",
+               "plct_sphinx_components.extensions.multiple_choice",            
+               "plct_sphinx_components.extensions.fill_in_the_blank"]
 
 myst_enable_extensions = [ "colon_fence",
                            "dollarmath",
@@ -27,8 +27,10 @@ myst_enable_extensions = [ "colon_fence",
 templates_path = ['_templates']
 exclude_patterns = []
 language = 'sr-Cyrl'
-import petlja_sphinx_extensions
-html_static_path = petlja_sphinx_extensions.extensions.static_dirs()
+
+
+import plct_sphinx_components
+html_static_path = plct_sphinx_components.extensions.static_dirs()
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -59,5 +61,5 @@ html_show_sourcelink = False
 
 
 
-#additional_build_targets =['scorm']
-content_uri = 'https://petljamediastorage.blob.core.windows.net/temp/etit1_prog'
+#additional_build_targets =['scorm' , 'moodle']
+content_uri = 'https://petljastorage.blob.core.windows.net/kursevi/2023/etit1_prog/'

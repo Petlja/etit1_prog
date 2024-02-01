@@ -3,5 +3,4 @@ myst-parser
 sphinx-design
 furo
 sphinx-copybutton
-petlja_sphinx_extensions
 sphinx-autobuild
