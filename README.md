@@ -8,7 +8,7 @@ Kurs možete integrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzet
 
 ## Konverzija u *HTML*
 
-U ovom repozitorijumu se nalazi izvorna forma sadržaja koju pomoću alata [PetljaDoc](https://github.com/Petlja/PetljaDoc) možete konvertovati u skup *HTML* strana.
+U ovom repozitorijumu se nalazi izvorna forma sadržaja koju pomoću alata [PLCT](https://github.com/Petlja/PLCT-CLI) možete konvertovati u skup *HTML* strana.
 
 Na https://petlja.github.io/etit1_prog možete pregledati na taj način dobijene *HTML* strane.
 
