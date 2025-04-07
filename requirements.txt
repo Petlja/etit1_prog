@@ -6,3 +6,4 @@ sphinx-copybutton
 sphinx-autobuild
 plct-cli
 plct-sphinx-components
+setuptools
